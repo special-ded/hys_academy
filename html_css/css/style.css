@@ -88,3 +88,13 @@ button:hover {
 button:active {
   background: #175EE9;
 }
+
+.svg-union-logo {
+  z-index: 4;
+  cursor: pointer;
+  fill: #1B63F0;
+}
+
+.svg-union-logo:hover {
+  fill: black;
+}
