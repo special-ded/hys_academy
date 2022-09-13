@@ -1,3 +1,9 @@
+/* TEMPORARY STYLE FOR PIXEL PERFECT */
+/* .chromeperfectpixel-overlay {
+  width: 1440px !important;
+  height: initial !important;
+} */
+
 @import url(./modern-normalize.css);
 
 @font-face {
@@ -50,7 +56,7 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: 26px;
-  line-height: 1.38;
+  line-height: 1.0;
 }
 
 p {
@@ -89,6 +95,46 @@ button:active {
   background: #175EE9;
 }
 
+.bg-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 746px;
+  z-index: -2;
+}
+
+.bg-green {
+  position: relative;
+}
+
+.bg-green-top,
+.bg-green-bottom {
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+
+.bg-green-top {
+  z-index: 2;
+  max-width: 740px;
+}
+
+.bg-green-bottom {
+  max-width: 778px;
+}
+
+header {
+  z-index: 4;
+  padding-top: 44px;
+  margin: 0 auto;
+  max-width: 850px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .svg-union-logo {
   z-index: 4;
   cursor: pointer;
@@ -97,4 +143,343 @@ button:active {
 
 .svg-union-logo:hover {
   fill: black;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav ul {
+  display: flex;
+  z-index: 4;
+  justify-content: space-between;
+}
+
+header nav button {
+  width: 96px;
+  z-index: 4;
+}
+
+header nav ul li a {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #fff;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li:last-child {
+  margin-right: 40px;
+}
+
+header nav ul li a:hover {
+  color: #1B63F0;
+}
+
+
+.weapon {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.weapon article {
+  display: flex;
+  flex-direction: column;
+}
+
+.weapon h1 {
+  z-index: 4;
+  margin-top: 155px;
+  margin-bottom: 20px;
+}
+
+.weapon p {
+  z-index: 4;
+  margin-bottom: 40px;
+}
+
+.weapon img {
+  z-index: 3;
+  width: 100%;
+  max-width: 403px;
+  max-height: 403px;
+  margin-top: 76px;
+  margin-right: -4px;
+}
+
+.weapon__buttons {
+  display: flex;
+  align-items: baseline;
+}
+
+.weapon__buttons a {
+  margin-left: 24px;
+  padding: 12px 24px;
+  width: 119px;
+  height: 40px;
+  background: #97F5CD;
+  border-radius: 22px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #000000;
+}
+
+.weapon__links {
+  display: flex;
+  align-items: center;
+  padding-top: 23px;
+}
+
+.weapon__links img {
+  margin-right: 0px;
+}
+
+
+.choose {
+  max-width: 850px;
+  margin: 0 auto;
+  padding-top: 64px;
+  display: flex;
+  justify-content: space-between
+}
+
+.choose__left svg {
+  width: 56px;
+  height: 56px;
+}
+
+.choose__left h2 {
+  padding-bottom: 33px;
+}
+
+.blue-line {
+  display: inline-block;
+  border-bottom: 2px solid #1B63F0;
+  width: 60px;
+  margin-left: 25px;
+}
+
+
+.choose__left--line1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.choose__left--line1 article {
+  display: flex;
+  flex-direction: column;
+}
+
+.choose__left--line1 h3,
+.choose__left--line2 h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  margin-top: 17px;
+  margin-bottom: 0;
+}
+
+.choose__left--line1 p,
+.choose__left--line2 p {
+  margin-top: 6px;
+}
+
+.choose__left--line1Article2 {
+  margin-right: 36px;
+}
+
+.choose__left--line2 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -18px;
+}
+
+.choose__left--line2 article {
+  display: flex;
+  flex-direction: column;
+}
+
+.choose__left--line2Article1 {
+  margin-right: 20px;
+}
+
+.choose__left--line2Article2 {
+  margin-left: 9px;
+}
+
+.apply {
+  position: relative;
+}
+
+.apply__img {
+  margin-top: 20px;
+}
+
+.apply__details {
+  color: #FFFFFF;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  padding-top: 17px;
+}
+
+.apply__details h2 {
+  width: 325px;
+  height: 100px;
+  padding: 31px 0px 40px;
+  background: #1B63F0;
+  border-radius: 8px 8px 0px 0px;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.apply__details h2 hr {
+  width: 80px;
+}
+
+.apply__details p {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33px;
+  color: #FFFFFF;
+  padding-top: 38px;
+}
+
+.apply__details hr {
+  width: 261px;
+  height: 0px;
+  border: 1px dashed rgba(255, 255, 255, 0.6);
+}
+
+.apply__details button {
+  margin-top: 40px;
+  padding: 12px 20px;
+  width: 88px;
+}
+
+.courses {
+  margin: 0 auto;
+  width: 850px;
+  text-align: center;
+  margin-top: 76px;
+}
+
+.courses span {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.0;
+  color: #1B63F0;
+
+}
+
+.courses h2 {
+  margin-top: 5px;
+}
+
+.courses__slider {
+  width: 870px;
+  margin-top: 78px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.slider__img {
+  position: relative;
+  margin-right: 20px;
+}
+
+.slider__img--inner {
+  position: absolute;
+  top: -23px;
+  left: 0px;
+  color: #FFFFFF;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+}
+
+/* /* .slider__img--small {
+  position: absolute;
+  top: -21px;
+  left: 25px;
+}/* */
+
+.slider__img--inner h3 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.0;
+  margin-bottom: 9px;
+}
+
+.slider__img--inner p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #FFFFFF;
+  margin-top: 0;
+}
+
+.slider__img--inner hr {
+  position: absolute;
+  top: 317px;
+  left: 0px;
+  width: 270px;
+  background: #FFFFFF;
+  opacity: 0.3;
+}
+
+.slider__img--small {
+  padding-bottom: 206px;
+}
+
+.slider__img--price {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 17px;
+  padding-right: 28px;
+}
+
+.slider__img--price img {
+  width: 12px;
+  height: 10px;
+}
+
+.slider__img--price div {
+  display: flex;
+  align-items: baseline;
+}
+
+.slider__img--price p {
+  padding-left: 2px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #FFFFFF;
+}
+
+.slider__img--priceOld {
+  text-decoration-line: line-through;
+  margin-top: 0;
+  margin-left: 11px;
+}
+
+.slider__img--price span {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #FFFFFF;
 }
