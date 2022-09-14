@@ -275,6 +275,7 @@ header nav ul li a:hover {
 .choose__left--line1 article {
   display: flex;
   flex-direction: column;
+  padding-top: 5px;
 }
 
 .choose__left--line1 h3,
@@ -320,7 +321,7 @@ header nav ul li a:hover {
 }
 
 .apply__img {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .apply__details {
@@ -329,7 +330,7 @@ header nav ul li a:hover {
   top: 0px;
   left: 0px;
   text-align: center;
-  padding-top: 17px;
+  padding-top: 13px;
 }
 
 .apply__details h2 {
@@ -362,8 +363,12 @@ header nav ul li a:hover {
   border: 1px dashed rgba(255, 255, 255, 0.6);
 }
 
+.apply__details hr:nth-child(3) {
+  margin-top: 22px;
+}
+
 .apply__details button {
-  margin-top: 40px;
+  margin-top: 28px;
   padding: 12px 20px;
   width: 88px;
 }
@@ -384,12 +389,12 @@ header nav ul li a:hover {
 }
 
 .courses h2 {
-  margin-top: 5px;
+  margin-top: 11px;
 }
 
 .courses__slider {
   width: 870px;
-  margin-top: 78px;
+  margin-top: 82px;
   display: flex;
   justify-content: space-around;
 }
@@ -449,8 +454,8 @@ header nav ul li a:hover {
   width: 250px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 17px;
+  align-items: baseline;
+  margin-top: 5px;
   padding-right: 28px;
 }
 
@@ -462,6 +467,12 @@ header nav ul li a:hover {
 .slider__img_price div {
   display: flex;
   align-items: baseline;
+}
+
+.slider__img_price ul {
+  display: flex;
+  align-items: baseline;
+  margin-left: 25px;
 }
 
 .slider__img_price p {
