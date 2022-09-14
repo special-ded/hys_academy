@@ -543,7 +543,7 @@ header nav ul li a:hover {
 }
 
 
-.tour__dot::before {
+.tour__dot li::before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -555,23 +555,65 @@ header nav ul li a:hover {
 
 .tour article {
   margin-left: 116px;
-  /* margin-top: 50px; */
+  margin-bottom: 24px;
 }
 
 .tour article h2 {
-  margin-top: 8px;
+  margin: 0;
+  padding: 0;
 }
 
-.tour article h2 .blue-line {
-  margin-left: 19px;
-}
 
 .tour article p {
-  padding-top: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.tour article ul {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.57;
+  color: #5C5C5C;
+}
+
+
+
+/* .tour article span {
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+} */
+
+.tour article h2 {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.38;
+  padding-top: 6px;
+}
+
+.tour article :nth-child(3) {
+  padding-top: 24px;
 }
 
 .tour article :nth-child(4) {
-  padding-top: 0px;
-  margin-top: 0;
-  padding-bottom: 0;
+  padding-top: 12px;
+}
+
+.tour article :nth-child(5) {
+  padding-top: 12px;
+}
+
+.tour article ul :nth-child(2) {
+  padding-top: 12px;
+
+}
+
+.tour article ul li {
+  float: left;
+  color: #000000;
+
+}
+
+.tour__button {
+  margin-top: 24px;
 }
