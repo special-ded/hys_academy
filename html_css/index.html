@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Education</title>
   </head>
   <body>
@@ -350,9 +350,11 @@
             height="520"
             alt="Two women"
           />
-          <svg class="tour__left_play" viewBox="0 0 32 32" width="400">
-            <use href="./assets/images/sprite.svg#icon-play-btn"></use>
-          </svg>
+          <div>
+            <svg class="tour__left_play">
+              <use href="./assets/images/sprite.svg#icon-play-btn"></use>
+            </svg>
+          </div>
         </div>
 
         <article>
@@ -379,26 +381,39 @@
             </li>
           </ul>
           <button class="tour__button">Read More</button>
+          <div class="tour__circle"></div>
+          <div class="tour__square"></div>
         </article>
       </section>
       <a name="chooseTwo"></a>
+
+      <!-- SECTION CHOOSE-TWO -->
+
       <section class="choose-two">
         <article>
-          <h2>Shy shoose us?</h2>
+          <h2>Why shoose us?</h2>
           <div class="event">
             <h3>International Conference on Bussiness</h3>
             <div class="event__details">
               <div>
-                <img src="./images/calendar.svg" width="20" alt="calendar" />
+                <img
+                  src="./assets/images/calendar.svg"
+                  width="20"
+                  alt="calendar"
+                />
                 <p>July 8, 2018</p>
               </div>
               <div>
-                <img src="./images/clock.svg" width="20" alt="clock" />
+                <img src="./assets/images/clock.svg" width="20" alt="clock" />
                 <p>5:00pm - 7:00pm</p>
               </div>
               <div>
-                <img src="./images/location.svg" width="20" alt="location" />
-                <p>Unated States</p>
+                <img
+                  src="./assets/images/location.svg"
+                  width="20"
+                  alt="location"
+                />
+                <p>United States</p>
               </div>
             </div>
           </div>
@@ -406,16 +421,24 @@
             <h3>International Conference on Bussiness</h3>
             <div class="event__details">
               <div>
-                <img src="./images/calendar.svg" width="20" alt="calendar" />
+                <img
+                  src="./assets/images/calendar.svg"
+                  width="20"
+                  alt="calendar"
+                />
                 <p>July 8, 2018</p>
               </div>
               <div>
-                <img src="./images/clock.svg" width="20" alt="clock" />
+                <img src="./assets/images/clock.svg" width="20" alt="clock" />
                 <p>5:00pm - 7:00pm</p>
               </div>
               <div>
-                <img src="./images/location.svg" width="20" alt="location" />
-                <p>Unated States</p>
+                <img
+                  src="./assets/images/location.svg"
+                  width="20"
+                  alt="location"
+                />
+                <p>United States</p>
               </div>
             </div>
           </div>
@@ -423,16 +446,24 @@
             <h3>International Conference on Bussiness</h3>
             <div class="event__details">
               <div>
-                <img src="./images/calendar.svg" width="20" alt="calendar" />
+                <img
+                  src="./assets/images/calendar.svg"
+                  width="20"
+                  alt="calendar"
+                />
                 <p>July 8, 2018</p>
               </div>
               <div>
-                <img src="./images/clock.svg" width="20" alt="clock" />
+                <img src="./assets/images/clock.svg" width="20" alt="clock" />
                 <p>5:00pm - 7:00pm</p>
               </div>
               <div>
-                <img src="./images/location.svg" width="20" alt="location" />
-                <p>Unated States</p>
+                <img
+                  src="./assets/images/location.svg"
+                  width="20"
+                  alt="location"
+                />
+                <p>United States</p>
               </div>
             </div>
           </div>
@@ -440,42 +471,64 @@
             <h3>International Conference on Bussiness</h3>
             <div class="event__details">
               <div>
-                <img src="./images/calendar.svg" width="20" alt="calendar" />
+                <img
+                  src="./assets/images/calendar.svg"
+                  width="20"
+                  alt="calendar"
+                />
                 <p>July 8, 2018</p>
               </div>
               <div>
-                <img src="./images/clock.svg" width="20" alt="clock" />
+                <img src="./assets/images/clock.svg" width="20" alt="clock" />
                 <p>5:00pm - 7:00pm</p>
               </div>
               <div>
-                <img src="./images/location.svg" width="20" alt="location" />
-                <p>Unated States</p>
+                <img
+                  src="./assets/images/location.svg"
+                  width="20"
+                  alt="location"
+                />
+                <p>United States</p>
               </div>
             </div>
           </div>
         </article>
         <aside>
           <h2>FEATURED</h2>
-          <div>
-            <p>213<span>Days</span></p>
+          <div class="featured__values">
+            <p>$213<span>Days</span></p>
             <p>23<span>Hours</span></p>
             <p>59<span>Min</span></p>
           </div>
-          <img src="./images/featured.svg" width="328" alt="Featured" />
-          <div class="featured__innerText">
-            <h3>International Conference...</h3>
-            <div class="event__details">
-              <div>
-                <img src="./images/calendar.svg" width="20" alt="calendar" />
-                <p>July 8, 2018</p>
-              </div>
-              <div>
-                <img src="./images/clock.svg" width="20" alt="clock" />
-                <p>5pm - 7pm</p>
-              </div>
-              <div>
-                <img src="./images/location.svg" width="20" alt="location" />
-                <p>Unated States</p>
+          <div class="featured__img">
+            <img
+              src="./assets/images/featured.svg"
+              width="328"
+              alt="Featured"
+            />
+            <div class="featured__innerText">
+              <h3>International Conference...</h3>
+              <div class="event__details-img">
+                <div>
+                  <img
+                    src="./assets/images/calendar.svg"
+                    width="20"
+                    alt="calendar"
+                  />
+                  <p>July 8, 2018</p>
+                </div>
+                <div>
+                  <img src="./assets/images/clock.svg" width="20" alt="clock" />
+                  <p>5pm - 7pm</p>
+                </div>
+                <div>
+                  <img
+                    src="./assets/images/location.svg"
+                    width="20"
+                    alt="location"
+                  />
+                  <p>United States</p>
+                </div>
               </div>
             </div>
           </div>
@@ -491,40 +544,60 @@
           architecto beatae vitae dicta sunt explicabo.
         </p>
         <div class="prefer__slider">
-          <img src="./images/slide-left.svg" width="24" alt="Slide left" />
+          <img
+            src="./assets/images/slide-left.svg"
+            width="24"
+            alt="Slide left"
+          />
           <div class="prefer__slider_slide">
             <img
-              src="./images/prefer-pic1.svg"
+              src="./assets/images/prefer-pic1.svg"
               alt="Graphic Design"
               width="198"
             />
             <p>Graphic Design</p>
           </div>
           <div class="prefer__slider_slide">
-            <img src="./images/prefer-pic2.svg" width="198" alt="prefer pic" />
+            <img
+              src="./assets/images/prefer-pic2.svg"
+              width="198"
+              alt="prefer pic"
+            />
             <p>Web Design</p>
           </div>
           <div class="prefer__slider_slide">
-            <img src="./images/prefer-pic3.svg" width="198" alt="prefer pic" />
+            <img
+              src="./assets/images/prefer-pic3.svg"
+              width="198"
+              alt="prefer pic"
+            />
             <p>Graphic Design</p>
           </div>
           <div class="prefer__slider--slide">
-            <img src="./images/prefer-pic4.svg" width="198" alt="prefer pic" />
+            <img
+              src="./assets/images/prefer-pic4.svg"
+              width="198"
+              alt="prefer pic"
+            />
             <p>Graphic Design</p>
           </div>
-          <img src="./images/slide-right.svg" width="24" alt="Slide right" />
+          <img
+            src="./assets/images/slide-right.svg"
+            width="24"
+            alt="Slide right"
+          />
         </div>
       </section>
       <section class="customers">
         <img
-          src="./images/two-women-img.svg"
+          src="./assets/images/two-women-img.svg"
           width="412"
           alt="Two women image"
         />
         <div class="customers__feedback">
           <h2>Our great customers</h2>
           <img
-            src="./images/customers-feedback-img.svg"
+            src="./assets/images/customers-feedback-img.svg"
             width="39"
             alt="Customers feedback image"
           />
@@ -538,7 +611,11 @@
             sunt explicabo.
           </p>
           <h3>Stephanie Magion</h3>
-          <img src="./images/customers-scroll.svg" width="70" alt="Scroll" />
+          <img
+            src="./assets/images/customers-scroll.svg"
+            width="70"
+            alt="Scroll"
+          />
         </div>
       </section>
       <section class="ready">
@@ -561,26 +638,26 @@
         </article>
         <aside>
           <div>
-            <img src="./images/link.svg" width="24" alt="Link" />
+            <img src="./assets/images/link.svg" width="24" alt="Link" />
             <h2>Quick Link</h2>
           </div>
           <div>
-            <img src="./images/pen-tool.svg" width="24" alt="Pen" />
+            <img src="./assets/images/pen-tool.svg" width="24" alt="Pen" />
             <p>Tution and Fees</p>
             <hr />
           </div>
           <div>
-            <img src="./images/case.svg" width="24" alt="Case" />
+            <img src="./assets/images/case.svg" width="24" alt="Case" />
             <p>Review & Rating</p>
             <hr />
           </div>
           <div>
-            <img src="./images/book-open.svg" width="24" alt="Book" />
+            <img src="./assets/images/book-open.svg" width="24" alt="Book" />
             <p>Universoty Facilities</p>
             <hr />
           </div>
           <div>
-            <img src="./images/comment.svg" width="24" alt="Comment" />
+            <img src="./assets/images/comment.svg" width="24" alt="Comment" />
             <p>Community Q&A</p>
             <hr />
           </div>
@@ -590,11 +667,15 @@
         <h2>Latest Blog</h2>
         <div class="blog__container">
           <div class="blog__container_item">
-            <img src="./images/blog-img1.svg" width="415" alt="Blog image" />
+            <img
+              src="./assets/images/blog-img1.svg"
+              width="415"
+              alt="Blog image"
+            />
             <p class="blog__container_itemDesign">DESIGN</p>
             <div>
               <img
-                src="./images/slider-img1-small.svg"
+                src="./assets/images/slider-img1-small.svg"
                 width="48"
                 alt="slider img1 small"
               />
@@ -606,11 +687,15 @@
             <a href="#chooseTwo">Read Now</a>
           </div>
           <div class="blog__container_item">
-            <img src="./images/blog-img2.svg" width="415" alt="Blog image" />
+            <img
+              src="./assets/images/blog-img2.svg"
+              width="415"
+              alt="Blog image"
+            />
             <p class="blog__container_itemDesign">DESIGN</p>
             <div>
               <img
-                src="./images/slider-img2-small.svg"
+                src="./assets/images/slider-img2-small.svg"
                 width="48"
                 alt="slider img2 small"
               />
@@ -636,7 +721,7 @@
     <footer>
       <section class="footer__top">
         <div>
-          <img src="./images/union-logo.svg" width="53" alt="Logo" />
+          <img src="./assets/images/union-logo.svg" width="53" alt="Logo" />
         </div>
         <div>
           <h3>Company</h3>
@@ -667,16 +752,28 @@
           <ul>
             <li>
               <a href="#"
-                ><img src="./images/facebook.svg" width="24" alt="facebook"
+                ><img
+                  src="./assets/images/facebook.svg"
+                  width="24"
+                  alt="facebook"
               /></a>
               <a href="#"
-                ><img src="./images/instagram.svg" width="24" alt="instagram"
+                ><img
+                  src="./assets/images/instagram.svg"
+                  width="24"
+                  alt="instagram"
               /></a>
               <a href="#"
-                ><img src="./images/twitter.svg" width="24" alt="twitter"
+                ><img
+                  src="./assets/images/twitter.svg"
+                  width="24"
+                  alt="twitter"
               /></a>
               <a href="#"
-                ><img src="./images/youtube.svg" width="24" alt="youtube"
+                ><img
+                  src="./assets/images/youtube.svg"
+                  width="24"
+                  alt="youtube"
               /></a>
             </li>
           </ul>

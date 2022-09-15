@@ -112,7 +112,7 @@
 <symbol id="icon-play-btn" viewBox="0 0 32 32">
 <path fill="#64be97" style="fill: var(--color13, #64be97)" d="M16 5.333c4.909 0 8.889 3.98 8.889 8.889s-3.98 8.889-8.889 8.889c-4.909 0-8.889-3.98-8.889-8.889s3.98-8.889 8.889-8.889z"></path>
 <path fill="#fff" style="fill: var(--color5, #fff)" d="M12.889 10.222l6.222 4-6.222 4v-8z"></path>
-<path fill="none" stroke="#fff" style="stroke: var(--color5, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.8889" d="M16 5.778c4.664 0 8.444 3.781 8.444 8.444s-3.781 8.444-8.444 8.444c-4.664 0-8.444-3.781-8.444-8.444s3.781-8.444 8.444-8.444z"></path>
+<path fill="none" stroke="#fff" style="stroke: var(--color6, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.8889" d="M16 5.778c4.664 0 8.444 3.781 8.444 8.444s-3.781 8.444-8.444 8.444c-4.664 0-8.444-3.781-8.444-8.444s3.781-8.444 8.444-8.444z"></path>
 </symbol>
 <symbol id="icon-prefer-pic1" viewBox="0 0 32 32">
 <path fill="#000" style="fill: var(--color3, #000)" d="M3.24 1.755h25.587c0.298 0 0.54 0.242 0.54 0.54v25.519c0 0.298-0.242 0.54-0.54 0.54h-25.587c-0.298 0-0.54-0.242-0.54-0.54v-25.519c0-0.298 0.242-0.54 0.54-0.54z"></path>
