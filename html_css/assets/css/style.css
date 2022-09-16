@@ -488,13 +488,17 @@ header nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 5px;
+  margin-top: 10px;
   padding-right: 28px;
 }
 
 .slider__img_price svg {
   width: 12px;
   height: 10px;
+}
+
+.star-white {
+  --color19: #ffffff;
 }
 
 .slider__img_price div {
@@ -506,6 +510,9 @@ header nav ul li a:hover {
   display: flex;
   align-items: baseline;
   margin-left: 25px;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #FFFFFF;
 }
 
 .slider__img_price p {
