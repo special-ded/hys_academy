@@ -867,7 +867,7 @@ header nav ul li a:hover {
 
 .prefer__slider_text {
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 600;
@@ -875,4 +875,15 @@ header nav ul li a:hover {
   line-height: 1.5;
   color: #FFFFFF;
   white-space: nowrap;
+}
+
+.ready {
+  max-width: 1440px;
+  height: 406px;
+  background-image: url('../images/ready-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background-color: #000000; */
+
 }
