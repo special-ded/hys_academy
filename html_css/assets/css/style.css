@@ -82,7 +82,8 @@ li {
   list-style: none;
 }
 
-button {
+button,
+.ready__apply-btn {
   padding: 12px 24px;
   width: 116px;
   height: 40px;
@@ -244,6 +245,15 @@ header nav ul li a:hover {
   line-height: 1.33;
   color: #000000;
 }
+
+.weapon__buttons a:hover {
+  background: #C0FFE4;
+}
+
+.weapon__buttons a:active {
+  background: #83EBBF;
+}
+
 
 .weapon__links {
   display: flex;
@@ -886,4 +896,49 @@ header nav ul li a:hover {
   background-position: center;
   /* background-color: #000000; */
 
+}
+
+.ready__apply-btn {
+  width: 109px;
+  background: #64BE97;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.ready__apply-btn:hover {
+  background: #C0FFE4;
+}
+
+.ready__apply-btn:active {
+  background: #83EBBF;
+}
+
+.ready__request-btn {
+  padding: 12px 20px;
+  width: 142px;
+  background: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 22px;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.ready__request-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ready__request-btn:active {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #FFFFFF;
+  padding: 11px 20px;
+}
+
+.form button {
+  padding: 10px 0px;
+  width: 120px;
+  height: 44px;
+  background: #64BE97;
+  box-shadow: 0px 4px 16px rgba(75, 202, 103, 0.58);
 }
