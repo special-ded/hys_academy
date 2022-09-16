@@ -982,7 +982,8 @@ header nav ul li a:hover {
 }
 
 .ready__container aside {
-  padding-left: 194px;
+  padding-left: 211px;
+  padding-top: 72px;
 }
 
 .ready__container article p:nth-child(1) {
@@ -1010,6 +1011,22 @@ header nav ul li a:hover {
   margin-top: 1px;
 }
 
+
+
+
+.ready__container aside div {
+  display: flex;
+  align-items: center;
+}
+
+.ready__container aside div p {
+  margin-left: 13px;
+  margin-top: 0;
+}
+
+.ready__container aside div h2 {
+  margin-left: 8px;
+}
 
 
 
