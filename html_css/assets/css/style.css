@@ -219,13 +219,14 @@ header nav ul li a:hover {
   margin-bottom: 40px;
 }
 
-.weapon img {
+.weapon img,
+.weapon svg {
   z-index: 3;
   width: 100%;
-  max-width: 403px;
-  max-height: 403px;
-  margin-top: 76px;
-  margin-right: -4px;
+  max-width: 500px;
+  max-height: 500px;
+  margin-top: 21px;
+  margin-right: -104px;
 }
 
 .weapon__buttons {
@@ -258,7 +259,7 @@ header nav ul li a:hover {
 .weapon__links {
   display: flex;
   align-items: center;
-  padding-top: 23px;
+  padding-top: 77px;
 }
 
 .weapon__links img {
