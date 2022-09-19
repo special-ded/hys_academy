@@ -60,7 +60,7 @@
           </p>
           <div class="top-section__buttons">
             <button>Read More</button>
-            <a href="#form">Get started</a>
+            <a href="#registration">Get started</a>
           </div>
           <div class="top-section__links">
             <img
@@ -627,7 +627,7 @@
               sunt explicabo.
             </p>
             <div>
-              <a class="ready__apply-btn" href="#form">Apply Now</a>
+              <a class="ready__apply-btn" href="#registration">Apply Now</a>
               <button class="ready__request-btn">Request Service</button>
             </div>
           </article>
@@ -727,12 +727,16 @@
 
       <!-- SECTION FORM -->
 
-      <a name="form"></a>
-      <section class="form">
-        <form action="/action.php">
-          <input type="text" placeholder="Name Surname" /><br /><br />
-          <input type="tel" placeholder="Phone" /><br /><br />
-          <input type="email" placeholder="Enter your email..." /><br /><br />
+      <a name="registration"></a>
+      <section class="registration">
+        <form class="form" action="/action.php">
+          <input type="text" placeholder="Name Surname" required /><br /><br />
+          <input type="tel" placeholder="Phone" required /><br /><br />
+          <input
+            type="email"
+            placeholder="Enter your email..."
+            required
+          /><br /><br />
           <button class="send-btn" type="submit">Send</button>
         </form>
       </section>
@@ -740,11 +744,11 @@
 
     <!-- FOOTER -->
 
-    <footer>
+    <footer class="footer">
       <section class="footer__top">
         <div>
           <svg
-            class="svg-union-logo"
+            class="header__union-logo"
             width="54"
             height="24"
             viewBox="0 0 54 24"
@@ -752,51 +756,56 @@
             <use href="/assets/images/sprite.svg#icon-union-main-logo"></use>
           </svg>
         </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
+        <div class="footer__top-nav">
+          <h3 class="footer__top-nav-title">Company</h3>
+          <ul class="footer__top-nav-list">
             <li><a href="#">About Company</a></li>
             <li><a href="#">Feature Course</a></li>
             <li><a href="#">Careers</a></li>
           </ul>
         </div>
-        <div>
-          <h3>Help Links</h3>
-          <ul>
+        <div class="footer__top-nav">
+          <h3 class="footer__top-nav-title">Help Links</h3>
+          <ul class="footer__top-nav-list">
             <li><a href="#">Student Support</a></li>
             <li><a href="#">Course Policy</a></li>
             <li><a href="#">Register Key</a></li>
           </ul>
         </div>
-        <div>
-          <h3>Course</h3>
-          <ul>
+        <div class="footer__top-nav">
+          <h3 class="footer__top-nav-title">Course</h3>
+          <ul class="footer__top-nav-list">
             <li><a href="#">Wordpres</a></li>
             <li><a href="#">Photography</a></li>
-            <li><a>Learning English</a></li>
+            <li><a href="#">Learning English</a></li>
           </ul>
         </div>
-        <div>
-          <h3>Social Media</h3>
-          <ul>
+        <div class="footer__top-nav">
+          <h3 class="footer__top-nav-title">Social Media</h3>
+          <ul class="footer__top-nav-list">
             <li>
               <a href="#">
-                <svg viewBox="0 0 32 32" width="24">
+                <svg class="social-media" viewBox="0 0 32 32" width="24">
                   <use href="/assets/images/sprite.svg#icon-facebook"></use>
                 </svg>
               </a>
               <a href="#">
-                <svg viewBox="0 0 32 32" width="24">
+                <svg
+                  class="social-media"
+                  class="social-media"
+                  viewBox="0 0 32 32"
+                  width="24"
+                >
                   <use href="/assets/images/sprite.svg#icon-instagram"></use>
                 </svg>
               </a>
               <a href="#">
-                <svg viewBox="0 0 32 32" width="24">
+                <svg class="social-media" viewBox="0 0 32 32" width="24">
                   <use href="/assets/images/sprite.svg#icon-twitter"></use>
                 </svg>
               </a>
               <a href="#">
-                <svg viewBox="0 0 32 32" width="24">
+                <svg class="social-media" viewBox="0 0 32 32" width="24">
                   <use href="/assets/images/sprite.svg#icon-youtube"></use>
                 </svg>
               </a>
@@ -807,8 +816,8 @@
       <section class="footer__bottom">
         <hr />
         <div class="footer__bottom_links">
-          <p>All rights Reserved</p>
-          <ul>
+          <p class="links-title">All rights Reserved</p>
+          <ul class="links-list">
             <li><a href="#">About company</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Help Center</a></li>

@@ -64,12 +64,15 @@
   --event-featured-bg: #FFF9F1;
   --event-text-color: #838383;
   --request-btn-bg-hover: rgba(255, 255, 255, 0.15);
+  --registration-input-bg: #F3F6FC;
+  --registration-input-box-shadow: rgba(0, 0, 0, 0.25);
   --send-button-bg-default: #64BE97;
   --send-button-bg-hover: #25DE8E;
   --send-button-bg-pressed: #4DDA9D;
   --send-button-bg-box-shadow: rgba(75, 202, 103, 0.58);
   --send-button-bg-hover-box-shadow: rgba(52, 210, 142, 0.58);
   --blog-side-text-color: #5D74E4;
+
 }
 
 body {
@@ -1037,6 +1040,37 @@ button:active {
   border: 1px solid var(--arrow-play-button-hover);
 }
 
+.form {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.form input {
+  display: block;
+  width: 420px;
+  height: 44px;
+  padding: 0px 12px;
+  background: var(--registration-input-bg);
+  border-radius: 22px;
+  border: 2px solid var(--registration-input-bg);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  filter: drop-shadow(0px 4px 4px var(--registration-input-box-shadow));
+}
+
+.form input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--secondary-text-color);
+}
+
+.form input:focus {
+  outline: none;
+  border: 2px solid var(--blue-button-bg-default);
+}
+
 .send-btn {
   width: 120px;
   background: var(--arrow-play-button-hover);
@@ -1051,4 +1085,46 @@ button:active {
 .send-btn:active {
   background: var(--send-button-bg-pressed);
   box-shadow: 0px 4px 16px var(--send-button-bg-box-shadow);
+}
+
+.footer__top {
+  display: flex;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.footer__top-nav-title {
+  font-weight: 700;
+}
+
+.footer__top-nav-list li a {
+  font-size: 14px;
+  line-height: 1.57;
+  color: var(--secondary-text-color);
+}
+
+.footer__top-nav-list li a:hover {
+  color: var(--green-button-bg-default);
+  transition: all 300ms ease-in;
+}
+
+.social-media:hover {
+  --hover-color: var(--green-button-bg-default);
+}
+
+.links-title,
+.links-list li a {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--secondary-text-color);
+  cursor: pointer;
+}
+
+.links-title {
+  cursor: auto;
+}
+
+.links-list li a:hover {
+  color: var(--blue-button-bg-default);
 }
