@@ -372,63 +372,6 @@ button:active {
   margin-left: 9px;
 }
 
-/* .apply {
-  position: relative;
-}
-
-.apply__img {
-  margin-top: 16px;
-}
-
-.apply__details {
-  color: var(--white-color);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  text-align: center;
-  padding-top: 13px;
-}
-
-.apply__details h2 {
-  width: 325px;
-  height: 100px;
-  padding: 31px 0px 40px;
-  background: var(--blue-button-bg-default);
-  border-radius: 8px 8px 0px 0px;
-  font-size: 20px;
-  line-height: 1.2;
-  text-align: center;
-  color: var(--white-color);
-}
-
-.apply__details h2 hr {
-  width: 80px;
-}
-
-.apply__details p {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 1.33px;
-  color: var(--white-color);
-  padding-top: 38px;
-} */
-
-/* .apply__details hr {
-  width: 261px;
-  height: 0px;
-  border: 1px dashed rgba(255, 255, 255, 0.6);
-} */
-
-.apply__details hr:nth-child(3) {
-  margin-top: 22px;
-}
-
-.apply__details button {
-  margin-top: 28px;
-  padding: 12px 20px;
-  width: 88px;
-}
-
 .courses {
   margin: 0 auto;
   width: 850px;
