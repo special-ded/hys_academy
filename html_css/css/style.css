@@ -168,7 +168,7 @@ button:active {
   max-width: 778px;
 }
 
-header {
+.header {
   z-index: 4;
   padding-top: 44px;
   margin: 0 auto;
@@ -180,76 +180,76 @@ header {
   justify-content: space-between;
 }
 
-.svg-union-logo {
+.header__union-logo {
   z-index: 4;
   cursor: pointer;
   fill: var(--blue-button-bg-default);
 }
 
-.svg-union-logo:hover {
+.header__union-logo:hover {
   fill: var(--main-text-color);
 }
 
-header nav {
+.header__nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header nav ul {
+.header__list {
   display: flex;
   z-index: 4;
   justify-content: space-between;
 }
 
-header nav button {
+.header__nav button {
   width: 96px;
   z-index: 4;
 }
 
-header nav ul li a {
+.header__elem a {
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   color: var(--white-color);
 }
 
-header nav ul li {
-  margin-right: 20px;
-}
-
-header nav ul li:last-child {
-  margin-right: 40px;
-}
-
-header nav ul li a:hover {
+.header__elem a:hover {
   color: var(--blue-button-bg-default);
 }
 
-.weapon {
+.header__elem {
+  margin-right: 20px;
+}
+
+.header__elem:last-child {
+  margin-right: 40px;
+}
+
+.top-section {
   max-width: 850px;
   margin: 0 auto;
   display: flex;
 }
 
-.weapon article {
+.top-section article {
   display: flex;
   flex-direction: column;
 }
 
-.weapon h1 {
+.top-section h1 {
   z-index: 4;
   margin-top: 155px;
   margin-bottom: 20px;
 }
 
-.weapon p {
+.top-section p {
   z-index: 4;
   margin-bottom: 40px;
 }
 
-.weapon img,
-.weapon svg {
+.top-section img,
+.top-section svg {
   z-index: 3;
   width: 100%;
   max-width: 500px;
@@ -258,12 +258,12 @@ header nav ul li a:hover {
   margin-right: -104px;
 }
 
-.weapon__buttons {
+.top-section__buttons {
   display: flex;
   align-items: baseline;
 }
 
-.weapon__buttons a {
+.top-section__buttons a {
   margin-left: 24px;
   padding: 12px 24px;
   width: 119px;
@@ -276,23 +276,23 @@ header nav ul li a:hover {
   color: var(--main-text-color);
 }
 
-.weapon__buttons a:hover,
+.top-section__buttons a:hover,
 .ready__apply-btn:hover {
   background: var(--green-button-bg-hover);
 }
 
-.weapon__buttons a:active,
+.top-section__buttons a:active,
 .ready__apply-btn:active {
   background: var(--green-button-bg-active);
 }
 
-.weapon__links {
+.top-section__links {
   display: flex;
   align-items: center;
   padding-top: 77px;
 }
 
-.weapon__links img {
+.top-section__links img {
   margin-right: 0px;
 }
 
