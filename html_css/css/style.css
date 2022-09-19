@@ -318,7 +318,7 @@ button:active {
 .prefer h2::after,
 .customers__feedback h2::after,
 .blog h2::after,
-.choose-two article h2::after {
+.events__article h2::after {
   content: "";
   display: inline-block;
   border-bottom: 2px solid var(--blue-button-bg-default);
@@ -650,7 +650,7 @@ button:active {
   border-radius: 8px;
 }
 
-.choose-two {
+.events__container {
   max-width: 1440px;
   margin-top: 95px;
   display: flex;
@@ -658,12 +658,12 @@ button:active {
   align-items: center;
 }
 
-.choose-two article {
+.events__article {
   display: flex;
   flex-direction: column;
 }
 
-.event::after {
+.events__elem::after {
   content: "";
   display: inline-block;
   border-bottom: 1px solid var(--secondary-text-color);
@@ -673,23 +673,23 @@ button:active {
   margin-bottom: 18px;
 }
 
-.event__details {
+.events__elem-details {
   display: flex;
   gap: 24px;
 }
 
-.event__details div {
+.events__elem-details div {
   display: flex;
 }
 
-.event p {
+.events__elem p {
   margin: 0;
   padding: 0;
   padding-left: 8px;
   color: var(--event-text-color);
 }
 
-.choose-two aside {
+.events__aside {
   width: 623px;
   height: 680px;
   margin-left: 107px;
@@ -697,12 +697,12 @@ button:active {
   background: var(--event-featured-bg);
 }
 
-.featured__img {
+.events__aside-img {
   position: relative;
   margin-top: 40px;
 }
 
-.featured__innerText {
+.events__aside-inner-text {
   position: absolute;
   top: 224px;
   left: 24px;
@@ -713,30 +713,30 @@ button:active {
   background: var(--event-img-text-bg);
 }
 
-.featured__innerText h3 {
+.events__aside-inner-text h3 {
   text-align: center;
   color: var(--white-color);
   margin-top: 0;
 }
 
-.event__details-img {
+.events__aside-details {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
   justify-content: space-around;
 }
 
-.event__details-img p {
+.events__aside-details p {
   padding-left: 8px;
   color: var(--event-img-text);
   margin: 0;
 }
 
-.event__details-img div {
+.events__aside-details div {
   display: flex;
 }
 
-.choose-two aside h2 {
+.events__aside h2 {
   font-weight: 700;
   font-size: 60px;
   line-height: 73px;
@@ -747,38 +747,38 @@ button:active {
   margin-bottom: 0;
 }
 
-.featured__values {
+.events__aside-values {
   display: flex;
   gap: 45px;
   margin-top: 27px;
 }
 
-.featured__values p {
+.events__aside-values p {
   margin: 0;
 }
 
-.featured__values p:nth-child(1) {
+.events__aside-values p:nth-child(1) {
   font-weight: 700;
   font-size: 18px;
   line-height: 1.33;
   color: var(--featured-value-day);
 }
 
-.featured__values p:nth-child(2) {
+.events__aside-values p:nth-child(2) {
   font-weight: 700;
   font-size: 18px;
   line-height: 1.33;
   color: var(--featured-value-hour);
 }
 
-.featured__values p:nth-child(3) {
+.events__aside-values p:nth-child(3) {
   font-weight: 700;
   font-size: 18px;
   line-height: 1.33;
   color: var(--featured-value-minutes);
 }
 
-.featured__values span {
+.events__aside-values span {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.57;
@@ -786,7 +786,7 @@ button:active {
   padding-left: 6px;
 }
 
-.choose-two aside button {
+.events__aside button {
   width: 158px;
   padding: 12px 20px;
   margin-top: 51px;
