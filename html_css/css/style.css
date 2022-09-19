@@ -214,6 +214,7 @@ button:active {
 }
 
 .header__elem a:hover {
+  transition: all 250ms ease-in;
   color: var(--blue-button-bg-default);
 }
 
