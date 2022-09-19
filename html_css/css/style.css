@@ -69,6 +69,7 @@
   --send-button-bg-pressed: #4DDA9D;
   --send-button-bg-box-shadow: rgba(75, 202, 103, 0.58);
   --send-button-bg-hover-box-shadow: rgba(52, 210, 142, 0.58);
+  --blog-side-text-color: #5D74E4;
 }
 
 body {
@@ -187,6 +188,7 @@ button:active {
 
 .header__union-logo:hover {
   fill: var(--main-text-color);
+  transition: all 250ms ease-in;
 }
 
 .header__nav {
@@ -947,6 +949,7 @@ button:active {
 .ready__container aside div p {
   margin-left: 13px;
   margin-top: 0;
+  color: var(--white-color);
 }
 
 .ready__container aside div h2 {
@@ -981,9 +984,62 @@ button:active {
   padding: 11px 20px;
 }
 
+.blog {
+  max-width: 1440px;
+
+}
+
+.blog__container {
+  display: flex;
+}
+
+.blog__item_side-text,
+.blog__item_link {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--blog-side-text-color);
+  margin: 0;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.blog__item_link {
+  writing-mode: horizontal-tb;
+  color: var(--main-text-color);
+}
+
+.blog__container_scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.blog__container_scroll-btn {
+  color: var(--blog-side-text-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.0;
+  width: 40px;
+  height: 40px;
+  padding: 13px;
+  text-align: center;
+  background: var(--white-color);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.blog__container_scroll-btn:hover {
+  box-shadow: 0px 4px 16px var(--arrow-box-shadow);
+}
+
+.blog__container_scroll-btn:active {
+  border: 1px solid var(--arrow-play-button-hover);
+}
+
 .send-btn {
   width: 120px;
-  background: var(--send-button-bg-default);
+  background: var(--arrow-play-button-hover);
   box-shadow: 0px 4px 16px var(--send-button-bg-box-shadow);
 }
 
