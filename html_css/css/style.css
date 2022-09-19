@@ -313,12 +313,7 @@ button:active {
   padding-bottom: 33px;
 }
 
-.advantages__container h2::after,
-.description__article h2::after,
-.prefer h2::after,
-.customers__feedback h2::after,
-.blog h2::after,
-.events__article h2::after {
+.blue-line::after {
   content: "";
   display: inline-block;
   border-bottom: 2px solid var(--blue-button-bg-default);
