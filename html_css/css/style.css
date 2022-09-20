@@ -1164,13 +1164,20 @@ button:active {
   margin: 0;
 }
 
-.footer__top-nav-list {
+.footer__top-nav-list,
+.footer__top-nav-list-social {
   padding: 0;
   margin: 0;
   padding-top: 24px;
 }
 
-.footer__top-nav-list li {
+.footer__top-nav-list-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer__top-nav-list li,
+.footer__top-nav-list-social li {
   margin-bottom: 12px;
 }
 
@@ -1185,8 +1192,30 @@ button:active {
   transition: all 300ms ease-in;
 }
 
+.footer__bottom {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.footer__bottom hr {
+  background: var(--secondary-text-color);
+  opacity: 0.1;
+}
+
+.footer__bottom_links {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .social-media:hover {
   --hover-color: var(--green-button-bg-default);
+}
+
+.links-list {
+  display: flex;
+  gap: 20px;
 }
 
 .links-title,
