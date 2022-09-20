@@ -959,9 +959,14 @@ button:active {
   margin-left: 8px;
 }
 
+.ready__buttons {
+  padding-top: 16px;
+}
+
 .ready__apply-btn {
   width: 109px;
   background: var(--arrow-play-button-hover);
+  color: var(--main-text-color);
   padding: 12px 20px;
   cursor: pointer;
 }
@@ -969,6 +974,7 @@ button:active {
 .ready__request-btn {
   padding: 12px 20px;
   width: 142px;
+  margin-left: 20px;
   background: none;
   border: 1px solid var(--white-color);
   border-radius: 22px;
