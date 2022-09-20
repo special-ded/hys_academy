@@ -254,7 +254,7 @@ button:active {
 }
 
 .top-section img,
-.top-section svg {
+.coding-girl-img {
   z-index: 3;
   width: 100%;
   max-width: 500px;
@@ -520,7 +520,7 @@ button:active {
 .description {
   display: flex;
   align-items: center;
-  max-width: 1440px;
+  max-width: 1220px;
   margin-top: 61px;
 }
 
@@ -529,13 +529,15 @@ button:active {
 }
 
 .description__left_img {
+  width: 50vw;
+  max-width: 700px;
   margin-bottom: 1px;
 }
 
 .description__left_play {
   position: absolute;
-  top: 218px;
-  left: 470px;
+  top: 42%;
+  left: 67%;
   width: 72px;
   height: 72px;
 }
@@ -841,8 +843,8 @@ button:active {
   top: 105px;
   left: 25px;
   z-index: -1;
-  width: 516px;
-  height: 525px;
+  max-width: 516px;
+  max-height: 525px;
 }
 
 .customers__background-behind {
@@ -850,15 +852,20 @@ button:active {
   position: absolute;
   top: 76px;
   left: -4px;
-  width: 796px;
-  height: 597px;
+  max-width: 796px;
+  max-height: 597px;
 }
 
 .customers__container {
   display: flex;
   justify-content: flex-start;
+  max-width: 937px;
   padding-top: 180px;
-  padding-left: 207px;
+  margin-left: 207px;
+}
+
+.customers__container img {
+  max-width: 412px;
 }
 
 .customers__feedback {
@@ -972,7 +979,7 @@ button:active {
   position: absolute;
   top: 35px;
   left: 0;
-  width: 415px;
+  width: 25vw;
   height: 1px;
   background: var(--white-color);
   opacity: 0.2;
@@ -1233,4 +1240,56 @@ button:active {
 
 .links-list li a:hover {
   color: var(--blue-button-bg-default);
+}
+
+@media(max-width:1380px) {
+  .description__square {
+    display: none;
+  }
+
+
+}
+
+@media(max-width:1240px) {
+  .description__circle {
+    display: none;
+  }
+
+  .events__aside {
+    margin-left: 0;
+
+  }
+}
+
+@media(max-width:1150px) {
+  .customers__container {
+    margin: 0 auto;
+  }
+
+}
+
+@media(max-width:1100px) {
+  .events__container {
+    flex-direction: column;
+  }
+
+  .coding-girl-img {
+    margin-right: 0;
+  }
+}
+
+@media(max-width:900px) {
+  .header {
+    padding: 32px 24px 0 24px;
+  }
+
+  .top-section {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .top-section article {
+    flex-direction: column;
+    align-items: center;
+  }
 }
