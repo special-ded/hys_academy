@@ -183,6 +183,10 @@ button:active {
   justify-content: space-between;
 }
 
+.header div {
+  z-index: 4;
+}
+
 .header__union-logo {
   z-index: 4;
   cursor: pointer;
@@ -204,6 +208,11 @@ button:active {
   display: flex;
   z-index: 4;
   justify-content: space-between;
+}
+
+.burger__icon,
+.burger__menu {
+  display: none;
 }
 
 .header__nav button {
@@ -328,7 +337,7 @@ button:active {
 
 .advantages__container-line1 {
   display: flex;
-  justify-content: space-between;
+  gap: 46px;
 }
 
 .advantages__container-line1 article {
@@ -349,14 +358,10 @@ button:active {
   margin-top: 6px;
 }
 
-.advantages__container-line1-article2 {
-  margin-right: 36px;
-}
-
 .advantages__container-line2 {
   display: flex;
-  justify-content: space-around;
-  margin-top: -18px;
+  margin-top: 28px;
+  gap: 31px;
 }
 
 .advantages__container-line2 article {
@@ -364,19 +369,17 @@ button:active {
   flex-direction: column;
 }
 
-.advantages__container-line2-article1 {
-  margin-right: 20px;
-}
 
-.advantages__container-line2-article2 {
-  margin-left: 9px;
-}
 
 .courses {
+  max-width: 1440px;
+}
+
+.courses__container {
   margin: 0 auto;
   width: 850px;
   text-align: center;
-  margin-top: 76px;
+  margin-top: 119px;
 }
 
 .courses span,
@@ -1292,4 +1295,77 @@ button:active {
     flex-direction: column;
     align-items: center;
   }
+
+  .top-section h1 {
+    margin-top: 0;
+  }
+
+  .top-section p,
+  .top-section h1 {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .top-section p br,
+  .top-section h1 br {
+    display: none;
+  }
+
+  .top-section__links {
+    padding-top: 40px;
+  }
+
+  .advantages__container {
+    padding: 0 24px;
+  }
+}
+
+@media(max-width:600px) {
+  .header__list {
+    display: none;
+  }
+
+  .burger__icon {
+    display: block;
+    z-index: 3;
+    width: 28px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .burger__menu {
+    /* display: block; */
+    z-index: 3;
+  }
+
+  .header div {
+    display: flex;
+    gap: 12px;
+  }
+
+  .top-section__links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .top-section img {
+    width: auto;
+  }
+
+  .advantages__container-line1,
+  .advantages__container-line2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .advantages__container-line1 article,
+  .advantages__container-line2 article {
+    align-items: center;
+  }
+
+  .advantages__container-line1 article br,
+  .advantages__container-line2 article br {
+    display: none;
+  }
+
 }

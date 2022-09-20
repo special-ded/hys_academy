@@ -26,15 +26,26 @@
       </svg>
     </div>
     <header class="header">
-      <svg
-        class="header__union-logo"
-        width="54"
-        height="24"
-        viewBox="0 0 54 24"
-      >
-        <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
-      </svg>
+      <div>
+        <svg class="burger__icon" viewBox="0 0 24 24">
+          <use href="./assets/images/sprite.svg#icon-burger"></use>
+        </svg>
+        <svg
+          class="header__union-logo"
+          width="54"
+          height="24"
+          viewBox="0 0 54 24"
+        >
+          <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
+        </svg>
+      </div>
       <nav class="header__nav">
+        <ul class="burger__menu">
+          <li class="burger__elem"><a href="#">Categories</a></li>
+          <li class="burger__elem"><a href="#course">Course</a></li>
+          <li class="burger__elem"><a href="#">Explore</a></li>
+          <li class="burger__elem"><a href="#">Degrees</a></li>
+        </ul>
         <ul class="header__list">
           <li class="header__elem"><a href="#">Categories</a></li>
           <li class="header__elem"><a href="#course">Course</a></li>
@@ -87,7 +98,7 @@
         </svg>
       </section>
 
-      <!-- CHOOSE SECTION -->
+      <!-- ADVANTAGES SECTION -->
 
       <section class="advantages">
         <div class="advantages__container">
@@ -99,11 +110,9 @@
               </svg>
               <h3>Certificate</h3>
               <p>
-                Lorem ipsum dolor sit amet,<br />
-                consectetur adipiscing elit, sed do<br />
-                eiusmod.A bank is a financial<br />
-                institution accepts deposits from<br />
-                public and creates credit.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
+                sed do eiusmod.A bank is a financial institution accepts<br />
+                deposits from public and creates credit.
               </p>
             </article>
             <article class="advantages__container-line1-article2">
@@ -112,10 +121,8 @@
               </svg>
               <h3>Life Programs</h3>
               <p>
-                Lorem ipsum dolor sit amet,<br />
-                consectetur adipiscing <br />
-                elit, sed institution accepts<br />
-                deposits from public
+                Lorem ipsum dolor sit amet, consectetur adipiscing <br />
+                elit, sed institution accepts deposits from public
               </p>
             </article>
           </div>
@@ -126,11 +133,9 @@
               </svg>
               <h3>Affordability</h3>
               <p>
-                Lorem ipsum dolor sit amet,<br />
-                consectetur adipiscing elit, sed. A<br />
-                bank is a financial institution<br />
-                accepts deposits from public and<br />
-                creates credit.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
+                sed. A bank is a financial institution accepts deposits from<br />
+                public and creates credit.
               </p>
             </article>
             <article class="advantages__container-line2-article2">
@@ -139,9 +144,8 @@
               </svg>
               <h3>Social</h3>
               <p>
-                A bank is a financial institution<br />
-                accepts deposits from public and<br />
-                creates credit.
+                A bank is a financial institution accepts deposits from<br />
+                public and creates credit.
               </p>
             </article>
           </div>
@@ -152,171 +156,173 @@
       <!-- COURSES SECTION -->
 
       <section class="courses">
-        <span>MOST POPULAR COURSES</span>
-        <h2>2000+ Online courses</h2>
-        <div class="courses__slider">
-          <div>
-            <svg class="slider__arrow" viewBox="0 0 33 32" width="40">
-              <use href="./assets/images/sprite.svg#icon-slide-left"></use>
-            </svg>
-          </div>
-          <div class="slider__img">
-            <img
-              src="./assets/images/slider-img1.png"
-              alt="Slide 1"
-              width="270"
-            />
-            <div class="slider__img_inner">
+        <div class="courses__container">
+          <span>MOST POPULAR COURSES</span>
+          <h2>2000+ Online courses</h2>
+          <div class="courses__slider">
+            <div>
+              <svg class="slider__arrow" viewBox="0 0 33 32" width="40">
+                <use href="./assets/images/sprite.svg#icon-slide-left"></use>
+              </svg>
+            </div>
+            <div class="slider__img">
               <img
-                class="slider__img_small"
-                src="./assets/images/slider-img1-small.png"
-                alt="Slide 1 small"
+                src="./assets/images/slider-img1.png"
+                alt="Slide 1"
+                width="270"
               />
-              <h3>DESIGN</h3>
-              <p>Learn Photoshop title</p>
-              <hr />
-              <div class="slider__img_price">
-                <div>
-                  <span>$260</span>
-                  <p class="slider__img_price-crossed">$360</p>
+              <div class="slider__img_inner">
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img1-small.png"
+                  alt="Slide 1 small"
+                />
+                <h3>DESIGN</h3>
+                <p>Learn Photoshop title</p>
+                <hr />
+                <div class="slider__img_price">
+                  <div>
+                    <span>$260</span>
+                    <p class="slider__img_price-crossed">$360</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg class="star-white" viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>(4)</li>
+                  </ul>
                 </div>
-                <ul>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg class="star-white" viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>(4)</li>
-                </ul>
               </div>
             </div>
-          </div>
-          <div class="slider__img">
-            <img
-              src="./assets/images/slider-img2.png"
-              alt="Slide 2"
-              width="270"
-            />
-            <div class="slider__img_inner">
+            <div class="slider__img">
               <img
-                class="slider__img_small"
-                src="./assets/images/slider-img2-small.png"
-                alt="Slide 2 small"
+                src="./assets/images/slider-img2.png"
+                alt="Slide 2"
+                width="270"
               />
-              <h3>Marketing</h3>
-              <p>Learn Photoshop title trun...</p>
-              <hr />
-              <div class="slider__img_price">
-                <div>
-                  <span>$260</span>
-                  <p class="slider__img_price-crossed">$360</p>
+              <div class="slider__img_inner">
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img2-small.png"
+                  alt="Slide 2 small"
+                />
+                <h3>Marketing</h3>
+                <p>Learn Photoshop title trun...</p>
+                <hr />
+                <div class="slider__img_price">
+                  <div>
+                    <span>$260</span>
+                    <p class="slider__img_price-crossed">$360</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg class="star-white" viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg class="star-white" viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg class="star-white" viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>(4)</li>
+                  </ul>
                 </div>
-                <ul>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg class="star-white" viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg class="star-white" viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg class="star-white" viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>(4)</li>
-                </ul>
               </div>
             </div>
-          </div>
-          <div class="slider__img">
-            <img
-              src="./assets/images/slider-img3.png"
-              alt="Slide 3"
-              width="270"
-            />
-            <div class="slider__img_inner">
+            <div class="slider__img">
               <img
-                class="slider__img_small"
-                src="./assets/images/slider-img3-small.png"
-                alt="Slide 3 small"
+                src="./assets/images/slider-img3.png"
+                alt="Slide 3"
+                width="270"
               />
-              <h3>Web design</h3>
-              <p>Learn Photoshop</p>
-              <hr />
-              <div class="slider__img_price">
-                <div>
-                  <span>$260</span>
-                  <p class="slider__img_price-crossed">$360</p>
+              <div class="slider__img_inner">
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img3-small.png"
+                  alt="Slide 3 small"
+                />
+                <h3>Web design</h3>
+                <p>Learn Photoshop</p>
+                <hr />
+                <div class="slider__img_price">
+                  <div>
+                    <span>$260</span>
+                    <p class="slider__img_price-crossed">$360</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>(4)</li>
+                  </ul>
                 </div>
-                <ul>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 29 32" width="10">
-                      <use href="./assets/images/sprite.svg#icon-star"></use>
-                    </svg>
-                  </li>
-                  <li>(4)</li>
-                </ul>
               </div>
             </div>
-          </div>
-          <div>
-            <svg class="slider__arrow" viewBox="0 0 33 32" width="550">
-              <use href="/assets/images/sprite.svg#icon-slide-right"></use>
-            </svg>
+            <div>
+              <svg class="slider__arrow" viewBox="0 0 33 32" width="550">
+                <use href="/assets/images/sprite.svg#icon-slide-right"></use>
+              </svg>
+            </div>
           </div>
         </div>
       </section>
