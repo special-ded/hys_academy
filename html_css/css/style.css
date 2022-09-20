@@ -916,7 +916,7 @@ button:active {
 
 .ready__container aside {
   padding-left: 211px;
-  padding-top: 72px;
+  padding-top: 89px;
 }
 
 .ready__container article p:nth-child(1) {
@@ -944,20 +944,41 @@ button:active {
   margin-top: 1px;
 }
 
-.ready__container aside div {
+.links_list div {
   display: flex;
   align-items: center;
 }
 
-.ready__container aside div p {
-  margin-left: 13px;
+.links_list-item {
+  position: relative;
+  margin-top: 25px;
+}
+
+.links_list div h2 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 8px;
+}
+
+.links_list div p {
+  margin: 0;
+  margin-left: 15px;
   margin-top: 0;
   color: var(--white-color);
 }
 
-.ready__container aside div h2 {
-  margin-left: 8px;
+.links_list-item::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 415px;
+  height: 1px;
+  background: var(--white-color);
+  opacity: 0.2;
+
 }
+
 
 .ready__buttons {
   padding-top: 16px;
