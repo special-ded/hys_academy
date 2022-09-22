@@ -932,6 +932,10 @@ button:active {
   height: 406px;
 }
 
+.ready {
+  background: linear-gradient(0deg, rgba(69, 82, 156, 0.95), rgba(69, 82, 156, 0.95));
+}
+
 .ready img {
   position: absolute;
   top: 0;
