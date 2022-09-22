@@ -530,6 +530,17 @@ button:active {
   align-items: center;
   max-width: 1220px;
   margin-top: 61px;
+  position: relative;
+}
+
+.description_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95vw;
+  max-width: 1440px;
+  height: 520px;
+  background: linear-gradient(235.25deg, #FFFFFF 41.4%, #FAFBFF 60.76%);
 }
 
 .description__left {
@@ -1003,7 +1014,6 @@ button:active {
 
 }
 
-
 .ready__buttons {
   padding-top: 16px;
 }
@@ -1126,31 +1136,6 @@ button:active {
   border: 1px solid var(--arrow-play-button-hover);
 }
 
-.registration {
-  max-width: 1440px;
-  position: relative;
-  /* overflow: hidden; */
-}
-
-.registration-bg-icons-left {
-  z-index: -1;
-  position: absolute;
-  top: 3px;
-  left: -47px;
-  width: 746px;
-  height: 588px;
-}
-
-.registration-bg-icons-right {
-  z-index: -1;
-  position: absolute;
-  top: 3px;
-  left: 740px;
-  width: 746px;
-  height: 588px;
-}
-
-
 .form {
   margin: 0 auto;
   max-width: 450px;
@@ -1205,6 +1190,24 @@ button:active {
 .footer {
   position: relative;
   overflow: hidden;
+}
+
+.footer-bg-icons-left {
+  z-index: -1;
+  position: absolute;
+  top: 3px;
+  left: -47px;
+  width: 746px;
+  height: 588px;
+}
+
+.footer-bg-icons-right {
+  z-index: -1;
+  position: absolute;
+  top: 3px;
+  left: 740px;
+  width: 746px;
+  height: 588px;
 }
 
 .footer__top {
@@ -1291,12 +1294,6 @@ button:active {
 .links-list li a:hover {
   color: var(--blue-button-bg-default);
 }
-
-/* @media(max-width:1440px) {
-  .registration {
-    overflow: hidden;
-  }
-} */
 
 @media(max-width:1380px) {
   .description__square {
@@ -1699,6 +1696,10 @@ button:active {
   .ready {
     position: relative;
     margin-top: 0;
+  }
+
+  .description_bg {
+    display: none;
   }
 
   .description__left {
