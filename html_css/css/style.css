@@ -1899,6 +1899,46 @@ button:active {
     padding-bottom: 51px;
   }
 
+  .blog__container {
+    text-align: unset;
+  }
+
+  .blog__container {
+    margin-top: 64px;
+  }
+
+  .footer__top-nav-list li:nth-last-child(1) {
+    margin-bottom: 0px;
+  }
+
+  .footer__top-nav-list {
+    padding-top: 14px;
+  }
+
+  .footer__bottom hr {
+    margin-top: 25px;
+  }
+
+  .footer__bottom_links {
+    align-items: unset;
+  }
+
+  .links-title {
+    margin-top: 19px;
+  }
+
+  .links-list {
+    margin-top: 10px;
+  }
+
+  .links-list {
+    gap: 18px;
+  }
+
+  .footer__top {
+    margin-top: 77px;
+  }
+
   .customers {
     height: 931px;
   }
