@@ -1126,6 +1126,31 @@ button:active {
   border: 1px solid var(--arrow-play-button-hover);
 }
 
+.registration {
+  max-width: 1440px;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.registration-bg-icons-left {
+  z-index: -1;
+  position: absolute;
+  top: 3px;
+  left: -47px;
+  width: 746px;
+  height: 588px;
+}
+
+.registration-bg-icons-right {
+  z-index: -1;
+  position: absolute;
+  top: 3px;
+  left: 740px;
+  width: 746px;
+  height: 588px;
+}
+
+
 .form {
   margin: 0 auto;
   max-width: 450px;
@@ -1144,7 +1169,6 @@ button:active {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
-  filter: drop-shadow(0px 4px 4px var(--registration-input-box-shadow));
 }
 
 .form input::placeholder {
@@ -1161,8 +1185,9 @@ button:active {
 
 .send-btn {
   width: 120px;
+  height: 44px;
   display: block;
-  margin: 0 auto;
+  margin: 7px auto 0 auto;
   background: var(--arrow-play-button-hover);
   box-shadow: 0px 4px 16px var(--send-button-bg-box-shadow);
 }
@@ -1175,6 +1200,11 @@ button:active {
 .send-btn:active {
   background: var(--send-button-bg-pressed);
   box-shadow: 0px 4px 16px var(--send-button-bg-box-shadow);
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
 }
 
 .footer__top {
@@ -1262,6 +1292,12 @@ button:active {
   color: var(--blue-button-bg-default);
 }
 
+/* @media(max-width:1440px) {
+  .registration {
+    overflow: hidden;
+  }
+} */
+
 @media(max-width:1380px) {
   .description__square {
     display: none;
@@ -1296,7 +1332,6 @@ button:active {
   .events__aside {
     width: auto;
   }
-
 
 }
 
