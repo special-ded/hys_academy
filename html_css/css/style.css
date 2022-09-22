@@ -1240,10 +1240,13 @@ button:active {
 .footer__top {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
   max-width: 850px;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 82px;
+}
+
+.footer__top div {
+  width: 154px;
 }
 
 .footer__top-nav-title {
@@ -1287,12 +1290,14 @@ button:active {
 .footer__bottom hr {
   background: var(--secondary-text-color);
   opacity: 0.1;
+  margin-top: 68px;
 }
 
 .footer__bottom_links {
   display: flex;
   justify-content: space-between;
-  padding-top: 40px;
+  align-items: center;
+  padding-top: 12px;
   padding-bottom: 40px;
 }
 
@@ -1712,6 +1717,44 @@ button:active {
 }
 
 @media(max-width:376px) {
+  .top-section article {
+    align-items: unset;
+  }
+
+  .top-section__buttons {
+    padding-left: 24px;
+  }
+
+  .top-section__links {
+    padding-top: 13px;
+    padding-left: 22px;
+  }
+
+  .advantages__container-line1 p,
+  .advantages__container-line2 p {
+    text-overflow: clip;
+    height: 44px;
+    overflow: hidden;
+  }
+
+  .advantages__container-line1 {
+    text-align: center;
+    gap: 0;
+  }
+
+  .advantages__container-line2 {
+    text-align: center;
+    gap: 5px;
+  }
+
+  .advantages__container-line2 {
+    margin-top: 22px;
+  }
+
+  .courses__container {
+    padding-top: 61px;
+  }
+
   .bg-icons {
     display: none;
   }
