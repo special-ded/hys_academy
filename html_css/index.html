@@ -796,11 +796,20 @@
       <a name="registration"></a>
       <section class="footer-registration">
         <form class="form" action="/action.php">
-          <input type="text" placeholder="Name Surname" required /><br />
-          <input type="tel" placeholder="Phone" required /><br />
+          <label for="username"></label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Name Surname"
+            required
+          /><br />
+          <label for="telephone"></label>
+          <input type="tel" placeholder="Phone" id="telephone" required /><br />
+          <label for="email"></label>
           <input
             type="email"
             placeholder="Enter your email..."
+            id="email"
             required
           /><br />
           <button class="send-btn" type="submit">Send</button>
