@@ -220,6 +220,10 @@ button:active {
   margin: 20px 5px 0 0;
 }
 
+.burger__icon {
+  display: none;
+}
+
 .burger__menu {
   margin-top: 82px;
   padding-left: 0;
