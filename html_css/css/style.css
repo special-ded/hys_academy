@@ -1871,9 +1871,9 @@ button:active {
   }
 
   .events__aside {
-    width: 375px;
+    max-width: 375px;
     height: 612px;
-    padding-left: 24px;
+    padding-left: 11px;
   }
 
   .prefer {
