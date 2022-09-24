@@ -59,6 +59,7 @@
   --prefer-slide-4-bg: rgba(254, 95, 96, 0.8);
   --customer-dot-bg: #BAD1FF;
   --customer-dot-bg-active: #1B63F0;
+  --customers-img-bg-color: #637AF2;
   --ready-bg-color: rgba(69, 82, 156, 0.95);
   --event-img-text: #BFBFBF;
   --event-img-text-bg: rgba(0, 0, 0, 0.8);
@@ -963,8 +964,28 @@ li {
   margin-left: 207px;
 }
 
-.customers__container img {
-  max-width: 412px;
+.customers__img-block {
+  position: relative;
+  width: 412px;
+  height: 402px;
+}
+
+.customers__img-bg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 344px;
+  height: 344px;
+  background: var(--customers-img-bg-color);
+  border-radius: 24px;
+}
+
+.customers__img {
+  position: absolute;
+  left: 68px;
+  top: 58px;
+  width: 344px;
+  height: 344px;
 }
 
 .customers__feedback {
@@ -1000,6 +1021,7 @@ li {
 .customer__dots {
   display: flex;
   gap: 5px;
+  padding-top: 31px;
 }
 
 .customer__dot {
@@ -1721,8 +1743,19 @@ li {
     height: 364px;
   }
 
-  .customers__container img {
-    width: 327px;
+  .customers__img {
+    width: 273px;
+    height: 273px;
+    top: 46px;
+    left: 54px;
+  }
+
+  .customers__img-bg {
+    width: 273px;
+    height: 273px;
+  }
+
+  .customers__img-block {
     height: 319px;
   }
 
