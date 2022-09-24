@@ -331,12 +331,13 @@ button:active {
 .advantages__line1 {
   display: flex;
   gap: 46px;
+  padding-top: 4px;
 }
 
-.advantages__line1 article {
+.advantages__line2 {
   display: flex;
-  flex-direction: column;
-  padding-top: 5px;
+  margin-top: 20px;
+  gap: 31px;
 }
 
 .advantages__line1 h3,
@@ -349,17 +350,6 @@ button:active {
 .advantages__line1 p,
 .advantages__line2 p {
   margin-top: 6px;
-}
-
-.advantages__line2 {
-  display: flex;
-  margin-top: 28px;
-  gap: 31px;
-}
-
-.advantages__line2 article {
-  display: flex;
-  flex-direction: column;
 }
 
 .courses {
@@ -1434,6 +1424,7 @@ button:active {
 
   .advantages {
     padding: 0 24px;
+    margin-top: 82px;
   }
 
   .courses__container {
@@ -1749,7 +1740,7 @@ button:active {
   }
 
   .courses__container {
-    padding-top: 61px;
+    padding-top: 53px;
   }
 
   .courses__slider {
