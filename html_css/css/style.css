@@ -239,8 +239,7 @@ button:active {
 }
 
 .top-section {
-  max-width: 850px;
-  margin: 0 auto;
+  padding: 0px 87px 0px 87px;
   display: flex;
 }
 
@@ -1532,6 +1531,10 @@ button:active {
 }
 
 @media(max-width:700px) {
+  .top-section {
+    padding: 0;
+  }
+
   .footer__top {
     flex-wrap: wrap;
     justify-content: center;
