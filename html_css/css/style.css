@@ -144,7 +144,7 @@ li {
 
 .container {
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: 1024px
 }
 
 .bg-icons {
@@ -176,10 +176,8 @@ li {
 }
 
 .header {
+  padding: 44px 87px 0px 87px;
   z-index: 4;
-  padding-top: 44px;
-  margin: 0 auto;
-  max-width: 850px;
   height: 40px;
   display: flex;
   align-items: center;
