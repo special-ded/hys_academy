@@ -308,19 +308,15 @@ button:active {
 }
 
 .advantages {
-  max-width: 850px;
-  margin: 0 auto;
-  padding-top: 64px;
-  display: flex;
-  justify-content: space-between
+  padding: 64px 87px 0px 87px;
 }
 
-.advantages__container svg {
+.advantages svg {
   width: 56px;
   height: 56px;
 }
 
-.advantages__container h2 {
+.advantages h2 {
   padding-bottom: 33px;
 }
 
@@ -332,36 +328,36 @@ button:active {
   margin-left: 25px;
 }
 
-.advantages__container-line1 {
+.advantages__line1 {
   display: flex;
   gap: 46px;
 }
 
-.advantages__container-line1 article {
+.advantages__line1 article {
   display: flex;
   flex-direction: column;
   padding-top: 5px;
 }
 
-.advantages__container-line1 h3,
-.advantages__container-line2 h3 {
+.advantages__line1 h3,
+.advantages__line2 h3 {
   color: var(--main-text-color);
   margin-top: 17px;
   margin-bottom: 0;
 }
 
-.advantages__container-line1 p,
-.advantages__container-line2 p {
+.advantages__line1 p,
+.advantages__line2 p {
   margin-top: 6px;
 }
 
-.advantages__container-line2 {
+.advantages__line2 {
   display: flex;
   margin-top: 28px;
   gap: 31px;
 }
 
-.advantages__container-line2 article {
+.advantages__line2 article {
   display: flex;
   flex-direction: column;
 }
@@ -1436,7 +1432,7 @@ button:active {
     padding-top: 40px;
   }
 
-  .advantages__container {
+  .advantages {
     padding: 0 24px;
   }
 
@@ -1584,19 +1580,19 @@ button:active {
     width: auto;
   }
 
-  .advantages__container-line1,
-  .advantages__container-line2 {
+  .advantages__line1,
+  .advantages__line2 {
     flex-direction: column;
     align-items: center;
   }
 
-  .advantages__container-line1 article,
-  .advantages__container-line2 article {
+  .advantages__line1 article,
+  .advantages__line2 article {
     align-items: center;
   }
 
-  .advantages__container-line1 article br,
-  .advantages__container-line2 article br {
+  .advantages__line1 article br,
+  .advantages__line2 article br {
     display: none;
   }
 
@@ -1731,24 +1727,24 @@ button:active {
     padding-left: 22px;
   }
 
-  .advantages__container-line1 p,
-  .advantages__container-line2 p {
+  .advantages__line1 p,
+  .advantages__line2 p {
     text-overflow: clip;
     height: 44px;
     overflow: hidden;
   }
 
-  .advantages__container-line1 {
+  .advantages__line1 {
     text-align: center;
     gap: 0;
   }
 
-  .advantages__container-line2 {
+  .advantages__line2 {
     text-align: center;
     gap: 5px;
   }
 
-  .advantages__container-line2 {
+  .advantages__line2 {
     margin-top: 22px;
   }
 
