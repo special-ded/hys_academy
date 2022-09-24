@@ -57,6 +57,8 @@
   --prefer-slide-2-bg: rgba(240, 199, 45, 0.8);
   --prefer-slide-3-bg: rgba(148, 87, 243, 0.8);
   --prefer-slide-4-bg: rgba(254, 95, 96, 0.8);
+  --customer-dot-bg: #BAD1FF;
+  --customer-dot-bg-active: #1B63F0;
   --ready-bg-color: rgba(69, 82, 156, 0.95);
   --event-img-text: #BFBFBF;
   --event-img-text-bg: rgba(0, 0, 0, 0.8);
@@ -977,22 +979,41 @@ button:active {
   margin-top: 31px;
 }
 
-.customers__feedback :nth-child(3) {
+.customers__feedback-text-top {
   margin-top: 29px;
   margin-bottom: 0;
 }
 
-.customers__feedback :nth-child(4) {
+.customers__feedback-text-bottom {
   margin-top: 11px;
 }
 
-.customers__feedback :nth-child(5) {
+.customers__feedback h3 {
   margin-top: 16px;
   margin-bottom: 27px;
   font-weight: 700;
   font-size: 12px;
   line-height: 1.33;
   color: var(--main-text-color);
+}
+
+.customer__dots {
+  display: flex;
+  gap: 5px;
+}
+
+.customer__dot {
+  margin: 0;
+  padding: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--customer-dot-bg);
+}
+
+.customer__dot_active {
+  margin: 0;
+  padding: 0;
+  background: var(--customer-dot-bg-active);
 }
 
 .ready {
