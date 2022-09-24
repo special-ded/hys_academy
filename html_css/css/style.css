@@ -186,7 +186,7 @@ li {
   justify-content: space-between;
 }
 
-.header div {
+.header__icons {
   z-index: 4;
 }
 
