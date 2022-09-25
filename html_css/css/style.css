@@ -264,6 +264,7 @@ button:active {
 }
 
 .top-section__buttons {
+  z-index: 4;
   display: flex;
   align-items: baseline;
 }
