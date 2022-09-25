@@ -1,9 +1,3 @@
-/* TEMPORARY STYLE FOR PIXEL PERFECT */
-/* .chromeperfectpixel-overlay {
-  width: 1440px !important;
-  height: initial !important;
-} */
-
 @import url(./modern-normalize.css);
 
 @font-face {
@@ -44,12 +38,12 @@
   --secondary-text-color: #5C5C5C;
   --blue-button-bg-default: #1B63F0;
   --blue-button-bg-hover: #3D7FFF;
-  --blue-button-bg-pressed: #175EE9;
+  --blue-button-bg-active: #175EE9;
   --green-button-bg-default: #97F5CD;
   --green-button-bg-hover: #C0FFE4;
-  --green-button-bg-pressed: #83EBBF;
+  --green-button-bg-active: #83EBBF;
   --arrow-play-button-hover: #64BE97;
-  --arrow-play-button-pressed: #55B089;
+  --arrow-play-button-active: #55B089;
   --arrow-box-shadow: #E2EDFB;
   --play-button-box-shadow: rgba(75, 202, 103, 0.56);
   --description-dot-li: #FDE7E6;
@@ -68,7 +62,7 @@
   --registration-input-box-shadow: rgba(0, 0, 0, 0.25);
   --send-button-bg-default: #64BE97;
   --send-button-bg-hover: #25DE8E;
-  --send-button-bg-pressed: #4DDA9D;
+  --send-button-bg-active: #4DDA9D;
   --send-button-bg-box-shadow: rgba(75, 202, 103, 0.58);
   --send-button-bg-hover-box-shadow: rgba(52, 210, 142, 0.58);
   --blog-side-text-color: #5D74E4;
@@ -136,7 +130,7 @@ button:hover {
 }
 
 button:active {
-  background: var(--blue-button-bg-pressed);
+  background: var(--blue-button-bg-active);
 }
 
 .container {
@@ -515,7 +509,7 @@ button:active {
 
 .slider__arrow:active {
   --color13: var(--white-color);
-  --color5: var(--arrow-play-button-pressed);
+  --color5: var(--arrow-play-button-active);
 }
 
 .description {
@@ -552,8 +546,8 @@ button:active {
 }
 
 .description__left_play use:active {
-  --color13: var(--arrow-play-button-pressed);
-  --color6: var(--arrow-play-button-pressed);
+  --color13: var(--arrow-play-button-active);
+  --color6: var(--arrow-play-button-active);
 }
 
 .description__dot li::before {
@@ -1084,7 +1078,7 @@ button:active {
 }
 
 .send-btn:active {
-  background: var(--send-button-bg-pressed);
+  background: var(--send-button-bg-active);
   box-shadow: 0px 4px 16px var(--send-button-bg-box-shadow);
 }
 
