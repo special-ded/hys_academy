@@ -1474,6 +1474,10 @@ li {
   .blog__slider_scroll {
     padding-left: 0px;
   }
+
+  .ready__article {
+    padding-left: 24px;
+  }
 }
 
 @media(max-width:1000px) {
@@ -1617,8 +1621,9 @@ li {
     align-items: center;
   }
 
-  .ready__container article {
+  .ready__article {
     max-width: 327px;
+    padding-left: 0px;
   }
 
   .ready__container article br {
