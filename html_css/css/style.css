@@ -1483,13 +1483,14 @@ li {
 }
 
 @media(max-width:769px) {
-  .ready {
+  .ready__container {
     flex-direction: column;
     align-items: center;
   }
 
   .ready__article {
     max-width: 327px;
+    padding-left: 0px;
   }
 
   .ready__article br {
