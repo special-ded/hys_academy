@@ -1132,18 +1132,22 @@ li {
   border: 1px solid var(--arrow-play-button-hover);
 }
 
-.form {
-  margin: 0 auto;
-  max-width: 450px;
-  padding-top: 80px;
+.registration-form {
+  padding: 78px 302px 0px 302px;
 }
 
-.form input {
+.registration-form form {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.registration-form input {
   display: block;
   width: 420px;
   height: 44px;
-  margin: 0 auto;
   padding: 0px 12px;
+  padding-bottom: 8px;
+  margin: auto;
   background: var(--registration-input-bg);
   border-radius: 22px;
   border: 2px solid var(--registration-input-bg);
@@ -1152,14 +1156,14 @@ li {
   line-height: 1.14;
 }
 
-.form input::placeholder {
+.registration-form input::placeholder {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   color: var(--secondary-text-color);
 }
 
-.form input:focus {
+.registration-form input:focus {
   outline: none;
   border: 2px solid var(--blue-button-bg-default);
 }
@@ -1333,6 +1337,10 @@ li {
 
   .events__aside {
     width: auto;
+  }
+
+  .registration-form {
+    padding: 78px 0px 0px 0px;
   }
 
 }
@@ -1690,7 +1698,7 @@ li {
     top: 56px;
   }
 
-  .form input {
+  .registration-form input {
     width: 327px;
   }
 }
@@ -1888,6 +1896,10 @@ li {
 
   .blog {
     padding-top: 64px;
+  }
+
+  .registration-form form {
+    padding-top: 80px;
   }
 
   .footer__top-nav-list li:nth-last-child(1) {
