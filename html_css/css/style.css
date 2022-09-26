@@ -644,7 +644,7 @@ li {
   border-radius: 8px;
 }
 
-.events__container {
+.events {
   max-width: 1440px;
   margin-top: 95px;
   display: flex;
@@ -858,6 +858,7 @@ li {
 .customers {
   max-width: 1440px;
   position: relative;
+
 }
 
 .brake-text-375 {
@@ -885,9 +886,8 @@ li {
 .customers__container {
   display: flex;
   justify-content: flex-start;
-  max-width: 937px;
-  padding-top: 180px;
-  margin-left: 207px;
+  padding: 180px 44px 0px 44px;
+  margin-left: 163px;
 }
 
 .customers__container img {
@@ -1327,7 +1327,7 @@ li {
     margin-right: 0;
   }
 
-  .events__container {
+  .events {
     flex-direction: column;
   }
 
@@ -1589,7 +1589,7 @@ li {
     width: 100%;
   }
 
-  .events__container {
+  .events {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -1754,6 +1754,10 @@ li {
     margin-top: 0;
   }
 
+  .courses {
+    padding: 53px 0px 0px 0px;
+  }
+
   .description_bg {
     display: none;
   }
@@ -1779,7 +1783,7 @@ li {
     height: 80px;
   }
 
-  .events__container {
+  .events {
     margin-top: 90px;
   }
 
