@@ -1713,7 +1713,7 @@ li {
 
   .events__aside {
     width: 350px;
-    padding-left: 10px;
+    padding-left: 11px;
   }
 
   .events__aside-img img {
@@ -1921,9 +1921,7 @@ li {
   }
 
   .events__aside {
-    max-width: 375px;
     height: 612px;
-    padding-left: 11px;
   }
 
   .prefer {
