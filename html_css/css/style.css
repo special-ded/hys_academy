@@ -1369,7 +1369,7 @@ li {
     align-items: center;
   }
 
-  .blog__container {
+  .blog h2 {
     text-align: center;
   }
 
@@ -1880,12 +1880,14 @@ li {
     padding-bottom: 51px;
   }
 
-  .blog__container {
+  .blog h2 {
+    padding-left: 24px;
+    padding-right: 24px;
     text-align: unset;
   }
 
-  .blog__container {
-    margin-top: 64px;
+  .blog {
+    padding-top: 64px;
   }
 
   .footer__top-nav-list li:nth-last-child(1) {
