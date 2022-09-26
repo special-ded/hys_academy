@@ -111,7 +111,7 @@ li {
   list-style: none;
 }
 
-button,
+.btn,
 .ready__apply-btn {
   padding: 12px 24px;
   width: 116px;
@@ -126,11 +126,11 @@ button,
   color: var(--white-color);
 }
 
-button:hover {
+.btn:hover {
   background: var(--blue-button-bg-hover);
 }
 
-button:active {
+.btn:active {
   background: var(--blue-button-bg-active);
 }
 
@@ -1810,9 +1810,7 @@ button:active {
   }
 
   .events__aside {
-    width: 375px;
     height: 612px;
-    padding-left: 24px;
   }
 
   .prefer {
