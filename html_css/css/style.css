@@ -1470,15 +1470,15 @@ li {
   .events__aside {
     width: auto;
   }
+
+  .blog__slider_scroll {
+    padding-left: 0px;
+  }
 }
 
 @media(max-width:1000px) {
   .slide3 {
     display: none;
-  }
-
-  .blog__slider_scroll {
-    padding-left: 0px;
   }
 
   .courses__slider {
@@ -1645,7 +1645,7 @@ li {
   .footer__top {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 22px;
   }
 
   .links-list {
@@ -1806,24 +1806,43 @@ li {
   }
 
   .blog__container {
+    text-align: unset;
     max-width: 327px;
   }
 
-  .blog__slider_item-img {
-    width: 327px;
+  .blog__slider_item {
+    position: relative;
+    width: 100%;
     height: 288px;
   }
 
+  .blog__slider_item-img {
+    position: absolute;
+    top: 0;
+    left: 68px;
+    width: 259px;
+    height: 160px;
+    padding: 0;
+  }
+
+  .blog__slider_item-bg {
+    width: 327px;
+    height: 264px;
+  }
+
   .blog__slider_title {
-    top: 160px;
+    top: 184px;
+    gap: 7px
   }
 
   .blog__item_link {
-    top: 230px;
+    top: 248px;
+    left: 67px;
   }
 
   .blog__item_side-text {
-    top: 56px;
+    top: 48px;
+    left: 23px;
   }
 
   .form input {
@@ -2049,7 +2068,7 @@ li {
   }
 
   .footer__top {
-    margin-top: 77px;
+    margin-top: 76px;
   }
 
   .customers {
@@ -2057,6 +2076,7 @@ li {
   }
 
   .send-btn {
+    margin-top: 13px;
     width: 327px;
   }
 
@@ -2066,5 +2086,6 @@ li {
 
   .footer__bottom_links {
     flex-direction: column;
+    padding-top: 7px;
   }
 }
