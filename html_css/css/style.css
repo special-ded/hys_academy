@@ -349,23 +349,18 @@ li {
 }
 
 .courses {
-  max-width: 1440px;
+  padding: 119px 87px 0px 87px;
   position: relative;
+  text-align: center
 }
 
 .courses-bg-icons {
   position: absolute;
   top: 123px;
   left: 15px;
+  z-index: -1;
   width: 746px;
   height: 579px;
-}
-
-.courses__container {
-  margin: 0 auto;
-  max-width: 850px;
-  text-align: center;
-  padding-top: 119px;
 }
 
 .courses span,
