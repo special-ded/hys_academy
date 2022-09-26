@@ -1213,9 +1213,7 @@ li {
 .footer__top {
   display: flex;
   justify-content: space-between;
-  max-width: 850px;
-  margin: auto;
-  margin-top: 82px;
+  padding: 82px 87px 0px 87px;
 }
 
 .footer__top div {
@@ -1898,8 +1896,10 @@ li {
     padding-top: 64px;
   }
 
-  .registration-form form {
-    padding-top: 80px;
+  .footer__top {
+    flex-direction: column;
+    margin-top: 77px;
+    padding: 0;
   }
 
   .footer__top-nav-list li:nth-last-child(1) {
@@ -1930,9 +1930,7 @@ li {
     gap: 18px;
   }
 
-  .footer__top {
-    margin-top: 77px;
-  }
+
 
   .customers {
     height: 931px;
@@ -1940,10 +1938,6 @@ li {
 
   .send-btn {
     width: 327px;
-  }
-
-  .footer__top {
-    flex-direction: column;
   }
 
   .footer__bottom_links {
