@@ -757,21 +757,23 @@ li {
   padding-left: 6px;
 }
 
-.events__aside button {
+.sponsor-btn {
   width: 158px;
   padding: 12px 20px;
   margin-top: 51px;
 }
 
+/* SECTION PREFER  */
+
 .prefer {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 62px;
+  margin-top: 81px;
 }
 
-.prefer h2 {
-  margin-bottom: 9px;
+.prefer__text {
+  margin-top: 16px;
 }
 
 .prefer__slider {
@@ -779,14 +781,14 @@ li {
   justify-content: center;
   gap: 20px;
   align-items: center;
-  margin-top: 37px;
+  margin-top: 51px;
 }
 
 .prefer-br {
   display: none;
 }
 
-.prefer__slider_slide {
+.prefer__slider-slide {
   width: 197.5px;
   height: 197px;
   position: relative;
@@ -818,7 +820,7 @@ li {
 }
 
 
-.prefer__slider_slide img {
+.prefer__slider-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -826,9 +828,9 @@ li {
   border-radius: 4px;
 }
 
-.prefer__slider_text {
+.prefer__slider-text {
   position: absolute;
-  top: 42%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 600;
@@ -837,6 +839,8 @@ li {
   color: var(--white-color);
   white-space: nowrap;
 }
+
+/* CUSTOMERS SECTION */
 
 .customers {
   max-width: 1440px;
