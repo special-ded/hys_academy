@@ -212,14 +212,14 @@ li {
   z-index: 4;
 }
 
-.header__elem a {
+.header__elem-link {
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   color: var(--white-color);
 }
 
-.header__elem a:hover {
+.header__elem-link:hover {
   transition: all 250ms ease-in;
   color: var(--blue-button-bg-default);
 }
@@ -269,7 +269,7 @@ li {
   align-items: baseline;
 }
 
-.top-section__buttons a {
+.top-section__get-started-btn {
   margin-left: 24px;
   padding: 12px 24px;
   width: 119px;
@@ -282,12 +282,12 @@ li {
   color: var(--main-text-color);
 }
 
-.top-section__buttons a:hover,
+.top-section__get-started-btn:hover,
 .ready__apply-btn:hover {
   background: var(--green-button-bg-hover);
 }
 
-.top-section__buttons a:active,
+.top-section__get-started-btn:active,
 .ready__apply-btn:active {
   background: var(--green-button-bg-active);
 }
@@ -306,13 +306,9 @@ li {
   padding: 64px 87px 0px 87px;
 }
 
-.advantages svg {
+.advantages__icon {
   width: 56px;
   height: 56px;
-}
-
-.advantages h2 {
-  padding-bottom: 33px;
 }
 
 .blue-line::after {
@@ -323,27 +319,25 @@ li {
   margin-left: 25px;
 }
 
-.advantages__line1 {
+.advantages__first-line {
   display: flex;
   gap: 46px;
-  padding-top: 4px;
+  padding-top: 37px;
 }
 
-.advantages__line2 {
+.advantages__second-line {
   display: flex;
   margin-top: 20px;
   gap: 31px;
 }
 
-.advantages__line1 h3,
-.advantages__line2 h3 {
+.advantages__title {
   color: var(--main-text-color);
   margin-top: 17px;
   margin-bottom: 0;
 }
 
-.advantages__line1 p,
-.advantages__line2 p {
+.advantages__text {
   margin-top: 6px;
 }
 
@@ -353,7 +347,7 @@ li {
   text-align: center
 }
 
-.courses-bg-icons {
+.courses__bg-icons {
   position: absolute;
   top: 123px;
   left: 15px;
@@ -392,13 +386,13 @@ li {
   overflow-y: hidden;
 }
 
-.slider__img {
+.slider__item {
   flex: 1 1 100px;
   height: 364px;
   position: relative;
 }
 
-.slider__img_inner {
+.slider__img-inner {
   position: absolute;
   top: -23px;
   left: 0px;
@@ -409,7 +403,7 @@ li {
   padding-left: 16px;
 }
 
-.slider__img_inner h3 {
+.slider__img-inner h3 {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.0;
@@ -424,7 +418,7 @@ li {
   margin-top: 0;
 }
 
-.slider__img_inner hr {
+.slider__img-inner hr {
   position: absolute;
   top: 317px;
   left: 0px;
@@ -513,7 +507,7 @@ li {
   display: flex;
   align-items: center;
   max-width: 1220px;
-  margin-top: 61px;
+  margin-top: 65px;
   position: relative;
 }
 
@@ -1093,20 +1087,20 @@ li {
   writing-mode: horizontal-tb;
   color: var(--main-text-color);
   position: absolute;
-  left: 74px;
-  top: 248px;
+  left: 86px;
+  top: 251px;
 }
 
 .blog__item_side-text {
   position: absolute;
-  top: 35px;
-  left: 18px;
+  top: 45px;
+  left: 30px;
 }
 
 .blog__slider_title {
   position: absolute;
-  top: 186px;
-  left: 4px;
+  top: 187px;
+  left: 15px;
   display: flex;
   gap: 24px;
   max-width: 383px;
@@ -1494,7 +1488,7 @@ li {
     display: none;
   }
 
-  .courses-bg-icons {
+  .courses__bg-icons {
     display: none;
   }
 }
@@ -1582,19 +1576,19 @@ li {
     width: auto;
   }
 
-  .advantages__line1,
-  .advantages__line2 {
+  .advantages__first-line,
+  .advantages__second-line {
     flex-direction: column;
     align-items: center;
   }
 
-  .advantages__line1 article,
-  .advantages__line2 article {
+  .advantages__first-line article,
+  .advantages__second-line article {
     align-items: center;
   }
 
-  .advantages__line1 article br,
-  .advantages__line2 article br {
+  .advantages__first-line article br,
+  .advantages__second-line article br {
     display: none;
   }
 
@@ -1654,7 +1648,7 @@ li {
     gap: 0;
   }
 
-  .slide-img {
+  .slider__item-img {
     width: 260px;
     height: 364px;
   }
@@ -1731,28 +1725,27 @@ li {
     padding-left: 22px;
   }
 
-  .advantages__line1 p,
-  .advantages__line2 p {
+  .advantages__text {
     text-overflow: clip;
     height: 44px;
     overflow: hidden;
   }
 
-  .advantages__line1 {
+  .advantages__first-line {
     text-align: center;
     gap: 0;
   }
 
-  .advantages__line2 {
+  .advantages__second-line {
     text-align: center;
     gap: 5px;
   }
 
-  .advantages__line2 {
+  .advantages__second-line {
     margin-top: 22px;
   }
 
-  .slider__img_inner hr {
+  .slider__img-inner hr {
     left: 11px;
     width: 255px;
   }

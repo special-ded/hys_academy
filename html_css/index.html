@@ -42,10 +42,10 @@
           <li class="burger__elem"><a href="#">Degrees</a></li>
         </ul>
         <ul class="header__list">
-          <li class="header__elem"><a href="#">Categories</a></li>
-          <li class="header__elem"><a href="#course">Course</a></li>
-          <li class="header__elem"><a href="#">Explore</a></li>
-          <li class="header__elem"><a href="#">Degrees</a></li>
+          <li class="header__elem"><a class="header__elem-link" href="#">Categories</a></li>
+          <li class="header__elem"><a class="header__elem-link" href="#course">Course</a></li>
+          <li class="header__elem"><a class="header__elem-link" href="#">Explore</a></li>
+          <li class="header__elem"><a class="header__elem-link" href="#">Degrees</a></li>
         </ul>
         <button class="header__nav-button btn">Explore</button>
       </nav>
@@ -66,7 +66,7 @@
           </p>
           <div class="top-section__buttons">
             <button class="btn">Read More</button>
-            <a href="#registration">Get started</a>
+            <a class="top-section__get-started-btn" href="#registration">Get started</a>
           </div>
           <div class="top-section__links">
             <img src="./assets/images/youfone-logo.png" alt="Youfone" width="155" />
@@ -85,47 +85,47 @@
 
       <section class="advantages container">
         <h2 class="blue-line">Shy shoose us?</h2>
-        <div class="advantages__line1">
-          <article class="advantages__line1-article">
-            <svg viewBox="0 0 32 32">
+        <div class="advantages__first-line">
+          <article class="advantages__first-line-article">
+            <svg class="advantages__icon" viewBox="0 0 32 32">
               <use href="./assets/images/sprite.svg#icon-certificate"></use>
             </svg>
-            <h3>Certificate</h3>
-            <p>
+            <h3 class="advantages__title">Certificate</h3>
+            <p class="advantages__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
               sed do eiusmod.A bank is a financial institution accepts<br />
               deposits from public and creates credit.
             </p>
           </article>
-          <article class="advantages__line1-article">
-            <svg viewBox="0 0 32 32">
+          <article class="advantages__first-line-article">
+            <svg class="advantages__icon" viewBox="0 0 32 32">
               <use href="./assets/images/sprite.svg#icon-protractor"></use>
             </svg>
-            <h3>Life Programs</h3>
-            <p>
+            <h3 class="advantages__title">Life Programs</h3>
+            <p class="advantages__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing <br />
               elit, sed institution accepts deposits from public
             </p>
           </article>
         </div>
-        <div class="advantages__line2">
-          <article class="advantages__line2-article">
-            <svg viewBox="0 0 32 32">
+        <div class="advantages__second-line">
+          <article class="advantages__second-line-article">
+            <svg class="advantages__icon" viewBox="0 0 32 32">
               <use href="./assets/images/sprite.svg#icon-microscope"></use>
             </svg>
-            <h3>Affordability</h3>
-            <p>
+            <h3 class="advantages__title">Affordability</h3>
+            <p class="advantages__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
               sed. A bank is a financial institution accepts deposits from<br />
               public and creates credit.
             </p>
           </article>
-          <article class="advantages__line2-article">
-            <svg viewBox="0 0 32 32">
+          <article class="advantages__second-line-article">
+            <svg class="advantages__icon" viewBox="0 0 32 32">
               <use href="./assets/images/sprite.svg#icon-book"></use>
             </svg>
-            <h3>Social</h3>
-            <p>
+            <h3 class="advantages__title">Social</h3>
+            <p class="advantages__text">
               A bank is a financial institution accepts deposits from<br />
               public and creates credit.
             </p>
@@ -137,11 +137,14 @@
       <!-- COURSES SECTION -->
 
       <section class="courses container">
-        <svg class="courses-bg-icons" viewBox="0 0 41 32">
+        <svg class="courses__bg-icons" viewBox="0 0 41 32">
           <use href="./assets/images/sprite.svg#icon-background"></use>
         </svg>
         <span>MOST POPULAR COURSES</span>
         <h2>2000+ Online courses</h2>
+
+        <!-- Courses Slider -->
+
         <div class="courses__slider">
           <div>
             <svg class="slider__arrow" viewBox="0 0 33 32" width="40">
@@ -149,9 +152,9 @@
             </svg>
           </div>
           <div class="slider__slides">
-            <div class="slider__img">
-              <img class="slide-img" src="./assets/images/slider-img1.png" alt="Slide 1" />
-              <div class="slider__img_inner">
+            <div class="slider__item">
+              <img class="slider__item-img" src="./assets/images/slider-img1.png" alt="Slide 1" />
+              <div class="slider__img-inner">
                 <img
                   class="slider__img_small"
                   src="./assets/images/slider-img1-small.png"
@@ -196,14 +199,14 @@
                 </div>
               </div>
             </div>
-            <div class="slider__img">
+            <div class="slider__item">
               <img
-                class="slide-img"
+                class="slider__item-img"
                 src="./assets/images/slider-img2.png"
                 alt="Slide 2"
                 width="270"
               />
-              <div class="slider__img_inner">
+              <div class="slider__img-inner">
                 <img
                   class="slider__img_small"
                   src="./assets/images/slider-img2-small.png"
@@ -248,14 +251,14 @@
                 </div>
               </div>
             </div>
-            <div class="slider__img">
+            <div class="slider__item">
               <img
-                class="slide-img"
+                class="slider__item-img"
                 src="./assets/images/slider-img3.png"
                 alt="Slide 3"
                 width="270"
               />
-              <div class="slider__img_inner">
+              <div class="slider__img-inner">
                 <img
                   class="slider__img_small"
                   src="./assets/images/slider-img3-small.png"
@@ -307,6 +310,8 @@
             </svg>
           </div>
         </div>
+
+        <!-- Courses slider end -->
       </section>
 
       <!-- SECTION DESCRIPTION -->
