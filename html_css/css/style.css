@@ -1653,7 +1653,13 @@ li {
     display: none;
   }
 
-  .slide1-img {
+  .courses__slider {
+    margin: 58px auto 0px auto;
+    max-width: 358px;
+    gap: 0;
+  }
+
+  .slide-img {
     width: 260px;
     height: 364px;
   }
@@ -1755,8 +1761,9 @@ li {
     padding-top: 53px;
   }
 
-  .courses__slider {
-    margin: 58px auto 0px auto;
+  .slider__img_inner hr {
+    left: 11px;
+    width: 255px;
   }
 
   .description {
