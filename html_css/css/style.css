@@ -111,8 +111,7 @@ li {
   list-style: none;
 }
 
-.btn,
-.ready__apply-btn {
+.btn {
   padding: 12px 24px;
   width: 116px;
   height: 40px;
@@ -176,17 +175,17 @@ li {
   justify-content: space-between;
 }
 
-.header div {
+.header__icons {
   z-index: 4;
 }
 
-.header__union-logo {
+.main-logo-icon {
   z-index: 4;
   cursor: pointer;
   fill: var(--blue-button-bg-default);
 }
 
-.header__union-logo:hover {
+.main-logo-icon:hover {
   fill: var(--main-text-color);
   transition: all 250ms ease-in;
 }
@@ -208,7 +207,7 @@ li {
   display: none;
 }
 
-.header__nav button {
+.header__nav-button {
   width: 96px;
   z-index: 4;
 }
@@ -238,18 +237,18 @@ li {
   display: flex;
 }
 
-.top-section article {
+.top-section__article {
   display: flex;
   flex-direction: column;
 }
 
-.top-section h1 {
+.top-section__title {
   z-index: 4;
   margin-top: 155px;
   margin-bottom: 20px;
 }
 
-.top-section p {
+.top-section__text {
   z-index: 4;
   margin-bottom: 40px;
 }
@@ -1448,10 +1447,6 @@ li {
     margin-top: 82px;
   }
 
-  .courses__container {
-    width: auto;
-  }
-
   .description {
     flex-direction: column;
   }
@@ -1755,10 +1750,6 @@ li {
 
   .advantages__line2 {
     margin-top: 22px;
-  }
-
-  .courses__container {
-    padding-top: 53px;
   }
 
   .slider__img_inner hr {
