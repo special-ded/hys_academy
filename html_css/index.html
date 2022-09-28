@@ -66,7 +66,7 @@
           </p>
           <div class="top-section__buttons">
             <button class="btn">Read More</button>
-            <a class="top-section__get-started-btn" href="#registration">Get started</a>
+            <a class="get-started-btn btn" href="#registration">Get started</a>
           </div>
           <div class="top-section__links">
             <img src="./assets/images/youfone-logo.png" alt="Youfone" width="155" />
@@ -140,8 +140,8 @@
         <svg class="courses__bg-icons" viewBox="0 0 41 32">
           <use href="./assets/images/sprite.svg#icon-background"></use>
         </svg>
-        <span>MOST POPULAR COURSES</span>
-        <h2>2000+ Online courses</h2>
+        <span class="pretitle">MOST POPULAR COURSES</span>
+        <h2 class="courses__title">2000+ Online courses</h2>
 
         <!-- Courses Slider -->
 
@@ -160,15 +160,15 @@
                   src="./assets/images/slider-img1-small.png"
                   alt="Slide 1 small"
                 />
-                <h3>DESIGN</h3>
+                <h3 class="slider__img-title">DESIGN</h3>
                 <p class="slider__sub-title">Learn Photoshop title</p>
                 <hr />
-                <div class="slider__img_price">
+                <div class="slider__img-price">
                   <div>
                     <span>$260</span>
-                    <p class="slider__img_price-crossed">$360</p>
+                    <p class="slider__img-price-crossed">$360</p>
                   </div>
-                  <ul>
+                  <ul class="slider__img-rating">
                     <li>
                       <svg viewBox="0 0 29 32" width="10">
                         <use href="./assets/images/sprite.svg#icon-star"></use>
@@ -212,15 +212,15 @@
                   src="./assets/images/slider-img2-small.png"
                   alt="Slide 2 small"
                 />
-                <h3>Marketing</h3>
+                <h3 class="slider__img-title">Marketing</h3>
                 <p class="slider__sub-title">Learn Photoshop title trun...</p>
                 <hr />
-                <div class="slider__img_price">
+                <div class="slider__img-price">
                   <div>
                     <span>$260</span>
-                    <p class="slider__img_price-crossed">$360</p>
+                    <p class="slider__img-price-crossed">$360</p>
                   </div>
-                  <ul>
+                  <ul class="slider__img-rating">
                     <li>
                       <svg viewBox="0 0 29 32" width="10">
                         <use href="./assets/images/sprite.svg#icon-star"></use>
@@ -264,15 +264,15 @@
                   src="./assets/images/slider-img3-small.png"
                   alt="Slide 3 small"
                 />
-                <h3>Web design</h3>
+                <h3 class="slider__img-title">Web design</h3>
                 <p class="slider__sub-title">Learn Photoshop</p>
                 <hr />
-                <div class="slider__img_price">
+                <div class="slider__img-price">
                   <div>
                     <span>$260</span>
-                    <p class="slider__img_price-crossed">$360</p>
+                    <p class="slider__img-price-crossed">$360</p>
                   </div>
-                  <ul>
+                  <ul class="slider__img-rating">
                     <li>
                       <svg viewBox="0 0 29 32" width="10">
                         <use href="./assets/images/sprite.svg#icon-star"></use>
@@ -320,34 +320,37 @@
         <div class="description_bg"></div>
         <div class="description__left">
           <img
-            class="description__left_img"
+            class="description__left-img"
             src="./assets/images/two-women-img.png"
             alt="Two women"
           />
           <div>
-            <svg class="description__left_play">
-              <use href="./assets/images/sprite.svg#icon-play-btn"></use>
+            <svg class="description__play">
+              <use
+                class="description__play-btn"
+                href="./assets/images/sprite.svg#icon-play-btn"
+              ></use>
             </svg>
           </div>
         </div>
         <article class="description__article">
-          <span>UNIVERSOTY DESCRIPTION</span>
-          <h2 class="blue-line">Take a tour</h2>
-          <p>
+          <span class="pretitle">UNIVERSOTY DESCRIPTION</span>
+          <h2 class="description__title blue-line">Take a tour</h2>
+          <p class="description__text-first">
             Sed ut perspiciatis unde omnis iste natus error sit <br />
             voluptatem accusantium doloremque
           </p>
-          <p>
+          <p class="description__text-second">
             Laudantium, totam rem aperiam, eaque ipsa quae ab illo<br />
             inventore veritatis et quasi architecto beatae vitae dicta<br />
             sunt explicabo.
           </p>
           <ul class="description__dot">
-            <li>
+            <li class="description__dot-item">
               Neque porro quisquam est, qui dolorem ipsum quia<br />
               dolor sit amet, consectetur
             </li>
-            <li>
+            <li class="description__dot-item">
               Ut enim ad minima veniam, quis nostrum <br />
               exercitationem ullam corporis suscipit laboriosam,<br />
               nisi ut aliquid ex ea commodi consequatur?
@@ -367,99 +370,102 @@
           <h2 class="blue-line">Why shoose us?</h2>
           <div class="events__elem">
             <h3>International Conference on Bussiness</h3>
-            <div class="events__elem-details">
-              <div>
+            <div class="events__elem-wrapper">
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-calendar"></use>
                 </svg>
-                <p>July 8, 2018</p>
+                <p class="events__elem-text">July 8, 2018</p>
               </div>
-              <div>
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-clock"></use>
                 </svg>
-                <p>5:00pm - 7:00pm</p>
+                <p class="events__elem-text">5:00pm - 7:00pm</p>
               </div>
-              <div>
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-location"></use>
                 </svg>
-                <p>United States</p>
+                <p class="events__elem-text">United States</p>
               </div>
             </div>
           </div>
           <div class="events__elem">
             <h3>International Conference on Bussiness</h3>
-            <div class="events__elem-details">
-              <div>
+            <div class="events__elem-wrapper">
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-calendar"></use>
                 </svg>
-                <p>July 8, 2018</p>
+                <p class="events__elem-text">July 8, 2018</p>
               </div>
-              <div>
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-clock"></use>
                 </svg>
-                <p>5:00pm - 7:00pm</p>
+                <p class="events__elem-text">5:00pm - 7:00pm</p>
               </div>
-              <div>
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-location"></use>
                 </svg>
-                <p>United States</p>
+                <p class="events__elem-text">United States</p>
               </div>
             </div>
           </div>
           <div class="events__elem">
             <h3>International Conference on Bussiness</h3>
-            <div class="events__elem-details">
-              <div>
+            <div class="events__elem-wrapper">
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-calendar"></use>
                 </svg>
-                <p>July 8, 2018</p>
+                <p class="events__elem-text">July 8, 2018</p>
               </div>
-              <div>
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-clock"></use>
                 </svg>
-                <p>5:00pm - 7:00pm</p>
+                <p class="events__elem-text">5:00pm - 7:00pm</p>
               </div>
-              <div>
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-location"></use>
                 </svg>
-                <p>United States</p>
+                <p class="events__elem-text">United States</p>
               </div>
             </div>
           </div>
           <div class="events__elem">
             <h3>International Conference on Bussiness</h3>
-            <div class="events__elem-details">
-              <div>
+            <div class="events__elem-wrapper">
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-calendar"></use>
                 </svg>
-                <p>July 8, 2018</p>
+                <p class="events__elem-text">July 8, 2018</p>
               </div>
-              <div>
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-clock"></use>
                 </svg>
-                <p>5:00pm - 7:00pm</p>
+                <p class="events__elem-text">5:00pm - 7:00pm</p>
               </div>
-              <div>
+              <div class="events__elem-item">
                 <svg width="20" height="20">
                   <use href="./assets/images/sprite.svg#icon-location"></use>
                 </svg>
-                <p>United States</p>
+                <p class="events__elem-text">United States</p>
               </div>
             </div>
           </div>
         </article>
+
+        <!-- Events aside part -->
+
         <aside class="events__aside">
-          <h2>FEATURED</h2>
+          <h2 class="events__aside-title">FEATURED</h2>
           <div class="events__aside-values">
             <p>$213<span>Days</span></p>
             <p>23<span>Hours</span></p>
@@ -467,26 +473,26 @@
           </div>
           <div class="events__aside-img">
             <img src="./assets/images/featured.svg" width="328" alt="Featured" />
-            <div class="events__aside-inner-text">
-              <h3>International Conference...</h3>
+            <div class="events__aside-inner">
+              <h3 class="events__aside-subtitle">International Conference...</h3>
               <div class="events__aside-details">
                 <div>
                   <svg width="20" height="20">
                     <use href="./assets/images/sprite.svg#icon-calendar"></use>
                   </svg>
-                  <p>July 8, 2018</p>
+                  <p class="aside__elem-text">July 8, 2018</p>
                 </div>
                 <div>
                   <svg width="20" height="20">
                     <use href="./assets/images/sprite.svg#icon-clock"></use>
                   </svg>
-                  <p>5pm - 7pm</p>
+                  <p class="aside__elem-text">5pm - 7pm</p>
                 </div>
                 <div>
                   <svg width="20" height="20">
                     <use href="./assets/images/sprite.svg#icon-location"></use>
                   </svg>
-                  <p>United States</p>
+                  <p class="aside__elem-text">United States</p>
                 </div>
               </div>
             </div>
