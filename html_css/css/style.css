@@ -233,8 +233,13 @@ li {
 }
 
 .top-section {
-  padding: 0px 87px 0px 87px;
+  max-width: 1060px;
+  padding: 0px 0px 0px 105px;
+}
+
+.top-section__wrapper {
   display: flex;
+  justify-content: space-between;
 }
 
 .top-section__article {
@@ -252,14 +257,20 @@ li {
   margin-top: 34px;
 }
 
-.top-section img,
+.link-img {
+  z-index: 3;
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  margin-top: 21px;
+}
+
 .coding-girl-img {
   z-index: 3;
   width: 100%;
   max-width: 500px;
   max-height: 500px;
   margin-top: 21px;
-  margin-right: -104px;
 }
 
 .top-section__buttons {
@@ -290,15 +301,12 @@ li {
 .top-section__links {
   display: flex;
   align-items: center;
-  margin-top: 77px;
-}
-
-.top-section__links img {
-  margin-right: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .advantages {
-  padding: 82px 87px 0px 87px;
+  padding: 78px 87px 0px 87px;
 }
 
 .advantages__icon {
