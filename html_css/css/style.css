@@ -259,9 +259,6 @@ li {
 
 .link-img {
   z-index: 3;
-  width: 100%;
-  max-width: 500px;
-  max-height: 500px;
   margin-top: 21px;
 }
 
@@ -1394,6 +1391,10 @@ li {
   }
 
   .top-section {
+    padding: 0 24px;
+  }
+
+  .top-section__wrapper {
     flex-direction: column-reverse;
     align-items: center;
   }
@@ -1405,12 +1406,6 @@ li {
 
   .top-section h1 {
     margin-top: 0;
-  }
-
-  .top-section p,
-  .top-section h1 {
-    margin-left: 24px;
-    margin-right: 24px;
   }
 
   .top-section p br,
@@ -1512,9 +1507,6 @@ li {
 }
 
 @media(max-width:700px) {
-  .top-section {
-    padding: 0;
-  }
 
   .footer__top {
     flex-wrap: wrap;
@@ -1553,10 +1545,6 @@ li {
   .top-section__links {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .top-section img {
-    width: auto;
   }
 
   .advantages__first-line,
@@ -1699,13 +1687,8 @@ li {
     align-items: unset;
   }
 
-  .top-section__buttons {
-    padding-left: 24px;
-  }
-
   .top-section__links {
     padding-top: 13px;
-    padding-left: 22px;
   }
 
   .advantages__text {
@@ -1741,8 +1724,13 @@ li {
     display: none;
   }
 
+  .bg-green-top {
+    max-width: 356px;
+  }
+
   .coding-girl-img {
     margin-top: 7px;
+    width: 375px;
   }
 
   .courses {
