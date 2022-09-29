@@ -147,6 +147,7 @@ li {
 }
 
 .bg-green {
+  z-index: -5;
   position: relative;
 }
 
@@ -158,7 +159,7 @@ li {
 }
 
 .bg-green-top {
-  z-index: 2;
+  z-index: 1;
   max-width: 740px;
 }
 
