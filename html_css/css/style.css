@@ -290,7 +290,7 @@ li {
 .top-section__links {
   display: flex;
   align-items: center;
-  padding-top: 77px;
+  margin-top: 77px;
 }
 
 .top-section__links img {
@@ -1332,6 +1332,10 @@ li {
     text-align: center;
   }
 
+  .blog__slider-scroll {
+    padding-left: 0px;
+  }
+
   .footer {
     padding-left: 24px;
     padding-right: 24px;
@@ -1339,9 +1343,6 @@ li {
 }
 
 @media(max-width:1000px) {
-  .blog__slider-scroll {
-    padding-left: 0px;
-  }
 
   .courses__slider {
     margin: 82px auto 0px auto;
