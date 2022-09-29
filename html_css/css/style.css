@@ -115,7 +115,6 @@ li {
   padding: 12px 24px;
   width: 116px;
   height: 40px;
-  background-color: var(--blue-button-bg-default);
   border-radius: 22px;
   border: 1px;
   cursor: pointer;
@@ -125,12 +124,29 @@ li {
   color: var(--white-color);
 }
 
-.btn:hover {
+.blue-btn {
+  background-color: var(--blue-button-bg-default);
+}
+
+.blue-btn:hover {
   background: var(--blue-button-bg-hover);
 }
 
-.btn:active {
+.blue-btn:active {
   background: var(--blue-button-bg-active);
+}
+
+.green-btn {
+  background: var(--green-button-bg-default);
+  color: var(--main-text-color);
+}
+
+.green-btn:hover {
+  background: var(--green-button-bg-hover);
+}
+
+.green-btn:active {
+  background: var(--green-button-bg-active);
 }
 
 .container {
@@ -281,19 +297,6 @@ li {
 .get-started-btn {
   margin-left: 24px;
   width: 119px;
-  height: 40px;
-  background: var(--green-button-bg-default);
-  color: var(--main-text-color);
-}
-
-.get-started-btn:hover,
-.ready__apply-btn:hover {
-  background: var(--green-button-bg-hover);
-}
-
-.get-started-btn:active,
-.ready__apply-btn:active {
-  background: var(--green-button-bg-active);
 }
 
 .top-section__links {
@@ -1021,10 +1024,7 @@ li {
 
 .ready__apply-btn {
   width: 109px;
-  background: var(--arrow-play-button-hover);
-  color: var(--main-text-color);
   padding: 12px 20px;
-  cursor: pointer;
 }
 
 .ready__request-btn {
@@ -1033,10 +1033,6 @@ li {
   margin-left: 20px;
   background: none;
   border: 1px solid var(--white-color);
-  border-radius: 22px;
-  font-size: 12px;
-  line-height: 1.33;
-  color: var(--white-color);
   white-space: nowrap;
 }
 
