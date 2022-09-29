@@ -1093,8 +1093,9 @@ li {
   padding-left: 87px;
 }
 
-.blog__slider-scroll-btn {
+.blog__slider-btn {
   color: var(--blog-side-text-color);
+  border: 1px solid var(--white-color);
   font-weight: 600;
   font-size: 16px;
   line-height: 1.0;
@@ -1107,11 +1108,11 @@ li {
   cursor: pointer;
 }
 
-.blog__slider-scroll-btn:hover {
+.blog__slider-btn:hover {
   box-shadow: 0px 4px 16px var(--arrow-box-shadow);
 }
 
-.blog__slider-scroll-btn:active {
+.blog__slider-btn_active {
   border: 1px solid var(--arrow-play-button-hover);
 }
 
