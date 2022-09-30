@@ -1648,6 +1648,12 @@ li {
     padding-top: 56px;
     padding-bottom: 40px;
   }
+
+  .footer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
 }
 
 @media(max-width:700px) {
@@ -1660,11 +1666,6 @@ li {
   .links-list {
     padding-left: 0;
     flex-direction: column;
-  }
-
-  .footer {
-    padding-left: 24px;
-    padding-right: 24px;
   }
 
 }
