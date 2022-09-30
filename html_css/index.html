@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./assets/mobile-menu.js"></script>
     <title>Draganov Ivan</title>
   </head>
   <body>
@@ -27,7 +28,7 @@
     </div>
     <header class="header container">
       <div class="header__icons">
-        <svg class="burger__icon" viewBox="0 0 24 24">
+        <svg class="burger__icon" id="burger" viewBox="0 0 24 24">
           <use href="./assets/images/sprite.svg#icon-burger"></use>
         </svg>
         <svg class="header__union-logo" width="54" height="24" viewBox="0 0 54 24">
@@ -184,11 +185,7 @@
             <div class="slider__img slide1">
               <img class="slide1-img" src="./assets/images/slider-img1.png" alt="Slide 1" />
               <div class="slider__img_inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img1-small.png"
-                  alt="Slide 1 small"
-                />
+                <img class="slider__img_small" src="./assets/images/slider-img1-small.png" alt="Slide 1 small" />
                 <h3>DESIGN</h3>
                 <p>Learn Photoshop title</p>
                 <hr />
@@ -231,11 +228,7 @@
             <div class="slider__img slide2">
               <img src="./assets/images/slider-img2.png" alt="Slide 2" width="270" />
               <div class="slider__img_inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img2-small.png"
-                  alt="Slide 2 small"
-                />
+                <img class="slider__img_small" src="./assets/images/slider-img2-small.png" alt="Slide 2 small" />
                 <h3>Marketing</h3>
                 <p>Learn Photoshop title trun...</p>
                 <hr />
@@ -278,11 +271,7 @@
             <div class="slider__img slide3">
               <img src="./assets/images/slider-img3.png" alt="Slide 3" width="270" />
               <div class="slider__img_inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img3-small.png"
-                  alt="Slide 3 small"
-                />
+                <img class="slider__img_small" src="./assets/images/slider-img3-small.png" alt="Slide 3 small" />
                 <h3>Web design</h3>
                 <p>Learn Photoshop</p>
                 <hr />
@@ -336,11 +325,7 @@
       <section class="description">
         <div class="description_bg"></div>
         <div class="description__left">
-          <img
-            class="description__left_img"
-            src="./assets/images/two-women-img.png"
-            alt="Two women"
-          />
+          <img class="description__left_img" src="./assets/images/two-women-img.png" alt="Two women" />
           <div>
             <svg class="description__left_play">
               <use href="./assets/images/sprite.svg#icon-play-btn"></use>
@@ -671,19 +656,10 @@
           <div class="blog__slider">
             <div class="blog__slider_item">
               <div class="blog__slider_item-bg"></div>
-              <img
-                class="blog__slider_item-img"
-                src="./assets/images/blog-img1.png"
-                alt="Blog image"
-              />
+              <img class="blog__slider_item-img" src="./assets/images/blog-img1.png" alt="Blog image" />
               <p class="blog__item_side-text">DESIGN</p>
               <div class="blog__slider_title">
-                <img
-                  src="./assets/images/slider-img1-small.png"
-                  width="48"
-                  height="48"
-                  alt="slider img1 small"
-                />
+                <img src="./assets/images/slider-img1-small.png" width="48" height="48" alt="slider img1 small" />
                 <h3 class="blog__item_main-text">
                   International Conference <br />
                   on Bussiness
@@ -693,18 +669,10 @@
             </div>
             <div class="blog__slider_item">
               <div class="blog__slider_item-bg"></div>
-              <img
-                class="blog__slider_item-img"
-                src="./assets/images/blog-img2.png"
-                alt="Blog image"
-              />
+              <img class="blog__slider_item-img" src="./assets/images/blog-img2.png" alt="Blog image" />
               <p class="blog__item_side-text">DESIGN</p>
               <div class="blog__slider_title">
-                <img
-                  src="./assets/images/slider-img2-small.png"
-                  width="48"
-                  alt="slider img2 small"
-                />
+                <img src="./assets/images/slider-img2-small.png" width="48" alt="slider img2 small" />
                 <h3 class="blog__item_main-text">
                   International Conference <br />
                   on Bussiness
