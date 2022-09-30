@@ -186,7 +186,7 @@ li {
 }
 
 .header__icons {
-  z-index: 4;
+  z-index: 6;
 }
 
 .header__union-logo {
@@ -200,7 +200,7 @@ li {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header__nav-mobile {
+.mobile__menu {
   display: none;
   position: fixed;
   top: 0;
@@ -212,7 +212,11 @@ li {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header__nav-mobile-container {
+.mobile__menu_active {
+  display: block;
+}
+
+.mobile__menu-container {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -222,13 +226,17 @@ li {
 
 .burger__icons-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin: 20px 5px 0 0;
 }
 
 .burger__icon {
   display: none;
+}
+
+.burger__icon-cross {
+  cursor: pointer;
 }
 
 .burger__menu {
