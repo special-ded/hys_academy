@@ -1616,6 +1616,10 @@ li {
 }
 
 @media(max-width:769px) {
+  .ready {
+    margin-top: 0;
+  }
+
   .ready__container {
     flex-direction: column;
     align-items: center;
@@ -1908,11 +1912,6 @@ li {
 
   .coding-girl-img {
     margin-top: 7px;
-  }
-
-  .ready {
-    position: relative;
-    margin-top: 0;
   }
 
   .description_bg {
