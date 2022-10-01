@@ -254,6 +254,7 @@ li {
 .burger__elem-item {
   font-weight: 700;
   font-size: 26px;
+  padding: 30px 86% 30px 0%;
   line-height: 1.38;
   color: var(--main-text-color);
 }
@@ -287,7 +288,8 @@ li {
   color: var(--white-color);
 }
 
-.header__elem a:hover {
+.header__elem a:hover,
+.burger__elem-item:hover {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--blue-button-bg-default);
 }
