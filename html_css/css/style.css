@@ -1296,7 +1296,7 @@ li {
 .form {
   margin: 0 auto;
   max-width: 450px;
-  padding-top: 80px;
+  margin-top: 80px;
 }
 
 .form input {
