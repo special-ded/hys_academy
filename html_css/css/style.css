@@ -925,24 +925,33 @@ li {
   height: 48px;
   display: flex;
   background: #F3F6FC;
-  border: 1px solid #1B63F0;
+
   border-radius: 22px;
   cursor: pointer;
 }
 
-.select__current {
-  padding: 10px;
+.input__value {
+  display: block;
+  width: 200px;
+  height: 48px;
+  padding: 6px 12px;
+  background: #F3F6FC;
+  border: 1px solid #F3F6FC;
+  border-radius: 22px;
+  cursor: pointer;
+  caret-color: rgba(0, 0, 0, 0)
 }
 
-.select__icon {
-  align-items: center;
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  height: 40px;
-  margin-left: auto;
-  text-align: center;
-  width: 40px;
+.input__value:focus {
+  outline: none;
+  border: 1px solid var(--customer-dot-bg-active);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input__icon {
+  position: absolute;
+  right: 64px;
+  top: 14px;
 }
 
 .select__body {

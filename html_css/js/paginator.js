@@ -1,5 +1,5 @@
 let select = function () {
-  let selectHeader = document.querySelector('.select__input');
+  let selectHeader = document.querySelector('.input__wrap');
   let selectItem = document.querySelectorAll('.select__item');
 
   selectHeader.addEventListener('click', selectToggler)
@@ -15,7 +15,7 @@ let select = function () {
   function selectChoose() {
     let text = this.innerText,
       select = this.closest('.select'),
-      currentText = select.querySelector('.select__current');
+      currentText = select.querySelector('.input__value');
     currentText.value = text;
     select.classList.remove('is-active');
 
