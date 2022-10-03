@@ -1,14 +1,14 @@
 let select = function () {
-  let selectHeader = document.querySelector('.select__header');
+  let selectHeader = document.querySelector('.select__input');
   let selectItem = document.querySelectorAll('.select__item');
 
-  selectHeader.addEventListener('click', selectToggle)
+  selectHeader.addEventListener('click', selectToggler)
 
   selectItem.forEach(item => {
     item.addEventListener('click', selectChoose)
   });
 
-  function selectToggle() {
+  function selectToggler() {
     this.parentElement.classList.toggle('is-active');
   }
 
@@ -16,7 +16,7 @@ let select = function () {
     let text = this.innerText,
       select = this.closest('.select'),
       currentText = select.querySelector('.select__current');
-    currentText.innerText = text;
+    currentText.value = text;
     select.classList.remove('is-active');
 
   }

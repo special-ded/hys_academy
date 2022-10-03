@@ -906,6 +906,11 @@ li {
 
 
 .select {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  align-items: center;
+  color: #5C5C5C;
   margin: 0 auto;
   position: relative;
   width: 250px;
@@ -915,16 +920,18 @@ li {
   display: block;
 }
 
-.select__header {
-  border: 1px solid #ccc;
-  cursor: pointer;
+.select__input {
+  width: 200px;
+  height: 48px;
   display: flex;
+  background: #F3F6FC;
+  border: 1px solid #1B63F0;
+  border-radius: 22px;
+  cursor: pointer;
 }
 
 .select__current {
-  font-size: 18px;
-  line-height: 24px;
-  padding: 8px;
+  padding: 10px;
 }
 
 .select__icon {
@@ -939,7 +946,11 @@ li {
 }
 
 .select__body {
-  border: 1px solid #cccccc;
+  width: 200px;
+  margin-top: 8px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 11px rgba(29, 31, 34, 0.1);
+  border-radius: 22px;
   z-index: 2;
   border-top: 0;
   display: none;
@@ -951,13 +962,14 @@ li {
 
 .select__item {
   cursor: pointer;
-  font-size: 16px;
-  line-height: 24px;
-  padding: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-align: left;
 }
 
 .select__item:hover {
-  background-color: #f2f2f2;
+  background: #F3F6FC;
+  border-radius: 11px;
 }
 
 /* PAGINATOR END */
