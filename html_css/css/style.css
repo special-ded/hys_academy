@@ -927,6 +927,10 @@ li {
   background: var(--prefer-slide-1-bg);
 }
 
+.slide-2-bg {
+  background: var(--prefer-slide-2-bg);
+}
+
 .slide-3-bg {
   background: var(--prefer-slide-3-bg)
 }
