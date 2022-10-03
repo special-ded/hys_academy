@@ -21,10 +21,10 @@ menuItem.forEach(elem => elem.addEventListener('click', () => menuToggler()))
 
 console.log(menuItem)
 
-// closes Mobile menu if width more then 600 px
+// closes Mobile menu if width more then 767 px
 
 window.addEventListener('resize', function () {
-  if (window.innerWidth > 599 && menuOpen === true) {
+  if (window.innerWidth > 767 && menuOpen === true) {
     menuToggler()
   }
 })
