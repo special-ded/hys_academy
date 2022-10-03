@@ -896,6 +896,23 @@ li {
   margin-top: 16px;
 }
 
+.paginator {
+  padding: 6px 12px;
+  width: 200px;
+  height: 48px;
+  background: #F3F6FC;
+  border-radius: 22px;
+}
+
+.paginator__option {
+  padding: 4px;
+  width: 200px;
+  height: 152px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 11px rgba(29, 31, 34, 0.1);
+  border-radius: 22px;
+}
+
 .prefer__slider {
   display: flex;
   justify-content: center;
@@ -925,6 +942,10 @@ li {
 
 .slide-1-bg {
   background: var(--prefer-slide-1-bg);
+}
+
+.slide-2-bg {
+  background: var(--prefer-slide-2-bg);
 }
 
 .slide-3-bg {
