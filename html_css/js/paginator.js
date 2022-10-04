@@ -1,43 +1,22 @@
-let select = function () {
-  let inputField = document.querySelector('.input__wrap');
-  let selectItem = document.querySelectorAll('.select__item');
-  let paginatorIconLink = document.getElementsByClassName("paginator__icon-use");
 
-  let iconToggle = false
+let albumList = document.querySelector('.select__body')
+let ImgData = []
+let albumArr = []
 
-  inputField.addEventListener('click',
-    selectToggler)
+fetch('https://jsonplaceholder.typicode.com/photos')
+  .then(response => response.json())
+  .then(data => ImgData = data)
+  .then(() => console.log(ImgData))
+  .then(() => paginator(albumList, ImgData))
 
-  selectItem.forEach(item => {
-    item.addEventListener('click', selectChoose)
-  });
+function paginator(selector, ImgData) {
+  let arr = []
+  console.log(ImgData[0])
 
-  function selectToggler() {
-    iconToggler()
-    this.parentElement.classList.toggle('is-active');
-  }
+  ImgData.map((el) => {
+    arr.push(el.albumId)
+  })
+  albumArr = [...new Set(arr)],
+    console.log(albumArr)
+}
 
-  function selectChoose() {
-    iconToggler()
-    let text = this.innerText,
-      select = this.closest('.select'),
-      currentText = select.querySelector('.input__value');
-    currentText.value = text;
-    select.classList.remove('is-active');
-
-  }
-
-  function iconToggler() {
-    if (iconToggle == false) {
-      paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-active")
-    } else {
-      paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-default")
-    }
-    iconToggle = !iconToggle
-
-  }
-
-};
-
-
-select();

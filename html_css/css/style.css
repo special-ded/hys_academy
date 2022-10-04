@@ -924,7 +924,7 @@ li {
   width: 200px;
   height: 48px;
   display: flex;
-  background: #F3F6FC;
+  background: var(--registration-input-bg);
   border-radius: 22px;
   cursor: pointer;
 }
@@ -934,8 +934,8 @@ li {
   width: 200px;
   height: 48px;
   padding: 6px 12px;
-  background: #F3F6FC;
-  border: 1px solid #F3F6FC;
+  background: var(--registration-input-bg);
+  border: 1px solid var(--registration-input-bg);
   border-radius: 22px;
   cursor: pointer;
   caret-color: rgba(0, 0, 0, 0)
@@ -955,17 +955,19 @@ li {
 
 .select__body {
   width: 200px;
+  max-height: 144px;
   margin-top: 8px;
-  background: #FFFFFF;
+  overflow-y: scroll;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: var(--white-color);
   box-shadow: 0px 4px 11px rgba(29, 31, 34, 0.1);
   border-radius: 22px;
   z-index: 2;
   border-top: 0;
   transform: rotateY(90deg);
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 100%;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -977,7 +979,8 @@ li {
 }
 
 .select__item:hover {
-  background: #F3F6FC;
+  background: var(--registration-input-bg);
+  color: var(--customer-dot-bg-active);
   border-radius: 11px;
 }
 
