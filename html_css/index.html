@@ -530,11 +530,17 @@
         </p>
 
         <!-- PAGINATOR -->
-
         <div class="select">
           <div class="input__wrap">
             <input class="input__value" value="Label" />
-            <div class="input__icon">&times;</div>
+            <div class="input__icon">
+              <svg class="paginator__icon" width="20" height="20">
+                <use class="paginator__icon-use" href="./assets/images/sprite.svg#icon-arrow-default"></use>
+              </svg>
+              <!-- <svg class="paginator__icon" width="20" height="20">
+                <use href="./assets/images/sprite.svg#icon-arrow-active"></use>
+              </svg> -->
+            </div>
           </div>
           <ul class="select__body">
             <li class="select__item">Item 1</li>
