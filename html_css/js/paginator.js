@@ -2,12 +2,12 @@ let albumList = document.querySelector('.select__body')
 let sliderScroll = document.querySelector('.blog__slider-scroll')
 let sliderWrapper = document.querySelector('.blog__slider-wrapper')
 let sliderCuantity = sliderWrapper.children.length
-let firstSlide = sliderWrapper.children[0]
-let secondSlide = sliderWrapper.children[1]
-let firstSlideTitle = firstSlide.querySelector('.slider-title')
-let secondSlideTitle = secondSlide.querySelector('.slider-title')
-let firstSlideImg = firstSlide.querySelector('.blog__slider-item-img')
-let secondSlideImg = secondSlide.querySelector('.blog__slider-item-img')
+// let firstSlide = sliderWrapper.children[0]
+// let secondSlide = sliderWrapper.children[1]
+// let firstSlideTitle = firstSlide.querySelector('.slider-title')
+// let secondSlideTitle = secondSlide.querySelector('.slider-title')
+// let firstSlideImg = firstSlide.querySelector('.blog__slider-item-img')
+// let secondSlideImg = secondSlide.querySelector('.blog__slider-item-img')
 
 let buttonActive = 1
 
@@ -57,6 +57,7 @@ sliderScroll.addEventListener('click', (event) => {
     ? buttonActive = event.target.innerHTML
     : null
   getData(sliderCuantity, buttonActive)
+  console.log(buttonActive)
 })
 
 function paginator(sliderWrapper, currentData) {
@@ -71,5 +72,8 @@ function getData(cuantity, btn) {
   paginator(sliderWrapper, currentData)
 }
 
+function activeBtnToggler() {
+  console.log("sdsdsd")
+}
 
 
