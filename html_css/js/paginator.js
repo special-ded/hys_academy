@@ -1,9 +1,9 @@
-let sliderScroll = document.querySelector('.blog__slider-scroll')
-let sliderWrapper = document.querySelector('.blog__slider-wrapper')
-let sliderQuantity = sliderWrapper.children.length
+const sliderScroll = document.querySelector('.blog__slider-scroll')
+const sliderWrapper = document.querySelector('.blog__slider-wrapper')
+const sliderQuantity = sliderWrapper.children.length
 let buttonActive = 3
 
-let DATA = [
+const DATA = [
   {
     "albumId": 1,
     "id": 1,
@@ -42,12 +42,9 @@ let DATA = [
 
 let currentData = []
 let activeBtn = sliderScroll.querySelector('.blog__slider-btn_active')
-console.log(activeBtn)
-getData(sliderQuantity, buttonActive)
 
-function defaultBtn() {
-  sliderScroll
-}
+getData(sliderQuantity, buttonActive)
+btnDisabler()
 
 // getting number of button clicked
 sliderScroll.addEventListener('click', (event) => {
@@ -66,7 +63,6 @@ function paginator(sliderWrapper, currentData) {
 
 function getData(quantity, btn) {
   currentData = DATA.slice(quantity * btn - quantity, quantity * btn)
-  console.log(currentData)
   sliderHandler(currentData, btn)
   paginator(sliderWrapper, currentData)
 }
@@ -97,4 +93,4 @@ function btnDisabler() {
     ? sliderScroll.children[4].setAttribute("disabled", "")
     : null
 }
-btnDisabler()
+
