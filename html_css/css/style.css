@@ -1286,6 +1286,10 @@ li {
   height: 288px;
 }
 
+.display-none {
+  display: none;
+}
+
 .blog__slider-item-bg {
   z-index: -1;
   position: absolute;
@@ -1315,6 +1319,7 @@ li {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .blog__item-side-text,
@@ -1373,6 +1378,11 @@ li {
   background: var(--white-color);
   border-radius: 20px;
   cursor: pointer;
+}
+
+.blog__slider-btn:disabled {
+  background-color: var(--event-img-text);
+  color: var(--secondary-text-color);
 }
 
 .blog__slider-btn:hover {

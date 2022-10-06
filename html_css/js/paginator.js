@@ -1,15 +1,7 @@
-let albumList = document.querySelector('.select__body')
 let sliderScroll = document.querySelector('.blog__slider-scroll')
 let sliderWrapper = document.querySelector('.blog__slider-wrapper')
-let sliderCuantity = sliderWrapper.children.length
-// let firstSlide = sliderWrapper.children[0]
-// let secondSlide = sliderWrapper.children[1]
-// let firstSlideTitle = firstSlide.querySelector('.slider-title')
-// let secondSlideTitle = secondSlide.querySelector('.slider-title')
-// let firstSlideImg = firstSlide.querySelector('.blog__slider-item-img')
-// let secondSlideImg = secondSlide.querySelector('.blog__slider-item-img')
-
-let buttonActive = 1
+let sliderQuantity = sliderWrapper.children.length
+let buttonActive = 3
 
 let DATA = [
   {
@@ -49,15 +41,20 @@ let DATA = [
   }]
 
 let currentData = []
+let activeBtn = sliderScroll.querySelector('.blog__slider-btn_active')
+console.log(activeBtn)
+getData(sliderQuantity, buttonActive)
 
+function defaultBtn() {
+  sliderScroll
+}
 
 // getting number of button clicked
 sliderScroll.addEventListener('click', (event) => {
   event.target.className === "blog__slider-btn" || "blog__slider-btn blog__slider-btn_active"
-    ? buttonActive = event.target.innerHTML
+    ? (buttonActive = event.target.innerHTML, activeBtnToggler(event))
     : null
-  getData(sliderCuantity, buttonActive)
-  console.log(buttonActive)
+  getData(sliderQuantity, buttonActive)
 })
 
 function paginator(sliderWrapper, currentData) {
@@ -67,13 +64,37 @@ function paginator(sliderWrapper, currentData) {
   });
 }
 
-function getData(cuantity, btn) {
-  console.log(currentData = DATA.slice(cuantity * btn - cuantity, cuantity * btn));
+function getData(quantity, btn) {
+  currentData = DATA.slice(quantity * btn - quantity, quantity * btn)
+  console.log(currentData)
+  sliderHandler(currentData, btn)
   paginator(sliderWrapper, currentData)
 }
 
-function activeBtnToggler() {
-  console.log("sdsdsd")
+function activeBtnToggler(e) {
+  if (sliderScroll.querySelector('.blog__slider-btn_active') && (e.target.className === "blog__slider-btn" ||
+    e.target.className === "blog__slider-btn blog__slider-btn_active")) {
+    activeBtn = sliderScroll.querySelector('.blog__slider-btn_active')
+    // removing active class
+    activeBtn.classList.remove('blog__slider-btn_active');
+    // adding active class
+    e.target.classList.add('blog__slider-btn_active')
+  }
 }
 
+function sliderHandler(data) {
+  data.length === 1 ?
+    sliderWrapper.children[1].classList.add('display-none') :
+    sliderWrapper.children[1].classList.remove('display-none')
+}
 
+function btnDisabler() {
+  DATA.length / sliderQuantity <= 3
+    ? (sliderScroll.children[3].setAttribute("disabled", ""),
+      sliderScroll.children[4].setAttribute("disabled", ""))
+    : null
+  DATA.length / sliderQuantity <= 4
+    ? sliderScroll.children[4].setAttribute("disabled", "")
+    : null
+}
+btnDisabler()

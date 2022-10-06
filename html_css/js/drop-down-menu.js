@@ -1,12 +1,8 @@
 let select = function () {
   let dropDownMenu = document.querySelector('.select');
-  // let inputField = document.querySelector('.input__wrap');
   let selectItem = document.querySelectorAll('.select__item');
   let paginatorIconLink = document.getElementsByClassName("paginator__icon-use");
-
   let iconToggle = false
-
-  // inputField.addEventListener('click', selectToggler)
 
   selectItem.forEach(item => {
     item.addEventListener('click', selectChoose)
