@@ -1,21 +1,28 @@
-let select = function () {
-  let dropDownMenu = document.querySelector('.select');
-  let selectItem = document.querySelectorAll('.select__item');
-  let paginatorIconLink = document.getElementsByClassName("paginator__icon-use");
+export default function preferDropDown() {
   let iconToggle = false
 
-  selectItem.forEach(item => {
-    item.addEventListener('click', selectChoose)
-  });
+  initEventListeners()
 
-  document.querySelector(".select").addEventListener('click', (event) => {
-    let classListInput = ["input__value", "input__wrap", "paginator__icon-use", "paginator__icon"]
-    if (classListInput.includes(event.target.className) || classListInput.includes(event.target.classList.value)) {
-      selectToggler()
-    }
-  })
+  function initEventListeners() {
+    const selectItem = document.querySelectorAll('.select__item');
+
+    selectItem.forEach(item => {
+      item.addEventListener('click', selectChoose)
+    });
+
+    document.querySelector(".select").addEventListener('click', (event) => {
+      const classListInput = ["input__value", "input__wrap", "paginator__icon-use", "paginator__icon"]
+
+      if (classListInput.includes(event.target.className) || classListInput.includes(event.target.classList.value)) {
+        selectToggler()
+      }
+    })
+  }
+
 
   function selectToggler() {
+    const dropDownMenu = document.querySelector('.select');
+
     iconToggler()
     dropDownMenu.classList.toggle('is-active');
   }
@@ -29,7 +36,10 @@ let select = function () {
     select.classList.remove('is-active');
   }
 
+
   function iconToggler() {
+    const paginatorIconLink = document.getElementsByClassName("paginator__icon-use");
+
     if (iconToggle == false) {
       paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-active")
     } else {
@@ -39,4 +49,3 @@ let select = function () {
   }
 };
 
-select();
