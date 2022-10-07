@@ -30,7 +30,6 @@ function clickHandler(slidesQuantity, DATA) {
 
 function updateData(slidesQuantity, activeButtonNumber, DATA) {
   const currentData = DATA.slice(slidesQuantity * activeButtonNumber - slidesQuantity, slidesQuantity * activeButtonNumber);
-
   renderNewSlides(currentData)
   sliderHandler(currentData);
 }
@@ -39,6 +38,9 @@ function renderNewSlides(currentData) {
   currentData.forEach((element, i) => {
     sliderWrapper.children[i].querySelector('.slider-title').innerText = element.title;
     sliderWrapper.children[i].querySelector('.blog__slider-item-img').src = element.url;
+    sliderWrapper.children[i].querySelector('.blog__item-side-text').innerText = element.category;
+    sliderWrapper.children[i].querySelector('.blog__item_link').setAttribute("href", element.redirectLink);
+    sliderWrapper.children[i].querySelector('.blog__slider-user-img').src = element.userImage;
   });
 }
 
