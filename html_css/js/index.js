@@ -6,10 +6,10 @@ import paginatorData from './data/paginator-data.js'
 init()
 
 function init() {
-  addStickyHeader()
+  addStickyHeader();
   initPaginator();
-  initMobileMenu()
-  preferDropDown()
+  initMobileMenu();
+  preferDropDown();
 }
 
 function initPaginator() {
@@ -23,11 +23,12 @@ function initPaginator() {
 // ADDING STICKY HEADER
 function addStickyHeader() {
   window.addEventListener('scroll', (event) => {
-    const header = document.querySelector('.header')
+    const header = document.querySelector('.header');
+
     if (window.scrollY > header.clientHeight) {
       header.classList.add('sticky');
     } else {
-      header.classList.remove('sticky')
+      header.classList.remove('sticky');
     }
   });
 }

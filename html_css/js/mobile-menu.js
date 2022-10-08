@@ -7,12 +7,12 @@ export default function initMobileMenu() {
     const mobileMenu = document.querySelector('#mobile__menu');
 
     mobileMenu.classList.toggle('mobile__menu_active');
-    setTimeoutForScrollStop()
+    setTimeoutForScrollStop();
   }
 
   function setTimeoutForScrollStop() {
     setTimeout(() => {
-      document.querySelector('body').classList.toggle('stop-scroll')
+      document.querySelector('body').classList.toggle('stop-scroll');
     }, 300);
     menuOpen = !menuOpen;
   }
@@ -29,7 +29,7 @@ export default function initMobileMenu() {
     // closes Mobile menu if width more then 767 px
     window.addEventListener('resize', function () {
       if (window.innerWidth > 767 && menuOpen === true) {
-        menuToggler()
+        menuToggler();
       }
     })
   }

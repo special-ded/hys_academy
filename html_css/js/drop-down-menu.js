@@ -7,14 +7,14 @@ export default function preferDropDown() {
     const selectItem = document.querySelectorAll('.select__item');
 
     selectItem.forEach(item => {
-      item.addEventListener('click', selectChoose)
+      item.addEventListener('click', selectChoose);
     });
 
     document.querySelector(".select").addEventListener('click', (event) => {
-      const classListInput = ["input__value", "input__wrap", "paginator__icon-use", "paginator__icon"]
+      const classListInput = ["input__value", "input__wrap", "paginator__icon-use", "paginator__icon"];
 
       if (classListInput.includes(event.target.className) || classListInput.includes(event.target.classList.value)) {
-        selectToggler()
+        selectToggler();
       }
     })
   }
@@ -23,12 +23,12 @@ export default function preferDropDown() {
   function selectToggler() {
     const dropDownMenu = document.querySelector('.select');
 
-    iconToggler()
+    iconToggler();
     dropDownMenu.classList.toggle('is-active');
   }
 
   function selectChoose() {
-    iconToggler()
+    iconToggler();
     let text = this.innerText,
       select = this.closest('.select'),
       currentText = select.querySelector('.input__value');
@@ -41,11 +41,11 @@ export default function preferDropDown() {
     const paginatorIconLink = document.getElementsByClassName("paginator__icon-use");
 
     if (iconToggle == false) {
-      paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-active")
+      paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-active");
     } else {
-      paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-default")
+      paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-default");
     }
-    iconToggle = !iconToggle
+    iconToggle = !iconToggle;
   }
 };
 
