@@ -49,6 +49,9 @@ function buttonScrollHandler(activeButtonNumber, DATA) {
   } else if (activeButtonNumber <= 3) {
     sliderScrollWrap.setAttribute("style", `transform: translateY(-0px)`);
   }
+  if (activeButtonNumber == Math.round(DATA.length / 2) - 1) {
+    sliderScrollWrap.setAttribute("style", `transform: translateY(-${62 * (activeButtonNumber - 4)}px)`);
+  }
 }
 
 function renderButtons(DATA) {
