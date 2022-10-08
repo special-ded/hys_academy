@@ -9,6 +9,7 @@ export default function paginator(sliderWrapper, DATA) {
   // default active Button
   const activeButtonNumber = 1;
 
+  renderButtons(DATA)
   initClickListener(slidesQuantity, DATA);
   setButtonState(slidesQuantity, DATA);
   updateData(slidesQuantity, activeButtonNumber, DATA);
@@ -22,8 +23,11 @@ function clickHandler(slidesQuantity, DATA) {
   let activeButtonNumber = 0;
 
   sliderScroll.addEventListener('click', (event) => {
-    event.target.className === buttonClassName || event.target.className === activeButtonClassName ? (activeButtonNumber = event.target.innerHTML, activeBtnToggler(event)) : null
+    event.target.className === buttonClassName || event.target.className === activeButtonClassName ?
+      (activeButtonNumber = event.target.innerHTML, activeBtnToggler(event)) : null
     updateData(slidesQuantity, activeButtonNumber, DATA);
+
+    buttonScrollHandler(activeButtonNumber);
   })
 }
 
@@ -39,14 +43,49 @@ function removeAllChildNodes(parent) {
   }
 }
 
+function buttonScrollHandler(activeButtonNumber) {
+  const sliderScrollWrap = document.querySelector('.blog__slider-scroll-wrap')
+
+
+  if (activeButtonNumber > 3) {
+    sliderScrollWrap.setAttribute("style", `transform: translateY(-${62 * (activeButtonNumber - 3)}px)`);
+  }
+
+  if (activeButtonNumber == 3) {
+    sliderScrollWrap.setAttribute("style", `transform: translateY(-0px)`);
+  }
+  console.log(multiplier)
+}
+
+function renderButtons(DATA) {
+  const sliderScrollWrap = document.createElement('div');
+  sliderScrollWrap.classList.add('blog__slider-scroll-wrap');
+  sliderScroll.appendChild(sliderScrollWrap);
+
+  const activeButton = document.createElement('button');
+  activeButton.classList.add('blog__slider-btn');
+  activeButton.classList.add('blog__slider-btn_active');
+  activeButton.innerText = 1
+  sliderScrollWrap.appendChild(activeButton);
+
+  for (let i = 0; i < (DATA.length / 2) - 1; i++) {
+    const button = document.createElement('button');
+    button.classList.add('blog__slider-btn');
+    button.innerText = i + 2
+
+    sliderScrollWrap.appendChild(button);
+  }
+
+}
+
 function renderNewSlides(currentData) {
   removeAllChildNodes(sliderWrapper);
 
   currentData.forEach((element) => {
     const slide = document.createElement('div');
     slide.classList.add('blog__slider-item');
-    slide.innerHTML = `            
-    <div class="blog__slider-item-bg"></div>
+    slide.innerHTML = `
+    <div class="blog__slider-item-bg" ></div>
     <img class="blog__slider-item-img" src =${element.url} alt = "Blog image" />
     <p class="blog__item-side-text">${element.category}</p>
     <div class="blog__slider-title">
