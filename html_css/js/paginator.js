@@ -26,7 +26,6 @@ function clickHandler(slidesQuantity, DATA) {
     event.target.className === buttonClassName || event.target.className === activeButtonClassName ?
       (activeButtonNumber = event.target.innerHTML, activeBtnToggler(event)) : null
     updateData(slidesQuantity, activeButtonNumber, DATA);
-
     buttonScrollHandler(activeButtonNumber, DATA);
   })
 }
@@ -34,7 +33,6 @@ function clickHandler(slidesQuantity, DATA) {
 function updateData(slidesQuantity, activeButtonNumber, DATA) {
   const currentData = DATA.slice(slidesQuantity * activeButtonNumber - slidesQuantity, slidesQuantity * activeButtonNumber);
   renderNewSlides(currentData);
-  // sliderHandler(currentData);
 }
 
 function removeAllChildNodes(parent) {
@@ -51,7 +49,6 @@ function buttonScrollHandler(activeButtonNumber, DATA) {
   } else if (activeButtonNumber <= 3) {
     sliderScrollWrap.setAttribute("style", `transform: translateY(-0px)`);
   }
-
 }
 
 function renderButtons(DATA) {
@@ -72,7 +69,6 @@ function renderButtons(DATA) {
 
     sliderScrollWrap.appendChild(button);
   }
-
 }
 
 function renderNewSlides(currentData) {
@@ -107,10 +103,6 @@ function activeBtnToggler(e) {
     e.target.classList.add('blog__slider-btn_active');
   }
 }
-
-// function sliderHandler(currentData) {
-//   currentData.length === 1 ? sliderWrapper.children[1].classList.add('display-none') : sliderWrapper.children[1].classList.remove('display-none');
-// }
 
 function setButtonState(slidesQuantity, DATA) {
   DATA.length / slidesQuantity <= 3 ? (sliderScroll.children[3].setAttribute("disabled", ""), sliderScroll.children[4].setAttribute("disabled", "")) : null;
