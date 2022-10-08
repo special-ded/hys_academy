@@ -5,7 +5,7 @@ const activeButtonClassName = "blog__slider-btn blog__slider-btn_active";
 
 
 export default function paginator(sliderWrapper, DATA) {
-  const slidesQuantity = sliderWrapper.children.length;
+  const slidesQuantity = 2;
   // default active Button
   const activeButtonNumber = 1;
 
@@ -13,7 +13,6 @@ export default function paginator(sliderWrapper, DATA) {
   setButtonState(slidesQuantity, DATA);
   updateData(slidesQuantity, activeButtonNumber, DATA);
 }
-
 
 function initClickListener(slidesQuantity, DATA) {
   clickHandler(slidesQuantity, DATA);
@@ -31,16 +30,32 @@ function clickHandler(slidesQuantity, DATA) {
 function updateData(slidesQuantity, activeButtonNumber, DATA) {
   const currentData = DATA.slice(slidesQuantity * activeButtonNumber - slidesQuantity, slidesQuantity * activeButtonNumber);
   renderNewSlides(currentData);
-  sliderHandler(currentData);
+  // sliderHandler(currentData);
+}
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 }
 
 function renderNewSlides(currentData) {
-  currentData.forEach((element, i) => {
-    sliderWrapper.children[i].querySelector('.slider-title').innerText = element.title;
-    sliderWrapper.children[i].querySelector('.blog__slider-item-img').src = element.url;
-    sliderWrapper.children[i].querySelector('.blog__item-side-text').innerText = element.category;
-    sliderWrapper.children[i].querySelector('.blog__item_link').setAttribute("href", element.redirectLink);
-    sliderWrapper.children[i].querySelector('.blog__slider-user-img').src = element.userImage;
+  removeAllChildNodes(sliderWrapper);
+
+  currentData.forEach((element) => {
+    const slide = document.createElement('div');
+    slide.classList.add('blog__slider-item');
+    slide.innerHTML = `            
+    <div class="blog__slider-item-bg"></div>
+    <img class="blog__slider-item-img" src =${element.url} alt = "Blog image" />
+    <p class="blog__item-side-text">${element.category}</p>
+    <div class="blog__slider-title">
+      <img class="blog__slider-user-img" src=${element.userImage} width="48" height="48" alt="slider img1 small" />
+      <h3 class="slider-title">${element.title}</h3>
+    </div>
+    <a class="blog__item_link" href=${element.redirectLink}>Read Now</a>`
+
+    sliderWrapper.appendChild(slide);
   });
 }
 
@@ -57,9 +72,9 @@ function activeBtnToggler(e) {
   }
 }
 
-function sliderHandler(currentData) {
-  currentData.length === 1 ? sliderWrapper.children[1].classList.add('display-none') : sliderWrapper.children[1].classList.remove('display-none');
-}
+// function sliderHandler(currentData) {
+//   currentData.length === 1 ? sliderWrapper.children[1].classList.add('display-none') : sliderWrapper.children[1].classList.remove('display-none');
+// }
 
 function setButtonState(slidesQuantity, DATA) {
   DATA.length / slidesQuantity <= 3 ? (sliderScroll.children[3].setAttribute("disabled", ""), sliderScroll.children[4].setAttribute("disabled", "")) : null;
