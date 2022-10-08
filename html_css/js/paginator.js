@@ -27,7 +27,7 @@ function clickHandler(slidesQuantity, DATA) {
       (activeButtonNumber = event.target.innerHTML, activeBtnToggler(event)) : null
     updateData(slidesQuantity, activeButtonNumber, DATA);
 
-    buttonScrollHandler(activeButtonNumber);
+    buttonScrollHandler(activeButtonNumber, DATA);
   })
 }
 
@@ -43,18 +43,15 @@ function removeAllChildNodes(parent) {
   }
 }
 
-function buttonScrollHandler(activeButtonNumber) {
+function buttonScrollHandler(activeButtonNumber, DATA) {
   const sliderScrollWrap = document.querySelector('.blog__slider-scroll-wrap')
 
-
-  if (activeButtonNumber > 3) {
+  if (activeButtonNumber > 3 && activeButtonNumber <= Math.round(DATA.length / 2) - 2) {
     sliderScrollWrap.setAttribute("style", `transform: translateY(-${62 * (activeButtonNumber - 3)}px)`);
-  }
-
-  if (activeButtonNumber == 3) {
+  } else if (activeButtonNumber <= 3) {
     sliderScrollWrap.setAttribute("style", `transform: translateY(-0px)`);
   }
-  console.log(multiplier)
+
 }
 
 function renderButtons(DATA) {
