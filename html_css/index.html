@@ -11,8 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/mobile-menu.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
     <title>Draganov Ivan</title>
   </head>
   <body>
@@ -527,6 +526,29 @@
           Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi<br />
           architecto beatae vitae dicta sunt explicabo.
         </p>
+
+        <!-- PAGINATOR -->
+        <div class="select">
+          <div class="input__wrap">
+            <input class="input__value" value="Label" />
+            <div class="input__icon">
+              <svg class="paginator__icon" width="20" height="20">
+                <use class="paginator__icon-use" href="./assets/images/sprite.svg#icon-arrow-default"></use>
+              </svg>
+            </div>
+          </div>
+          <ul class="select__body">
+            <li class="select__item">Item 1</li>
+            <li class="select__item">Item 2</li>
+            <li class="select__item">Item 3</li>
+            <li class="select__item">Item 4</li>
+            <li class="select__item">Item 5</li>
+            <li class="select__item">Item 6</li>
+          </ul>
+        </div>
+
+        <!-- PAGINATOR END-->
+
         <div class="prefer__slider">
           <button class="slider__arrow-btn">
             <svg class="slider__arrow" viewBox="0 0 33 32" width="40">
@@ -672,41 +694,8 @@
       <section class="blog container">
         <h2 class="blue-line">Latest Blog</h2>
         <div class="blog__slider">
-          <div class="blog__slider-wrapper">
-            <div class="blog__slider-item">
-              <div class="blog__slider-item-bg"></div>
-              <img class="blog__slider-item-img" src="./assets/images/blog-img1.png" alt="Blog image" />
-              <p class="blog__item-side-text">DESIGN</p>
-              <div class="blog__slider-title">
-                <img src="./assets/images/slider-img1-small.png" width="48" height="48" alt="slider img1 small" />
-                <h3>
-                  International Conference <br />
-                  on Bussiness
-                </h3>
-              </div>
-              <a class="blog__item_link" href="#events">Read Now</a>
-            </div>
-            <div class="blog__slider-item">
-              <div class="blog__slider-item-bg"></div>
-              <img class="blog__slider-item-img" src="./assets/images/blog-img2.png" alt="Blog image" />
-              <p class="blog__item-side-text">DESIGN</p>
-              <div class="blog__slider-title">
-                <img src="./assets/images/slider-img2-small.png" width="48" alt="slider img2 small" />
-                <h3>
-                  International Conference <br />
-                  on Bussiness
-                </h3>
-              </div>
-              <a class="blog__item_link" href="#events">Read Now</a>
-            </div>
-          </div>
-          <div class="blog__slider-scroll">
-            <button class="blog__slider-btn">1</button>
-            <button class="blog__slider-btn">2</button>
-            <button class="blog__slider-btn blog__slider-btn_active">3</button>
-            <button class="blog__slider-btn">4</button>
-            <button class="blog__slider-btn">5</button>
-          </div>
+          <div class="blog__slider-wrapper" id="paginator"></div>
+          <div class="blog__slider-scroll"></div>
         </div>
       </section>
     </main>
