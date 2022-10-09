@@ -2,6 +2,7 @@ export default function initMobileMenu() {
   let menuOpen = false;
 
   initEventListeners();
+  closeIfResize()
 
   function menuToggler() {
     const mobileMenu = document.querySelector('#mobile__menu');
@@ -18,15 +19,16 @@ export default function initMobileMenu() {
   }
 
   function initEventListeners() {
-    const burgerIcon = document.querySelector('#burger__icon');
+    const burgerIcon = document.querySelector('.burger__icon');
     const crossIcon = document.querySelector('.burger__icon-cross');
-    const menuItem = document.querySelectorAll('.burger__elem-item');
+    const menuItem = document.querySelectorAll('.menu__elem-item');
 
     burgerIcon.addEventListener('click', () => menuToggler());
     crossIcon.addEventListener('click', () => menuToggler());
     menuItem.forEach(elem => elem.addEventListener('click', () => menuToggler()));
+  }
 
-    // closes Mobile menu if width more then 767 px
+  function closeIfResize() {
     window.addEventListener('resize', function () {
       if (window.innerWidth > 767 && menuOpen === true) {
         menuToggler();
