@@ -17,7 +17,6 @@ function init() {
 }
 
 function initPaginator() {
-  // const sliderWrapper = document.querySelector('#paginator');
   const data = paginatorData();
 
   paginator('#paginator', data);
