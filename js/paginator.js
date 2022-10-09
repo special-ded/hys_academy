@@ -9,22 +9,21 @@ export default function paginator(selector, data) {
   // default active Button
   const activeButtonNumber = 1;
 
-  renderButtons(data)
+  renderButtons(data);
   initClickListener(slidesQuantity, data);
   setButtonState(slidesQuantity, data);
   updateData(slidesQuantity, activeButtonNumber, data);
-  CheckTranslateProperty()
+  сheckTranslateProperty();
 }
 
 function includesButtonClass(event) {
   const buttonClasses = [...event.target.classList];
 
-  return buttonClasses.includes(buttonClassName)
+  return buttonClasses.includes(buttonClassName);
 }
 
-
 function initClickListener(slidesQuantity, data) {
-  sliderScroll.addEventListener('click', clickHandler.bind(this, slidesQuantity, data))
+  sliderScroll.addEventListener('click', clickHandler.bind(this, slidesQuantity, data));
 }
 
 function clickHandler(slidesQuantity, data, event) {
@@ -49,14 +48,14 @@ function removeAllChildNodes(parent) {
   }
 }
 
-function CheckTranslateProperty() {
-  let translateProperty = "translateY"
-  return window.innerWidth < 769 ? translateProperty = "translateX" : translateProperty = "translateY"
+function сheckTranslateProperty() {
+  let translateProperty = "translateY";
+  return window.innerWidth < 769 ? translateProperty = "translateX" : translateProperty = "translateY";
 }
 
 function buttonScrollHandler(activeButtonNumber, data) {
-  const sliderScrollWrap = document.querySelector('.blog__slider-scroll-wrap')
-  const translateProperty = CheckTranslateProperty()
+  const sliderScrollWrap = document.querySelector('.blog__slider-scroll-wrap');
+  const translateProperty = сheckTranslateProperty();
 
   if (activeButtonNumber <= 3) {
     sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-0px)`);
@@ -79,14 +78,14 @@ function renderButtons(data) {
   sliderScroll.appendChild(sliderScrollWrap);
   activeButton.classList.add('blog__slider-btn');
   activeButton.classList.add('blog__slider-btn_active');
-  activeButton.innerText = 1
+  activeButton.innerText = 1;
   sliderScrollWrap.appendChild(activeButton);
 
   for (let i = 0; i < (data.length / 2) - 1; i++) {
     const button = document.createElement('button');
 
     button.classList.add('blog__slider-btn');
-    button.innerText = i + 2
+    button.innerText = i + 2;
     sliderScrollWrap.appendChild(button);
   }
 }
@@ -112,7 +111,7 @@ function renderNewSlides(currentData) {
   removeAllChildNodes(sliderWrapper);
 
   currentData.forEach((slideData) => {
-    renderTemplate(slideData)
+    renderTemplate(slideData);
   });
 }
 
