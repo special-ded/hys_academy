@@ -5,7 +5,7 @@ export default function initMobileMenu() {
   closeIfResize()
 
   function menuToggler() {
-    const mobileMenu = document.querySelector('#mobile__menu');
+    const mobileMenu = document.querySelector('.mobile__menu');
 
     mobileMenu.classList.toggle('mobile__menu_active');
     setTimeoutForScrollStop();
