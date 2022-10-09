@@ -1,37 +1,40 @@
 const sliderScroll = document.querySelector('.blog__slider-scroll');
-const sliderWrapper = document.querySelector('#paginator');
+let sliderWrapper = ''
 const buttonClassName = "blog__slider-btn";
 const activeButtonClassName = "blog__slider-btn blog__slider-btn_active";
 
 
-export default function paginator(sliderWrapper, DATA) {
+
+export default function paginator(selector, data) {
+  sliderWrapper = document.querySelector(selector);
   const slidesQuantity = 2;
   // default active Button
   const activeButtonNumber = 1;
 
-  renderButtons(DATA)
-  initClickListener(slidesQuantity, DATA);
-  setButtonState(slidesQuantity, DATA);
-  updateData(slidesQuantity, activeButtonNumber, DATA);
+  renderButtons(data)
+  initClickListener(slidesQuantity, data);
+  setButtonState(slidesQuantity, data);
+  updateData(slidesQuantity, activeButtonNumber, data);
+  CheckTranslateProperty()
 }
 
-function initClickListener(slidesQuantity, DATA) {
-  clickHandler(slidesQuantity, DATA);
+function initClickListener(slidesQuantity, data) {
+  clickHandler(slidesQuantity, data);
 }
 
-function clickHandler(slidesQuantity, DATA) {
+function clickHandler(slidesQuantity, data) {
   let activeButtonNumber = 0;
 
   sliderScroll.addEventListener('click', (event) => {
     event.target.className === buttonClassName || event.target.className === activeButtonClassName ?
       (activeButtonNumber = event.target.innerHTML, activeBtnToggler(event)) : null
-    updateData(slidesQuantity, activeButtonNumber, DATA);
-    buttonScrollHandler(activeButtonNumber, DATA);
+    updateData(slidesQuantity, activeButtonNumber, data);
+    buttonScrollHandler(activeButtonNumber, data);
   })
 }
 
-function updateData(slidesQuantity, activeButtonNumber, DATA) {
-  const currentData = DATA.slice(slidesQuantity * activeButtonNumber - slidesQuantity, slidesQuantity * activeButtonNumber);
+function updateData(slidesQuantity, activeButtonNumber, data) {
+  const currentData = data.slice(slidesQuantity * activeButtonNumber - slidesQuantity, slidesQuantity * activeButtonNumber);
   renderNewSlides(currentData);
 }
 
@@ -41,44 +44,44 @@ function removeAllChildNodes(parent) {
   }
 }
 
-function translateProperty() {
+function CheckTranslateProperty() {
   let translateProperty = "translateY"
-
   return window.innerWidth < 769 ? translateProperty = "translateX" : translateProperty = "translateY"
 }
 
-function buttonScrollHandler(activeButtonNumber, DATA) {
+function buttonScrollHandler(activeButtonNumber, data) {
   const sliderScrollWrap = document.querySelector('.blog__slider-scroll-wrap')
+  const translateProperty = CheckTranslateProperty()
 
   if (activeButtonNumber <= 3) {
-    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty()}(-0px)`);
+    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-0px)`);
   }
 
-  if (activeButtonNumber > 3 && activeButtonNumber <= Math.round(DATA.length / 2) - 2) {
-    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty()}(-${62 * (activeButtonNumber - 3)}px)`);
+  if (activeButtonNumber > 3 && activeButtonNumber <= Math.round(data.length / 2) - 2) {
+    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-${62 * (activeButtonNumber - 3)}px)`);
   }
 
-  if (activeButtonNumber == Math.round(DATA.length / 2) - 1) {
-    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty()}(-${62 * (activeButtonNumber - 4)}px)`);
+  if (activeButtonNumber == Math.round(data.length / 2) - 1) {
+    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-${62 * (activeButtonNumber - 4)}px)`);
   }
 }
 
-function renderButtons(DATA) {
+function renderButtons(data) {
   const sliderScrollWrap = document.createElement('div');
+  const activeButton = document.createElement('button');
+
   sliderScrollWrap.classList.add('blog__slider-scroll-wrap');
   sliderScroll.appendChild(sliderScrollWrap);
-
-  const activeButton = document.createElement('button');
   activeButton.classList.add('blog__slider-btn');
   activeButton.classList.add('blog__slider-btn_active');
   activeButton.innerText = 1
   sliderScrollWrap.appendChild(activeButton);
 
-  for (let i = 0; i < (DATA.length / 2) - 1; i++) {
+  for (let i = 0; i < (data.length / 2) - 1; i++) {
     const button = document.createElement('button');
+
     button.classList.add('blog__slider-btn');
     button.innerText = i + 2
-
     sliderScrollWrap.appendChild(button);
   }
 }
@@ -116,7 +119,7 @@ function activeBtnToggler(e) {
   }
 }
 
-function setButtonState(slidesQuantity, DATA) {
-  DATA.length / slidesQuantity <= 3 ? (sliderScroll.children[3].setAttribute("disabled", ""), sliderScroll.children[4].setAttribute("disabled", "")) : null;
-  DATA.length / slidesQuantity <= 4 ? sliderScroll.children[4].setAttribute("disabled", "") : null;
+function setButtonState(slidesQuantity, data) {
+  data.length / slidesQuantity <= 3 ? (sliderScroll.children[3].setAttribute("disabled", ""), sliderScroll.children[4].setAttribute("disabled", "")) : null;
+  data.length / slidesQuantity <= 4 ? sliderScroll.children[4].setAttribute("disabled", "") : null;
 }

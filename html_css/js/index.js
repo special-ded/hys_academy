@@ -1,10 +1,13 @@
 import preferDropDown from './drop-down-menu.js';
 import initMobileMenu from './mobile-menu.js';
-import paginator from './paginator.js'
+import paginator from '../../js/paginator.js'
 // import paginatorData from './data/paginator-data.js'
 import paginatorData from './data/paginator-data-big.js'
 
-init()
+(document.onload = () => {
+  init()
+})()
+
 
 function init() {
   addStickyHeader();
@@ -14,10 +17,10 @@ function init() {
 }
 
 function initPaginator() {
-  const sliderWrapper = document.querySelector('#paginator');
-  const DATA = paginatorData();
+  // const sliderWrapper = document.querySelector('#paginator');
+  const data = paginatorData();
 
-  paginator(sliderWrapper, DATA);
+  paginator('#paginator', data);
 }
 
 
