@@ -1,8 +1,6 @@
 const sliderScroll = document.querySelector('.blog__slider-scroll');
 let sliderWrapper = ''
 const buttonClassName = "blog__slider-btn";
-const activeButtonClassName = "blog__slider-btn blog__slider-btn_active";
-
 
 
 export default function paginator(selector, data) {
@@ -20,7 +18,6 @@ export default function paginator(selector, data) {
 
 function includesButtonClass(event) {
   const buttonClasses = [...event.target.classList];
-  console.log(buttonClasses.includes(buttonClassName));
 
   return buttonClasses.includes(buttonClassName)
 }
@@ -39,9 +36,6 @@ function clickHandler(slidesQuantity, data, event) {
       updateData(slidesQuantity, activeButtonNumber, data),
       buttonScrollHandler(activeButtonNumber, data))
     : null;
-
-  ;
-
 }
 
 function updateData(slidesQuantity, activeButtonNumber, data) {
@@ -97,23 +91,28 @@ function renderButtons(data) {
   }
 }
 
+function renderTemplate(slideData) {
+  const slide = document.createElement('div');
+
+  slide.classList.add('blog__slider-item');
+  slide.innerHTML = `
+    <div class="blog__slider-item-bg" ></div>
+    <img class="blog__slider-item-img" src =${slideData.url} alt = "Blog image" />
+    <p class="blog__item-side-text">${slideData.category}</p>
+    <div class="blog__slider-title">
+      <img class="blog__slider-user-img" src=${slideData.userImage} width="48" height="48" alt="slider img1 small" />
+      <h3 class="slider-title">${slideData.title}</h3>
+    </div>
+    <a class="blog__item_link" href=${slideData.redirectLink}>Read Now</a>`
+
+  sliderWrapper.appendChild(slide);
+}
+
 function renderNewSlides(currentData) {
   removeAllChildNodes(sliderWrapper);
 
-  currentData.forEach((element) => {
-    const slide = document.createElement('div');
-    slide.classList.add('blog__slider-item');
-    slide.innerHTML = `
-    <div class="blog__slider-item-bg" ></div>
-    <img class="blog__slider-item-img" src =${element.url} alt = "Blog image" />
-    <p class="blog__item-side-text">${element.category}</p>
-    <div class="blog__slider-title">
-      <img class="blog__slider-user-img" src=${element.userImage} width="48" height="48" alt="slider img1 small" />
-      <h3 class="slider-title">${element.title}</h3>
-    </div>
-    <a class="blog__item_link" href=${element.redirectLink}>Read Now</a>`
-
-    sliderWrapper.appendChild(slide);
+  currentData.forEach((slideData) => {
+    renderTemplate(slideData)
   });
 }
 
