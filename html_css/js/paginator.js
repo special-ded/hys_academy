@@ -41,16 +41,25 @@ function removeAllChildNodes(parent) {
   }
 }
 
+function translateProperty() {
+  let translateProperty = "translateY"
+
+  return window.innerWidth < 769 ? translateProperty = "translateX" : translateProperty = "translateY"
+}
+
 function buttonScrollHandler(activeButtonNumber, DATA) {
   const sliderScrollWrap = document.querySelector('.blog__slider-scroll-wrap')
 
-  if (activeButtonNumber > 3 && activeButtonNumber <= Math.round(DATA.length / 2) - 2) {
-    sliderScrollWrap.setAttribute("style", `transform: translateY(-${62 * (activeButtonNumber - 3)}px)`);
-  } else if (activeButtonNumber <= 3) {
-    sliderScrollWrap.setAttribute("style", `transform: translateY(-0px)`);
+  if (activeButtonNumber <= 3) {
+    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty()}(-0px)`);
   }
+
+  if (activeButtonNumber > 3 && activeButtonNumber <= Math.round(DATA.length / 2) - 2) {
+    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty()}(-${62 * (activeButtonNumber - 3)}px)`);
+  }
+
   if (activeButtonNumber == Math.round(DATA.length / 2) - 1) {
-    sliderScrollWrap.setAttribute("style", `transform: translateY(-${62 * (activeButtonNumber - 4)}px)`);
+    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty()}(-${62 * (activeButtonNumber - 4)}px)`);
   }
 }
 
