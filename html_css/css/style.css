@@ -987,6 +987,7 @@ li {
 /* PAGINATOR END */
 
 .prefer__slider {
+  max-width: 990px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -997,6 +998,7 @@ li {
 .prefer__slider-inner {
   display: flex;
   gap: 20px;
+  overflow: hidden;
 }
 
 .prefer-br {
@@ -1007,6 +1009,7 @@ li {
   width: 197.5px;
   height: 197px;
   position: relative;
+  flex-shrink: 0;
 }
 
 .bg-position {
