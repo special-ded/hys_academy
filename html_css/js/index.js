@@ -27,7 +27,7 @@ function initPaginator() {
 function initSlider() {
   const data = paginatorData();
   const slider = new Slider('#slider', data)
-  slider.runSlider()
+  slider.initSlider()
 
 }
 
