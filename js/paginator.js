@@ -50,7 +50,9 @@ function removeAllChildNodes(parent) {
 
 function сheckTranslateProperty() {
   let translateProperty = "translateY";
-  return window.innerWidth < 769 ? translateProperty = "translateX" : translateProperty = "translateY";
+  return window.innerWidth < 769
+    ? translateProperty = "translateX"
+    : translateProperty = "translateY";
 }
 
 function buttonScrollHandler(activeButtonNumber, data) {

@@ -29,7 +29,10 @@
     <header class="header container" id="header">
       <div class="header__icons">
         <svg class="burger__icon" viewBox="0 0 24 24">
-          <use href="./assets/images/sprite.svg#icon-burger"></use>
+          <use
+            class="burger__icon"
+            href="./assets/images/sprite.svg#icon-burger"
+          ></use>
         </svg>
         <svg class="main-logo-icon" width="54" height="24" viewBox="0 0 54 24">
           <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
@@ -47,7 +50,10 @@
               height="14"
               viewBox="0 0 14 14"
             >
-              <use href="./assets/images/sprite.svg#icon-burger-cross"></use>
+              <use
+                class="burger__icon-cross"
+                href="./assets/images/sprite.svg#icon-burger-cross"
+              ></use>
             </svg>
           </div>
           <ul class="burger__menu">
@@ -83,7 +89,12 @@
             <a class="header__elem-link" href="#degree">Degrees</a>
           </li>
         </ul>
-        <button class="header__nav-button blue-btn btn">Explore</button>
+        <button
+          class="header__nav-button blue-btn btn"
+          onclick="location.href='#explore'"
+        >
+          Explore
+        </button>
       </nav>
     </header>
     <main>

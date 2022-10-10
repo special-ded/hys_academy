@@ -1,8 +1,25 @@
 export default function initMobileMenu() {
   let menuOpen = false;
 
-  initEventListeners();
+
+  initEventListener();
   closeIfResize()
+
+
+  function initEventListener() {
+    const header = document.querySelector('#header');
+
+    header.addEventListener('click', clickHandler)
+  }
+
+  function clickHandler(e) {
+
+    if (e.target.className === "menu__elem-item" ||
+      e.target.className.animVal === "burger__icon-cross" ||
+      e.target.className.animVal === "burger__icon") {
+      menuToggler()
+    }
+  }
 
   function menuToggler() {
     const mobileMenu = document.querySelector('.mobile__menu');
@@ -16,30 +33,6 @@ export default function initMobileMenu() {
       document.querySelector('body').classList.toggle('stop-scroll');
     }, 300);
     menuOpen = !menuOpen;
-  }
-
-  function initEventListeners() {
-    const burgerMenu = document.querySelector('.mobile__menu');
-
-    burgerMenu.addEventListener('click', clickHandler)
-
-
-    const burgerIcon = document.querySelector('.burger__icon');
-    // const crossIcon = document.querySelector('.burger__icon-cross');
-    // const menuItem = document.querySelectorAll('.menu__elem-item');
-
-    burgerIcon.addEventListener('click', () => menuToggler());
-    // crossIcon.addEventListener('click', () => menuToggler());
-    // menuItem.forEach(elem => elem.addEventListener('click', () => menuToggler()));
-  }
-
-  function clickHandler(e) {
-    console.log(e.target.className)
-    console.log(e.target.className.value)
-    if (e.target.className === "menu__elem-item" ||
-      e.target.className.value === "burger__icon-cross") {
-      menuToggler()
-    }
   }
 
   function closeIfResize() {
