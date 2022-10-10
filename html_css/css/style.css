@@ -994,6 +994,11 @@ li {
   margin-top: 51px;
 }
 
+.prefer__slider-inner {
+  display: flex;
+  gap: 20px;
+}
+
 .prefer-br {
   display: none;
 }
