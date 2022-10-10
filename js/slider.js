@@ -5,10 +5,8 @@ export default class Slider {
     this.data = data;
   }
 
-  slider = document.querySelector('#slider');
-  sliderInner = document.createElement('div');
-
   initSlider() {
+    this.slider = document.querySelector(this.selector);
     this.processDataforSlides(this.data)
   }
 
@@ -24,7 +22,7 @@ export default class Slider {
 
 
   processDataforSlides(data) {
-
+    this.sliderInner = document.createElement('div');
     this.renderLeftArrow('left')
     this.sliderInner.classList.add('prefer__slider-inner')
     this.slider.appendChild(this.sliderInner)
