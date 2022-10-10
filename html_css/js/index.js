@@ -3,6 +3,7 @@ import initMobileMenu from './mobile-menu.js';
 import paginator from '../../js/paginator.js'
 // import paginatorData from './data/paginator-data.js'
 import paginatorData from './data/paginator-data-big.js'
+import Slider from '../../js/slider.js';
 
 (document.onload = () => {
   init()
@@ -14,12 +15,20 @@ function init() {
   initPaginator();
   initMobileMenu();
   preferDropDown();
+  initSlider()
 }
 
 function initPaginator() {
   const data = paginatorData();
 
   paginator('#paginator', data);
+}
+
+function initSlider() {
+  const data = paginatorData();
+  const slider = new Slider('#slider', data)
+  slider.runSlider()
+
 }
 
 
