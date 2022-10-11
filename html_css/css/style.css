@@ -995,10 +995,15 @@ li {
   margin-top: 51px;
 }
 
-.prefer__slider-inner {
+.prefer__slides-wrapper {
+  overflow: hidden;
+
+}
+
+.prefer__slides-inner {
   display: flex;
   gap: 20px;
-  overflow: hidden;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .prefer-br {

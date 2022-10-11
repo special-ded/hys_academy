@@ -8,6 +8,8 @@ export default class Slider {
   initSlider() {
     this.slider = document.querySelector(this.selector);
     this.processDataforSlides(this.data)
+    this.initIventListener()
+    this.multiplier = 0
   }
 
   renderLeftArrow(side) {
@@ -15,16 +17,47 @@ export default class Slider {
     this.arrow.classList.add('slider__arrow-btn')
 
     this.arrow.innerHTML = `<svg class="slider__arrow arrow-${side}" viewBox="0 0 33 32" width="40">
-    <use href="./assets/images/sprite.svg#icon-slide-${side}"></use>
+    <use class="arrow-${side}" href="./assets/images/sprite.svg#icon-slide-${side}"></use>
     </svg>`
     this.slider.appendChild(this.arrow);
   }
 
+  initIventListener() {
+    this.slider.addEventListener('click', (event) => {
+
+      this.includesButtonClass(event) ? this.clickHandler(event) : null
+    })
+  }
+
+  includesButtonClass(event) {
+    this.buttonClassName = ['arrow-left', 'arrow-right']
+    this.buttonClassName = event.target.className.baseVal;
+
+    return this.buttonClassName.includes(this.buttonClassName);
+  }
+
+
+  clickHandler(event) {
+
+    if (event.target.className.baseVal === 'arrow-right') {
+      this.multiplier = this.multiplier + 1
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`)
+    } else {
+      this.multiplier -= 1
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`)
+    }
+  }
+
+
   processDataforSlides(data) {
-    this.sliderInner = document.createElement('div');
+    this.slidesInner = document.createElement('div');
+    this.slidesWrapper = document.createElement('div');
     this.renderLeftArrow('left')
-    this.sliderInner.classList.add('prefer__slider-inner')
-    this.slider.appendChild(this.sliderInner)
+    this.slidesWrapper.classList.add('prefer__slides-wrapper')
+    this.slider.appendChild(this.slidesWrapper)
+
+    this.slidesInner.classList.add('prefer__slides-inner')
+    this.slidesWrapper.appendChild(this.slidesInner)
 
     data.forEach((slideData) => {
       this.renderTemplate(slideData);
@@ -41,7 +74,7 @@ export default class Slider {
     <div class="bg-position "></div>
     <p class="prefer__slider-text">${slideData.title.slice(0, 10)}</p>`
 
-    this.sliderInner.appendChild(this.slide);
+    this.slidesInner.appendChild(this.slide);
   }
 }
 
