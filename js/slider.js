@@ -20,7 +20,6 @@ export default class Slider {
     this.slider.appendChild(this.arrow);
   }
 
-
   processDataforSlides(data) {
     this.sliderInner = document.createElement('div');
     this.renderLeftArrow('left')

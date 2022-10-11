@@ -107,6 +107,14 @@ function renderTemplate(slideData) {
     <a class="blog__item_link" href=${slideData.redirectLink}>Read Now</a>`
 
   sliderWrapper.appendChild(slide);
+  smoothRendering(slide)
+}
+
+function smoothRendering(slide) {
+  slide.classList.add('opacity')
+  setTimeout(() => {
+    slide.classList.remove('opacity')
+  }, 200)
 }
 
 function renderNewSlides(currentData) {
