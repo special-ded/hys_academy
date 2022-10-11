@@ -1297,19 +1297,8 @@ li {
 }
 
 .opacity {
-  /* opacity: 0.4;
-  transition: opacity .1s ease-out; */
   opacity: 0%;
 }
-
-/* 
-.blog__cards {
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
-  opacity: 100%;
-  transition: opacity 100ms ease-in;
-} */
 
 .display-none {
   display: none;
