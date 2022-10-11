@@ -1284,6 +1284,12 @@ li {
   position: relative;
   width: 415px;
   height: 288px;
+  opacity: 100%;
+  transition: opacity 100ms ease-in;
+}
+
+.opacity {
+  opacity: 0%;
 }
 
 .display-none {
