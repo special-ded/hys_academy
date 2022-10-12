@@ -477,10 +477,22 @@ li {
 .courses__slider {
   margin: 55px auto 0px auto;
   width: 972px;
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 20px;
+}
+
+/* SLICK SLIDER */
+/* slider__slides slick-initialized slick-slider */
+div .slick-slider {
+  position: static;
+  width: 889px;
+}
+
+.slick-slide {
+  width: 200px;
 }
 
 /* Стрелка */
@@ -500,16 +512,25 @@ li {
 /* Стрелка влево */
 .slick-arrow.slick-prev {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 183px;
+  left: -25px;
   background: url('../assets/images/111.svg') center/21% no-repeat;
 
 }
 
 /* Стрелка вправо */
 .slick-arrow.slick-next {
+  position: absolute;
+  top: 183px;
+  right: -19px;
   z-index: 20;
-  background: url('../assets/images/111.svg') center/21% no-repeat;
+  background: url('../assets/images/222.svg') center/21% no-repeat;
+}
+
+div .slick-slide,
+.slick-current,
+.slick-active {
+  width: 200px;
 }
 
 /* Стрелка не активная */
