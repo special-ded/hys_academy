@@ -483,6 +483,38 @@ li {
   gap: 20px;
 }
 
+/* Стрелка */
+.slick-arrow {
+  display: inline-flex;
+  align-items: center;
+  border: 0px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0px 4px 16px var(--arrow-box-shadow);
+  border-radius: 20px;
+  font-size: 0;
+}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../assets/images/111.svg') center/21% no-repeat;
+
+}
+
+/* Стрелка вправо */
+.slick-arrow.slick-next {
+  z-index: 20;
+  background: url('../assets/images/111.svg') center/21% no-repeat;
+}
+
+/* Стрелка не активная */
+.slick-arrow.slick-disabled {}
+
 .slider__arrow-btn {
   border-radius: 50%;
   display: inline-flex;
