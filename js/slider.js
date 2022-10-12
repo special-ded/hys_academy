@@ -24,30 +24,33 @@ export default class Slider {
 
   initIventListener() {
     this.slider.addEventListener('click', (event) => {
-
       this.includesButtonClass(event) ? this.clickHandler(event) : null
     })
   }
 
   includesButtonClass(event) {
-    this.buttonClassName = ['arrow-left', 'arrow-right']
+    this.buttonClasses = ['arrow-left', 'arrow-right']
     this.buttonClassName = event.target.className.baseVal;
 
-    return this.buttonClassName.includes(this.buttonClassName);
+    return this.buttonClasses.includes(this.buttonClassName);
   }
 
-
   clickHandler(event) {
+    this.maxMultiplier = this.data.length - 5
+
+    if (this.multiplier >= this.maxMultiplier) {
+      this.arrow.disabled = true;
+    }
 
     if (event.target.className.baseVal === 'arrow-right') {
-      this.multiplier = this.multiplier + 1
+      this.multiplier += 1
       this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`)
     } else {
-      this.multiplier -= 1
+      this.arrow.removeAttribute('disabled');
+      this.multiplier > 0 ? this.multiplier -= 1 : null;
       this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`)
     }
   }
-
 
   processDataforSlides(data) {
     this.slidesInner = document.createElement('div');
@@ -55,7 +58,6 @@ export default class Slider {
     this.renderLeftArrow('left')
     this.slidesWrapper.classList.add('prefer__slides-wrapper')
     this.slider.appendChild(this.slidesWrapper)
-
     this.slidesInner.classList.add('prefer__slides-inner')
     this.slidesWrapper.appendChild(this.slidesInner)
 
