@@ -5,7 +5,7 @@ $(document).ready(function () {
     autoplay: false,
     responsive: [
       {
-        breakpoint: 980,
+        breakpoint: 1050,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -13,22 +13,12 @@ $(document).ready(function () {
         }
       },
       {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
+        breakpoint: 770,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ]
   });
 });
