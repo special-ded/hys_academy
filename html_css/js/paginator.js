@@ -9,9 +9,11 @@ export default function paginator(selector, data) {
   // default active Button
   const activeButtonNumber = 1;
 
-  renderButtons(data);
+  if (data.length > 2) {
+    renderButtons(data);
+  }
+
   initClickListener(slidesQuantity, data);
-  setButtonState(slidesQuantity, data);
   updateData(slidesQuantity, activeButtonNumber, data);
   checkTranslateProperty();
 }
@@ -30,10 +32,10 @@ function clickHandler(slidesQuantity, data, event) {
   let activeButtonNumber = 0;
 
   if (includesButtonClass(event)) {
-    (activeButtonNumber = event.target.innerHTML,
+    activeButtonNumber = event.target.innerHTML,
       activeBtnToggler(event),
       updateData(slidesQuantity, activeButtonNumber, data),
-      buttonScrollHandler(activeButtonNumber, data))
+      buttonScrollHandler(activeButtonNumber, data)
   }
 }
 
@@ -140,10 +142,4 @@ function activeBtnToggler(e) {
     activeBtn.classList.remove('blog__slider-btn_active');
     e.target.classList.add('blog__slider-btn_active');
   }
-}
-
-function setButtonState(slidesQuantity, data) {
-  // if (slidesQuantity <= 2) {
-  //   buttonClassName.setAttribute("style", "opacity: 0;");
-  // }
 }

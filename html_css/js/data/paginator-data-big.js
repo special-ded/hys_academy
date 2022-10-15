@@ -14,5 +14,22 @@ export default function paginatorData() {
     "userImage": "https://via.placeholder.com/150/771796",
     "redirectLink": "https://jsonplaceholder.typicode.com",
     "category": "Design"
-  }]
+  },
+  {
+    "id": 3,
+    "title": "officia porro iure quia iusto qui ipsa ut modi",
+    "url": "https://via.placeholder.com/600/24f355",
+    "userImage": "https://via.placeholder.com/150/24f355",
+    "redirectLink": "https://jsonplaceholder.typicode.com",
+    "category": "Design"
+  },
+  {
+    "id": 4,
+    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "url": "https://via.placeholder.com/600/d32776",
+    "userImage": "https://via.placeholder.com/150/d32776",
+    "redirectLink": "https://jsonplaceholder.typicode.com",
+    "category": "Design"
+  },
+  ]
 }
