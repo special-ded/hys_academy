@@ -6,7 +6,6 @@ const buttonClassName = "blog__slider-btn";
 export default function paginator(selector, data) {
   sliderWrapper = document.querySelector(selector);
   const slidesQuantity = 2;
-  // default active Button
   const activeButtonNumber = 1;
 
   if (data.length > 2) {
@@ -18,7 +17,7 @@ export default function paginator(selector, data) {
   checkTranslateProperty();
 }
 
-function includesButtonClass(event) {
+function isButtonClass(event) {
   const buttonClasses = [...event.target.classList];
 
   return buttonClasses.includes(buttonClassName);
@@ -31,7 +30,7 @@ function initClickListener(slidesQuantity, data) {
 function clickHandler(slidesQuantity, data, event) {
   let activeButtonNumber = 0;
 
-  if (includesButtonClass(event)) {
+  if (isButtonClass(event)) {
     activeButtonNumber = event.target.innerHTML,
       activeBtnToggler(event),
       updateData(slidesQuantity, activeButtonNumber, data),
@@ -137,7 +136,7 @@ function renderNewSlides(currentData) {
 function activeBtnToggler(e) {
   let activeBtn = sliderScroll.querySelector('.blog__slider-btn_active');
 
-  if (includesButtonClass(e)) {
+  if (isButtonClass(e)) {
     activeBtn = sliderScroll.querySelector('.blog__slider-btn_active');
     activeBtn.classList.remove('blog__slider-btn_active');
     e.target.classList.add('blog__slider-btn_active');
