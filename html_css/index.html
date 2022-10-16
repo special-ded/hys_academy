@@ -11,8 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/mobile-menu.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
     <title>Draganov Ivan</title>
   </head>
   <body>
@@ -29,8 +28,11 @@
     </div>
     <header class="header container" id="header">
       <div class="header__icons">
-        <svg class="burger__icon" id="burger__icon" viewBox="0 0 24 24">
-          <use href="./assets/images/sprite.svg#icon-burger"></use>
+        <svg class="burger__icon" viewBox="0 0 24 24">
+          <use
+            class="burger__icon"
+            href="./assets/images/sprite.svg#icon-burger"
+          ></use>
         </svg>
         <svg class="main-logo-icon" width="54" height="24" viewBox="0 0 54 24">
           <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
@@ -39,25 +41,33 @@
 
       <!-- MOBILE MENU -->
 
-      <nav class="mobile__menu" id="mobile__menu">
+      <nav class="mobile__menu">
         <div class="mobile__menu-container">
           <div class="burger__icons-container">
-            <svg class="burger__icon-cross" width="14" height="14" viewBox="0 0 14 14">
-              <use href="./assets/images/sprite.svg#icon-burger-cross"></use>
+            <svg
+              class="burger__icon-cross"
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+            >
+              <use
+                class="burger__icon-cross"
+                href="./assets/images/sprite.svg#icon-burger-cross"
+              ></use>
             </svg>
           </div>
           <ul class="burger__menu">
-            <li class="burger__elem burger-line">
-              <a class="burger__elem-item" href="#categories">Categories</a>
+            <li class="menu__elem burger-line">
+              <a class="menu__elem-item" href="#categories">Categories</a>
             </li>
-            <li class="burger__elem burger-line">
-              <a class="burger__elem-item" href="#course">Course</a>
+            <li class="menu__elem burger-line">
+              <a class="menu__elem-item" href="#course">Course</a>
             </li>
-            <li class="burger__elem burger-line">
-              <a class="burger__elem-item" href="#explore">Explore</a>
+            <li class="menu__elem burger-line">
+              <a class="menu__elem-item" href="#explore">Explore</a>
             </li>
-            <li class="burger__elem">
-              <a class="burger__elem-item" href="#degree">Degrees</a>
+            <li class="menu__elem">
+              <a class="menu__elem-item" href="#degree">Degrees</a>
             </li>
           </ul>
         </div>
@@ -66,12 +76,25 @@
 
       <nav class="header__nav">
         <ul class="header__list">
-          <li class="header__elem"><a class="header__elem-link" href="#categories">Categories</a></li>
-          <li class="header__elem"><a class="header__elem-link" href="#course">Course</a></li>
-          <li class="header__elem"><a class="header__elem-link" href="#explore">Explore</a></li>
-          <li class="header__elem"><a class="header__elem-link" href="#degree">Degrees</a></li>
+          <li class="header__elem">
+            <a class="header__elem-link" href="#categories">Categories</a>
+          </li>
+          <li class="header__elem">
+            <a class="header__elem-link" href="#course">Course</a>
+          </li>
+          <li class="header__elem">
+            <a class="header__elem-link" href="#explore">Explore</a>
+          </li>
+          <li class="header__elem">
+            <a class="header__elem-link" href="#degree">Degrees</a>
+          </li>
         </ul>
-        <button class="header__nav-button blue-btn btn">Explore</button>
+        <button
+          class="header__nav-button blue-btn btn"
+          onclick="location.href='#explore'"
+        >
+          Explore
+        </button>
       </nav>
     </header>
     <main>
@@ -91,7 +114,9 @@
             </p>
             <div class="top-section__buttons">
               <button class="blue-btn btn">Read More</button>
-              <a class="get-started-btn btn green-btn" href="#registration">Get started</a>
+              <a class="get-started-btn btn green-btn" href="#registration"
+                >Get started</a
+              >
             </div>
           </article>
           <svg class="coding-girl-img" viewBox="0 0 32 32">
@@ -100,22 +125,48 @@
         </div>
         <ul class="top-section__links">
           <li class="top-section__link">
-            <a href="#"><img class="link-img" src="./assets/images/youfone-logo.png" alt="Youfone" width="155" /></a>
-          </li>
-          <li class="top-section__link">
-            <a href="#"><img class="link-img" src="./assets/images/nice-logo.png" alt="Nice" width="97" /></a>
-          </li>
-          <li class="top-section__link">
-            <a href="#">
-              <img class="link-img" src="./assets/images/swishfund-logo.png" alt="Swishfund" width="135"
+            <a href="#"
+              ><img
+                class="link-img"
+                src="./assets/images/youfone-logo.png"
+                alt="Youfone"
+                width="155"
             /></a>
           </li>
           <li class="top-section__link">
-            <a href="#"><img class="link-img" src="./assets/images/brico-logo.png" alt="Brico" width="91" /></a>
+            <a href="#"
+              ><img
+                class="link-img"
+                src="./assets/images/nice-logo.png"
+                alt="Nice"
+                width="97"
+            /></a>
+          </li>
+          <li class="top-section__link">
+            <a href="#">
+              <img
+                class="link-img"
+                src="./assets/images/swishfund-logo.png"
+                alt="Swishfund"
+                width="135"
+            /></a>
           </li>
           <li class="top-section__link">
             <a href="#"
-              ><img class="link-img praxis" src="./assets/images/praxis-logo.png" alt="Praxis" width="101"
+              ><img
+                class="link-img"
+                src="./assets/images/brico-logo.png"
+                alt="Brico"
+                width="91"
+            /></a>
+          </li>
+          <li class="top-section__link">
+            <a href="#"
+              ><img
+                class="link-img praxis"
+                src="./assets/images/praxis-logo.png"
+                alt="Praxis"
+                width="101"
             /></a>
           </li>
         </ul>
@@ -193,9 +244,17 @@
           </button>
           <div class="slider__slides">
             <article class="slider__item">
-              <img class="slider__item-img" src="./assets/images/slider-img1.png" alt="Slide 1" />
+              <img
+                class="slider__item-img"
+                src="./assets/images/slider-img1.png"
+                alt="Slide 1"
+              />
               <div class="slider__img-inner">
-                <img class="slider__img_small" src="./assets/images/slider-img1-small.png" alt="Slide 1 small" />
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img1-small.png"
+                  alt="Slide 1 small"
+                />
                 <h3 class="slider__img-title">DESIGN</h3>
                 <p class="slider__sub-title">Learn Photoshop title</p>
                 <hr />
@@ -236,9 +295,18 @@
               </div>
             </article>
             <article class="slider__item">
-              <img class="slider__item-img" src="./assets/images/slider-img2.png" alt="Slide 2" width="270" />
+              <img
+                class="slider__item-img"
+                src="./assets/images/slider-img2.png"
+                alt="Slide 2"
+                width="270"
+              />
               <div class="slider__img-inner">
-                <img class="slider__img_small" src="./assets/images/slider-img2-small.png" alt="Slide 2 small" />
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img2-small.png"
+                  alt="Slide 2 small"
+                />
                 <h3 class="slider__img-title">Marketing</h3>
                 <p class="slider__sub-title">Learn Photoshop title trun...</p>
                 <hr />
@@ -279,9 +347,18 @@
               </div>
             </article>
             <article class="slider__item">
-              <img class="slider__item-img" src="./assets/images/slider-img3.png" alt="Slide 3" width="270" />
+              <img
+                class="slider__item-img"
+                src="./assets/images/slider-img3.png"
+                alt="Slide 3"
+                width="270"
+              />
               <div class="slider__img-inner">
-                <img class="slider__img_small" src="./assets/images/slider-img3-small.png" alt="Slide 3 small" />
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img3-small.png"
+                  alt="Slide 3 small"
+                />
                 <h3 class="slider__img-title">Web design</h3>
                 <p class="slider__sub-title">Learn Photoshop</p>
                 <hr />
@@ -324,7 +401,7 @@
           </div>
           <button class="slider__arrow-btn">
             <svg class="slider__arrow" viewBox="0 0 33 32" width="550">
-              <use href="/assets/images/sprite.svg#icon-slide-right"></use>
+              <use href="./assets/images/sprite.svg#icon-slide-right"></use>
             </svg>
           </button>
         </div>
@@ -337,11 +414,18 @@
       <section class="description">
         <div class="description_bg"></div>
         <div class="description__left">
-          <img class="description__left-img" src="./assets/images/two-women-img.png" alt="Two women" />
+          <img
+            class="description__left-img"
+            src="./assets/images/two-women-img.png"
+            alt="Two women"
+          />
           <div>
             <button class="slider__arrow-btn">
               <svg class="description__play">
-                <use class="description__play-btn" href="./assets/images/sprite.svg#icon-play-btn"></use>
+                <use
+                  class="description__play-btn"
+                  href="./assets/images/sprite.svg#icon-play-btn"
+                ></use>
               </svg>
             </button>
           </div>
@@ -487,9 +571,15 @@
             <p>59<span>Min</span></p>
           </div>
           <div class="events__aside-img">
-            <img src="./assets/images/featured.svg" width="328" alt="Featured" />
+            <img
+              src="./assets/images/featured.svg"
+              width="328"
+              alt="Featured"
+            />
             <div class="events__aside-inner">
-              <h3 class="events__aside-subtitle">International Conference...</h3>
+              <h3 class="events__aside-subtitle">
+                International Conference...
+              </h3>
               <div class="events__aside-details">
                 <div>
                   <svg width="20" height="20">
@@ -524,9 +614,36 @@
           you prefer?
         </h2>
         <p class="prefer__text">
-          Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi<br />
+          Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+          veritatis et quasi<br />
           architecto beatae vitae dicta sunt explicabo.
         </p>
+
+        <!-- PAGINATOR -->
+        <div class="select">
+          <div class="input__wrap">
+            <input class="input__value" value="Label" />
+            <div class="input__icon">
+              <svg class="paginator__icon" width="20" height="20">
+                <use
+                  class="paginator__icon-use"
+                  href="./assets/images/sprite.svg#icon-arrow-default"
+                ></use>
+              </svg>
+            </div>
+          </div>
+          <ul class="select__body">
+            <li class="select__item">Item 1</li>
+            <li class="select__item">Item 2</li>
+            <li class="select__item">Item 3</li>
+            <li class="select__item">Item 4</li>
+            <li class="select__item">Item 5</li>
+            <li class="select__item">Item 6</li>
+          </ul>
+        </div>
+
+        <!-- PAGINATOR END-->
+
         <div class="prefer__slider">
           <button class="slider__arrow-btn">
             <svg class="slider__arrow" viewBox="0 0 33 32" width="40">
@@ -534,22 +651,39 @@
             </svg>
           </button>
           <div class="prefer__slider-slide prefer-slide-1">
-            <img src="./assets/images/prefer1.png" alt="Graphic Design" width="198" />
+            <img
+              src="./assets/images/prefer1.png"
+              alt="Graphic Design"
+              width="198"
+            />
             <div class="bg-position slide-1-bg"></div>
             <p class="prefer__slider-text">Graphic Design</p>
           </div>
           <div class="prefer__slider-slide prefer-slide-2">
-            <img src="./assets/images/prefer2.png" width="198" alt="prefer pic" />
+            <img
+              src="./assets/images/prefer2.png"
+              width="198"
+              alt="prefer pic"
+            />
             <div class="bg-position slide-2-bg"></div>
             <p class="prefer__slider-text">Web Design</p>
           </div>
           <div class="prefer__slider-slide prefer-slide-3">
-            <img src="./assets/images/prefer3.png" width="198" alt="prefer pic" />
+            <img
+              src="./assets/images/prefer3.png"
+              width="198"
+              alt="prefer pic"
+            />
             <div class="bg-position slide-3-bg"></div>
             <p class="prefer__slider-text">Marketing</p>
           </div>
           <div class="prefer__slider-slide prefer-slide-4">
-            <img src="./assets/images/prefer4.png" width="198" height="198" alt="prefer pic" />
+            <img
+              src="./assets/images/prefer4.png"
+              width="198"
+              height="198"
+              alt="prefer pic"
+            />
             <div class="bg-position slide-4-bg"></div>
             <p class="prefer__slider-text">Education</p>
           </div>
@@ -586,8 +720,14 @@
               Our great <br class="brake-text-375" />
               customers
             </h2>
-            <svg class="customers__feedback-icon" viewBox="0 0 40 32" width="39">
-              <use href="./assets/images/sprite.svg#icon-customers-quotes"></use>
+            <svg
+              class="customers__feedback-icon"
+              viewBox="0 0 40 32"
+              width="39"
+            >
+              <use
+                href="./assets/images/sprite.svg#icon-customers-quotes"
+              ></use>
             </svg>
             <p class="customers__text-first">
               Sed ut perspiciatis unde omnis iste natus error sit<br />
@@ -628,7 +768,9 @@
               sunt explicabo.
             </p>
             <div class="ready__buttons">
-              <a class="ready__apply-btn green-btn btn" href="#registration">Apply Now</a>
+              <a class="ready__apply-btn green-btn btn" href="#registration"
+                >Apply Now</a
+              >
               <button class="ready__request-btn btn">Request Service</button>
             </div>
           </article>
@@ -672,41 +814,8 @@
       <section class="blog container">
         <h2 class="blue-line">Latest Blog</h2>
         <div class="blog__slider">
-          <div class="blog__slider-wrapper">
-            <div class="blog__slider-item">
-              <div class="blog__slider-item-bg"></div>
-              <img class="blog__slider-item-img" src="./assets/images/blog-img1.png" alt="Blog image" />
-              <p class="blog__item-side-text">DESIGN</p>
-              <div class="blog__slider-title">
-                <img src="./assets/images/slider-img1-small.png" width="48" height="48" alt="slider img1 small" />
-                <h3>
-                  International Conference <br />
-                  on Bussiness
-                </h3>
-              </div>
-              <a class="blog__item_link" href="#events">Read Now</a>
-            </div>
-            <div class="blog__slider-item">
-              <div class="blog__slider-item-bg"></div>
-              <img class="blog__slider-item-img" src="./assets/images/blog-img2.png" alt="Blog image" />
-              <p class="blog__item-side-text">DESIGN</p>
-              <div class="blog__slider-title">
-                <img src="./assets/images/slider-img2-small.png" width="48" alt="slider img2 small" />
-                <h3>
-                  International Conference <br />
-                  on Bussiness
-                </h3>
-              </div>
-              <a class="blog__item_link" href="#events">Read Now</a>
-            </div>
-          </div>
-          <div class="blog__slider-scroll">
-            <button class="blog__slider-btn">1</button>
-            <button class="blog__slider-btn">2</button>
-            <button class="blog__slider-btn blog__slider-btn_active">3</button>
-            <button class="blog__slider-btn">4</button>
-            <button class="blog__slider-btn">5</button>
-          </div>
+          <div class="blog__slider-wrapper" id="paginator"></div>
+          <div class="blog__slider-scroll"></div>
         </div>
       </section>
     </main>
@@ -726,42 +835,83 @@
       <section class="registration-container container">
         <form action="/action.php">
           <label for="username"></label>
-          <input class="form__input" id="username" type="text" placeholder="Name Surname" required />
+          <input
+            class="form__input"
+            id="username"
+            type="text"
+            placeholder="Name Surname"
+            required
+          />
           <label for="telephone"></label>
-          <input class="form__input" id="telephone" type="tel" placeholder="Phone" required />
+          <input
+            class="form__input"
+            id="telephone"
+            type="tel"
+            placeholder="Phone"
+            required
+          />
           <label for="email"></label>
-          <input class="form__input" id="email" type="email" placeholder="Enter your email..." required />
+          <input
+            class="form__input"
+            id="email"
+            type="email"
+            placeholder="Enter your email..."
+            required
+          />
           <button class="send-btn btn" type="submit">Send</button>
         </form>
       </section>
       <section class="footer__top container">
         <div>
-          <svg class="main-logo-icon" width="54" height="24" viewBox="0 0 54 24">
-            <use href="/assets/images/sprite.svg#icon-union-main-logo"></use>
+          <svg
+            class="main-logo-icon"
+            width="54"
+            height="24"
+            viewBox="0 0 54 24"
+          >
+            <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
           </svg>
         </div>
         <div class="footer__links-list">
           <h3 class="footer__links-title">Company</h3>
           <ul class="footer__links">
-            <li class="footer__link-text"><a class="footer__link" href="#">About Company</a></li>
-            <li class="footer__link-text"><a class="footer__link" href="#">Feature Course</a></li>
-            <li class="footer__link-text"><a class="footer__link" href="#">Careers</a></li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">About Company</a>
+            </li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">Feature Course</a>
+            </li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">Careers</a>
+            </li>
           </ul>
         </div>
         <div class="footer__links-list">
           <h3 class="footer__links-title">Help Links</h3>
           <ul class="footer__links">
-            <li class="footer__link-text"><a class="footer__link" href="#">Student Support</a></li>
-            <li class="footer__link-text"><a class="footer__link" href="#">Course Policy</a></li>
-            <li class="footer__link-text"><a class="footer__link" href="#">Register Key</a></li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">Student Support</a>
+            </li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">Course Policy</a>
+            </li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">Register Key</a>
+            </li>
           </ul>
         </div>
         <div class="footer__links-list">
           <h3 class="footer__links-title">Course</h3>
           <ul class="footer__links">
-            <li class="footer__link-text"><a class="footer__link" href="#">Wordpres</a></li>
-            <li class="footer__link-text"><a class="footer__link" href="#">Photography</a></li>
-            <li class="footer__link-text"><a class="footer__link" href="#">Learning English</a></li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">Wordpres</a>
+            </li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">Photography</a>
+            </li>
+            <li class="footer__link-text">
+              <a class="footer__link" href="#">Learning English</a>
+            </li>
           </ul>
         </div>
         <div class="footer__links-list">
@@ -770,28 +920,28 @@
             <li class="footer__link-text">
               <a href="#">
                 <svg class="social-media" viewBox="0 0 32 32" width="24">
-                  <use href="/assets/images/sprite.svg#icon-facebook"></use>
+                  <use href="./assets/images/sprite.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li class="footer__link-text">
               <a href="#">
                 <svg class="social-media" viewBox="0 0 32 32" width="24">
-                  <use href="/assets/images/sprite.svg#icon-instagram"></use>
+                  <use href="./assets/images/sprite.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
             <li class="footer__link-text">
               <a href="#">
                 <svg class="social-media" viewBox="0 0 32 32" width="24">
-                  <use href="/assets/images/sprite.svg#icon-twitter"></use>
+                  <use href="./assets/images/sprite.svg#icon-twitter"></use>
                 </svg>
               </a>
             </li>
             <li class="footer__link-text">
               <a href="#">
                 <svg class="social-media" viewBox="0 0 32 32" width="24">
-                  <use href="/assets/images/sprite.svg#icon-youtube"></use>
+                  <use href="./assets/images/sprite.svg#icon-youtube"></use>
                 </svg>
               </a>
             </li>

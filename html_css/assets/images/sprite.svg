@@ -4846,5 +4846,16 @@
       <path d="M9.75 15.02L15.5 11.75L9.75 8.47998V15.02Z" 
       stroke="var(--hover-color,#000)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+
+    <symbol id="icon-arrow-default"  width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.234315 0.234315C0.546734 -0.0781049 1.05327 -0.0781049 1.36569 0.234315L5.8 4.66863L10.2343 0.234315C10.5467 -0.0781049 11.0533 -0.0781049 11.3657 0.234315C11.6781 0.546734 11.6781 1.05327 11.3657 1.36569L6.4364 6.29497C6.08493 6.64644 5.51508 6.64645 5.1636 6.29497L0.234315 1.36569C-0.0781049 1.05327 -0.0781049 0.546734 0.234315 0.234315Z" 
+      fill="black"/>
+    </symbol>
+
+  <symbol id="icon-arrow-active" width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 12">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.324 11.366a.8.8 0 0 0 0-1.132L1.89 5.8l4.434-4.434A.8.8 0 1 0 5.193.234l-4.93 4.93a.9.9 0 0 0 0 1.272l4.93 4.93a.8.8 0 0 0 1.131 0Z" fill="#1B63F0"></path>
+  </symbol>
+
+
   </defs>
 </svg>
