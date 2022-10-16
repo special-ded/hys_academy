@@ -100,13 +100,13 @@ function renderTemplate(slideData) {
 
   slide.classList.add('blog__slider-item');
 
-  slide.innerHTML = returnTemplate(slideData);
+  slide.innerHTML = getSlideTemplate(slideData);
 
   sliderWrapper.appendChild(slide);
   smoothRendering(slide);
 }
 
-function returnTemplate(slideData) {
+function getSlideTemplate(slideData) {
   return `
     <div class="blog__slider-item-bg" ></div>
     <img class="blog__slider-item-img" src =${slideData.url} alt = "Blog image" />
