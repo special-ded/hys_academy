@@ -1,5 +1,5 @@
 const sliderScroll = document.querySelector('.blog__slider-scroll');
-let sliderWrapper = ''
+let sliderWrapper = '';
 const buttonClassName = "blog__slider-btn";
 
 
@@ -121,7 +121,7 @@ function renderSlideData(slideData, slide) {
 function smoothRendering(slide) {
   slide.classList.add('opacity');
   setTimeout(() => {
-    slide.classList.remove('opacity')
+    slide.classList.remove('opacity');
   }, 200)
 }
 
