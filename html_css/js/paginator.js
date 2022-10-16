@@ -31,10 +31,10 @@ function clickHandler(slidesQuantity, data, event) {
   let activeButtonNumber = 0;
 
   if (isButtonClass(event)) {
-    activeButtonNumber = event.target.innerHTML,
-      activeBtnToggler(event),
-      updateData(slidesQuantity, activeButtonNumber, data),
-      buttonScrollHandler(activeButtonNumber, data)
+    activeButtonNumber = event.target.innerHTML;
+    activeBtnToggler(event);
+    updateData(slidesQuantity, activeButtonNumber, data);
+    buttonScrollHandler(activeButtonNumber, data);
   }
 }
 
@@ -61,17 +61,17 @@ function buttonScrollHandler(activeButtonNumber, data) {
 
   if (activeButtonNumber <= 3) {
     sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-0px)`);
-    return
+    return;
   }
 
   if (activeButtonNumber > 3 && activeButtonNumber <= Math.round(data.length / 2) - 2) {
     sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-${62 * (activeButtonNumber - 3)}px)`);
-    return
+    return;
   }
 
   if (activeButtonNumber == Math.round(data.length / 2) - 1) {
     sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-${62 * (activeButtonNumber - 4)}px)`);
-    return
+    return;
   }
 }
 
