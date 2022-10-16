@@ -4,7 +4,10 @@ import paginator from './paginator.js'
 // import paginatorData from './data/paginator-data.js'
 import paginatorData from './data/paginator-data-big.js'
 
-init()
+(document.onload = () => {
+  init()
+})()
+
 
 function init() {
   addStickyHeader();
@@ -14,10 +17,9 @@ function init() {
 }
 
 function initPaginator() {
-  const sliderWrapper = document.querySelector('#paginator');
-  const DATA = paginatorData();
+  const data = paginatorData();
 
-  paginator(sliderWrapper, DATA);
+  paginator('#paginator', data);
 }
 
 
