@@ -7,26 +7,34 @@ export default class Slider {
 
   initSlider() {
     this.slider = document.querySelector(this.selector);
-    this.processDataforSlides(this.data);
+    this.processDataForSlides(this.data);
     this.initIventListener();
-    this.multiplier = 0;
-    this.buttonHandler(this.multiplier)
+    this.page = 0;
+    this.buttonHandler(this.page);
+    this.changeSlidesQuantity()
   }
 
-  renderLeftArrow(side) {
-    this.arrow = document.createElement('button');
-    this.arrow.classList.add('slider__arrow-btn');
+  renderButtons(buttonSide) {
+    this.button = document.createElement('button');
+    this.button.classList.add('slider__arrow-btn');
 
-    this.arrow.innerHTML = `<svg class="slider__arrow arrow-${side}" viewBox="0 0 33 32" width="40">
-    <use class="arrow-${side}" href="./assets/images/sprite.svg#icon-slide-${side}"></use>
-    </svg>`
-    this.slider.appendChild(this.arrow);
+    this.button.innerHTML = this.getButtonTemplate(buttonSide);
+
+    this.slider.appendChild(this.button);
+  }
+
+  getButtonTemplate(buttonSide) {
+    return `<svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
+      <use class="arrow-${buttonSide}" href="./assets/images/sprite.svg#icon-slide-${buttonSide}"></use>
+      </svg>`;
   }
 
   initIventListener() {
     this.slider.addEventListener('click', (event) => {
       this.isButtonClass(event) ? this.clickHandler(event) : null;
     })
+
+    window.addEventListener('resize', () => this.changeSlidesQuantity())
   }
 
   isButtonClass(event) {
@@ -37,43 +45,41 @@ export default class Slider {
   }
 
   clickHandler(event) {
-    this.maxMultiplier = this.data.length - 4;
+
+    this.maxPage = this.data.length - this.slidesShown;
+    console.log(this.slidesShown)
 
     if (event.target.className.baseVal === 'arrow-right') {
-      ++this.multiplier
-      this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`);
-      this.buttonHandler(this.multiplier)
+      ++this.page;
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217}px)`);
+      this.buttonHandler(this.page);
       return
-    } else {
-      this.arrow.removeAttribute('disabled');
-      this.multiplier > 0 ? --this.multiplier : null;
-      this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`);
-      this.buttonHandler(this.multiplier)
+    }
+
+    if (event.target.className.baseVal === 'arrow-left') {
+      --this.page;
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217}px)`);
+      this.buttonHandler(this.page);
+      return
     }
   }
 
-  buttonHandler(multiplier) {
+  buttonHandler(page) {
     this.arrowParent = [...document.querySelectorAll('.slider__arrow-btn')];
-    this.arrowLeft = this.arrowParent.find(el => el.children[0].className.baseVal === 'slider__arrow arrow-left')
-    // this.arrowLeft.disabled = true;
+    this.arrowLeft = this.arrowParent.find(el => el.children[0].className.baseVal === 'slider__arrow arrow-left');
 
-    if (multiplier >= this.maxMultiplier) {
-      this.arrow.disabled = true;
-    }
+    page === 0 ? this.arrowLeft.disabled = true : this.arrowLeft.disabled = false;
 
-    if (multiplier === 0) {
-
-      this.arrowLeft.disabled = true;
-    } else {
-      this.arrowLeft.disabled = false;
-    }
-
+    page >= this.maxPage ? this.button.disabled = true : this.button.disabled = false;
+    console.log(page)
+    console.log(this.maxPage)
   }
 
-  processDataforSlides(data) {
+  processDataForSlides(data) {
     this.slidesInner = document.createElement('div');
     this.slidesWrapper = document.createElement('div');
-    this.renderLeftArrow('left');
+
+    this.renderButtons('left');
     this.slidesWrapper.classList.add('prefer__slides-wrapper');
     this.slider.appendChild(this.slidesWrapper);
     this.slidesInner.classList.add('prefer__slides-inner');
@@ -83,18 +89,53 @@ export default class Slider {
       this.renderTemplate(slideData);
     });
 
-    this.renderLeftArrow('right');
+    this.renderButtons('right');
   }
 
   renderTemplate(slideData) {
     this.slide = document.createElement('div');
 
     this.slide.classList.add('prefer__slider-slide');
-    this.slide.innerHTML = `<img src=${slideData.url} alt="Graphic Design" width="198" />
-    <div class="bg-position "></div>
-    <p class="prefer__slider-text">${slideData.title.slice(0, 10)}</p>`
+
+    this.slide.innerHTML = this.getSlideTemplate(slideData);
 
     this.slidesInner.appendChild(this.slide);
+  }
+
+  getSlideTemplate(slideData) {
+    return `<img src=${slideData.url} alt="Graphic Design" width="198" />
+    <div class="bg-position "></div>
+    <p class="prefer__slider-text">${slideData.title.slice(0, 10)}</p>`;
+  }
+
+  changeSlidesQuantity() {
+
+
+    console.log(this.slider.clientWidth)
+
+    if (window.innerWidth < 620) {
+      this.slider.style.maxWidth = '338px';
+      this.slidesShown = 1;
+      return
+    }
+
+    if (window.innerWidth < 800) {
+      this.slider.style.maxWidth = '554px';
+      this.slidesShown = 2;
+      return
+    }
+
+    if (window.innerWidth < 1020) {
+      this.slider.style.maxWidth = '768px';
+      this.slidesShown = 3;
+      return
+    }
+
+    if (window.innerWidth > 1020) {
+      this.slider.style.maxWidth = '990px';
+      this.slidesShown = 4;
+      return
+    }
   }
 }
 

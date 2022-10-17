@@ -27,6 +27,7 @@ function initPaginator() {
 function initSlider() {
   const data = paginatorData();
   const slider = new Slider('#slider', data);
+
   slider.initSlider();
 }
 
@@ -36,10 +37,6 @@ function addStickyHeader() {
   window.addEventListener('scroll', (event) => {
     const header = document.querySelector('.header');
 
-    if (window.scrollY > header.clientHeight) {
-      header.classList.add('sticky');
-    } else {
-      header.classList.remove('sticky');
-    }
+    window.scrollY > header.clientHeight ? header.classList.add('sticky') : header.classList.remove('sticky')
   });
 }
