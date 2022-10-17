@@ -3,6 +3,8 @@ $(document).ready(function () {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: false,
+    infinite: false,
+    cssEase: 'ease-out',
     responsive: [
       {
         breakpoint: 1050,

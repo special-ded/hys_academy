@@ -10,6 +10,7 @@ export default class Slider {
     this.processDataforSlides(this.data);
     this.initIventListener();
     this.multiplier = 0;
+    this.buttonHandler(this.multiplier)
   }
 
   renderLeftArrow(side) {
@@ -24,11 +25,11 @@ export default class Slider {
 
   initIventListener() {
     this.slider.addEventListener('click', (event) => {
-      this.includesButtonClass(event) ? this.clickHandler(event) : null;
+      this.isButtonClass(event) ? this.clickHandler(event) : null;
     })
   }
 
-  includesButtonClass(event) {
+  isButtonClass(event) {
     this.buttonClasses = ['arrow-left', 'arrow-right']
     this.buttonClassName = event.target.className.baseVal;
 
@@ -36,20 +37,37 @@ export default class Slider {
   }
 
   clickHandler(event) {
-    this.maxMultiplier = this.data.length - 5;
+    this.maxMultiplier = this.data.length - 4;
 
-    if (this.multiplier >= this.maxMultiplier) {
+    if (event.target.className.baseVal === 'arrow-right') {
+      ++this.multiplier
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`);
+      this.buttonHandler(this.multiplier)
+      return
+    } else {
+      this.arrow.removeAttribute('disabled');
+      this.multiplier > 0 ? --this.multiplier : null;
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`);
+      this.buttonHandler(this.multiplier)
+    }
+  }
+
+  buttonHandler(multiplier) {
+    this.arrowParent = [...document.querySelectorAll('.slider__arrow-btn')];
+    this.arrowLeft = this.arrowParent.find(el => el.children[0].className.baseVal === 'slider__arrow arrow-left')
+    // this.arrowLeft.disabled = true;
+
+    if (multiplier >= this.maxMultiplier) {
       this.arrow.disabled = true;
     }
 
-    if (event.target.className.baseVal === 'arrow-right') {
-      this.multiplier += 1;
-      this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`);
+    if (multiplier === 0) {
+
+      this.arrowLeft.disabled = true;
     } else {
-      this.arrow.removeAttribute('disabled');
-      this.multiplier > 0 ? this.multiplier -= 1 : null;
-      this.slidesInner.setAttribute('style', `transform: translateX(-${this.multiplier * 217}px)`);
+      this.arrowLeft.disabled = false;
     }
+
   }
 
   processDataforSlides(data) {

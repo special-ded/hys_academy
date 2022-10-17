@@ -484,7 +484,7 @@ li {
   gap: 20px;
 }
 
-/* SLICK SLIDER */
+/* SLICK SLIDER START */
 
 div .slick-slider {
   position: static;
@@ -538,6 +538,13 @@ div .slick-slide,
 .slick-active {
   width: 200px;
 }
+
+.slick-disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* SLICK SLIDER END */
 
 .slider__arrow-btn {
   border-radius: 50%;
@@ -1059,7 +1066,7 @@ div .slick-slide,
 .slider__arrow-btn:disabled {
   background-color: var(--event-img-text);
   color: var(--secondary-text-color);
-  --color5: grey;
+  opacity: 0.2;
   pointer-events: none;
 }
 
@@ -1768,7 +1775,6 @@ div .slick-slide,
   }
 
   .courses__slider {
-    max-width: 358px;
     gap: 0;
   }
 
