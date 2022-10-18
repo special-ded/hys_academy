@@ -496,10 +496,6 @@ div .slick-list {
   margin: 0 auto;
 }
 
-.slick-slide {
-  width: 200px;
-}
-
 .slick-track {
   padding-top: 24px;
 }
@@ -531,12 +527,6 @@ div .slick-list {
   right: 3px;
   z-index: 20;
   background: url('../assets/images/222.svg') center/21% no-repeat;
-}
-
-div .slick-slide,
-.slick-current,
-.slick-active {
-  width: 200px;
 }
 
 .slick-disabled {
@@ -1656,7 +1646,7 @@ div .slick-slide,
   }
 
   .courses__slider {
-    max-width: 95%;
+    max-width: 94%;
   }
 
   .description__square {
@@ -2007,9 +1997,13 @@ div .slick-slide,
     gap: 5px;
   }
 
+  div .slick-list {
+    max-width: 263px;
+  }
+
   .slider__img-inner hr {
     left: 11px;
-    width: 255px;
+    width: 250px;
   }
 
   .slider__item-img {
