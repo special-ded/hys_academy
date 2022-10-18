@@ -1,9 +1,9 @@
 import preferDropDown from './drop-down-menu.js';
 import initMobileMenu from './mobile-menu.js';
-import paginator from '../../js/paginator.js'
+import paginator from './paginator.js'
 // import paginatorData from './data/paginator-data.js'
 import paginatorData from './data/paginator-data-big.js'
-import Slider from '../../js/slider.js';
+import Slider from './slider.js';
 
 (document.onload = () => {
   init();
