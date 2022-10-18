@@ -968,10 +968,9 @@ div .slick-slide,
   font-size: 16px;
   line-height: 1.25;
   align-items: center;
-  color: #5C5C5C;
+  color: var(--secondary-text-color);
   margin: 0 auto;
   position: relative;
-  width: 250px;
 }
 
 .select.is-active .select__body {
@@ -1007,8 +1006,8 @@ div .slick-slide,
 
 .input__icon {
   position: absolute;
-  right: 64px;
-  top: 18px;
+  right: 10px;
+  top: 20px;
 }
 
 .select__body {
@@ -1050,7 +1049,8 @@ div .slick-slide,
   justify-content: center;
   gap: 20px;
   align-items: center;
-  margin-top: 51px;
+  margin: 51px auto 0 auto;
+  /* margin-top: 51px; */
 }
 
 .prefer__slides-wrapper {
