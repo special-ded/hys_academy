@@ -5,6 +5,7 @@ $(document).ready(function () {
     autoplay: false,
     infinite: false,
     cssEase: 'ease-out',
+    lazyLoad: 'ondemand',
     responsive: [
       {
         breakpoint: 1050,
