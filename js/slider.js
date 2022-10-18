@@ -110,9 +110,6 @@ export default class Slider {
 
   changeSlidesQuantity() {
 
-
-    console.log(this.slider.clientWidth)
-
     if (window.innerWidth < 620) {
       this.slider.style.maxWidth = '338px';
       this.slidesShown = 1;
