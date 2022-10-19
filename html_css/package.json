@@ -1,0 +1,14 @@
+{
+  "name": "my-web-pack-bundler",
+  "version": "1.0.0",
+  "description": "'Bundler for HYS Project'",
+  "main": "index.js",
+  "scripts": {
+    "test": "1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  }
+}
