@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelector(".blog__slider-scroll")})();
