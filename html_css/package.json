@@ -2,8 +2,9 @@
   "name": "my-web-pack-bundler",
   "version": "1.0.0",
   "description": "'Bundler for HYS Project'",
-  "main": "index.js",
+  "main": "./js/index.js",
   "scripts": {
+    "start": "webpack serve",
     "build": "webpack"
   },
   "author": "",

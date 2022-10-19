@@ -28,4 +28,11 @@ module.exports = {
     path: __dirname + '/build',
     chunkFilename: '[id].[chunkhash].js'
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, '/'),
+    },
+    compress: true,
+    port: 8080,
+  },
 };
