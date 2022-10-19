@@ -47,7 +47,6 @@ export default class Slider {
   clickHandler(event) {
 
     this.maxPage = this.data.length - this.slidesShown;
-    console.log(this.slidesShown)
 
     if (event.target.className.baseVal === 'arrow-right') {
       ++this.page;
@@ -71,8 +70,6 @@ export default class Slider {
     page === 0 ? this.arrowLeft.disabled = true : this.arrowLeft.disabled = false;
 
     page >= this.maxPage ? this.button.disabled = true : this.button.disabled = false;
-    console.log(page)
-    console.log(this.maxPage)
   }
 
   processDataForSlides(data) {
