@@ -1,10 +1,11 @@
 import preferDropDown from './drop-down-menu.js';
 import initMobileMenu from './mobile-menu.js';
-import paginator from './paginator.js';
+// import paginator from './paginator.js';
 // import paginatorData from './data/paginator-data.js';
 import paginatorData from './data/paginator-data-big.js';
-import Slider from './slider.js';
-import '../css/style.css'
+// import Slider from './slider.js';
+import App from './app.js';
+// import '../css/style.css'
 
 (document.onload = () => {
   init();
@@ -12,24 +13,23 @@ import '../css/style.css'
 
 
 function init() {
+  initApp()
+  putDataInLocalStorage();
+
   addStickyHeader();
-  initPaginator();
   initMobileMenu();
   preferDropDown();
-  initSlider();
 }
 
-function initPaginator() {
-  const data = paginatorData();
-
-  paginator('#paginator', data);
+function initApp() {
+  const app = new App();
+  app.init()
 }
 
-function initSlider() {
+function putDataInLocalStorage() {
   const data = paginatorData();
-  const slider = new Slider('#slider', data);
-
-  slider.initSlider();
+  console.log(data)
+  localStorage.setItem('localStorageSliderData', JSON.stringify(data));
 }
 
 
