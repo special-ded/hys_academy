@@ -3,38 +3,62 @@ export default class Storage {
   }
 
   getSliderData() {
-    this.checkLocalStorage()
-    this.setFormLocalStorage()
-    return this.data = JSON.parse(localStorage.getItem('localStorageSliderData'))
+    this.initStorage();
 
+    return this.data = JSON.parse(localStorage.getItem('localStorageSliderData'));
+  }
+
+  initStorage() {
+    this.checkLocalStorage();
+    this.setFormToLocalStorage();
+    this.sendButtonHandler();
   }
 
   checkLocalStorage() {
-    this.formUserName = localStorage.getItem('username')?.trim()
-    this.formTelephone = localStorage.getItem('telephone')?.trim()
-    this.formEmail = localStorage.getItem('email')?.trim()
+    this.formUserName = JSON.parse(localStorage.getItem('username'))?.trim();
+    this.formTelephone = JSON.parse(localStorage.getItem('telephone'))?.trim();
+    this.formEmail = JSON.parse(localStorage.getItem('email'))?.trim();
 
-    this.formUserName || this.formTelephone || this.formEmail
-      ? console.log('aaaaaaaa')
-      : console.log('bbbbbb')
+    if (this.formUserName || this.formTelephone || this.formEmail) {
+      this.renderFormData();
+    }
   }
 
-  setFormLocalStorage() {
-    document.querySelector('form').addEventListener('input', (event) =>
-
-      this.inputHandler(event)
-    )
+  renderFormData() {
+    this.formUserName ? document.querySelector('#username').value = this.formUserName : null;
+    this.formTelephone ? document.querySelector('#telephone').value = this.formTelephone : null;
+    this.formEmail ? document.querySelector('#email').value = this.formEmail : null;
   }
 
-  getFormLocalStorage() {
-
-
+  setFormToLocalStorage() {
+    document.querySelector('form').addEventListener('input', (e) => this.inputHandler(e));
   }
 
   inputHandler(event) {
-    console.log(event.target.value);
     localStorage.setItem(event.target.id, JSON.stringify(event.target.value));
   }
+
+  sendButtonHandler() {
+    document.querySelector('.send-btn').addEventListener('click', () => this.clearLocalStorage());
+  }
+
+  clearLocalStorage() {
+
+    if (this.passValidation()) {
+      setTimeout(() => {
+        document.querySelector('#username').value = '';
+        document.querySelector('#telephone').value = '';
+        document.querySelector('#email').value = '';
+        localStorage.clear();
+      }, 300);
+    }
+  }
+
+  passValidation() {
+    console.log("valid")
+    return true
+  }
+
 }
 
 
