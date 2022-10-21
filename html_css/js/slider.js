@@ -38,7 +38,7 @@ export default class Slider {
   }
 
   isButtonClass(event) {
-    this.buttonClasses = ['arrow-left', 'arrow-right']
+    this.buttonClasses = ['arrow-left', 'arrow-right'];
     this.buttonClassName = event.target.className.baseVal;
 
     return this.buttonClasses.includes(this.buttonClassName);
