@@ -55,7 +55,6 @@ export default class Storage {
   }
 
   passValidation() {
-    console.log("valid")
     return true
   }
 

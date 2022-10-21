@@ -2,12 +2,12 @@ export default function initMobileMenu() {
   let menuOpen = false;
 
   initEventListener();
-  closeIfResize()
+  closeIfResize();
 
   function initEventListener() {
     const header = document.querySelector('#header');
 
-    header.addEventListener('click', clickHandler)
+    header.addEventListener('click', clickHandler);
   }
 
   function clickHandler(e) {

@@ -12,7 +12,7 @@ import App from './app.js';
 
 function init() {
   putDataInLocalStorage();
-  initApp()
+  initApp();
 
   addStickyHeader();
   initMobileMenu();
@@ -21,7 +21,7 @@ function init() {
 
 function initApp() {
   const app = new App();
-  app.init()
+  app.init();
 }
 
 function putDataInLocalStorage() {
@@ -29,12 +29,10 @@ function putDataInLocalStorage() {
   localStorage.setItem('localStorageSliderData', JSON.stringify(data));
 }
 
-
-// ADDING STICKY HEADER
 function addStickyHeader() {
   window.addEventListener('scroll', (event) => {
     const header = document.querySelector('.header');
 
-    window.scrollY > header.clientHeight ? header.classList.add('sticky') : header.classList.remove('sticky')
+    window.scrollY > header.clientHeight ? header.classList.add('sticky') : header.classList.remove('sticky');
   });
 }

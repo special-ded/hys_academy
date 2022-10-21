@@ -8,7 +8,7 @@ export default class App {
 
   init() {
     this.storage = new Storage();
-    this.data = this.storage.getSliderData()
+    this.data = this.storage.getSliderData();
 
     this.initPaginator();
     this.initSlider();
