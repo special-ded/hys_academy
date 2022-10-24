@@ -1,6 +1,7 @@
 import paginator from './paginator.js';
 import Slider from './slider.js';
 import Storage from './storage.js';
+import Select from './select.js';
 
 export default class App {
   constructor() {
@@ -12,6 +13,12 @@ export default class App {
 
     this.initPaginator();
     this.initSlider();
+    this.initSelect()
+  }
+
+  initSelect() {
+    const select = new Select('#select', this.data);
+    select.initSelect()
   }
 
   initPaginator() {

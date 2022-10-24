@@ -1,34 +1,43 @@
-export default function preferDropDown() {
-  let iconToggle = false
+export default class Select {
 
-  initEventListeners()
+  constructor(selector, data) {
+    this.selector = selector;
+    this.data = data;
+  }
 
-  function initEventListeners() {
+  initSelect() {
+    this.iconToggle = false
+    this.initEventListeners()
+  }
+
+
+
+  initEventListeners() {
     const selectItem = document.querySelectorAll('.select__item');
 
     selectItem.forEach(item => {
-      item.addEventListener('click', selectChoose);
+      item.addEventListener('click', this.selectChoose);
     });
 
     document.querySelector(".select").addEventListener('click', (event) => {
       const classListInput = ["input__value", "input__wrap", "paginator__icon-use", "paginator__icon"];
 
       if (classListInput.includes(event.target.className) || classListInput.includes(event.target.classList.value)) {
-        selectToggler();
+        this.selectToggler();
       }
     })
   }
 
 
-  function selectToggler() {
+  selectToggler() {
     const dropDownMenu = document.querySelector('.select');
 
-    iconToggler();
+    this.iconToggler();
     dropDownMenu.classList.toggle('is-active');
   }
 
-  function selectChoose() {
-    iconToggler();
+  selectChoose() {
+    // this.iconToggler();
     let text = this.innerText,
       select = this.closest('.select'),
       currentText = select.querySelector('.input__value');
@@ -37,15 +46,14 @@ export default function preferDropDown() {
   }
 
 
-  function iconToggler() {
-    const paginatorIconLink = document.getElementsByClassName("paginator__icon-use");
+  iconToggler() {
+    this.paginatorIconLink = document.getElementsByClassName("paginator__icon-use");
 
-    if (iconToggle == false) {
-      paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-active");
+    if (this.iconToggle == false) {
+      this.paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-active");
     } else {
-      paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-default");
+      this.paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-default");
     }
-    iconToggle = !iconToggle;
+    this.iconToggle = !this.iconToggle;
   }
 };
-
