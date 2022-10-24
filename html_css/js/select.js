@@ -6,13 +6,44 @@ export default class Select {
   }
 
   initSelect() {
+    this.selectDiv = document.querySelector(`${this.selector}`);
+    console.log();
+    this.renderSelect();
     this.initEventListeners();
-    this.selectDiv = document.querySelector('.select')
+
+  }
+
+  renderSelect() {
+    this.selectDiv.innerHTML = this.getSelectTemplate();
+
+    // sliderWrapper.appendChild(slide);
+    // smoothRendering(slide);
+
+  }
+
+  getSelectTemplate() {
+    return `
+    <div class="input__wrap">
+    <input class="input__value" value="Album" />
+    <div class="input__icon">
+      <svg class="select__icon" width="20" height="20">
+        <use
+          class="select__icon-use"
+          href="./assets/images/sprite.svg#icon-arrow-default"
+        ></use>
+      </svg>
+    </div>
+  </div>
+  <ul class="select__list">
+    <li value="1" class="select__item">Album 1</li>
+    <li value="2" class="select__item">Album 2</li>
+    <li value="3" class="select__item">Album 3</li>
+  </ul>`
   }
 
   initEventListeners() {
     document.querySelector('.select__list').addEventListener('click', (event) => {
-      this.selectChoose(event.target.innerText)
+      this.selectChoose(event.target.innerText);
     })
 
     document.querySelector(".select").addEventListener('click', (event) => {
@@ -28,15 +59,14 @@ export default class Select {
   selectToggler() {
     this.selectDiv.classList.toggle('is-active');
 
-    this.iconToggler()
+    this.iconToggler();
   }
 
   selectChoose(text) {
-
     document.querySelector('.input__value').value = text;
 
     this.selectDiv.classList.remove('is-active');
-    this.iconToggler()
+    this.iconToggler();
   }
 
   iconToggler() {
@@ -45,7 +75,7 @@ export default class Select {
     this.paginatorIconLink.href.baseVal = "./assets/images/sprite.svg#icon-arrow-default";
 
     if (this.selectDiv.className === "select is-active") {
-      this.paginatorIconLink.href.baseVal = "./assets/images/sprite.svg#icon-arrow-active"
+      this.paginatorIconLink.href.baseVal = "./assets/images/sprite.svg#icon-arrow-active";
     }
   }
 };
