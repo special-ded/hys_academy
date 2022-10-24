@@ -1,4 +1,4 @@
-import preferDropDown from './drop-down-menu.js';
+import select from './select.js';
 import initMobileMenu from './mobile-menu.js';
 // import paginatorData from './data/paginator-data.js';
 import paginatorData from './data/paginator-data-big.js';
@@ -16,7 +16,7 @@ function init() {
 
   addStickyHeader();
   initMobileMenu();
-  preferDropDown();
+  select();
 }
 
 function initApp() {
