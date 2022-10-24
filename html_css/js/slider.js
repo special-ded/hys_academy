@@ -6,6 +6,8 @@ export default class Slider {
   }
 
   initSlider() {
+
+
     this.slider = document.querySelector(this.selector);
     this.processDataForSlides(this.data);
     this.initIventListener();

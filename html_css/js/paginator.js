@@ -7,7 +7,6 @@ export default function paginator(selector, data) {
   sliderWrapper = document.querySelector(selector);
   const slidesQuantity = 2;
   const activeButtonNumber = 1;
-
   if (data.length > 2) {
     renderButtons(data);
   }

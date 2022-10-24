@@ -1,24 +1,21 @@
+import App from "./app.js";
+
 export default class Select {
 
-  constructor(selector, data) {
+  constructor(selector, onSelectChangeCallBack) {
     this.selector = selector;
-    this.data = data;
+    this.onSelectChangeCallBack = onSelectChangeCallBack;
   }
 
   initSelect() {
     this.selectDiv = document.querySelector(`${this.selector}`);
-    console.log();
+    console.log(this.selector, this.onSelectChangeCallBack)
     this.renderSelect();
     this.initEventListeners();
-
   }
 
   renderSelect() {
     this.selectDiv.innerHTML = this.getSelectTemplate();
-
-    // sliderWrapper.appendChild(slide);
-    // smoothRendering(slide);
-
   }
 
   getSelectTemplate() {
@@ -43,7 +40,7 @@ export default class Select {
 
   initEventListeners() {
     document.querySelector('.select__list').addEventListener('click', (event) => {
-      this.selectChoose(event.target.innerText);
+      this.selectChoose(event.target.innerText, event.target.value);
     })
 
     document.querySelector(".select").addEventListener('click', (event) => {
@@ -62,11 +59,15 @@ export default class Select {
     this.iconToggler();
   }
 
-  selectChoose(text) {
+  selectChoose(text, value) {
+    console.log("aaaaaaaaaaaaa");
+
+
     document.querySelector('.input__value').value = text;
 
     this.selectDiv.classList.remove('is-active');
     this.iconToggler();
+    this.onSelectChange(value)
   }
 
   iconToggler() {
@@ -77,5 +78,13 @@ export default class Select {
     if (this.selectDiv.className === "select is-active") {
       this.paginatorIconLink.href.baseVal = "./assets/images/sprite.svg#icon-arrow-active";
     }
+  }
+
+  onSelectChange(value) {
+    // this.onSelectChangeCallBack(value);
+    console.log(value)
+    const app = new App()
+    app.setSliderData(value)
+    app.initSlider()
   }
 };
