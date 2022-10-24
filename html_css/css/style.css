@@ -963,7 +963,7 @@ div .slick-list {
   position: relative;
 }
 
-.select.is-active .select__body {
+.select.is-active .select__list {
   transform: translate(0%);
 }
 
@@ -1000,7 +1000,7 @@ div .slick-list {
   top: 20px;
 }
 
-.select__body {
+.select__list {
   width: 200px;
   max-height: 144px;
   margin-top: 8px;

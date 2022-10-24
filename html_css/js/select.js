@@ -6,54 +6,46 @@ export default class Select {
   }
 
   initSelect() {
-    this.iconToggle = false
-    this.initEventListeners()
+    this.initEventListeners();
+    this.selectDiv = document.querySelector('.select')
   }
 
-
-
   initEventListeners() {
-    const selectItem = document.querySelectorAll('.select__item');
-
-    selectItem.forEach(item => {
-      item.addEventListener('click', this.selectChoose);
-    });
+    document.querySelector('.select__list').addEventListener('click', (event) => {
+      this.selectChoose(event.target.innerText)
+    })
 
     document.querySelector(".select").addEventListener('click', (event) => {
-      const classListInput = ["input__value", "input__wrap", "paginator__icon-use", "paginator__icon"];
+      this.classListInput = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
 
-      if (classListInput.includes(event.target.className) || classListInput.includes(event.target.classList.value)) {
+      if (this.classListInput.includes(event.target.className)
+        || this.classListInput.includes(event.target.classList.value)) {
         this.selectToggler();
       }
     })
   }
 
-
   selectToggler() {
-    const dropDownMenu = document.querySelector('.select');
+    this.selectDiv.classList.toggle('is-active');
 
-    this.iconToggler();
-    dropDownMenu.classList.toggle('is-active');
+    this.iconToggler()
   }
 
-  selectChoose() {
-    // this.iconToggler();
-    let text = this.innerText,
-      select = this.closest('.select'),
-      currentText = select.querySelector('.input__value');
-    currentText.value = text;
-    select.classList.remove('is-active');
-  }
+  selectChoose(text) {
 
+    document.querySelector('.input__value').value = text;
+
+    this.selectDiv.classList.remove('is-active');
+    this.iconToggler()
+  }
 
   iconToggler() {
-    this.paginatorIconLink = document.getElementsByClassName("paginator__icon-use");
+    this.paginatorIconLink = document.querySelector(".select__icon-use");
 
-    if (this.iconToggle == false) {
-      this.paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-active");
-    } else {
-      this.paginatorIconLink[0].setAttribute('href', "./assets/images/sprite.svg#icon-arrow-default");
+    this.paginatorIconLink.href.baseVal = "./assets/images/sprite.svg#icon-arrow-default";
+
+    if (this.selectDiv.className === "select is-active") {
+      this.paginatorIconLink.href.baseVal = "./assets/images/sprite.svg#icon-arrow-active"
     }
-    this.iconToggle = !this.iconToggle;
   }
 };
