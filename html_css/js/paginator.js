@@ -38,7 +38,8 @@ function clickHandler(slidesQuantity, data, event) {
 }
 
 function updateData(slidesQuantity, activeButtonNumber, data) {
-  const currentData = data.slice(slidesQuantity * activeButtonNumber - slidesQuantity, slidesQuantity * activeButtonNumber);
+  const currentData = data.slice(slidesQuantity * activeButtonNumber - slidesQuantity,
+    slidesQuantity * activeButtonNumber);
   renderNewSlides(currentData);
 }
 
@@ -98,9 +99,7 @@ function renderTemplate(slideData) {
   const slide = document.createElement('div');
 
   slide.classList.add('blog__slider-item');
-
   slide.innerHTML = getSlideTemplate(slideData);
-
   sliderWrapper.appendChild(slide);
   smoothRendering(slide);
 }

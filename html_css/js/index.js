@@ -1,7 +1,6 @@
-import initMobileMenu from './mobile-menu.js';
-// import paginatorData from './data/paginator-data.js';
-import paginatorData from './data/paginator-data-big.js';
-import App from './app.js';
+import initMobileMenu from "./mobile-menu.js";
+import paginatorData from "./data/paginator-data-big.js";
+import App from "./app.js";
 // import '../css/style.css'
 
 (document.onload = () => {
@@ -31,6 +30,8 @@ function addStickyHeader() {
   window.addEventListener('scroll', (event) => {
     const header = document.querySelector('.header');
 
-    window.scrollY > header.clientHeight ? header.classList.add('sticky') : header.classList.remove('sticky');
+    window.scrollY > header.clientHeight
+      ? header.classList.add('sticky')
+      : header.classList.remove('sticky');
   });
 }

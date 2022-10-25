@@ -1,7 +1,7 @@
-import paginator from './paginator.js';
-import Slider from './slider.js';
-import Storage from './storage.js';
-import Select from './select.js';
+import paginator from "./paginator.js";
+import Slider from "./slider.js";
+import Storage from "./storage.js";
+import Select from "./select.js";
 
 export default class App {
   constructor() {
@@ -23,22 +23,22 @@ export default class App {
       const result = await response.json();
       return result
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
     return result
   }
 
   initSelect() {
-    const select = new Select('#select');
+    const select = new Select("#select");
     select.initSelect();
   }
 
   initPaginator() {
-    paginator('#paginator', this.data);
+    paginator("#paginator", this.data);
   }
 
   initSlider(data) {
-    const slider = new Slider('#slider', data);
+    const slider = new Slider("#slider", data);
     slider.initSlider();
   }
 }
