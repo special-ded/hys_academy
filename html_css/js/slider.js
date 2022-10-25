@@ -51,14 +51,14 @@ export default class Slider {
 
     if (event.target.className.baseVal === 'arrow-right') {
       ++this.page;
-      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217}px)`);
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217.5}px)`);
       this.buttonHandler(this.page);
       return
     }
 
     if (event.target.className.baseVal === 'arrow-left') {
       --this.page;
-      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217}px)`);
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217.5}px)`);
       this.buttonHandler(this.page);
       return
     }
