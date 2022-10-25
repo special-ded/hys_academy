@@ -21,7 +21,6 @@ export default class App {
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`);
       const result = await response.json();
-      console.log(result)
       return result
     } catch (error) {
       console.error('Error:', error);

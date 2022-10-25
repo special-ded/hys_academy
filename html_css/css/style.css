@@ -293,7 +293,6 @@ li {
   justify-content: space-between;
 }
 
-
 .menu__elem-item:hover {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--blue-button-bg-default);
@@ -518,7 +517,6 @@ div .slick-list {
   top: 183px;
   left: 3px;
   background: url('../assets/images/slick-left-arrow.svg') center/21% no-repeat;
-
 }
 
 .slick-arrow.slick-next {
@@ -949,9 +947,7 @@ div .slick-list {
   margin-top: 16px;
 }
 
-
 /* PAGINATOR */
-
 
 .select {
   font-weight: 400;
@@ -1002,9 +998,8 @@ div .slick-list {
 
 .select__list {
   width: 200px;
-  max-height: 144px;
+  height: 118px;
   margin-top: 8px;
-  overflow-y: scroll;
   position: absolute;
   left: 0;
   right: 0;
@@ -1040,7 +1035,6 @@ div .slick-list {
   gap: 20px;
   align-items: center;
   margin: 51px auto 0 auto;
-  /* margin-top: 51px; */
 }
 
 .prefer__slides-wrapper {
@@ -1096,7 +1090,6 @@ div .slick-list {
   background: var(--prefer-slide-4-bg);
 }
 
-
 .prefer__slider-slide img {
   width: 100%;
   height: 100%;
@@ -1122,7 +1115,6 @@ div .slick-list {
 .customers {
   max-width: 1440px;
   position: relative;
-
 }
 
 .brake-text-375 {
@@ -1935,7 +1927,6 @@ div .slick-list {
   .blog__slider-scroll-wrap {
     flex-direction: row;
   }
-
 
   .blog__container {
     text-align: unset;

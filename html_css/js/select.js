@@ -2,14 +2,13 @@ import App from "./app.js";
 
 export default class Select {
 
-  constructor(selector, onSelectChangeCallBack) {
+  constructor(selector) {
     this.selector = selector;
-    this.onSelectChangeCallBack = onSelectChangeCallBack;
   }
 
   initSelect() {
     this.selectDiv = document.querySelector(`${this.selector}`);
-    console.log(this.selector, this.onSelectChangeCallBack)
+
     this.renderSelect();
     this.initEventListeners();
   }
@@ -21,7 +20,7 @@ export default class Select {
   getSelectTemplate() {
     return `
     <div class="input__wrap">
-    <input class="input__value" value="Album" />
+    <input class="input__value" value="Album 1" />
     <div class="input__icon">
       <svg class="select__icon" width="20" height="20">
         <use
@@ -60,14 +59,11 @@ export default class Select {
   }
 
   selectChoose(text, value) {
-    console.log("aaaaaaaaaaaaa");
-
-
     document.querySelector('.input__value').value = text;
 
     this.selectDiv.classList.remove('is-active');
     this.iconToggler();
-    this.onSelectChange(value)
+    this.onSelectChange(value);
   }
 
   iconToggler() {
@@ -81,14 +77,9 @@ export default class Select {
   }
 
   async onSelectChange(value) {
-    // this.onSelectChangeCallBack(value);
-    console.log(value)
     const app = new App()
     const data = await app.setSliderData(value);
-    console.log(data);
 
     app.initSlider(data)
   }
-
-
 };
