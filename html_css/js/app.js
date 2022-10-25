@@ -8,7 +8,7 @@ export default class App {
   }
 
   async init() {
-    const data = await this.setSliderData(1)
+    const data = await this.setSliderData(1);
     this.initSelect();
     this.initSlider(data);
 
@@ -40,7 +40,6 @@ export default class App {
 
   initSlider(data) {
     const slider = new Slider('#slider', data);
-    console.log(data)
     slider.initSlider();
   }
 }

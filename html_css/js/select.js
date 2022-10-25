@@ -80,11 +80,15 @@ export default class Select {
     }
   }
 
-  onSelectChange(value) {
+  async onSelectChange(value) {
     // this.onSelectChangeCallBack(value);
     console.log(value)
     const app = new App()
-    app.setSliderData(value)
-    app.initSlider()
+    const data = await app.setSliderData(value);
+    console.log(data);
+
+    app.initSlider(data)
   }
+
+
 };

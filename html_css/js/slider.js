@@ -6,14 +6,13 @@ export default class Slider {
   }
 
   initSlider() {
-
-
     this.slider = document.querySelector(this.selector);
+    this.slider.innerHTML = '';
     this.processDataForSlides(this.data);
     this.initIventListener();
     this.page = 0;
     this.buttonHandler(this.page);
-    this.changeSlidesQuantity()
+    this.changeSlidesQuantity();
   }
 
   renderButtons(buttonSide) {
