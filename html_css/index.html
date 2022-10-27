@@ -11,6 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
     <script type="module" src="./js/index.js" defer></script>
     <title>Draganov Ivan</title>
   </head>
@@ -237,16 +243,11 @@
         <!-- Courses Slider -->
 
         <div class="courses__slider">
-          <button class="slider__arrow-btn">
-            <svg class="slider__arrow" viewBox="0 0 33 32" width="40">
-              <use href="./assets/images/sprite.svg#icon-slide-left"></use>
-            </svg>
-          </button>
           <div class="slider__slides">
             <article class="slider__item">
               <img
                 class="slider__item-img"
-                src="./assets/images/slider-img1.png"
+                data-lazy="./assets/images/slider-img1.png"
                 alt="Slide 1"
               />
               <div class="slider__img-inner">
@@ -297,7 +298,160 @@
             <article class="slider__item">
               <img
                 class="slider__item-img"
-                src="./assets/images/slider-img2.png"
+                data-lazy="./assets/images/slider-img2.png"
+                alt="Slide 1"
+              />
+              <div class="slider__img-inner">
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img1-small.png"
+                  alt="Slide 1 small"
+                />
+                <h3 class="slider__img-title">DESIGN</h3>
+                <p class="slider__sub-title">Learn Photoshop title</p>
+                <hr />
+                <div class="slider__img-price">
+                  <div>
+                    <span>$260</span>
+                    <p class="slider__img-price-crossed">$360</p>
+                  </div>
+                  <ul class="slider__img-rating">
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg class="star-white" viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>(4)</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+            <article class="slider__item">
+              <img
+                class="slider__item-img"
+                data-lazy="./assets/images/slider-img3.png"
+                alt="Slide 1"
+              />
+              <div class="slider__img-inner">
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img1-small.png"
+                  alt="Slide 1 small"
+                />
+                <h3 class="slider__img-title">DESIGN</h3>
+                <p class="slider__sub-title">Learn Photoshop title</p>
+                <hr />
+                <div class="slider__img-price">
+                  <div>
+                    <span>$260</span>
+                    <p class="slider__img-price-crossed">$360</p>
+                  </div>
+                  <ul class="slider__img-rating">
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg class="star-white" viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>(4)</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+            <article class="slider__item">
+              <img
+                class="slider__item-img"
+                data-lazy="./assets/images/slider-img1.png"
+                alt="Slide 1"
+              />
+              <div class="slider__img-inner">
+                <img
+                  class="slider__img_small"
+                  src="./assets/images/slider-img1-small.png"
+                  alt="Slide 1 small"
+                />
+                <h3 class="slider__img-title">DESIGN</h3>
+                <p class="slider__sub-title">Learn Photoshop title</p>
+                <hr />
+                <div class="slider__img-price">
+                  <div>
+                    <span>$260</span>
+                    <p class="slider__img-price-crossed">$360</p>
+                  </div>
+                  <ul class="slider__img-rating">
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg class="star-white" viewBox="0 0 29 32" width="10">
+                        <use href="./assets/images/sprite.svg#icon-star"></use>
+                      </svg>
+                    </li>
+                    <li>(4)</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+            <article class="slider__item">
+              <img
+                class="slider__item-img"
+                data-lazy="./assets/images/slider-img2.png"
                 alt="Slide 2"
                 width="270"
               />
@@ -349,7 +503,7 @@
             <article class="slider__item">
               <img
                 class="slider__item-img"
-                src="./assets/images/slider-img3.png"
+                data-lazy="./assets/images/slider-img3.png"
                 alt="Slide 3"
                 width="270"
               />
@@ -399,11 +553,6 @@
               </div>
             </article>
           </div>
-          <button class="slider__arrow-btn">
-            <svg class="slider__arrow" viewBox="0 0 33 32" width="550">
-              <use href="./assets/images/sprite.svg#icon-slide-right"></use>
-            </svg>
-          </button>
         </div>
 
         <!-- Courses slider end -->
@@ -644,55 +793,7 @@
 
         <!-- PAGINATOR END-->
 
-        <div class="prefer__slider">
-          <button class="slider__arrow-btn">
-            <svg class="slider__arrow" viewBox="0 0 33 32" width="40">
-              <use href="./assets/images/sprite.svg#icon-slide-left"></use>
-            </svg>
-          </button>
-          <div class="prefer__slider-slide prefer-slide-1">
-            <img
-              src="./assets/images/prefer1.png"
-              alt="Graphic Design"
-              width="198"
-            />
-            <div class="bg-position slide-1-bg"></div>
-            <p class="prefer__slider-text">Graphic Design</p>
-          </div>
-          <div class="prefer__slider-slide prefer-slide-2">
-            <img
-              src="./assets/images/prefer2.png"
-              width="198"
-              alt="prefer pic"
-            />
-            <div class="bg-position slide-2-bg"></div>
-            <p class="prefer__slider-text">Web Design</p>
-          </div>
-          <div class="prefer__slider-slide prefer-slide-3">
-            <img
-              src="./assets/images/prefer3.png"
-              width="198"
-              alt="prefer pic"
-            />
-            <div class="bg-position slide-3-bg"></div>
-            <p class="prefer__slider-text">Marketing</p>
-          </div>
-          <div class="prefer__slider-slide prefer-slide-4">
-            <img
-              src="./assets/images/prefer4.png"
-              width="198"
-              height="198"
-              alt="prefer pic"
-            />
-            <div class="bg-position slide-4-bg"></div>
-            <p class="prefer__slider-text">Education</p>
-          </div>
-          <button class="slider__arrow-btn">
-            <svg class="slider__arrow" viewBox="0 0 33 32" width="40">
-              <use href="./assets/images/sprite.svg#icon-slide-right"></use>
-            </svg>
-          </button>
-        </div>
+        <div class="prefer__slider" id="slider"></div>
       </section>
 
       <!-- CUSTOMERS SECTION -->
@@ -962,5 +1063,19 @@
         </div>
       </section>
     </footer>
+
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script type="text/javascript" src="./js/libs/my-slick.js"></script>
   </body>
 </html>
