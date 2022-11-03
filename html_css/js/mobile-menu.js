@@ -16,7 +16,7 @@ export default function initMobileMenu() {
       e.target.className.animVal === "burger__icon-cross" ||
       e.target.className.animVal === "burger__icon") {
 
-      menuToggler()
+      menuToggler();
     }
   }
 

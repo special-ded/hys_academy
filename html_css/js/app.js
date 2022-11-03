@@ -4,8 +4,6 @@ import Storage from "./storage.js";
 import Select from "./select.js";
 
 export default class App {
-  constructor() {
-  }
 
   async init() {
     const data = await this.setSliderData(1);

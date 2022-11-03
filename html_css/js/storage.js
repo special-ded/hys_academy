@@ -1,11 +1,12 @@
 export default class Storage {
   constructor() {
+    this.localStorageSliderData = 'localStorageSliderData';
   }
 
   getSliderData() {
     this.initStorage();
 
-    return this.data = JSON.parse(localStorage.getItem('localStorageSliderData'));
+    return JSON.parse(localStorage.getItem(this.localStorageSliderData));
   }
 
   initStorage() {
@@ -25,9 +26,18 @@ export default class Storage {
   }
 
   renderFormData() {
-    this.formUserName ? document.querySelector('#username').value = this.formUserName : null;
-    this.formTelephone ? document.querySelector('#telephone').value = this.formTelephone : null;
-    this.formEmail ? document.querySelector('#email').value = this.formEmail : null;
+
+    document.querySelector('#username').value = this.formUserName
+      ? this.formUserName
+      : null;
+
+    document.querySelector('#telephone').value = this.formTelephone
+      ? this.formTelephone
+      : null;
+
+    document.querySelector('#email').value = this.formEmail
+      ? this.formEmail
+      : null;
   }
 
   setFormToLocalStorage() {
@@ -55,14 +65,6 @@ export default class Storage {
   }
 
   passValidation() {
-    return true
+    return true;
   }
-
 }
-
-
-
-
-
-
-
