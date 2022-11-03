@@ -1,9 +1,8 @@
 import preferDropDown from './drop-down-menu.js';
 import initMobileMenu from './mobile-menu.js';
-import paginator from './paginator.js'
-// import paginatorData from './data/paginator-data.js'
-import paginatorData from './data/paginator-data-big.js'
-import Slider from './slider.js';
+import paginatorData from './data/paginator-data-big.js';
+import App from './app.js';
+import '../css/style.css'
 
 (document.onload = () => {
   init();
@@ -11,32 +10,29 @@ import Slider from './slider.js';
 
 
 function init() {
+  putDataInLocalStorage();
+  initApp();
+
   addStickyHeader();
-  initPaginator();
   initMobileMenu();
   preferDropDown();
   initSlider();
 }
 
-function initPaginator() {
-  const data = paginatorData();
-
-  paginator('#paginator', data);
+function initApp() {
+  const app = new App();
+  app.init();
 }
 
-function initSlider() {
+function putDataInLocalStorage() {
   const data = paginatorData();
-  const slider = new Slider('#slider', data);
-
-  slider.initSlider();
+  localStorage.setItem('localStorageSliderData', JSON.stringify(data));
 }
 
-
-// ADDING STICKY HEADER
 function addStickyHeader() {
-  window.addEventListener('scroll', (event) => {
+  window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
 
-    window.scrollY > header.clientHeight ? header.classList.add('sticky') : header.classList.remove('sticky')
+    header.classList.toggle('sticky', window.scrollY > header.clientHeight);
   });
 }

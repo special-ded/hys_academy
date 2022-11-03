@@ -2,12 +2,12 @@ export default function initMobileMenu() {
   let menuOpen = false;
 
   initEventListener();
-  closeIfResize()
+  closeIfResize();
 
   function initEventListener() {
     const header = document.querySelector('#header');
 
-    header.addEventListener('click', clickHandler)
+    header.addEventListener('click', clickHandler);
   }
 
   function clickHandler(e) {
@@ -16,7 +16,7 @@ export default function initMobileMenu() {
       e.target.className.animVal === "burger__icon-cross" ||
       e.target.className.animVal === "burger__icon") {
 
-      menuToggler()
+      menuToggler();
     }
   }
 

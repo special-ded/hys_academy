@@ -1,1081 +1,924 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
 
-    <script type="module" src="./js/index.js" defer></script>
-    <title>Draganov Ivan</title>
-  </head>
-  <body>
-    <svg class="bg-icons" viewBox="0 0 41 32">
-      <use href="./assets/images/sprite.svg#icon-background"></use>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./build/index.min.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="./css/style.css" /> -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script type="text/javascript" src="./build/index.min.js" defer></script>
+  <!-- <script type="module" src="./js/index.js" defer></script> -->
+  <title>Draganov Ivan</title>
+</head>
+
+<body>
+  <svg class="bg-icons" viewBox="0 0 41 32">
+    <use href="./assets/images/sprite.svg#icon-background"></use>
+  </svg>
+  <div class="bg-green">
+    <svg class="bg-green-top" viewBox="0 0 36 32">
+      <use href="./assets/images/sprite.svg#icon-green-bg-top"></use>
     </svg>
-    <div class="bg-green">
-      <svg class="bg-green-top" viewBox="0 0 36 32">
-        <use href="./assets/images/sprite.svg#icon-green-bg-top"></use>
+    <svg class="bg-green-bottom" viewBox="0 0 38 32">
+      <use href="./assets/images/sprite.svg#icon-green-bg-bottom"></use>
+    </svg>
+  </div>
+  <header class="header container" id="header">
+    <div class="header__icons">
+      <svg class="burger__icon" viewBox="0 0 24 24">
+        <use class="burger__icon" href="./assets/images/sprite.svg#icon-burger"></use>
       </svg>
-      <svg class="bg-green-bottom" viewBox="0 0 38 32">
-        <use href="./assets/images/sprite.svg#icon-green-bg-bottom"></use>
+      <svg class="main-logo-icon" width="54" height="24" viewBox="0 0 54 24">
+        <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
       </svg>
     </div>
-    <header class="header container" id="header">
-      <div class="header__icons">
-        <svg class="burger__icon" viewBox="0 0 24 24">
-          <use
-            class="burger__icon"
-            href="./assets/images/sprite.svg#icon-burger"
-          ></use>
-        </svg>
-        <svg class="main-logo-icon" width="54" height="24" viewBox="0 0 54 24">
-          <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
-        </svg>
-      </div>
 
-      <!-- MOBILE MENU -->
+    <!-- MOBILE MENU -->
 
-      <nav class="mobile__menu">
-        <div class="mobile__menu-container">
-          <div class="burger__icons-container">
-            <svg
-              class="burger__icon-cross"
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-            >
-              <use
-                class="burger__icon-cross"
-                href="./assets/images/sprite.svg#icon-burger-cross"
-              ></use>
-            </svg>
-          </div>
-          <ul class="burger__menu">
-            <li class="menu__elem burger-line">
-              <a class="menu__elem-item" href="#categories">Categories</a>
-            </li>
-            <li class="menu__elem burger-line">
-              <a class="menu__elem-item" href="#course">Course</a>
-            </li>
-            <li class="menu__elem burger-line">
-              <a class="menu__elem-item" href="#explore">Explore</a>
-            </li>
-            <li class="menu__elem">
-              <a class="menu__elem-item" href="#degree">Degrees</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- DESKTOP MENU -->
-
-      <nav class="header__nav">
-        <ul class="header__list">
-          <li class="header__elem">
-            <a class="header__elem-link" href="#categories">Categories</a>
-          </li>
-          <li class="header__elem">
-            <a class="header__elem-link" href="#course">Course</a>
-          </li>
-          <li class="header__elem">
-            <a class="header__elem-link" href="#explore">Explore</a>
-          </li>
-          <li class="header__elem">
-            <a class="header__elem-link" href="#degree">Degrees</a>
-          </li>
-        </ul>
-        <button
-          class="header__nav-button blue-btn btn"
-          onclick="location.href='#explore'"
-        >
-          Explore
-        </button>
-      </nav>
-    </header>
-    <main>
-      <!-- TOP SECTION -->
-
-      <section class="top-section container">
-        <div class="top-section__wrapper">
-          <article class="top-section__article">
-            <h1 class="top-section__title">
-              Education is the <br />
-              most powerfull <br />
-              weapon
-            </h1>
-            <p class="top-section__text">
-              A bank is a financial institution accepts deposits<br />
-              from public and creates credit. For all of your needs.
-            </p>
-            <div class="top-section__buttons">
-              <button class="blue-btn btn">Read More</button>
-              <a class="get-started-btn btn green-btn" href="#registration"
-                >Get started</a
-              >
-            </div>
-          </article>
-          <svg class="coding-girl-img" viewBox="0 0 32 32">
-            <use href="./assets/images/sprite.svg#icon-coding-girl2"></use>
+    <nav class="mobile__menu">
+      <div class="mobile__menu-container">
+        <div class="burger__icons-container">
+          <svg class="burger__icon-cross" width="14" height="14" viewBox="0 0 14 14">
+            <use class="burger__icon-cross" href="./assets/images/sprite.svg#icon-burger-cross"></use>
           </svg>
         </div>
-        <ul class="top-section__links">
-          <li class="top-section__link">
-            <a href="#"
-              ><img
-                class="link-img"
-                src="./assets/images/youfone-logo.png"
-                alt="Youfone"
-                width="155"
-            /></a>
+        <ul class="burger__menu">
+          <li class="menu__elem burger-line">
+            <a class="menu__elem-item" href="#categories">Categories</a>
           </li>
-          <li class="top-section__link">
-            <a href="#"
-              ><img
-                class="link-img"
-                src="./assets/images/nice-logo.png"
-                alt="Nice"
-                width="97"
-            /></a>
+          <li class="menu__elem burger-line">
+            <a class="menu__elem-item" href="#course">Course</a>
           </li>
-          <li class="top-section__link">
-            <a href="#">
-              <img
-                class="link-img"
-                src="./assets/images/swishfund-logo.png"
-                alt="Swishfund"
-                width="135"
-            /></a>
+          <li class="menu__elem burger-line">
+            <a class="menu__elem-item" href="#explore">Explore</a>
           </li>
-          <li class="top-section__link">
-            <a href="#"
-              ><img
-                class="link-img"
-                src="./assets/images/brico-logo.png"
-                alt="Brico"
-                width="91"
-            /></a>
-          </li>
-          <li class="top-section__link">
-            <a href="#"
-              ><img
-                class="link-img praxis"
-                src="./assets/images/praxis-logo.png"
-                alt="Praxis"
-                width="101"
-            /></a>
+          <li class="menu__elem">
+            <a class="menu__elem-item" href="#degree">Degrees</a>
           </li>
         </ul>
-      </section>
+      </div>
+    </nav>
+    <!-- DESKTOP MENU -->
 
-      <!-- ADVANTAGES SECTION -->
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__elem">
+          <a class="header__elem-link" href="#categories">Categories</a>
+        </li>
+        <li class="header__elem">
+          <a class="header__elem-link" href="#course">Course</a>
+        </li>
+        <li class="header__elem">
+          <a class="header__elem-link" href="#explore">Explore</a>
+        </li>
+        <li class="header__elem">
+          <a class="header__elem-link" href="#degree">Degrees</a>
+        </li>
+      </ul>
+      <button class="header__nav-button blue-btn btn" onclick="location.href='#explore'">
+        Explore
+      </button>
+    </nav>
+  </header>
+  <main>
+    <!-- TOP SECTION -->
 
-      <section class="advantages container">
-        <h2 class="blue-line">Shy shoose us?</h2>
-        <div class="advantages__first-line">
-          <article class="advantages__first-line-article">
-            <svg class="advantages__icon" viewBox="0 0 32 32">
-              <use href="./assets/images/sprite.svg#icon-certificate"></use>
-            </svg>
-            <h3 class="advantages__title">Certificate</h3>
-            <p class="advantages__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
-              sed do eiusmod.A bank is a financial institution accepts<br />
-              deposits from public and creates credit.
-            </p>
-          </article>
-          <article class="advantages__first-line-article">
-            <svg class="advantages__icon" viewBox="0 0 32 32">
-              <use href="./assets/images/sprite.svg#icon-protractor"></use>
-            </svg>
-            <h3 class="advantages__title">Life Programs</h3>
-            <p class="advantages__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing <br />
-              elit, sed institution accepts deposits from public
-            </p>
-          </article>
-        </div>
-        <div class="advantages__second-line">
-          <article class="advantages__second-line-article">
-            <svg class="advantages__icon" viewBox="0 0 32 32">
-              <use href="./assets/images/sprite.svg#icon-microscope"></use>
-            </svg>
-            <h3 class="advantages__title">Affordability</h3>
-            <p class="advantages__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
-              sed. A bank is a financial institution accepts deposits from<br />
-              public and creates credit.
-            </p>
-          </article>
-          <article class="advantages__second-line-article">
-            <svg class="advantages__icon" viewBox="0 0 32 32">
-              <use href="./assets/images/sprite.svg#icon-book"></use>
-            </svg>
-            <h3 class="advantages__title">Social</h3>
-            <p class="advantages__text">
-              A bank is a financial institution accepts deposits from<br />
-              public and creates credit.
-            </p>
-          </article>
-        </div>
-      </section>
-      <a name="course"></a>
-
-      <!-- COURSES SECTION -->
-
-      <section class="courses container">
-        <svg class="courses__bg-icons" viewBox="0 0 41 32">
-          <use href="./assets/images/sprite.svg#icon-background"></use>
+    <section class="top-section container">
+      <div class="top-section__wrapper">
+        <article class="top-section__article">
+          <h1 class="top-section__title">
+            Education is the <br />
+            most powerfull <br />
+            weapon
+          </h1>
+          <p class="top-section__text">
+            A bank is a financial institution accepts deposits<br />
+            from public and creates credit. For all of your needs.
+          </p>
+          <div class="top-section__buttons">
+            <button class="blue-btn btn">Read More</button>
+            <a class="get-started-btn btn green-btn" href="#registration">Get started</a>
+          </div>
+        </article>
+        <svg class="coding-girl-img" viewBox="0 0 32 32">
+          <use href="./assets/images/sprite.svg#icon-coding-girl2"></use>
         </svg>
-        <span class="pretitle">MOST POPULAR COURSES</span>
-        <h2 class="courses__title">2000+ Online courses</h2>
+      </div>
+      <ul class="top-section__links">
+        <li class="top-section__link">
+          <a href="#"><img class="link-img" src="./assets/images/youfone-logo.png" alt="Youfone" width="155" /></a>
+        </li>
+        <li class="top-section__link">
+          <a href="#"><img class="link-img" src="./assets/images/nice-logo.png" alt="Nice" width="97" /></a>
+        </li>
+        <li class="top-section__link">
+          <a href="#">
+            <img class="link-img" src="./assets/images/swishfund-logo.png" alt="Swishfund" width="135" /></a>
+        </li>
+        <li class="top-section__link">
+          <a href="#"><img class="link-img" src="./assets/images/brico-logo.png" alt="Brico" width="91" /></a>
+        </li>
+        <li class="top-section__link">
+          <a href="#"><img class="link-img praxis" src="./assets/images/praxis-logo.png" alt="Praxis" width="101" /></a>
+        </li>
+      </ul>
+    </section>
 
-        <!-- Courses Slider -->
+    <!-- ADVANTAGES SECTION -->
 
-        <div class="courses__slider">
-          <div class="slider__slides">
-            <article class="slider__item">
-              <img
-                class="slider__item-img"
-                data-lazy="./assets/images/slider-img1.png"
-                alt="Slide 1"
-              />
-              <div class="slider__img-inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img1-small.png"
-                  alt="Slide 1 small"
-                />
-                <h3 class="slider__img-title">DESIGN</h3>
-                <p class="slider__sub-title">Learn Photoshop title</p>
-                <hr />
-                <div class="slider__img-price">
-                  <div>
-                    <span>$260</span>
-                    <p class="slider__img-price-crossed">$360</p>
-                  </div>
-                  <ul class="slider__img-rating">
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg class="star-white" viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>(4)</li>
-                  </ul>
+    <section class="advantages container">
+      <h2 class="blue-line">Shy shoose us?</h2>
+      <div class="advantages__first-line">
+        <article class="advantages__first-line-article">
+          <svg class="advantages__icon" viewBox="0 0 32 32">
+            <use href="./assets/images/sprite.svg#icon-certificate"></use>
+          </svg>
+          <h3 class="advantages__title">Certificate</h3>
+          <p class="advantages__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
+            sed do eiusmod.A bank is a financial institution accepts<br />
+            deposits from public and creates credit.
+          </p>
+        </article>
+        <article class="advantages__first-line-article">
+          <svg class="advantages__icon" viewBox="0 0 32 32">
+            <use href="./assets/images/sprite.svg#icon-protractor"></use>
+          </svg>
+          <h3 class="advantages__title">Life Programs</h3>
+          <p class="advantages__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing <br />
+            elit, sed institution accepts deposits from public
+          </p>
+        </article>
+      </div>
+      <div class="advantages__second-line">
+        <article class="advantages__second-line-article">
+          <svg class="advantages__icon" viewBox="0 0 32 32">
+            <use href="./assets/images/sprite.svg#icon-microscope"></use>
+          </svg>
+          <h3 class="advantages__title">Affordability</h3>
+          <p class="advantages__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
+            sed. A bank is a financial institution accepts deposits from<br />
+            public and creates credit.
+          </p>
+        </article>
+        <article class="advantages__second-line-article">
+          <svg class="advantages__icon" viewBox="0 0 32 32">
+            <use href="./assets/images/sprite.svg#icon-book"></use>
+          </svg>
+          <h3 class="advantages__title">Social</h3>
+          <p class="advantages__text">
+            A bank is a financial institution accepts deposits from<br />
+            public and creates credit.
+          </p>
+        </article>
+      </div>
+    </section>
+    <a name="course"></a>
+
+    <!-- COURSES SECTION -->
+
+    <section class="courses container">
+      <svg class="courses__bg-icons" viewBox="0 0 41 32">
+        <use href="./assets/images/sprite.svg#icon-background"></use>
+      </svg>
+      <span class="pretitle">MOST POPULAR COURSES</span>
+      <h2 class="courses__title">2000+ Online courses</h2>
+
+      <!-- Courses Slider -->
+
+      <div class="courses__slider">
+        <div class="slider__slides">
+          <article class="slider__item">
+            <img class="slider__item-img" data-lazy="./assets/images/slider-img1.png" alt="Slide 1" />
+            <div class="slider__img-inner">
+              <img class="slider__img_small" src="./assets/images/slider-img1-small.png" alt="Slide 1 small" />
+              <h3 class="slider__img-title">DESIGN</h3>
+              <p class="slider__sub-title">Learn Photoshop title</p>
+              <hr />
+              <div class="slider__img-price">
+                <div>
+                  <span>$260</span>
+                  <p class="slider__img-price-crossed">$360</p>
                 </div>
+                <ul class="slider__img-rating">
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg class="star-white" viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>(4)</li>
+                </ul>
               </div>
-            </article>
-            <article class="slider__item">
-              <img
-                class="slider__item-img"
-                data-lazy="./assets/images/slider-img2.png"
-                alt="Slide 1"
-              />
-              <div class="slider__img-inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img1-small.png"
-                  alt="Slide 1 small"
-                />
-                <h3 class="slider__img-title">DESIGN</h3>
-                <p class="slider__sub-title">Learn Photoshop title</p>
-                <hr />
-                <div class="slider__img-price">
-                  <div>
-                    <span>$260</span>
-                    <p class="slider__img-price-crossed">$360</p>
-                  </div>
-                  <ul class="slider__img-rating">
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg class="star-white" viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>(4)</li>
-                  </ul>
+            </div>
+          </article>
+          <article class="slider__item">
+            <img class="slider__item-img" data-lazy="./assets/images/slider-img2.png" alt="Slide 1" />
+            <div class="slider__img-inner">
+              <img class="slider__img_small" src="./assets/images/slider-img1-small.png" alt="Slide 1 small" />
+              <h3 class="slider__img-title">DESIGN</h3>
+              <p class="slider__sub-title">Learn Photoshop title</p>
+              <hr />
+              <div class="slider__img-price">
+                <div>
+                  <span>$260</span>
+                  <p class="slider__img-price-crossed">$360</p>
                 </div>
+                <ul class="slider__img-rating">
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg class="star-white" viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>(4)</li>
+                </ul>
               </div>
-            </article>
-            <article class="slider__item">
-              <img
-                class="slider__item-img"
-                data-lazy="./assets/images/slider-img3.png"
-                alt="Slide 1"
-              />
-              <div class="slider__img-inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img1-small.png"
-                  alt="Slide 1 small"
-                />
-                <h3 class="slider__img-title">DESIGN</h3>
-                <p class="slider__sub-title">Learn Photoshop title</p>
-                <hr />
-                <div class="slider__img-price">
-                  <div>
-                    <span>$260</span>
-                    <p class="slider__img-price-crossed">$360</p>
-                  </div>
-                  <ul class="slider__img-rating">
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg class="star-white" viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>(4)</li>
-                  </ul>
+            </div>
+          </article>
+          <article class="slider__item">
+            <img class="slider__item-img" data-lazy="./assets/images/slider-img3.png" alt="Slide 1" />
+            <div class="slider__img-inner">
+              <img class="slider__img_small" src="./assets/images/slider-img1-small.png" alt="Slide 1 small" />
+              <h3 class="slider__img-title">DESIGN</h3>
+              <p class="slider__sub-title">Learn Photoshop title</p>
+              <hr />
+              <div class="slider__img-price">
+                <div>
+                  <span>$260</span>
+                  <p class="slider__img-price-crossed">$360</p>
                 </div>
+                <ul class="slider__img-rating">
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg class="star-white" viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>(4)</li>
+                </ul>
               </div>
-            </article>
-            <article class="slider__item">
-              <img
-                class="slider__item-img"
-                data-lazy="./assets/images/slider-img1.png"
-                alt="Slide 1"
-              />
-              <div class="slider__img-inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img1-small.png"
-                  alt="Slide 1 small"
-                />
-                <h3 class="slider__img-title">DESIGN</h3>
-                <p class="slider__sub-title">Learn Photoshop title</p>
-                <hr />
-                <div class="slider__img-price">
-                  <div>
-                    <span>$260</span>
-                    <p class="slider__img-price-crossed">$360</p>
-                  </div>
-                  <ul class="slider__img-rating">
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg class="star-white" viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>(4)</li>
-                  </ul>
+            </div>
+          </article>
+          <article class="slider__item">
+            <img class="slider__item-img" data-lazy="./assets/images/slider-img1.png" alt="Slide 1" />
+            <div class="slider__img-inner">
+              <img class="slider__img_small" src="./assets/images/slider-img1-small.png" alt="Slide 1 small" />
+              <h3 class="slider__img-title">DESIGN</h3>
+              <p class="slider__sub-title">Learn Photoshop title</p>
+              <hr />
+              <div class="slider__img-price">
+                <div>
+                  <span>$260</span>
+                  <p class="slider__img-price-crossed">$360</p>
                 </div>
+                <ul class="slider__img-rating">
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg class="star-white" viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>(4)</li>
+                </ul>
               </div>
-            </article>
-            <article class="slider__item">
-              <img
-                class="slider__item-img"
-                data-lazy="./assets/images/slider-img2.png"
-                alt="Slide 2"
-                width="270"
-              />
-              <div class="slider__img-inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img2-small.png"
-                  alt="Slide 2 small"
-                />
-                <h3 class="slider__img-title">Marketing</h3>
-                <p class="slider__sub-title">Learn Photoshop title trun...</p>
-                <hr />
-                <div class="slider__img-price">
-                  <div>
-                    <span>$260</span>
-                    <p class="slider__img-price-crossed">$360</p>
-                  </div>
-                  <ul class="slider__img-rating">
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg class="star-white" viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg class="star-white" viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg class="star-white" viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>(4)</li>
-                  </ul>
+            </div>
+          </article>
+          <article class="slider__item">
+            <img class="slider__item-img" data-lazy="./assets/images/slider-img2.png" alt="Slide 2" width="270" />
+            <div class="slider__img-inner">
+              <img class="slider__img_small" src="./assets/images/slider-img2-small.png" alt="Slide 2 small" />
+              <h3 class="slider__img-title">Marketing</h3>
+              <p class="slider__sub-title">Learn Photoshop title trun...</p>
+              <hr />
+              <div class="slider__img-price">
+                <div>
+                  <span>$260</span>
+                  <p class="slider__img-price-crossed">$360</p>
                 </div>
+                <ul class="slider__img-rating">
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg class="star-white" viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg class="star-white" viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg class="star-white" viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>(4)</li>
+                </ul>
               </div>
-            </article>
-            <article class="slider__item">
-              <img
-                class="slider__item-img"
-                data-lazy="./assets/images/slider-img3.png"
-                alt="Slide 3"
-                width="270"
-              />
-              <div class="slider__img-inner">
-                <img
-                  class="slider__img_small"
-                  src="./assets/images/slider-img3-small.png"
-                  alt="Slide 3 small"
-                />
-                <h3 class="slider__img-title">Web design</h3>
-                <p class="slider__sub-title">Learn Photoshop</p>
-                <hr />
-                <div class="slider__img-price">
-                  <div>
-                    <span>$260</span>
-                    <p class="slider__img-price-crossed">$360</p>
-                  </div>
-                  <ul class="slider__img-rating">
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 29 32" width="10">
-                        <use href="./assets/images/sprite.svg#icon-star"></use>
-                      </svg>
-                    </li>
-                    <li>(4)</li>
-                  </ul>
+            </div>
+          </article>
+          <article class="slider__item">
+            <img class="slider__item-img" data-lazy="./assets/images/slider-img3.png" alt="Slide 3" width="270" />
+            <div class="slider__img-inner">
+              <img class="slider__img_small" src="./assets/images/slider-img3-small.png" alt="Slide 3 small" />
+              <h3 class="slider__img-title">Web design</h3>
+              <p class="slider__sub-title">Learn Photoshop</p>
+              <hr />
+              <div class="slider__img-price">
+                <div>
+                  <span>$260</span>
+                  <p class="slider__img-price-crossed">$360</p>
                 </div>
+                <ul class="slider__img-rating">
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 29 32" width="10">
+                      <use href="./assets/images/sprite.svg#icon-star"></use>
+                    </svg>
+                  </li>
+                  <li>(4)</li>
+                </ul>
               </div>
-            </article>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Courses slider end -->
+    </section>
+
+    <!-- SECTION DESCRIPTION -->
+    <a name="explore"></a>
+    <section class="description">
+      <div class="description_bg"></div>
+      <div class="description__left">
+        <img class="description__left-img" src="./assets/images/two-women-img.png" alt="Two women" />
+        <div>
+          <button class="slider__arrow-btn">
+            <svg class="description__play">
+              <use class="description__play-btn" href="./assets/images/sprite.svg#icon-play-btn"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <article class="description__article">
+        <span class="pretitle">UNIVERSOTY DESCRIPTION</span>
+        <h2 class="description__title blue-line">Take a tour</h2>
+        <p class="description__text-first">
+          Sed ut perspiciatis unde omnis iste natus error sit <br />
+          voluptatem accusantium doloremque
+        </p>
+        <p class="description__text-second">
+          Laudantium, totam rem aperiam, eaque ipsa quae ab illo<br />
+          inventore veritatis et quasi architecto beatae vitae dicta<br />
+          sunt explicabo.
+        </p>
+        <ul class="description__dot">
+          <li class="description__dot-item">
+            Neque porro quisquam est, qui dolorem ipsum quia<br />
+            dolor sit amet, consectetur
+          </li>
+          <li class="description__dot-item">
+            Ut enim ad minima veniam, quis nostrum <br />
+            exercitationem ullam corporis suscipit laboriosam,<br />
+            nisi ut aliquid ex ea commodi consequatur?
+          </li>
+        </ul>
+        <button class="description__button blue-btn btn">Read More</button>
+        <div class="description__circle"></div>
+        <div class="description__square"></div>
+      </article>
+    </section>
+    <a name="events"></a>
+
+    <!-- SECTION EVENTS -->
+
+    <section class="events">
+      <article class="events__article">
+        <h2 class="blue-line">Why shoose us?</h2>
+        <ul class="events__list">
+          <li class="events__elem">
+            <h3>International Conference on Bussiness</h3>
+            <div class="events__elem-wrapper">
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-calendar"></use>
+                </svg>
+                <p class="events__elem-text">July 8, 2018</p>
+              </div>
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-clock"></use>
+                </svg>
+                <p class="events__elem-text">5:00pm - 7:00pm</p>
+              </div>
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-location"></use>
+                </svg>
+                <p class="events__elem-text">United States</p>
+              </div>
+            </div>
+          </li>
+          <li class="events__elem">
+            <h3>International Conference on Bussiness</h3>
+            <div class="events__elem-wrapper">
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-calendar"></use>
+                </svg>
+                <p class="events__elem-text">July 8, 2018</p>
+              </div>
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-clock"></use>
+                </svg>
+                <p class="events__elem-text">5:00pm - 7:00pm</p>
+              </div>
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-location"></use>
+                </svg>
+                <p class="events__elem-text">United States</p>
+              </div>
+            </div>
+          </li>
+          <li class="events__elem">
+            <h3>International Conference on Bussiness</h3>
+            <div class="events__elem-wrapper">
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-calendar"></use>
+                </svg>
+                <p class="events__elem-text">July 8, 2018</p>
+              </div>
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-clock"></use>
+                </svg>
+                <p class="events__elem-text">5:00pm - 7:00pm</p>
+              </div>
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-location"></use>
+                </svg>
+                <p class="events__elem-text">United States</p>
+              </div>
+            </div>
+          </li>
+          <li class="events__elem">
+            <h3>International Conference on Bussiness</h3>
+            <div class="events__elem-wrapper">
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-calendar"></use>
+                </svg>
+                <p class="events__elem-text">July 8, 2018</p>
+              </div>
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-clock"></use>
+                </svg>
+                <p class="events__elem-text">5:00pm - 7:00pm</p>
+              </div>
+              <div class="events__elem-item">
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-location"></use>
+                </svg>
+                <p class="events__elem-text">United States</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Events aside part -->
+
+      <aside class="events__aside">
+        <h2 class="events__aside-title">FEATURED</h2>
+        <div class="events__aside-values">
+          <p>$213<span>Days</span></p>
+          <p>23<span>Hours</span></p>
+          <p>59<span>Min</span></p>
+        </div>
+        <div class="events__aside-img">
+          <img src="./assets/images/featured.svg" width="328" alt="Featured" />
+          <div class="events__aside-inner">
+            <h3 class="events__aside-subtitle">
+              International Conference...
+            </h3>
+            <div class="events__aside-details">
+              <div>
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-calendar"></use>
+                </svg>
+                <p class="aside__elem-text">July 8, 2018</p>
+              </div>
+              <div>
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-clock"></use>
+                </svg>
+                <p class="aside__elem-text">5pm - 7pm</p>
+              </div>
+              <div>
+                <svg width="20" height="20">
+                  <use href="./assets/images/sprite.svg#icon-location"></use>
+                </svg>
+                <p class="aside__elem-text">United States</p>
+              </div>
+            </div>
           </div>
         </div>
+        <button class="sponsor-btn blue-btn btn">Become a Sponsor</button>
+      </aside>
+    </section>
 
-        <!-- Courses slider end -->
-      </section>
+    <!-- SECTION PREFER -->
+    <a name="degree"></a>
+    <section class="prefer container">
+      <h2 class="blue-line">
+        Which one do<br class="prefer-br" />
+        you prefer?
+      </h2>
+      <p class="prefer__text">
+        Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+        veritatis et quasi<br />
+        architecto beatae vitae dicta sunt explicabo.
+      </p>
 
-      <!-- SECTION DESCRIPTION -->
-      <a name="explore"></a>
-      <section class="description">
-        <div class="description_bg"></div>
-        <div class="description__left">
-          <img
-            class="description__left-img"
-            src="./assets/images/two-women-img.png"
-            alt="Two women"
-          />
-          <div>
-            <button class="slider__arrow-btn">
-              <svg class="description__play">
-                <use
-                  class="description__play-btn"
-                  href="./assets/images/sprite.svg#icon-play-btn"
-                ></use>
-              </svg>
-            </button>
+      <!-- PAGINATOR -->
+      <div class="select">
+        <div class="input__wrap">
+          <input class="input__value" value="Label" />
+          <div class="input__icon">
+            <svg class="paginator__icon" width="20" height="20">
+              <use class="paginator__icon-use" href="./assets/images/sprite.svg#icon-arrow-default"></use>
+            </svg>
           </div>
         </div>
-        <article class="description__article">
-          <span class="pretitle">UNIVERSOTY DESCRIPTION</span>
-          <h2 class="description__title blue-line">Take a tour</h2>
-          <p class="description__text-first">
-            Sed ut perspiciatis unde omnis iste natus error sit <br />
+        <ul class="select__body">
+          <li class="select__item">Item 1</li>
+          <li class="select__item">Item 2</li>
+          <li class="select__item">Item 3</li>
+          <li class="select__item">Item 4</li>
+          <li class="select__item">Item 5</li>
+          <li class="select__item">Item 6</li>
+        </ul>
+      </div>
+
+      <!-- PAGINATOR END-->
+
+      <div class="prefer__slider" id="slider"></div>
+    </section>
+
+    <!-- CUSTOMERS SECTION -->
+
+    <section class="customers">
+      <svg class="customers__background-top" viewBox="0 0 31 32">
+        <use href="./assets/images/sprite.svg#icon-customers-bg-top"></use>
+      </svg>
+      <svg class="customers__background-behind" viewBox="0 0 42 32">
+        <use href="./assets/images/sprite.svg#icon-customers-bg-behind"></use>
+      </svg>
+      <div class="customers__container container">
+        <div class="customers__img-block">
+          <div class="customers__img-bg"></div>
+          <img class="customers__img" src="./assets/images/customers.png" width="344" height="344"
+            alt="Two women image" />
+        </div>
+        <div class="customers__feedback">
+          <h2 class="customers__feedback-title blue-line">
+            Our great <br class="brake-text-375" />
+            customers
+          </h2>
+          <svg class="customers__feedback-icon" viewBox="0 0 40 32" width="39">
+            <use href="./assets/images/sprite.svg#icon-customers-quotes"></use>
+          </svg>
+          <p class="customers__text-first">
+            Sed ut perspiciatis unde omnis iste natus error sit<br />
             voluptatem accusantium doloremque
           </p>
-          <p class="description__text-second">
+          <p class="customers__text-second">
             Laudantium, totam rem aperiam, eaque ipsa quae ab illo<br />
             inventore veritatis et quasi architecto beatae vitae dicta<br />
             sunt explicabo.
           </p>
-          <ul class="description__dot">
-            <li class="description__dot-item">
-              Neque porro quisquam est, qui dolorem ipsum quia<br />
-              dolor sit amet, consectetur
-            </li>
-            <li class="description__dot-item">
-              Ut enim ad minima veniam, quis nostrum <br />
-              exercitationem ullam corporis suscipit laboriosam,<br />
-              nisi ut aliquid ex ea commodi consequatur?
-            </li>
-          </ul>
-          <button class="description__button blue-btn btn">Read More</button>
-          <div class="description__circle"></div>
-          <div class="description__square"></div>
-        </article>
-      </section>
-      <a name="events"></a>
-
-      <!-- SECTION EVENTS -->
-
-      <section class="events">
-        <article class="events__article">
-          <h2 class="blue-line">Why shoose us?</h2>
-          <ul class="events__list">
-            <li class="events__elem">
-              <h3>International Conference on Bussiness</h3>
-              <div class="events__elem-wrapper">
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-calendar"></use>
-                  </svg>
-                  <p class="events__elem-text">July 8, 2018</p>
-                </div>
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-clock"></use>
-                  </svg>
-                  <p class="events__elem-text">5:00pm - 7:00pm</p>
-                </div>
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-location"></use>
-                  </svg>
-                  <p class="events__elem-text">United States</p>
-                </div>
-              </div>
-            </li>
-            <li class="events__elem">
-              <h3>International Conference on Bussiness</h3>
-              <div class="events__elem-wrapper">
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-calendar"></use>
-                  </svg>
-                  <p class="events__elem-text">July 8, 2018</p>
-                </div>
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-clock"></use>
-                  </svg>
-                  <p class="events__elem-text">5:00pm - 7:00pm</p>
-                </div>
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-location"></use>
-                  </svg>
-                  <p class="events__elem-text">United States</p>
-                </div>
-              </div>
-            </li>
-            <li class="events__elem">
-              <h3>International Conference on Bussiness</h3>
-              <div class="events__elem-wrapper">
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-calendar"></use>
-                  </svg>
-                  <p class="events__elem-text">July 8, 2018</p>
-                </div>
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-clock"></use>
-                  </svg>
-                  <p class="events__elem-text">5:00pm - 7:00pm</p>
-                </div>
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-location"></use>
-                  </svg>
-                  <p class="events__elem-text">United States</p>
-                </div>
-              </div>
-            </li>
-            <li class="events__elem">
-              <h3>International Conference on Bussiness</h3>
-              <div class="events__elem-wrapper">
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-calendar"></use>
-                  </svg>
-                  <p class="events__elem-text">July 8, 2018</p>
-                </div>
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-clock"></use>
-                  </svg>
-                  <p class="events__elem-text">5:00pm - 7:00pm</p>
-                </div>
-                <div class="events__elem-item">
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-location"></use>
-                  </svg>
-                  <p class="events__elem-text">United States</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </article>
-
-        <!-- Events aside part -->
-
-        <aside class="events__aside">
-          <h2 class="events__aside-title">FEATURED</h2>
-          <div class="events__aside-values">
-            <p>$213<span>Days</span></p>
-            <p>23<span>Hours</span></p>
-            <p>59<span>Min</span></p>
+          <h3 class="customers__text-author">Stephanie Magion</h3>
+          <div class="customer__dots">
+            <button class="customer__dot btn"></button>
+            <button class="customer__dot btn"></button>
+            <button class="customer__dot customer__dot_active btn"></button>
+            <button class="customer__dot btn"></button>
+            <button class="customer__dot btn"></button>
           </div>
-          <div class="events__aside-img">
-            <img
-              src="./assets/images/featured.svg"
-              width="328"
-              alt="Featured"
-            />
-            <div class="events__aside-inner">
-              <h3 class="events__aside-subtitle">
-                International Conference...
-              </h3>
-              <div class="events__aside-details">
-                <div>
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-calendar"></use>
-                  </svg>
-                  <p class="aside__elem-text">July 8, 2018</p>
-                </div>
-                <div>
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-clock"></use>
-                  </svg>
-                  <p class="aside__elem-text">5pm - 7pm</p>
-                </div>
-                <div>
-                  <svg width="20" height="20">
-                    <use href="./assets/images/sprite.svg#icon-location"></use>
-                  </svg>
-                  <p class="aside__elem-text">United States</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="sponsor-btn blue-btn btn">Become a Sponsor</button>
-        </aside>
-      </section>
-
-      <!-- SECTION PREFER -->
-      <a name="degree"></a>
-      <section class="prefer container">
-        <h2 class="blue-line">
-          Which one do<br class="prefer-br" />
-          you prefer?
-        </h2>
-        <p class="prefer__text">
-          Laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-          veritatis et quasi<br />
-          architecto beatae vitae dicta sunt explicabo.
-        </p>
-
-        <!-- PAGINATOR -->
-        <div class="select">
-          <div class="input__wrap">
-            <input class="input__value" value="Label" />
-            <div class="input__icon">
-              <svg class="paginator__icon" width="20" height="20">
-                <use
-                  class="paginator__icon-use"
-                  href="./assets/images/sprite.svg#icon-arrow-default"
-                ></use>
-              </svg>
-            </div>
-          </div>
-          <ul class="select__body">
-            <li class="select__item">Item 1</li>
-            <li class="select__item">Item 2</li>
-            <li class="select__item">Item 3</li>
-            <li class="select__item">Item 4</li>
-            <li class="select__item">Item 5</li>
-            <li class="select__item">Item 6</li>
-          </ul>
         </div>
+      </div>
+    </section>
 
-        <!-- PAGINATOR END-->
-
-        <div class="prefer__slider" id="slider"></div>
-      </section>
-
-      <!-- CUSTOMERS SECTION -->
-
-      <section class="customers">
-        <svg class="customers__background-top" viewBox="0 0 31 32">
-          <use href="./assets/images/sprite.svg#icon-customers-bg-top"></use>
-        </svg>
-        <svg class="customers__background-behind" viewBox="0 0 42 32">
-          <use href="./assets/images/sprite.svg#icon-customers-bg-behind"></use>
-        </svg>
-        <div class="customers__container container">
-          <div class="customers__img-block">
-            <div class="customers__img-bg"></div>
-            <img
-              class="customers__img"
-              src="./assets/images/customers.png"
-              width="344"
-              height="344"
-              alt="Two women image"
-            />
+    <!-- SECTION READY -->
+    <a name="categories"></a>
+    <section class="ready">
+      <img src="./assets/images/ready-bg.png" width="1440" />
+      <div class="ready__container container">
+        <article class="ready__article">
+          <p class="ready__pretitle">IT'S FAST, FREE AND VERY EASY!</p>
+          <h2 class="ready__title">Ready to get started?</h2>
+          <p class="ready__text-first">
+            Sed ut perspiciatis unde omnis iste natus error sit<br />
+            voluptatem accusantium doloremque
+          </p>
+          <p class="ready__text-second">
+            Laudantium, totam rem aperiam, eaque ipsa quae ab illo<br />
+            inventore veritatis et quasi architecto beatae vitae dicta<br />
+            sunt explicabo.
+          </p>
+          <div class="ready__buttons">
+            <a class="ready__apply-btn green-btn btn" href="#registration">Apply Now</a>
+            <button class="ready__request-btn btn">Request Service</button>
           </div>
-          <div class="customers__feedback">
-            <h2 class="customers__feedback-title blue-line">
-              Our great <br class="brake-text-375" />
-              customers
-            </h2>
-            <svg
-              class="customers__feedback-icon"
-              viewBox="0 0 40 32"
-              width="39"
-            >
-              <use
-                href="./assets/images/sprite.svg#icon-customers-quotes"
-              ></use>
+        </article>
+        <aside class="ready__links">
+          <div class="ready__links-header">
+            <svg viewBox="0 0 32 32" width="24">
+              <use href="./assets/images/sprite.svg#icon-link"></use>
             </svg>
-            <p class="customers__text-first">
-              Sed ut perspiciatis unde omnis iste natus error sit<br />
-              voluptatem accusantium doloremque
-            </p>
-            <p class="customers__text-second">
-              Laudantium, totam rem aperiam, eaque ipsa quae ab illo<br />
-              inventore veritatis et quasi architecto beatae vitae dicta<br />
-              sunt explicabo.
-            </p>
-            <h3 class="customers__text-author">Stephanie Magion</h3>
-            <div class="customer__dots">
-              <button class="customer__dot btn"></button>
-              <button class="customer__dot btn"></button>
-              <button class="customer__dot customer__dot_active btn"></button>
-              <button class="customer__dot btn"></button>
-              <button class="customer__dot btn"></button>
-            </div>
+            <h2 class="ready__links-title">Quick Link</h2>
           </div>
-        </div>
-      </section>
+          <div class="ready__links-item">
+            <svg viewBox="0 0 32 32" width="24">
+              <use href="./assets/images/sprite.svg#icon-pen-tool"></use>
+            </svg>
+            <p class="ready__links-text">Tution and Fees</p>
+          </div>
+          <div class="ready__links-item">
+            <svg viewBox="0 0 32 32" width="24">
+              <use href="./assets/images/sprite.svg#icon-case"></use>
+            </svg>
+            <p class="ready__links-text">Review & Rating</p>
+          </div>
+          <div class="ready__links-item">
+            <svg viewBox="0 0 32 32" width="24">
+              <use href="./assets/images/sprite.svg#icon-book-open"></use>
+            </svg>
+            <p class="ready__links-text">Universoty Facilities</p>
+          </div>
+          <div class="ready__links-item">
+            <svg viewBox="0 0 32 32" width="24">
+              <use href="./assets/images/sprite.svg#icon-comment"></use>
+            </svg>
+            <p class="ready__links-text">Community Q&A</p>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-      <!-- SECTION READY -->
-      <a name="categories"></a>
-      <section class="ready">
-        <img src="./assets/images/ready-bg.png" width="1440" />
-        <div class="ready__container container">
-          <article class="ready__article">
-            <p class="ready__pretitle">IT'S FAST, FREE AND VERY EASY!</p>
-            <h2 class="ready__title">Ready to get started?</h2>
-            <p class="ready__text-first">
-              Sed ut perspiciatis unde omnis iste natus error sit<br />
-              voluptatem accusantium doloremque
-            </p>
-            <p class="ready__text-second">
-              Laudantium, totam rem aperiam, eaque ipsa quae ab illo<br />
-              inventore veritatis et quasi architecto beatae vitae dicta<br />
-              sunt explicabo.
-            </p>
-            <div class="ready__buttons">
-              <a class="ready__apply-btn green-btn btn" href="#registration"
-                >Apply Now</a
-              >
-              <button class="ready__request-btn btn">Request Service</button>
-            </div>
-          </article>
-          <aside class="ready__links">
-            <div class="ready__links-header">
-              <svg viewBox="0 0 32 32" width="24">
-                <use href="./assets/images/sprite.svg#icon-link"></use>
+    <!-- BLOG SECTION -->
+
+    <section class="blog container">
+      <h2 class="blue-line">Latest Blog</h2>
+      <div class="blog__slider">
+        <div class="blog__slider-wrapper" id="paginator"></div>
+        <div class="blog__slider-scroll"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <svg class="footer-bg-left" viewBox="0 0 41 32">
+      <use href="./assets/images/sprite.svg#icon-background"></use>
+    </svg>
+    <svg class="footer-bg-right" viewBox="0 0 41 32">
+      <use href="./assets/images/sprite.svg#icon-background"></use>
+    </svg>
+
+    <!-- SECTION FORM -->
+    <a name="registration"></a>
+    <section class="registration-container container">
+      <form action="#">
+        <label for="username"></label>
+        <input class="form__input" id="username" type="text" placeholder="Name Surname" required />
+        <label for="telephone"></label>
+        <input class="form__input" id="telephone" type="tel" placeholder="Phone" required />
+        <label for="email"></label>
+        <input class="form__input" id="email" type="email" placeholder="Enter your email..." required />
+        <button class="send-btn btn" type="submit">Send</button>
+      </form>
+    </section>
+    <section class="footer__top container">
+      <div>
+        <svg class="main-logo-icon" width="54" height="24" viewBox="0 0 54 24">
+          <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
+        </svg>
+      </div>
+      <div class="footer__links-list">
+        <h3 class="footer__links-title">Company</h3>
+        <ul class="footer__links">
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">About Company</a>
+          </li>
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">Feature Course</a>
+          </li>
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">Careers</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__links-list">
+        <h3 class="footer__links-title">Help Links</h3>
+        <ul class="footer__links">
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">Student Support</a>
+          </li>
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">Course Policy</a>
+          </li>
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">Register Key</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__links-list">
+        <h3 class="footer__links-title">Course</h3>
+        <ul class="footer__links">
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">Wordpres</a>
+          </li>
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">Photography</a>
+          </li>
+          <li class="footer__link-text">
+            <a class="footer__link" href="#">Learning English</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__links-list">
+        <h3 class="footer__links-title">Social Media</h3>
+        <ul class="footer__social">
+          <li class="footer__link-text">
+            <a href="#">
+              <svg class="social-media" viewBox="0 0 32 32" width="24">
+                <use href="./assets/images/sprite.svg#icon-facebook"></use>
               </svg>
-              <h2 class="ready__links-title">Quick Link</h2>
-            </div>
-            <div class="ready__links-item">
-              <svg viewBox="0 0 32 32" width="24">
-                <use href="./assets/images/sprite.svg#icon-pen-tool"></use>
+            </a>
+          </li>
+          <li class="footer__link-text">
+            <a href="#">
+              <svg class="social-media" viewBox="0 0 32 32" width="24">
+                <use href="./assets/images/sprite.svg#icon-instagram"></use>
               </svg>
-              <p class="ready__links-text">Tution and Fees</p>
-            </div>
-            <div class="ready__links-item">
-              <svg viewBox="0 0 32 32" width="24">
-                <use href="./assets/images/sprite.svg#icon-case"></use>
+            </a>
+          </li>
+          <li class="footer__link-text">
+            <a href="#">
+              <svg class="social-media" viewBox="0 0 32 32" width="24">
+                <use href="./assets/images/sprite.svg#icon-twitter"></use>
               </svg>
-              <p class="ready__links-text">Review & Rating</p>
-            </div>
-            <div class="ready__links-item">
-              <svg viewBox="0 0 32 32" width="24">
-                <use href="./assets/images/sprite.svg#icon-book-open"></use>
+            </a>
+          </li>
+          <li class="footer__link-text">
+            <a href="#">
+              <svg class="social-media" viewBox="0 0 32 32" width="24">
+                <use href="./assets/images/sprite.svg#icon-youtube"></use>
               </svg>
-              <p class="ready__links-text">Universoty Facilities</p>
-            </div>
-            <div class="ready__links-item">
-              <svg viewBox="0 0 32 32" width="24">
-                <use href="./assets/images/sprite.svg#icon-comment"></use>
-              </svg>
-              <p class="ready__links-text">Community Q&A</p>
-            </div>
-          </aside>
-        </div>
-      </section>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="footer__bottom container">
+      <hr class="footer__bottom-hr" />
+      <div class="footer__bottom-links">
+        <p class="links-title">All rights Reserved</p>
+        <ul class="links-list">
+          <li><a class="footer__bottom-link" href="#">About company</a></li>
+          <li><a class="footer__bottom-link" href="#">Privacy Policy</a></li>
+          <li><a class="footer__bottom-link" href="#">Help Center</a></li>
+          <li><a class="footer__bottom-link" href="#">Terms</a></li>
+          <li><a class="footer__bottom-link" href="#">Site map</a></li>
+        </ul>
+      </div>
+    </section>
+  </footer>
 
-      <!-- BLOG SECTION -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript" src="./js/libs/my-slick.js"></script>
+</body>
 
-      <section class="blog container">
-        <h2 class="blue-line">Latest Blog</h2>
-        <div class="blog__slider">
-          <div class="blog__slider-wrapper" id="paginator"></div>
-          <div class="blog__slider-scroll"></div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-
-    <footer class="footer">
-      <svg class="footer-bg-left" viewBox="0 0 41 32">
-        <use href="./assets/images/sprite.svg#icon-background"></use>
-      </svg>
-      <svg class="footer-bg-right" viewBox="0 0 41 32">
-        <use href="./assets/images/sprite.svg#icon-background"></use>
-      </svg>
-
-      <!-- SECTION FORM -->
-      <a name="registration"></a>
-      <section class="registration-container container">
-        <form action="/action.php">
-          <label for="username"></label>
-          <input
-            class="form__input"
-            id="username"
-            type="text"
-            placeholder="Name Surname"
-            required
-          />
-          <label for="telephone"></label>
-          <input
-            class="form__input"
-            id="telephone"
-            type="tel"
-            placeholder="Phone"
-            required
-          />
-          <label for="email"></label>
-          <input
-            class="form__input"
-            id="email"
-            type="email"
-            placeholder="Enter your email..."
-            required
-          />
-          <button class="send-btn btn" type="submit">Send</button>
-        </form>
-      </section>
-      <section class="footer__top container">
-        <div>
-          <svg
-            class="main-logo-icon"
-            width="54"
-            height="24"
-            viewBox="0 0 54 24"
-          >
-            <use href="./assets/images/sprite.svg#icon-union-main-logo"></use>
-          </svg>
-        </div>
-        <div class="footer__links-list">
-          <h3 class="footer__links-title">Company</h3>
-          <ul class="footer__links">
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">About Company</a>
-            </li>
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">Feature Course</a>
-            </li>
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">Careers</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__links-list">
-          <h3 class="footer__links-title">Help Links</h3>
-          <ul class="footer__links">
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">Student Support</a>
-            </li>
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">Course Policy</a>
-            </li>
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">Register Key</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__links-list">
-          <h3 class="footer__links-title">Course</h3>
-          <ul class="footer__links">
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">Wordpres</a>
-            </li>
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">Photography</a>
-            </li>
-            <li class="footer__link-text">
-              <a class="footer__link" href="#">Learning English</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__links-list">
-          <h3 class="footer__links-title">Social Media</h3>
-          <ul class="footer__social">
-            <li class="footer__link-text">
-              <a href="#">
-                <svg class="social-media" viewBox="0 0 32 32" width="24">
-                  <use href="./assets/images/sprite.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer__link-text">
-              <a href="#">
-                <svg class="social-media" viewBox="0 0 32 32" width="24">
-                  <use href="./assets/images/sprite.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer__link-text">
-              <a href="#">
-                <svg class="social-media" viewBox="0 0 32 32" width="24">
-                  <use href="./assets/images/sprite.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer__link-text">
-              <a href="#">
-                <svg class="social-media" viewBox="0 0 32 32" width="24">
-                  <use href="./assets/images/sprite.svg#icon-youtube"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="footer__bottom container">
-        <hr class="footer__bottom-hr" />
-        <div class="footer__bottom-links">
-          <p class="links-title">All rights Reserved</p>
-          <ul class="links-list">
-            <li><a class="footer__bottom-link" href="#">About company</a></li>
-            <li><a class="footer__bottom-link" href="#">Privacy Policy</a></li>
-            <li><a class="footer__bottom-link" href="#">Help Center</a></li>
-            <li><a class="footer__bottom-link" href="#">Terms</a></li>
-            <li><a class="footer__bottom-link" href="#">Site map</a></li>
-          </ul>
-        </div>
-      </section>
-    </footer>
-
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
-    <script type="text/javascript" src="./js/libs/my-slick.js"></script>
-  </body>
 </html>
