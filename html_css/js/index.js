@@ -16,6 +16,7 @@ function init() {
   addStickyHeader();
   initMobileMenu();
   preferDropDown();
+  initSlider();
 }
 
 function initApp() {
