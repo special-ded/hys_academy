@@ -3,15 +3,15 @@ export default class Slider {
   constructor(selector, data) {
     this.selector = selector;
     this.data = data;
+    this.slider = document.querySelector(this.selector);
+    this.page = 0;
   }
 
   initSlider() {
-    this.slider = document.querySelector(this.selector);
     this.processDataForSlides(this.data);
     this.initIventListener();
-    this.page = 0;
     this.buttonHandler(this.page);
-    this.changeSlidesQuantity()
+    this.changeSlidesQuantity();
   }
 
   renderButtons(buttonSide) {
@@ -24,17 +24,22 @@ export default class Slider {
   }
 
   getButtonTemplate(buttonSide) {
-    return `<svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
+    return `
+    <svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
       <use class="arrow-${buttonSide}" href="./assets/images/sprite.svg#icon-slide-${buttonSide}"></use>
-      </svg>`;
+      </svg>
+      `;
   }
 
   initIventListener() {
     this.slider.addEventListener('click', (event) => {
-      this.isButtonClass(event) ? this.clickHandler(event) : null;
+
+      if (this.isButtonClass(event)) {
+        this.clickHandler(event);
+      }
     })
 
-    window.addEventListener('resize', () => this.changeSlidesQuantity())
+    window.addEventListener('resize', () => this.changeSlidesQuantity());
   }
 
   isButtonClass(event) {
@@ -52,14 +57,13 @@ export default class Slider {
       ++this.page;
       this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217}px)`);
       this.buttonHandler(this.page);
-      return
+      return;
     }
 
     if (event.target.className.baseVal === 'arrow-left') {
       --this.page;
       this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217}px)`);
       this.buttonHandler(this.page);
-      return
     }
   }
 
@@ -67,9 +71,8 @@ export default class Slider {
     this.arrowParent = [...document.querySelectorAll('.slider__arrow-btn')];
     this.arrowLeft = this.arrowParent.find(el => el.children[0].className.baseVal === 'slider__arrow arrow-left');
 
-    page === 0 ? this.arrowLeft.disabled = true : this.arrowLeft.disabled = false;
-
-    page >= this.maxPage ? this.button.disabled = true : this.button.disabled = false;
+    this.arrowLeft.disabled = page === 0;
+    this.button.disabled = page >= this.maxPage;
   }
 
   processDataForSlides(data) {
@@ -110,25 +113,24 @@ export default class Slider {
     if (window.innerWidth < 620) {
       this.slider.style.maxWidth = '338px';
       this.slidesShown = 1;
-      return
+      return;
     }
 
     if (window.innerWidth < 800) {
       this.slider.style.maxWidth = '554px';
       this.slidesShown = 2;
-      return
+      return;
     }
 
     if (window.innerWidth < 1020) {
       this.slider.style.maxWidth = '768px';
       this.slidesShown = 3;
-      return
+      return;
     }
 
     if (window.innerWidth > 1020) {
       this.slider.style.maxWidth = '990px';
       this.slidesShown = 4;
-      return
     }
   }
 }

@@ -3,8 +3,6 @@ import Slider from './slider.js';
 import Storage from './storage.js';
 
 export default class App {
-  constructor() {
-  }
 
   init() {
     this.storage = new Storage();
