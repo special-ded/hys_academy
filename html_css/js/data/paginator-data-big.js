@@ -25,7 +25,7 @@ export default function paginatorData() {
   },
   {
     "id": 4,
-    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "title": "culpa odio esse rerum omnis laboriosam voluptate",
     "url": "https://via.placeholder.com/600/d32776",
     "userImage": "https://via.placeholder.com/150/d32776",
     "redirectLink": "https://jsonplaceholder.typicode.com",
@@ -64,7 +64,7 @@ export default function paginatorData() {
   },
   {
     "id": 9,
-    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "title": "culpa odio esse rerum omnis laboriosam voluptate",
     "url": "https://via.placeholder.com/600/d32776",
     "userImage": "https://via.placeholder.com/150/d32776",
     "redirectLink": "https://jsonplaceholder.typicode.com",
@@ -79,7 +79,7 @@ export default function paginatorData() {
     "category": "Design"
   }, {
     "id": 11,
-    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "title": "culpa odio esse rerum omnis laboriosam voluptate",
     "url": "https://via.placeholder.com/600/d32776",
     "userImage": "https://via.placeholder.com/150/d32776",
     "redirectLink": "https://jsonplaceholder.typicode.com",
@@ -109,7 +109,7 @@ export default function paginatorData() {
     "category": "Design"
   }, {
     "id": 15,
-    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "title": "culpa odio esse rerum omnis laboriosam voluptate",
     "url": "https://via.placeholder.com/600/d32776",
     "userImage": "https://via.placeholder.com/150/d32776",
     "redirectLink": "https://jsonplaceholder.typicode.com",

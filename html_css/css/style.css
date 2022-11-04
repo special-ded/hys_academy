@@ -515,14 +515,14 @@ div .slick-list {
 .slick-arrow.slick-prev {
   position: absolute;
   top: 183px;
-  left: 3px;
+  left: -6px;
   background: url('../assets/images/slick-left-arrow.svg') center/21% no-repeat;
 }
 
 .slick-arrow.slick-next {
   position: absolute;
   top: 183px;
-  right: 3px;
+  right: 0px;
   z-index: 20;
   background: url('../assets/images/slick-right-arrow.svg') center/21% no-repeat;
 }
@@ -1992,6 +1992,10 @@ div .slick-list {
     max-width: 263px;
   }
 
+  .slick-arrow.slick-next {
+    right: -3px;
+  }
+
   .slider__img-inner hr {
     left: 11px;
     width: 250px;
@@ -2118,6 +2122,14 @@ div .slick-list {
 
   .customers__background-behind {
     bottom: -35px;
+  }
+
+  .customers__img-block {
+    width: unset;
+  }
+
+  .customers__container {
+    align-items: unset;
   }
 
   .ready__buttons {
