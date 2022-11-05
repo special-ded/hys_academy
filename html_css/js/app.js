@@ -2,7 +2,6 @@ import paginator from "./paginator.js";
 import Slider from "./slider.js";
 import Storage from "./storage.js";
 import Select from "./select.js";
-import CustomerSlider from "./customer-slider.js";
 
 export default class App {
 
@@ -14,7 +13,6 @@ export default class App {
     this.storage = new Storage();
     this.data = this.storage.getSliderData();
     this.initPaginator();
-    this.initCustomerSlider()
   }
 
   async setSliderData(albumId) {
@@ -40,10 +38,5 @@ export default class App {
   initSlider(data) {
     const slider = new Slider("#slider", data);
     slider.initSlider();
-  }
-
-  initCustomerSlider() {
-    const customerSlider = new CustomerSlider()
-    customerSlider.initSlider()
   }
 }
