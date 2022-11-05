@@ -6,17 +6,17 @@ export default class CustomerSlider {
     this.slider = document.querySelector(this.selector);
     this.buttons = document.querySelector('.customer__dots');
     this.activeButtonClass = "customer__dot_active";
+    this.image = document.querySelector('.customers__img');
+    this.firstText = document.querySelector('.customers__text-first');
+    this.secondText = document.querySelector('.customers__text-second');
   }
 
   initSlider() {
-    console.log(this.slider, this.buttons, this.data);
-
     this.initEventListener()
   }
 
   initEventListener() {
     this.buttons.addEventListener('click', (e) => this.clickHandler(e))
-
   }
 
   clickHandler(event) {
@@ -24,19 +24,29 @@ export default class CustomerSlider {
       return
     }
     this.activeBtnToggler(event, this.activeButtonClass)
-
-    console.log(event.target.value)
   }
 
-  activeBtnToggler(e, activeButtonClass) {
+  activeBtnToggler(event, activeButtonClass) {
     let activeBtn = document.querySelector(`.` + activeButtonClass);
-    console.log(activeBtn);
 
-    activeBtn = document.querySelector(`.` + activeButtonClass);
     activeBtn.classList.remove(activeButtonClass);
-    e.target.classList.add(activeButtonClass);
+    event.target.classList.add(activeButtonClass);
+    this.renderImage(event.target.value)
+    this.renderText(event.target.value)
+  }
+
+  renderImage(activeBtn) {
+
+
+    this.image.src = this.data[activeBtn - 1].url
 
   }
 
+  renderText(activeBtn) {
+    console.log(this.data[activeBtn].title);
+    this.firstText.innerText = this.data[activeBtn].title
+    this.secondText.innerText = this.data[activeBtn].title
+
+  }
 }
 

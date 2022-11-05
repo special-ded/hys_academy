@@ -1,6 +1,5 @@
 const sliderScroll = document.querySelector('.blog__slider-scroll');
 let sliderWrapper = '';
-const buttonClassName = "blog__slider-btn";
 const activeButtonClass = "blog__slider-btn_active"
 
 
@@ -16,12 +15,6 @@ export default function paginator(selector, data) {
   updateData(slidesQuantity, activeButtonNumber, data);
   checkTranslateProperty();
 }
-
-// function isButtonClass(event) {
-//   const buttonClasses = [...event.target.classList];
-
-//   return buttonClasses.includes(buttonClassName);
-// }
 
 function initClickListener(slidesQuantity, data) {
   sliderScroll.addEventListener('click', clickHandler.bind(this, slidesQuantity, data));
@@ -138,7 +131,6 @@ function activeBtnToggler(e, activeButtonClass) {
   if (!e.target.value) {
     return
   }
-  activeBtn = document.querySelector(`.` + activeButtonClass);
   activeBtn.classList.remove(activeButtonClass);
   e.target.classList.add(activeButtonClass);
 }
