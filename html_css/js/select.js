@@ -55,21 +55,18 @@ export default class Select {
 
   selectToggler() {
     this.selectDiv.classList.toggle('is-active');
-
     this.iconToggler();
   }
 
   selectChoose(text, value) {
+    this.iconToggler();
+    this.selectDiv.classList.remove('is-active');
+
     if (!value) {
-      this.iconToggler();
-      this.selectDiv.classList.remove('is-active');
       return
     }
 
     document.querySelector('.input__value').value = text;
-
-    this.selectDiv.classList.remove('is-active');
-    this.iconToggler();
     this.onSelectChange(value);
   }
 
