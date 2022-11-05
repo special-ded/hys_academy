@@ -1,7 +1,7 @@
 import initMobileMenu from "./mobile-menu.js";
 import paginatorData from "./data/paginator-data-big.js";
 import App from "./app.js";
-import '../css/style.css';
+// import '../css/style.css';
 
 (document.onload = () => {
   init();

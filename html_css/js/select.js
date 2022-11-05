@@ -39,6 +39,7 @@ export default class Select {
 
   initEventListeners() {
     document.querySelector('.select__list').addEventListener('click', (event) => {
+      console.log(event.target.innerText, event.target.value);
       this.selectChoose(event.target.innerText, event.target.value);
     })
 
@@ -59,6 +60,12 @@ export default class Select {
   }
 
   selectChoose(text, value) {
+    if (!value) {
+      this.iconToggler();
+      this.selectDiv.classList.remove('is-active');
+      return
+    }
+
     document.querySelector('.input__value').value = text;
 
     this.selectDiv.classList.remove('is-active');
