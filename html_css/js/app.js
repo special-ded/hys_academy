@@ -5,16 +5,18 @@ import Select from "./select.js";
 import CustomerSlider from "./customer-slider.js";
 
 export default class App {
+  constructor() {
+    this.storage = new Storage();
+    this.data = this.storage.getSliderData();
+  }
 
   async init() {
     const data = await this.setSliderData(1);
     this.initSelect();
     this.initSlider(data);
 
-    this.storage = new Storage();
-    this.data = this.storage.getSliderData();
     this.initPaginator();
-    this.initCustomerSlider()
+    this.initCustomerSlider(data)
   }
 
   async setSliderData(albumId) {
@@ -42,8 +44,8 @@ export default class App {
     slider.initSlider();
   }
 
-  initCustomerSlider() {
-    const customerSlider = new CustomerSlider()
+  initCustomerSlider(data) {
+    const customerSlider = new CustomerSlider('#customer-slider', data)
     customerSlider.initSlider()
   }
 }

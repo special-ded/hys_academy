@@ -1,6 +1,7 @@
 const sliderScroll = document.querySelector('.blog__slider-scroll');
 let sliderWrapper = '';
 const buttonClassName = "blog__slider-btn";
+const activeButtonClass = "blog__slider-btn_active"
 
 
 export default function paginator(selector, data) {
@@ -16,11 +17,11 @@ export default function paginator(selector, data) {
   checkTranslateProperty();
 }
 
-function isButtonClass(event) {
-  const buttonClasses = [...event.target.classList];
+// function isButtonClass(event) {
+//   const buttonClasses = [...event.target.classList];
 
-  return buttonClasses.includes(buttonClassName);
-}
+//   return buttonClasses.includes(buttonClassName);
+// }
 
 function initClickListener(slidesQuantity, data) {
   sliderScroll.addEventListener('click', clickHandler.bind(this, slidesQuantity, data));
@@ -29,9 +30,9 @@ function initClickListener(slidesQuantity, data) {
 function clickHandler(slidesQuantity, data, event) {
   let activeButtonNumber = 0;
 
-  if (isButtonClass(event)) {
+  if (event.target.value) {
     activeButtonNumber = event.target.innerHTML;
-    activeBtnToggler(event);
+    activeBtnToggler(event, activeButtonClass);
     updateData(slidesQuantity, activeButtonNumber, data);
     buttonScrollHandler(activeButtonNumber, data);
   }
@@ -84,6 +85,7 @@ function renderButtons(data) {
   activeButton.classList.add('blog__slider-btn');
   activeButton.classList.add('blog__slider-btn_active');
   activeButton.innerText = 1;
+  activeButton.value = 1;
   sliderScrollWrap.appendChild(activeButton);
 
   for (let i = 0; i < (data.length / 2) - 1; i++) {
@@ -91,6 +93,7 @@ function renderButtons(data) {
 
     button.classList.add('blog__slider-btn');
     button.innerText = i + 2;
+    button.value = i + 2;
     sliderScrollWrap.appendChild(button);
   }
 }
@@ -118,9 +121,7 @@ function getSlideTemplate(slideData) {
 
 function smoothRendering(slide) {
   slide.classList.add('opacity');
-  setTimeout(() => {
-    slide.classList.remove('opacity');
-  }, 200)
+  setTimeout(() => { slide.classList.remove('opacity') }, 200)
 }
 
 function renderNewSlides(currentData) {
@@ -131,12 +132,13 @@ function renderNewSlides(currentData) {
   });
 }
 
-function activeBtnToggler(e) {
-  let activeBtn = sliderScroll.querySelector('.blog__slider-btn_active');
+function activeBtnToggler(e, activeButtonClass) {
+  let activeBtn = document.querySelector(`.` + activeButtonClass);
 
-  if (isButtonClass(e)) {
-    activeBtn = sliderScroll.querySelector('.blog__slider-btn_active');
-    activeBtn.classList.remove('blog__slider-btn_active');
-    e.target.classList.add('blog__slider-btn_active');
+  if (!e.target.value) {
+    return
   }
+  activeBtn = document.querySelector(`.` + activeButtonClass);
+  activeBtn.classList.remove(activeButtonClass);
+  e.target.classList.add(activeButtonClass);
 }

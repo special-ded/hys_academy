@@ -51,7 +51,6 @@ export default class Slider {
   }
 
   clickHandler(event) {
-
     this.maxPage = this.data.length - this.slidesShown;
 
     if (event.target.className.baseVal === 'arrow-right') {
@@ -95,11 +94,8 @@ export default class Slider {
 
   renderTemplate(slideData) {
     this.slide = document.createElement('div');
-
     this.slide.classList.add('prefer__slider-slide');
-
     this.slide.innerHTML = this.getSlideTemplate(slideData);
-
     this.slidesInner.appendChild(this.slide);
   }
 
