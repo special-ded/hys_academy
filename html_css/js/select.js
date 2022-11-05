@@ -39,7 +39,6 @@ export default class Select {
 
   initEventListeners() {
     document.querySelector('.select__list').addEventListener('click', (event) => {
-      console.log(event.target.innerText, event.target.value);
       this.selectChoose(event.target.innerText, event.target.value);
     })
 
