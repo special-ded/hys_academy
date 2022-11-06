@@ -8,6 +8,7 @@ export default class Slider {
   }
 
   initSlider() {
+    this.slider.innerHTML = '';
     this.processDataForSlides(this.data);
     this.initIventListener();
     this.buttonHandler(this.page);
@@ -55,14 +56,14 @@ export default class Slider {
 
     if (event.target.className.baseVal === 'arrow-right') {
       ++this.page;
-      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217}px)`);
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217.5}px)`);
       this.buttonHandler(this.page);
       return;
     }
 
     if (event.target.className.baseVal === 'arrow-left') {
       --this.page;
-      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217}px)`);
+      this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217.5}px)`);
       this.buttonHandler(this.page);
     }
   }
@@ -111,7 +112,7 @@ export default class Slider {
   changeSlidesQuantity() {
 
     if (window.innerWidth < 620) {
-      this.slider.style.maxWidth = '338px';
+      this.slider.style.maxWidth = '336px';
       this.slidesShown = 1;
       return;
     }
