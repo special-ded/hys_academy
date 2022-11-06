@@ -36,17 +36,12 @@ export default class CustomerSlider {
   }
 
   renderImage(activeBtn) {
-
-
     this.image.src = this.data[activeBtn - 1].url
-
   }
 
   renderText(activeBtn) {
-    console.log(this.data[activeBtn].title);
     this.firstText.innerText = this.data[activeBtn].title
     this.secondText.innerText = this.data[activeBtn].title
-
   }
 }
 
