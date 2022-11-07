@@ -1,4 +1,7 @@
 export default class Slider {
+  arrowLeftClass = 'arrow-left';
+  arrowRightClass = 'arrow-right';
+  arrowBtnClass = 'slider__arrow-btn'
 
   constructor(selector, data) {
     this.selector = selector;
@@ -17,7 +20,7 @@ export default class Slider {
 
   renderButtons(buttonSide) {
     this.button = document.createElement('button');
-    this.button.classList.add('slider__arrow-btn');
+    this.button.classList.add(this.arrowBtnClass);
 
     this.button.innerHTML = this.getButtonTemplate(buttonSide);
 
@@ -27,8 +30,10 @@ export default class Slider {
   getButtonTemplate(buttonSide) {
     return `
     <svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
-      <use class="arrow-${buttonSide}" href="./assets/images/sprite.svg#icon-slide-${buttonSide}"></use>
-      </svg>
+      <use class="arrow-${buttonSide}" 
+        href="./assets/images/sprite.svg#icon-slide-${buttonSide}">
+      </use>
+    </svg>
       `;
   }
 
@@ -44,7 +49,7 @@ export default class Slider {
   }
 
   isButtonClass(event) {
-    this.buttonClasses = ['arrow-left', 'arrow-right'];
+    this.buttonClasses = [this.arrowLeftClass, this.arrowRightClass];
     this.buttonClassName = event.target.className.baseVal;
 
     return this.buttonClasses.includes(this.buttonClassName);
@@ -53,14 +58,14 @@ export default class Slider {
   clickHandler(event) {
     this.maxPage = this.data.length - this.slidesShown;
 
-    if (event.target.className.baseVal === 'arrow-right') {
+    if (event.target.className.baseVal === this.arrowRightClass) {
       ++this.page;
       this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217.5}px)`);
       this.buttonHandler(this.page);
       return;
     }
 
-    if (event.target.className.baseVal === 'arrow-left') {
+    if (event.target.className.baseVal === this.arrowLeftClass) {
       --this.page;
       this.slidesInner.setAttribute('style', `transform: translateX(-${this.page * 217.5}px)`);
       this.buttonHandler(this.page);
@@ -68,7 +73,7 @@ export default class Slider {
   }
 
   buttonHandler(page) {
-    this.arrowParent = [...document.querySelectorAll('.slider__arrow-btn')];
+    this.arrowParent = [...document.querySelectorAll('.' + this.arrowBtnClass)];
     this.arrowLeft = this.arrowParent.find(el => el.children[0].className.baseVal === 'slider__arrow arrow-left');
 
     this.arrowLeft.disabled = page === 0;

@@ -9,8 +9,9 @@ import App from "./app.js";
 
 
 function init() {
-  putDataInLocalStorage();
   initApp();
+  putDataInLocalStorage();
+
 
   addStickyHeader();
   initMobileMenu();

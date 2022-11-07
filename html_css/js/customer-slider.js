@@ -1,14 +1,15 @@
 export default class CustomerSlider {
+  buttons = document.querySelector('.customer__dots');
+  activeButtonClass = "customer__dot_active";
+  image = document.querySelector('.customers__img');
+  firstText = document.querySelector('.customers__text-first');
+  secondText = document.querySelector('.customers__text-second');
 
   constructor(selector, data) {
     this.selector = selector;
     this.data = data;
     this.slider = document.querySelector(this.selector);
-    this.buttons = document.querySelector('.customer__dots');
-    this.activeButtonClass = "customer__dot_active";
-    this.image = document.querySelector('.customers__img');
-    this.firstText = document.querySelector('.customers__text-first');
-    this.secondText = document.querySelector('.customers__text-second');
+    this.initSlider()
   }
 
   initSlider() {

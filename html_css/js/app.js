@@ -32,7 +32,6 @@ export default class App {
 
   initSelect() {
     const select = new Select("#select");
-    select.initSelect();
   }
 
   initPaginator() {

@@ -1,9 +1,14 @@
 import App from "./app.js";
 
 export default class Select {
+  selectClassList = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
+  isActiveClass = 'is-active';
+  iconHrefDefault = "./assets/images/sprite.svg#icon-arrow-default";
+  iconHrefActive = "./assets/images/sprite.svg#icon-arrow-active";
 
   constructor(selector) {
     this.selector = selector;
+    this.initSelect()
   }
 
   initSelect() {
@@ -43,7 +48,7 @@ export default class Select {
     })
 
     document.querySelector(".select").addEventListener('click', (event) => {
-      this.classListInput = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
+      this.classListInput = this.selectClassList;
 
       if (this.classListInput.includes(event.target.className)
         || this.classListInput.includes(event.target.classList.value)) {
@@ -53,13 +58,13 @@ export default class Select {
   }
 
   selectToggler() {
-    this.selectDiv.classList.toggle('is-active');
+    this.selectDiv.classList.toggle(this.isActiveClass);
     this.iconToggler();
   }
 
   selectChoose(text, value) {
+    this.selectDiv.classList.remove(this.isActiveClass);
     this.iconToggler();
-    this.selectDiv.classList.remove('is-active');
 
     if (!value) {
       return
@@ -71,16 +76,15 @@ export default class Select {
 
   iconToggler() {
     this.paginatorIconLink = document.querySelector(".select__icon-use");
-
-    this.paginatorIconLink.href.baseVal = "./assets/images/sprite.svg#icon-arrow-default";
+    this.paginatorIconLink.href.baseVal = this.iconHrefDefault;
 
     if (this.selectDiv.className === "select is-active") {
-      this.paginatorIconLink.href.baseVal = "./assets/images/sprite.svg#icon-arrow-active";
+      this.paginatorIconLink.href.baseVal = this.iconHrefActive;
     }
   }
 
   async onSelectChange(value) {
-    const app = new App()
+    const app = new App();
     const data = await app.setSliderData(value);
 
     app.initSlider(data)
