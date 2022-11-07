@@ -14,7 +14,6 @@ export default class App {
     const data = await this.setSliderData(1);
     this.initSelect();
     this.initSlider(data);
-
     this.initPaginator();
     this.initCustomerSlider(data)
   }
@@ -40,11 +39,9 @@ export default class App {
 
   initSlider(data) {
     const slider = new Slider("#slider", data);
-    slider.initSlider();
   }
 
   initCustomerSlider(data) {
     const customerSlider = new CustomerSlider('#customer-slider', data)
-    customerSlider.initSlider()
   }
 }

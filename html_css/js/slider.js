@@ -8,6 +8,7 @@ export default class Slider {
     this.data = data;
     this.slider = document.querySelector(this.selector);
     this.page = 0;
+    this.initSlider()
   }
 
   initSlider() {

@@ -12,7 +12,6 @@ function init() {
   initApp();
   putDataInLocalStorage();
 
-
   addStickyHeader();
   initMobileMenu();
 }
