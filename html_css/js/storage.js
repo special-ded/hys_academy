@@ -1,4 +1,8 @@
 export default class Storage {
+  regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+  regNumber = /\+38+\d{10}$/;
+  regEmail = /^\S+@\S+\.\S+$/;
+
   constructor() {
     this.localStorageSliderData = 'localStorageSliderData';
   }
@@ -55,25 +59,55 @@ export default class Storage {
   clearLocalStorage() {
 
     if (this.passValidation()) {
-      setTimeout(() => {
-        document.querySelector('#username').value = '';
-        document.querySelector('#telephone').value = '';
-        document.querySelector('#email').value = '';
-        localStorage.clear();
-      }, 300);
+      document.querySelector('#username').value = '';
+      document.querySelector('#telephone').value = '';
+      document.querySelector('#email').value = '';
+      localStorage.clear();
     }
   }
 
   passValidation() {
-    console.log(document.querySelector('#username').value);
+    this.userNameValidation()
+    this.numberValidation()
+    this.emailValidation()
 
-    const regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
-    var name = document.querySelector('#username').value;
-    if (!regName.test(name)) {
-      alert('Invalid name given.');
-    } else {
-      alert('Valid name given.');
+    if (this.userNameValidation() && this.numberValidation() && this.emailValidation()) {
+      return true
     }
+  }
 
+  userNameValidation() {
+    const name = document.querySelector('#username').value;
+    document.querySelector('#username__alert').innerText = '';
+
+    if (!this.regName.test(name)) {
+      document.querySelector('#username__alert').innerText = 'Invalid name given';
+      return false
+    }
+    return true
+  }
+
+  numberValidation() {
+    console.log('22222');
+    const number = document.querySelector('#telephone').value;
+    document.querySelector('#telephone__alert').innerText = '';
+
+    if (!this.regNumber.test(number)) {
+      document.querySelector('#telephone__alert').innerText = 'Format: +38 077 777 77 77';
+      return false
+    }
+    return true
+  }
+
+  emailValidation() {
+    console.log('33333');
+    const email = document.querySelector('#email').value;
+    document.querySelector('#email__alert').innerText = '';
+
+    if (!this.regEmail.test(email)) {
+      document.querySelector('#email__alert').innerText = 'Invalid email given';
+      return false
+    }
+    return true
   }
 }

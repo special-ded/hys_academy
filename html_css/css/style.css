@@ -1514,15 +1514,11 @@ div .slick-list {
 
 .alert {
   display: block;
-  width: 420px;
-  height: 44px;
-  padding: 0px 10px 4px 10px;
-  margin: 0px auto 0px auto;
+  padding: 0px 10px 4px 27px;
+  margin: 0px auto 10px auto;
   font-weight: 500;
   font-size: 14px;
   line-height: 114%;
-  width: 408px;
-  height: 16px;
   color: var(--form-alert-text);
 }
 
@@ -1680,7 +1676,7 @@ div .slick-list {
   }
 
   .customers__container {
-    padding-left: 24px;
+    padding-left: 17px;
     padding-right: 24px;
   }
 
