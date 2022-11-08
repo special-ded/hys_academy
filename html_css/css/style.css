@@ -1490,7 +1490,7 @@ div .slick-list {
   width: 420px;
   height: 44px;
   padding: 0px 10px 4px 10px;
-  margin: 0px auto 16px auto;
+  margin: 0px auto 10px auto;
   background: var(--registration-input-bg);
   border-radius: 22px;
   border: 2px solid var(--registration-input-bg);
@@ -1519,7 +1519,7 @@ div .slick-list {
 .alert {
   display: block;
   padding: 0px 10px 4px 27px;
-  margin: 0px auto 10px auto;
+  margin: 0px auto 20px auto;
   font-weight: 500;
   font-size: 14px;
   line-height: 114%;
