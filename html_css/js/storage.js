@@ -67,47 +67,51 @@ export default class Storage {
   }
 
   passValidation() {
-    this.userNameValidation()
-    this.numberValidation()
-    this.emailValidation()
+    this.userNameValidation();
+    this.numberValidation();
+    this.emailValidation();
 
     if (this.userNameValidation() && this.numberValidation() && this.emailValidation()) {
-      return true
+      return true;
     }
   }
 
   userNameValidation() {
-    const name = document.querySelector('#username').value;
+    const userNameEl = document.querySelector('#username');
+    userNameEl.classList.remove('form__alert');
     document.querySelector('#username__alert').innerText = '';
 
-    if (!this.regName.test(name)) {
+    if (!this.regName.test(userNameEl.value)) {
       document.querySelector('#username__alert').innerText = 'Invalid name given';
-      return false
+      userNameEl.classList.add('form__alert');
+      return false;
     }
-    return true
+    return true;
   }
 
   numberValidation() {
-    console.log('22222');
-    const number = document.querySelector('#telephone').value;
+    const numberEl = document.querySelector('#telephone');
+    numberEl.classList.remove('form__alert');
     document.querySelector('#telephone__alert').innerText = '';
 
-    if (!this.regNumber.test(number)) {
+    if (!this.regNumber.test(numberEl.value)) {
       document.querySelector('#telephone__alert').innerText = 'Format: +38 077 777 77 77';
-      return false
+      numberEl.classList.add('form__alert');
+      return false;
     }
-    return true
+    return true;
   }
 
   emailValidation() {
-    console.log('33333');
-    const email = document.querySelector('#email').value;
+    const emailEl = document.querySelector('#email');
+    emailEl.classList.remove('form__alert');
     document.querySelector('#email__alert').innerText = '';
 
-    if (!this.regEmail.test(email)) {
+    if (!this.regEmail.test(emailEl.value)) {
       document.querySelector('#email__alert').innerText = 'Invalid email given';
-      return false
+      emailEl.classList.add('form__alert');
+      return false;
     }
-    return true
+    return true;
   }
 }

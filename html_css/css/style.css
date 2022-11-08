@@ -1512,6 +1512,10 @@ div .slick-list {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.form__alert {
+  border: 2px solid var(--form-alert-text);
+}
+
 .alert {
   display: block;
   padding: 0px 10px 4px 27px;
