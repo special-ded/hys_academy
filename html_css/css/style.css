@@ -78,6 +78,7 @@
   --blog-side-text-color: #5D74E4;
   --blog-slider-item-bg: #D6FAE7;
   --burger-line-color: rgba(61, 126, 255, 0.200);
+  --form-alert-text: #F15B5B;
 }
 
 html {
@@ -1511,6 +1512,20 @@ div .slick-list {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.alert {
+  display: block;
+  width: 420px;
+  height: 44px;
+  padding: 0px 10px 4px 10px;
+  margin: 0px auto 0px auto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  width: 408px;
+  height: 16px;
+  color: var(--form-alert-text);
+}
+
 .send-btn {
   width: 120px;
   height: 44px;
@@ -1965,7 +1980,8 @@ div .slick-list {
     top: 56px;
   }
 
-  .form__input {
+  .form__input,
+  .alert {
     width: 327px;
   }
 }

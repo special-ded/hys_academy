@@ -22,15 +22,15 @@ export default class App {
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`);
       const result = await response.json();
-      return result
+      return result;
     } catch (error) {
       console.error("Error:", error);
     }
-    return result
+    return result;
   }
 
   initSelect() {
-    const select = new Select("#select");
+    new Select("#select");
   }
 
   initPaginator() {
@@ -38,10 +38,10 @@ export default class App {
   }
 
   initSlider(data) {
-    const slider = new Slider("#slider", data);
+    new Slider("#slider", data);
   }
 
   initCustomerSlider(data) {
-    const customerSlider = new CustomerSlider('#customer-slider', data)
+    new CustomerSlider('#customer-slider', data);
   }
 }

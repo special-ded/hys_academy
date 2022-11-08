@@ -11,7 +11,6 @@ import App from "./app.js";
 function init() {
   initApp();
   putDataInLocalStorage();
-
   addStickyHeader();
   initMobileMenu();
 }

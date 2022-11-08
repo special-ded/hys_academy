@@ -65,6 +65,15 @@ export default class Storage {
   }
 
   passValidation() {
-    return true;
+    console.log(document.querySelector('#username').value);
+
+    const regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    var name = document.querySelector('#username').value;
+    if (!regName.test(name)) {
+      alert('Invalid name given.');
+    } else {
+      alert('Valid name given.');
+    }
+
   }
 }
