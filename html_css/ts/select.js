@@ -5,6 +5,7 @@ export default class Select {
   isActiveClass = 'is-active';
   iconHrefDefault = "./assets/images/sprite.svg#icon-arrow-default";
   iconHrefActive = "./assets/images/sprite.svg#icon-arrow-active";
+  #el;
 
   constructor(selector) {
     this.selector = selector;
@@ -12,14 +13,14 @@ export default class Select {
   }
 
   initSelect() {
-    this.selectDiv = document.querySelector(`${this.selector}`);
+    this.#el = document.querySelector(`${this.selector}`);
 
     this.renderSelect();
     this.initEventListeners();
   }
 
   renderSelect() {
-    this.selectDiv.innerHTML = this.getSelectTemplate();
+    this.#el.innerHTML = this.getSelectTemplate();
   }
 
   getSelectTemplate() {
@@ -58,12 +59,12 @@ export default class Select {
   }
 
   selectToggler() {
-    this.selectDiv.classList.toggle(this.isActiveClass);
+    this.#el.classList.toggle(this.isActiveClass);
     this.iconToggler();
   }
 
   selectChoose(text, value) {
-    this.selectDiv.classList.remove(this.isActiveClass);
+    this.#el.classList.remove(this.isActiveClass);
     this.iconToggler();
 
     if (!value) {
@@ -78,7 +79,7 @@ export default class Select {
     this.paginatorIconLink = document.querySelector(".select__icon-use");
     this.paginatorIconLink.href.baseVal = this.iconHrefDefault;
 
-    if (this.selectDiv.className === "select is-active") {
+    if (this.#el.className === "select is-active") {
       this.paginatorIconLink.href.baseVal = this.iconHrefActive;
     }
   }
