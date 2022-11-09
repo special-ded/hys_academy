@@ -2,7 +2,7 @@ import paginator from "./paginator.js";
 import Slider from "./slider.js";
 import Storage from "./storage.js";
 import Select from "./select.js";
-import CustomerSlider from "./customer-slider.js";
+import CustomerSlider from "./customer-slider.ts";
 
 export default class App {
   constructor() {
