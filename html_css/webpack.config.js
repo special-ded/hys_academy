@@ -5,12 +5,12 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   mode: 'development',
   entry: {
-    index: './js/index.js',
+    index: './ts/index.js',
   },
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(ts)$/,
         exclude: /(node_modules | data)/,
         use: ['babel-loader'],
       },
@@ -31,7 +31,7 @@ module.exports = {
     filename: 'index.min.css'
   })],
   output: {
-    filename: 'index.min.js',
+    filename: 'index.min.ts',
     path: __dirname + '/build',
   },
   devServer: {
@@ -39,6 +39,6 @@ module.exports = {
       directory: path.join(__dirname, '/'),
     },
     compress: true,
-    port: 8080,
+    port: 2077,
   },
 };
