@@ -10,17 +10,11 @@ export default function initMobileMenu() {
     header.addEventListener('click', clickHandler);
   }
 
-  function clickHandler(e: MouseEvent & {
-    target: HTMLButtonElement & {
-      className: {
-        animVal: string
-      }
-    }
-  }) {
+  function clickHandler(e: Event) {
 
-    if (e.target.className === "menu__elem-item" ||
-      e.target.className.animVal === "burger__icon-cross" ||
-      e.target.className.animVal === "burger__icon") {
+    if ((e.target as HTMLInputElement).className === "menu__elem-item" ||
+      (e.target as SVGImageElement).className.animVal === "burger__icon-cross" ||
+      (e.target as SVGImageElement).className.animVal === "burger__icon") {
 
       menuToggler();
     }
