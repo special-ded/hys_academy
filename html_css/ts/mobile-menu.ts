@@ -5,20 +5,22 @@ export default function initMobileMenu() {
   closeIfResize();
 
   function initEventListener() {
-    const header = document.querySelector('#header');
+    const header: HTMLHeadingElement = document.querySelector('#header');
 
-    (header as HTMLInputElement).addEventListener('click', clickHandler);
+    header.addEventListener('click', clickHandler);
   }
 
-  function clickHandler(e: Event) {
-    console.log((e.target as HTMLTextAreaElement).className);
+  function clickHandler(e: MouseEvent & {
+    target: HTMLButtonElement & {
+      className: {
+        animVal: string
+      }
+    }
+  }) {
 
-
-    if ((e.target as HTMLTextAreaElement).className === "menu__elem-item"
-      // ||
-      // (e.target as HTMLTextAreaElement).className.animVal === "burger__icon-cross" ||
-      // (e.target as HTMLTextAreaElement).className.animVal === "burger__icon"
-    ) {
+    if (e.target.className === "menu__elem-item" ||
+      e.target.className.animVal === "burger__icon-cross" ||
+      e.target.className.animVal === "burger__icon") {
 
       menuToggler();
     }
