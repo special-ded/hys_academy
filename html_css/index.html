@@ -677,42 +677,45 @@
       <svg class="customers__background-behind" viewBox="0 0 42 32">
         <use href="./assets/images/sprite.svg#icon-customers-bg-behind"></use>
       </svg>
-      <div class="customers__container container">
+      <div class="customers__container container" id="customer-slider">
         <div class="customers__img-block">
           <div class="customers__img-bg"></div>
           <img class="customers__img" src="./assets/images/customers.png" width="344" height="344"
             alt="Two women image" />
         </div>
-        <div class="customers__feedback">
-          <h2 class="customers__feedback-title blue-line">
-            Our great <br class="brake-text-375" />
-            customers
-          </h2>
-          <svg class="customers__feedback-icon" viewBox="0 0 40 32" width="39">
-            <use href="./assets/images/sprite.svg#icon-customers-quotes"></use>
-          </svg>
-          <p class="customers__text-first">
-            Sed ut perspiciatis unde omnis iste natus error sit<br />
-            voluptatem accusantium doloremque
-          </p>
-          <p class="customers__text-second">
-            Laudantium, totam rem aperiam, eaque ipsa quae ab illo<br />
-            inventore veritatis et quasi architecto beatae vitae dicta<br />
-            sunt explicabo.
-          </p>
-          <h3 class="customers__text-author">Stephanie Magion</h3>
+        <div>
+          <div class="customers__feedback">
+            <h2 class="customers__feedback-title blue-line">
+              Our great <br class="brake-text-375" />
+              customers
+            </h2>
+            <svg class="customers__feedback-icon" viewBox="0 0 40 32" width="39">
+              <use href="./assets/images/sprite.svg#icon-customers-quotes"></use>
+            </svg>
+            <p class="customers__text-first">
+              Sed ut perspiciatis unde omnis iste natus error sit
+              voluptatem accusantium doloremque
+            </p>
+            <p class="customers__text-second">
+              Laudantium, totam rem aperiam, eaque ipsa quae ab illo
+              inventore veritatis et quasi architecto beatae vitae dicta
+              sunt explicabo.
+            </p>
+            <h3 class="customers__text-author">Stephanie Magion</h3>
+          </div>
           <div class="customer__dots">
-            <button class="customer__dot btn"></button>
-            <button class="customer__dot btn"></button>
-            <button class="customer__dot customer__dot_active btn"></button>
-            <button class="customer__dot btn"></button>
-            <button class="customer__dot btn"></button>
+            <button value="1" class="customer__dot btn"></button>
+            <button value="2" class="customer__dot btn"></button>
+            <button value="3" class="customer__dot customer__dot_active btn"></button>
+            <button value="4" class="customer__dot btn"></button>
+            <button value="5" class="customer__dot btn"></button>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SECTION READY -->
+
     <a name="categories"></a>
     <section class="ready">
       <img src="./assets/images/ready-bg.png" width="1440" />
@@ -782,7 +785,6 @@
 
   <!-- FOOTER -->
 
-
   <footer class="footer">
     <svg class="footer-bg-left" viewBox="0 0 41 32">
       <use href="./assets/images/sprite.svg#icon-background"></use>
@@ -791,20 +793,22 @@
       <use href="./assets/images/sprite.svg#icon-background"></use>
     </svg>
 
-
-
     <!-- SECTION FORM -->
+
     <a name="registration"></a>
     <section class="registration-container container">
-      <form action="#">
+      <form>
         <label for="username"></label>
-        <input class="form__input" id="username" type="text" placeholder="Name Surname" required />
+        <input class="form__input" id="username" type="text" placeholder="Name Surname" />
+        <p id="username__alert" class="alert"> </p>
         <label for="telephone"></label>
-        <input class="form__input" id="telephone" type="tel" placeholder="Phone" required />
+        <input class="form__input" id="telephone" type="tel" placeholder="Phone" />
+        <p id="telephone__alert" class="alert"></p>
         <label for="email"></label>
-        <input class="form__input" id="email" type="email" placeholder="Enter your email..." required />
-        <button class="send-btn btn" type="submit">Send</button>
+        <input class="form__input" id="email" placeholder="Enter your email..." />
+        <p id="email__alert" class="alert"></p>
       </form>
+      <button class="send-btn btn">Send</button>
     </section>
     <section class="footer__top container">
       <div>
@@ -902,7 +906,6 @@
       </div>
     </section>
   </footer>
-
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
