@@ -10,9 +10,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts)$/,
+        test: /\.ts$/,
         exclude: /(node_modules | data)/,
-        use: ['babel-loader'],
+        use: 'ts-loader'
       },
       {
         test: /.css$/,
@@ -31,7 +31,7 @@ module.exports = {
     filename: 'index.min.css'
   })],
   output: {
-    filename: 'index.min.ts',
+    filename: 'index.min.js',
     path: __dirname + '/build',
   },
   devServer: {

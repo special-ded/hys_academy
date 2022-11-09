@@ -1,4 +1,4 @@
-import initMobileMenu from "./mobile-menu.js";
+import initMobileMenu from "./mobile-menu.ts";
 import paginatorData from "./data/paginator-data-big.js";
 import App from "./app.js";
 import '../css/style.css';

@@ -7,14 +7,18 @@ export default function initMobileMenu() {
   function initEventListener() {
     const header = document.querySelector('#header');
 
-    header.addEventListener('click', clickHandler);
+    (header as HTMLInputElement).addEventListener('click', clickHandler);
   }
 
-  function clickHandler(e) {
+  function clickHandler(e: Event) {
+    console.log((e.target as HTMLTextAreaElement).className);
 
-    if (e.target.className === "menu__elem-item" ||
-      e.target.className.animVal === "burger__icon-cross" ||
-      e.target.className.animVal === "burger__icon") {
+
+    if ((e.target as HTMLTextAreaElement).className === "menu__elem-item"
+      // ||
+      // (e.target as HTMLTextAreaElement).className.animVal === "burger__icon-cross" ||
+      // (e.target as HTMLTextAreaElement).className.animVal === "burger__icon"
+    ) {
 
       menuToggler();
     }
@@ -23,14 +27,15 @@ export default function initMobileMenu() {
   function menuToggler() {
     const mobileMenu = document.querySelector('.mobile__menu');
 
-    mobileMenu.classList.toggle('mobile__menu_active');
+    (mobileMenu as HTMLInputElement).classList.toggle('mobile__menu_active');
     scrollStopTimeOut();
   }
 
   function scrollStopTimeOut() {
 
     setTimeout(() => {
-      document.querySelector('body').classList.toggle('stop-scroll');
+      const body: HTMLBodyElement | null = document.querySelector('body');
+      body?.classList.toggle('stop-scroll');
     }, 300);
     menuOpen = !menuOpen;
   }
