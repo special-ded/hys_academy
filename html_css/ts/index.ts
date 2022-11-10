@@ -1,7 +1,8 @@
-import initMobileMenu from "./mobile-menu.ts";
+import initMobileMenu from "./mobile-menu";
 import paginatorData from "./data/paginator-data-big.js";
-import App from "./app.js";
+import App from "./app";
 import '../css/style.css';
+import { Data } from "./data-interface";
 
 (document.onload = () => {
   init();
@@ -11,24 +12,23 @@ import '../css/style.css';
 function init() {
   putDataInLocalStorage();
   initApp();
-
   addStickyHeader();
   initMobileMenu();
 }
 
 function initApp() {
-  const app = new App();
+  const app: App = new App();
   app.init();
 }
 
 function putDataInLocalStorage() {
-  const data = paginatorData();
+  const data: Data[] = paginatorData();
   localStorage.setItem('localStorageSliderData', JSON.stringify(data));
 }
 
 function addStickyHeader() {
   window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
+    const header: Element = document.querySelector('.header');
 
     header.classList.toggle('sticky', window.scrollY > header.clientHeight);
   });

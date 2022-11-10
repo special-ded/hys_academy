@@ -1,5 +1,5 @@
 export default function initMobileMenu() {
-  let menuOpen = false;
+  let menuOpen: boolean = false;
 
   initEventListener();
   closeIfResize();

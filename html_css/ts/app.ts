@@ -1,10 +1,14 @@
 import paginator from "./paginator.js";
-import Slider from "./slider.ts";
-import Storage from "./storage.ts";
-import Select from "./select.ts";
-import CustomerSlider from "./customer-slider.ts";
+import Slider from "./slider";
+import Storage from "./storage";
+import Select from "./select";
+import CustomerSlider from "./customer-slider";
+import { Data } from "./data-interface.js";
 
 export default class App {
+  storage: Storage;
+  data: Data[];
+
   constructor() {
     this.storage = new Storage();
     this.data = this.storage.getSliderData();
@@ -18,10 +22,11 @@ export default class App {
     this.initCustomerSlider(data)
   }
 
-  async setSliderData(albumId) {
+  async setSliderData(albumId: number) {
+    let result: Data[]
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`);
-      const result = await response.json();
+      result = await response.json();
       return result;
     } catch (error) {
       console.error("Error:", error);
@@ -37,11 +42,11 @@ export default class App {
     paginator("#paginator", this.data);
   }
 
-  initSlider(data) {
+  initSlider(data: Data[]) {
     new Slider("#slider", data);
   }
 
-  initCustomerSlider(data) {
+  initCustomerSlider(data: Data[]) {
     new CustomerSlider('#customer-slider', data);
   }
 }

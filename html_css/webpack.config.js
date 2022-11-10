@@ -4,8 +4,11 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: 'development',
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   entry: {
-    index: './ts/index.js',
+    index: './ts/index.ts',
   },
   module: {
     rules: [

@@ -1,4 +1,4 @@
-import App from "./app.js";
+import App from "./app";
 
 export default class Select {
   classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
@@ -86,7 +86,8 @@ export default class Select {
 
   async onSelectChange(event: Event) {
     const app = new App();
-    const data = await app.setSliderData((event.target as HTMLInputElement).value);
+    let albumId = (event.target as HTMLInputElement).value
+    const data = await app.setSliderData(+albumId);
 
     app.initSlider(data)
   }
