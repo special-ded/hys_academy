@@ -1,5 +1,5 @@
 import paginator from "./paginator.js";
-import Slider from "./slider.js";
+import Slider from "./slider.ts";
 import Storage from "./storage.ts";
 import Select from "./select.ts";
 import CustomerSlider from "./customer-slider.ts";
