@@ -1,4 +1,4 @@
-import paginator from "./paginator.js";
+import paginator from "./paginator";
 import Slider from "./slider";
 import Storage from "./storage";
 import Select from "./select";
