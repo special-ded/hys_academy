@@ -3,7 +3,9 @@ import Slider from "./slider";
 import Storage from "./storage";
 import Select from "./select";
 import CustomerSlider from "./customer-slider";
-import { Data } from "./data-interface.js";
+import { Data } from "./data-interface";
+import './libs/my-slick';
+
 
 export default class App {
   storage: Storage;
