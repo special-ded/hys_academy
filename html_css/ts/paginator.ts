@@ -4,7 +4,7 @@ const sliderScroll: Element = document.querySelector('.blog__slider-scroll');
 const activeButtonClass: string = "blog__slider-btn_active";
 let sliderWrapper: Element;
 
-export default function paginator(selector: string, data: Data[]) {
+export default function paginator(selector: string, data: Data[]): void {
 
   sliderWrapper = document.querySelector(selector);
   const slidesQuantity: number = 2;
@@ -19,11 +19,11 @@ export default function paginator(selector: string, data: Data[]) {
   checkTranslateProperty();
 }
 
-function initClickListener(slidesQuantity: number, data: Data[]) {
+function initClickListener(slidesQuantity: number, data: Data[]): void {
   sliderScroll.addEventListener('click', clickHandler.bind(this, slidesQuantity, data));
 }
 
-function clickHandler(slidesQuantity: number, data: Data[], event: Event) {
+function clickHandler(slidesQuantity: number, data: Data[], event: Event): void {
   let activeButtonNumber: number = 0;
 
   if ((event.target as HTMLButtonElement).value) {
@@ -35,27 +35,27 @@ function clickHandler(slidesQuantity: number, data: Data[], event: Event) {
   }
 }
 
-function updateData(slidesQuantity: number, activeButtonNumber: number, data: Data[]) {
+function updateData(slidesQuantity: number, activeButtonNumber: number, data: Data[]): void {
   const currentData: Data[] = data.slice(slidesQuantity * activeButtonNumber - slidesQuantity,
     slidesQuantity * activeButtonNumber);
   renderNewSlides(currentData);
 }
 
-function removeAllChildNodes(parent: Element) {
+function removeAllChildNodes(parent: Element): void {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
 }
 
-function checkTranslateProperty() {
+function checkTranslateProperty(): string {
   return window.innerWidth < 769
     ? "translateX"
     : "translateY";
 }
 
-function buttonScrollHandler(activeButtonNumber: number, data: Data[]) {
-  const sliderScrollWrap = document.querySelector('.blog__slider-scroll-wrap');
-  const translateProperty = checkTranslateProperty();
+function buttonScrollHandler(activeButtonNumber: number, data: Data[]): void {
+  const sliderScrollWrap: Element = document.querySelector('.blog__slider-scroll-wrap');
+  const translateProperty: string = checkTranslateProperty();
 
   if (activeButtonNumber <= 3) {
     sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-0px)`);
@@ -73,7 +73,7 @@ function buttonScrollHandler(activeButtonNumber: number, data: Data[]) {
   }
 }
 
-function renderButtons(data: Data[]) {
+function renderButtons(data: Data[]): void {
   const sliderScrollWrap: HTMLDivElement = document.createElement('div');
   const activeButton: HTMLButtonElement = document.createElement('button');
 
@@ -95,8 +95,8 @@ function renderButtons(data: Data[]) {
   }
 }
 
-function renderTemplate(slideData: Data) {
-  const slide = document.createElement('div');
+function renderTemplate(slideData: Data): void {
+  const slide: HTMLDivElement = document.createElement('div');
 
   slide.classList.add('blog__slider-item');
   slide.innerHTML = getSlideTemplate(slideData);
@@ -104,7 +104,7 @@ function renderTemplate(slideData: Data) {
   smoothRendering(slide);
 }
 
-function getSlideTemplate(slideData: Data) {
+function getSlideTemplate(slideData: Data): string {
   return `
     <div class="blog__slider-item-bg" ></div>
     <img class="blog__slider-item-img" src =${slideData.url} alt = "Blog image" />
@@ -116,12 +116,12 @@ function getSlideTemplate(slideData: Data) {
     <a class="blog__item_link" href=${slideData.redirectLink}>Read Now</a>`
 }
 
-function smoothRendering(slide: Element) {
+function smoothRendering(slide: Element): void {
   slide.classList.add('opacity');
   setTimeout(() => { slide.classList.remove('opacity') }, 200)
 }
 
-function renderNewSlides(currentData: Data[]) {
+function renderNewSlides(currentData: Data[]): void {
   removeAllChildNodes(sliderWrapper);
 
   currentData.forEach((slideData) => {
@@ -129,8 +129,8 @@ function renderNewSlides(currentData: Data[]) {
   });
 }
 
-function activeBtnToggler(e: Event, activeButtonClass: string) {
-  let activeBtn = document.querySelector(`.` + activeButtonClass);
+function activeBtnToggler(e: Event, activeButtonClass: string): void {
+  let activeBtn: Element = document.querySelector(`.` + activeButtonClass);
 
   if (!(e.target as HTMLInputElement).value) {
     return

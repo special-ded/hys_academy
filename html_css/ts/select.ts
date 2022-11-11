@@ -1,4 +1,5 @@
 import App from "./app";
+import { Data } from "./types/data-interface";
 import { AlbumEnum } from "./types/select-enum";
 
 export default class Select {
@@ -14,18 +15,18 @@ export default class Select {
     this.initSelect()
   }
 
-  initSelect() {
+  initSelect(): void {
     this.el = document.querySelector(`${this.selector}`);
 
     this.renderSelect();
     this.initEventListeners();
   }
 
-  renderSelect() {
+  renderSelect(): void {
     this.el.innerHTML = this.getSelectTemplate();
   }
 
-  getSelectTemplate() {
+  getSelectTemplate(): string {
     return `
     <div class="input__wrap">
     <input class="input__value" value=" ${AlbumEnum.Album1}" />
@@ -45,9 +46,7 @@ export default class Select {
   </ul>`
   }
 
-
-
-  initEventListeners() {
+  initEventListeners(): void {
     document.querySelector('.select__list').addEventListener('click', (event) => {
       this.selectChoose(event);
     })
@@ -61,12 +60,12 @@ export default class Select {
     })
   }
 
-  selectToggler() {
+  selectToggler(): void {
     this.el.classList.toggle(this.isActiveClass);
     this.iconToggler();
   }
 
-  selectChoose(event: Event) {
+  selectChoose(event: Event): void {
     this.el.classList.remove(this.isActiveClass);
     this.iconToggler();
 
@@ -78,7 +77,7 @@ export default class Select {
     this.onSelectChange(event);
   }
 
-  iconToggler() {
+  iconToggler(): void {
     const paginatorIconLink: SVGImageElement = document.querySelector(".select__icon-use");
     paginatorIconLink.href.baseVal = this.iconHrefDefault;
 
@@ -87,12 +86,10 @@ export default class Select {
     }
   }
 
-  async onSelectChange(event: Event) {
-    const app = new App();
-
-
-    let albumId = (event.target as HTMLInputElement).value
-    const data = await app.setSliderData(+albumId);
+  async onSelectChange(event: Event): Promise<void> {
+    const app: App = new App();
+    let albumId: string = (event.target as HTMLInputElement).value
+    const data: Data[] = await app.setSliderData(+albumId);
 
     app.initSlider(data)
   }

@@ -1,3 +1,5 @@
+import { Data } from "./types/data-interface";
+
 export default class Storage {
 
   localStorageSliderData: string;
@@ -6,25 +8,25 @@ export default class Storage {
   localStorageEmail: string;
   regName: RegExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
   regNumber: RegExp = /\+38+\d{10}$/;
-  regEmail: RegExp = /(?:[a-z0-9_-]+(?:\.[a-z0-9_-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+  regEmail: RegExp = /(?:[a-z0-9_-]+(?:\.[a-z0-9_-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
   constructor() {
     this.localStorageSliderData = 'localStorageSliderData';
   }
 
-  getSliderData() {
+  getSliderData(): Data[] {
     this.initStorage();
 
     return JSON.parse(localStorage.getItem(this.localStorageSliderData));
   }
 
-  initStorage() {
+  initStorage(): void {
     this.checkLocalStorage();
     this.setFormToLocalStorage();
     this.sendButtonHandler();
   }
 
-  checkLocalStorage() {
+  checkLocalStorage(): void {
     this.localStorageUserName = JSON.parse(localStorage.getItem('username'))?.trim();
     this.localStorageTelephone = JSON.parse(localStorage.getItem('telephone'))?.trim();
     this.localStorageEmail = JSON.parse(localStorage.getItem('email'))?.trim();
@@ -34,8 +36,7 @@ export default class Storage {
     }
   }
 
-  renderFormData() {
-
+  renderFormData(): void {
     (document.querySelector('#username') as HTMLInputElement).value = this.localStorageUserName
       ? this.localStorageUserName
       : null;
@@ -49,19 +50,19 @@ export default class Storage {
       : null;
   }
 
-  setFormToLocalStorage() {
+  setFormToLocalStorage(): void {
     document.querySelector('form').addEventListener('input', (e) => this.inputHandler(e));
   }
 
-  inputHandler(event: Event) {
+  inputHandler(event: Event): void {
     localStorage.setItem((event.target as HTMLInputElement).id, JSON.stringify((event.target as HTMLInputElement).value));
   }
 
-  sendButtonHandler() {
+  sendButtonHandler(): void {
     document.querySelector('.send-btn').addEventListener('click', () => this.clearLocalStorage());
   }
 
-  clearLocalStorage() {
+  clearLocalStorage(): void {
 
     if (this.passValidation()) {
       (document.querySelector('#username') as HTMLInputElement).value = '';
@@ -71,7 +72,7 @@ export default class Storage {
     }
   }
 
-  passValidation() {
+  passValidation(): boolean {
     this.userNameValidation();
     this.numberValidation();
     this.emailValidation();
@@ -81,7 +82,7 @@ export default class Storage {
     }
   }
 
-  userNameValidation() {
+  userNameValidation(): boolean {
     const userNameEl: HTMLInputElement = document.querySelector('#username');
     userNameEl.classList.remove('form__alert');
     (document.querySelector('#username__alert') as HTMLInputElement).innerText = '';
@@ -94,7 +95,7 @@ export default class Storage {
     return true;
   }
 
-  numberValidation() {
+  numberValidation(): boolean {
     const numberEl: HTMLInputElement = document.querySelector('#telephone');
     numberEl.classList.remove('form__alert');
     (document.querySelector('#telephone__alert') as HTMLInputElement).innerText = '';
@@ -107,7 +108,7 @@ export default class Storage {
     return true;
   }
 
-  emailValidation() {
+  emailValidation(): boolean {
     const emailEl: HTMLInputElement = document.querySelector('#email');
     emailEl.classList.remove('form__alert');
     (document.querySelector('#email__alert') as HTMLInputElement).innerText = '';
