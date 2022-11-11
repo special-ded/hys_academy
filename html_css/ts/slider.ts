@@ -1,4 +1,4 @@
-import { Data } from "./data-interface";
+import { Data } from "./types/data-interface";
 
 export default class Slider {
   arrowLeftClass: string = 'arrow-left';

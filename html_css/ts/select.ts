@@ -1,4 +1,5 @@
 import App from "./app";
+import { AlbumEnum } from "./types/select-enum";
 
 export default class Select {
   classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
@@ -27,7 +28,7 @@ export default class Select {
   getSelectTemplate() {
     return `
     <div class="input__wrap">
-    <input class="input__value" value="Album 1" />
+    <input class="input__value" value=" ${AlbumEnum.Album1}" />
     <div class="input__icon">
       <svg class="select__icon" width="20" height="20">
         <use
@@ -38,11 +39,13 @@ export default class Select {
     </div>
   </div>
   <ul class="select__list">
-    <li value="1" class="select__item">Album 1</li>
-    <li value="2" class="select__item">Album 2</li>
-    <li value="3" class="select__item">Album 3</li>
+    <li value="1" class="select__item">${AlbumEnum.Album1}</li>
+    <li value="2" class="select__item">${AlbumEnum.Album2}</li>
+    <li value="3" class="select__item">${AlbumEnum.Album3}</li>
   </ul>`
   }
+
+
 
   initEventListeners() {
     document.querySelector('.select__list').addEventListener('click', (event) => {
@@ -86,6 +89,8 @@ export default class Select {
 
   async onSelectChange(event: Event) {
     const app = new App();
+
+
     let albumId = (event.target as HTMLInputElement).value
     const data = await app.setSliderData(+albumId);
 

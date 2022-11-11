@@ -1,4 +1,4 @@
-import { Data } from "./data-interface";
+import { Data } from "./types/data-interface";
 
 const sliderScroll: Element = document.querySelector('.blog__slider-scroll');
 const activeButtonClass: string = "blog__slider-btn_active";

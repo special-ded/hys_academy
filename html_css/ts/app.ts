@@ -3,7 +3,7 @@ import Slider from "./slider";
 import Storage from "./storage";
 import Select from "./select";
 import CustomerSlider from "./customer-slider";
-import { Data } from "./data-interface";
+import { Data } from "./types/data-interface";
 import './libs/my-slick';
 
 
