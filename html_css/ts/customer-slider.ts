@@ -17,22 +17,22 @@ export default class CustomerSlider {
     this.initSlider();
   }
 
-  initSlider() {
+  initSlider(): void {
     this.initEventListener()
   }
 
-  initEventListener() {
+  initEventListener(): void {
     this.buttons.addEventListener('click', (event) => this.clickHandler(event))
   }
 
-  clickHandler(event: Event) {
+  clickHandler(event: Event): void {
     if (!(event.target as HTMLButtonElement).value) {
       return
     }
     this.activeBtnToggler(event, this.activeButtonClass)
   }
 
-  activeBtnToggler(event: Event, activeButtonClass: string) {
+  activeBtnToggler(event: Event, activeButtonClass: string): void {
     let activeBtn = document.querySelector(`.` + activeButtonClass);
 
     activeBtn.classList.remove(activeButtonClass);
@@ -42,11 +42,11 @@ export default class CustomerSlider {
     this.renderText((event.target as HTMLButtonElement & { value: number }).value)
   }
 
-  renderImage(activeBtn: number) {
+  renderImage(activeBtn: number): void {
     this.image.src = this.data[activeBtn - 1].url
   }
 
-  renderText(activeBtn: number) {
+  renderText(activeBtn: number): void {
     this.firstText.innerText = this.data[activeBtn].title
     this.secondText.innerText = this.data[activeBtn].title
   }

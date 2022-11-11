@@ -16,7 +16,7 @@ export default class App {
     this.data = this.storage.getSliderData();
   }
 
-  async init() {
+  async init(): Promise<void> {
     const data = await this.setSliderData(1);
     this.initSelect();
     this.initSlider(data);
@@ -24,7 +24,7 @@ export default class App {
     this.initCustomerSlider(data)
   }
 
-  async setSliderData(albumId: number) {
+  async setSliderData(albumId: number): Promise<Data[]> {
     let result: Data[]
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`);
@@ -36,19 +36,19 @@ export default class App {
     return result;
   }
 
-  initSelect() {
+  initSelect(): void {
     new Select("#select");
   }
 
-  initPaginator() {
+  initPaginator(): void {
     paginator("#paginator", this.data);
   }
 
-  initSlider(data: Data[]) {
+  initSlider(data: Data[]): void {
     new Slider("#slider", data);
   }
 
-  initCustomerSlider(data: Data[]) {
+  initCustomerSlider(data: Data[]): void {
     new CustomerSlider('#customer-slider', data);
   }
 }
