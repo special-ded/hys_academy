@@ -11,7 +11,6 @@ import { Data } from "./types/data-interface";
 function init(): void {
   putDataInLocalStorage();
   initApp();
-  addStickyHeader();
   initMobileMenu();
 }
 
@@ -25,10 +24,4 @@ function putDataInLocalStorage(): void {
   localStorage.setItem('localStorageSliderData', JSON.stringify(data));
 }
 
-function addStickyHeader(): void {
-  window.addEventListener('scroll', () => {
-    const header: Element = document.querySelector('.header');
 
-    header.classList.toggle('sticky', window.scrollY > header.clientHeight);
-  });
-}

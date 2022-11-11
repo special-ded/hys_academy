@@ -18,6 +18,7 @@ export default class App {
 
   async init(): Promise<void> {
     const data = await this.setSliderData(1);
+    this.addStickyHeader()
     this.initSelect();
     this.initSlider(data);
     this.initPaginator();
@@ -50,5 +51,13 @@ export default class App {
 
   initCustomerSlider(data: Data[]): void {
     new CustomerSlider('#customer-slider', data);
+  }
+
+  addStickyHeader(): void {
+    window.addEventListener('scroll', () => {
+      const header: Element = document.querySelector('.header');
+
+      header.classList.toggle('sticky', window.scrollY > header.clientHeight);
+    });
   }
 }
