@@ -1,6 +1,6 @@
 import App from "./app";
-import { Data } from "./types/data-interface";
-import { AlbumEnum } from "./types/select-enum";
+import { Data } from "./models/interfaces.model";
+import { AlbumEnum } from "./models/enum.model";
 
 export default class Select {
   classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];

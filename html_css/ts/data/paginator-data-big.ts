@@ -1,4 +1,4 @@
-import { Data } from "../types/data-interface";
+import { Data } from "../models/interfaces.model";
 
 export default function paginatorData(): Data[] {
   return [{

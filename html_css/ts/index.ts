@@ -2,7 +2,7 @@ import initMobileMenu from "./mobile-menu";
 import paginatorData from "./data/paginator-data-big";
 import App from "./app";
 import '../css/style.css';
-import { Data } from "./types/data-interface";
+import { Data } from "./models/interfaces.model";
 
 (document.onload = () => {
   init();
