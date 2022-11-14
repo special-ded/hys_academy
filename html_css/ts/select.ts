@@ -79,7 +79,7 @@ export default class Select {
       return
     }
 
-    (document.querySelector('.input__value') as HTMLInputElement).value = (event.target as HTMLInputElement).innerText;
+    document.querySelector<HTMLInputElement>('.input__value').value = (event.target as HTMLInputElement).innerText;
     this.onSelectChange(event);
   }
 

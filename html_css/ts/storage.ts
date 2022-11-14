@@ -37,15 +37,15 @@ export default class Storage {
   }
 
   renderFormData(): void {
-    (document.querySelector('#username') as HTMLInputElement).value = this.localStorageUserName
+    document.querySelector<HTMLInputElement>('#username').value = this.localStorageUserName
       ? this.localStorageUserName
       : null;
 
-    (document.querySelector('#telephone') as HTMLInputElement).value = this.localStorageTelephone
+    document.querySelector<HTMLInputElement>('#telephone').value = this.localStorageTelephone
       ? this.localStorageTelephone
       : null;
 
-    (document.querySelector('#email') as HTMLInputElement).value = this.localStorageEmail
+    document.querySelector<HTMLInputElement>('#email').value = this.localStorageEmail
       ? this.localStorageEmail
       : null;
   }
@@ -71,9 +71,9 @@ export default class Storage {
   clearLocalStorage(): void {
 
     if (this.passValidation()) {
-      (document.querySelector('#username') as HTMLInputElement).value = '';
-      (document.querySelector('#telephone') as HTMLInputElement).value = '';
-      (document.querySelector('#email') as HTMLInputElement).value = '';
+      document.querySelector<HTMLInputElement>('#username').value = '';
+      document.querySelector<HTMLInputElement>('#telephone').value = '';
+      document.querySelector<HTMLInputElement>('#email').value = '';
       localStorage.clear();
     }
   }
