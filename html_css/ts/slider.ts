@@ -1,7 +1,5 @@
 import { Data } from "./models/interfaces.model";
 
-// Add access modifiers to all methods in Select and Slider classes
-
 export default class Slider {
   arrowLeftClass: string = 'arrow-left';
   arrowRightClass: string = 'arrow-right';
@@ -24,7 +22,7 @@ export default class Slider {
     this.initSlider()
   }
 
-  initSlider(): void {
+  private initSlider(): void {
     this.slider.innerHTML = '';
     this.processDataForSlides(this.data);
     this.initIventListener();
@@ -32,7 +30,7 @@ export default class Slider {
     this.changeSlidesQuantity();
   }
 
-  renderButtons(buttonSide: string): void {
+  private renderButtons(buttonSide: string): void {
     this.button = document.createElement('button');
     this.button.classList.add(this.arrowBtnClass);
     this.button.classList.add(`arrow-${buttonSide}`)
@@ -41,7 +39,7 @@ export default class Slider {
     this.slider.appendChild(this.button);
   }
 
-  getButtonTemplate(buttonSide: string): string {
+  private getButtonTemplate(buttonSide: string): string {
     return `
     <svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
       <use class="arrow-${buttonSide}"
@@ -51,7 +49,7 @@ export default class Slider {
       `;
   }
 
-  initIventListener(): void {
+  private initIventListener(): void {
     this.slider.addEventListener('click', (event) => {
 
       if (this.isButtonClass(event)) {
@@ -61,14 +59,14 @@ export default class Slider {
     window.addEventListener('resize', () => this.changeSlidesQuantity());
   }
 
-  isButtonClass(event: Event): boolean {
+  private isButtonClass(event: Event): boolean {
     const buttonClasses: string[] = [this.arrowLeftClass, this.arrowRightClass];
     const buttonClassName: string = (event.target as SVGAnimateElement).className.baseVal;
 
     return buttonClasses.includes(buttonClassName);
   }
 
-  clickHandler(event: Event): void {
+  private clickHandler(event: Event): void {
     this.maxPage = this.data.length - this.slidesShown;
 
     if ((event.target as SVGAnimateElement).className.baseVal === this.arrowRightClass) {
@@ -85,7 +83,7 @@ export default class Slider {
     }
   }
 
-  buttonHandler(page: number): void {
+  private buttonHandler(page: number): void {
     const arrowParent: NodeListOf<Element> = document.querySelectorAll('.slider__arrow-btn');
     const arrowParentArr: HTMLInputElement[] = Array.prototype.slice.call(arrowParent);
     const arrowLeft = arrowParentArr.find(el => el.className === 'slider__arrow-btn arrow-left');
@@ -94,7 +92,7 @@ export default class Slider {
     (this.button as HTMLInputElement).disabled = page >= this.maxPage;
   }
 
-  processDataForSlides(data: Data[]): void {
+  private processDataForSlides(data: Data[]): void {
     this.slidesInner = document.createElement('div');
     const slidesWrapper: HTMLElement = document.createElement('div');
 
@@ -111,14 +109,14 @@ export default class Slider {
     this.renderButtons('right');
   }
 
-  renderTemplate(slideData: Data): void {
+  private renderTemplate(slideData: Data): void {
     this.slide = document.createElement('div');
     this.slide.classList.add('prefer__slider-slide');
     this.slide.innerHTML = this.getSlideTemplate(slideData);
     this.slidesInner.appendChild(this.slide);
   }
 
-  getSlideTemplate(slideData: Data): string {
+  private getSlideTemplate(slideData: Data): string {
     return `
     <img src="${slideData.url}" alt="Graphic Design" width="198" />
       <div class="bg-position"></div>
@@ -126,7 +124,7 @@ export default class Slider {
     `;
   }
 
-  changeSlidesQuantity(): void {
+  private changeSlidesQuantity(): void {
 
     if (window.innerWidth < 620) {
       (this.slider as HTMLInputElement).style.maxWidth = '336px';

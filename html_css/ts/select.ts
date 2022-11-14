@@ -2,8 +2,6 @@ import App from "./app";
 import { Data } from "./models/interfaces.model";
 import { AlbumEnum } from "./models/enum.model";
 
-// Add access modifiers to all methods in Select and Slider classes
-
 export default class Select {
   classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
   isActiveClass: string = 'is-active';
@@ -11,8 +9,6 @@ export default class Select {
   iconHrefActive: string = "./assets/images/sprite.svg#icon-arrow-active";
   selector: string;
   private el: Element;
-
-
 
   constructor(selector: string) {
     this.selector = selector;
