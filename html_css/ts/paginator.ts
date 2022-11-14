@@ -11,7 +11,7 @@ export default function paginator(selector: string, data: Data[]): void {
   const activeButtonNumber: number = 1;
 
   if (data.length > 2) {
-    renderButtons(data);
+    renderButtons<Data[]>(data);
   }
 
   initClickListener(slidesQuantity, data);
@@ -73,7 +73,7 @@ function buttonScrollHandler(activeButtonNumber: number, data: Data[]): void {
   }
 }
 
-function renderButtons(data: Data[]): void {
+function renderButtons<T extends Data[]>(data: T): void {
   const sliderScrollWrap: HTMLDivElement = document.createElement('div');
   const activeButton: HTMLButtonElement = document.createElement('button');
 
@@ -95,16 +95,24 @@ function renderButtons(data: Data[]): void {
   }
 }
 
-function renderTemplate(slideData: Data): void {
+function renderNewSlides(currentData: Data[]): void {
+  removeAllChildNodes(sliderWrapper);
+
+  currentData.forEach((slideData) => {
+    renderTemplate<Data>(slideData);
+  });
+}
+
+function renderTemplate<T extends Data>(slideData: T): void {
   const slide: HTMLDivElement = document.createElement('div');
 
   slide.classList.add('blog__slider-item');
-  slide.innerHTML = getSlideTemplate(slideData);
+  slide.innerHTML = getSlideTemplate<T>(slideData);
   sliderWrapper.appendChild(slide);
   smoothRendering(slide);
 }
 
-function getSlideTemplate(slideData: Data): string {
+function getSlideTemplate<T extends Data>(slideData: T): string {
   return `
     <div class="blog__slider-item-bg" ></div>
     <img class="blog__slider-item-img" src =${slideData.url} alt = "Blog image" />
@@ -119,14 +127,6 @@ function getSlideTemplate(slideData: Data): string {
 function smoothRendering(slide: Element): void {
   slide.classList.add('opacity');
   setTimeout(() => { slide.classList.remove('opacity') }, 200)
-}
-
-function renderNewSlides(currentData: Data[]): void {
-  removeAllChildNodes(sliderWrapper);
-
-  currentData.forEach((slideData) => {
-    renderTemplate(slideData);
-  });
 }
 
 function activeBtnToggler(e: Event, activeButtonClass: string): void {

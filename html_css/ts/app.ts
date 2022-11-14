@@ -6,10 +6,15 @@ import CustomerSlider from "./customer-slider";
 import { Data } from "./models/interfaces.model";
 import './libs/my-slick';
 
+abstract class AppAbstract {
+  abstract BASE_URL: string;
+  abstract setSliderData<T>(albumId: T): Promise<Data[]>;
+}
 
-export default class App {
+export default class App implements AppAbstract {
   storage: Storage;
   data: Data[];
+  BASE_URL = `https://jsonplaceholder.typicode.com/albums/`
 
   constructor() {
     this.storage = new Storage();
@@ -28,7 +33,7 @@ export default class App {
   async setSliderData<T>(albumId: T): Promise<Data[]> {
     let result: Data[]
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`);
+      const response = await fetch(this.BASE_URL + `${albumId}/photos`);
       result = await response.json();
       return result;
     } catch (error) {
