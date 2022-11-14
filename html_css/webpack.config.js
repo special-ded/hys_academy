@@ -43,8 +43,5 @@ module.exports = {
     },
     compress: true,
     port: 2077,
-  },
-
-  watch: true,
-
+  }
 };
