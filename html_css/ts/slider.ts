@@ -1,5 +1,7 @@
 import { Data } from "./models/interfaces.model";
 
+// Add access modifiers to all methods in Select and Slider classes
+
 export default class Slider {
   arrowLeftClass: string = 'arrow-left';
   arrowRightClass: string = 'arrow-right';

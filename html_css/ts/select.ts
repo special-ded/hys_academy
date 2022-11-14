@@ -2,6 +2,8 @@ import App from "./app";
 import { Data } from "./models/interfaces.model";
 import { AlbumEnum } from "./models/enum.model";
 
+// Add access modifiers to all methods in Select and Slider classes
+
 export default class Select {
   classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
   isActiveClass: string = 'is-active';
@@ -10,23 +12,25 @@ export default class Select {
   selector: string;
   private el: Element;
 
+
+
   constructor(selector: string) {
     this.selector = selector;
     this.initSelect()
   }
 
-  initSelect(): void {
+  public initSelect(): void {
     this.el = document.querySelector(`${this.selector}`);
 
     this.renderSelect();
     this.initEventListeners();
   }
 
-  renderSelect(): void {
+  private renderSelect(): void {
     this.el.innerHTML = this.getSelectTemplate();
   }
 
-  getSelectTemplate(): string {
+  private getSelectTemplate(): string {
     return `
     <div class="input__wrap">
     <input class="input__value" value=" ${AlbumEnum.Album1}" />
@@ -46,7 +50,7 @@ export default class Select {
   </ul>`
   }
 
-  initEventListeners(): void {
+  private initEventListeners(): void {
     document.querySelector('.select__list').addEventListener('click', (event) => {
       this.selectChoose(event);
     })
@@ -60,12 +64,12 @@ export default class Select {
     })
   }
 
-  selectToggler(): void {
+  private selectToggler(): void {
     this.el.classList.toggle(this.isActiveClass);
     this.iconToggler();
   }
 
-  selectChoose(event: Event): void {
+  private selectChoose(event: Event): void {
     this.el.classList.remove(this.isActiveClass);
     this.iconToggler();
 
@@ -77,7 +81,7 @@ export default class Select {
     this.onSelectChange(event);
   }
 
-  iconToggler(): void {
+  private iconToggler(): void {
     const paginatorIconLink: SVGImageElement = document.querySelector(".select__icon-use");
     paginatorIconLink.href.baseVal = this.iconHrefDefault;
 
@@ -86,7 +90,7 @@ export default class Select {
     }
   }
 
-  async onSelectChange(event: Event): Promise<void> {
+  private async onSelectChange(event: Event): Promise<void> {
     const app: App = new App();
     let albumId: string = (event.target as HTMLInputElement).value
     const data: Data[] = await app.setSliderData(+albumId);

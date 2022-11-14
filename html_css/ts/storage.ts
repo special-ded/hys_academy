@@ -1,12 +1,5 @@
 import { Data } from "./models/interfaces.model";
 
-// In Storage class methods for getting and setting data must be generics
-
-type T = {
-  ud: number,
-  status: 'online' | 'offline';
-};
-
 export default class Storage {
 
   localStorageSliderData: string;

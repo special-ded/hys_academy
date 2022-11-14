@@ -9,7 +9,7 @@ import { Data } from "./models/interfaces.model";
 })()
 
 function init(): void {
-  setDataInLocalStorage(paginatorData());
+  setDataInLocalStorage<Data[]>(paginatorData());
   initApp();
   initMobileMenu();
 }
@@ -19,7 +19,7 @@ function initApp(): void {
   app.init();
 }
 
-function setDataInLocalStorage(data: Array<Data>): void {
+function setDataInLocalStorage<A>(data: A): void {
   localStorage.setItem('localStorageSliderData', JSON.stringify(data));
 }
 
