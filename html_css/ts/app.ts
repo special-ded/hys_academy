@@ -26,6 +26,7 @@ export default class App {
   }
 
   async setSliderData(albumId: number): Promise<Data[]> {
+
     let result: Data[]
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`);
@@ -54,7 +55,7 @@ export default class App {
   }
 
   addStickyHeader(): void {
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', (): void => {
       const header: Element = document.querySelector('.header');
 
       header.classList.toggle('sticky', window.scrollY > header.clientHeight);

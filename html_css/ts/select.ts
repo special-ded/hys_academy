@@ -47,17 +47,23 @@ export default class Select {
   }
 
   initEventListeners(): void {
-    document.querySelector('.select__list').addEventListener('click', (event) => {
-      this.selectChoose(event);
-    })
+    document
+      .querySelector('.select__list')
+      .addEventListener(
+        'click', (event: Event): void => {
+          this.selectChoose(event);
+        })
 
-    document.querySelector(".select").addEventListener('click', (event) => {
+    document
+      .querySelector(".select")
+      .addEventListener(
+        'click', (event: Event): void => {
 
-      if (this.classListInput.includes((event.target as HTMLInputElement).className)
-        || this.classListInput.includes((event.target as HTMLInputElement).classList.value)) {
-        this.selectToggler();
-      }
-    })
+          if (this.classListInput.includes((event.target as HTMLInputElement).className)
+            || this.classListInput.includes((event.target as HTMLInputElement).classList.value)) {
+            this.selectToggler();
+          }
+        })
   }
 
   selectToggler(): void {

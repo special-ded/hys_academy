@@ -51,7 +51,10 @@ export default class Storage {
   }
 
   setFormToLocalStorage(): void {
-    document.querySelector('form').addEventListener('input', (e) => this.inputHandler(e));
+    document
+      .querySelector('form')
+      .addEventListener(
+        'input', (e: Event): void => this.inputHandler(e));
   }
 
   inputHandler(event: Event): void {
@@ -59,7 +62,10 @@ export default class Storage {
   }
 
   sendButtonHandler(): void {
-    document.querySelector('.send-btn').addEventListener('click', () => this.clearLocalStorage());
+    document
+      .querySelector('.send-btn')
+      .addEventListener(
+        'click', (): void => this.clearLocalStorage());
   }
 
   clearLocalStorage(): void {
@@ -73,51 +79,58 @@ export default class Storage {
   }
 
   passValidation(): boolean {
-    this.userNameValidation();
-    this.numberValidation();
-    this.emailValidation();
+    this.isUserNameValid();
+    this.isNumberValid();
+    this.isEmailValid();
 
-    if (this.userNameValidation() && this.numberValidation() && this.emailValidation()) {
+    if (this.isUserNameValid() && this.isNumberValid() && this.isEmailValid()) {
       return true;
     }
   }
 
-  userNameValidation(): boolean {
+  isUserNameValid(): boolean {
     const userNameEl: HTMLInputElement = document.querySelector('#username');
-    userNameEl.classList.remove('form__alert');
-    (document.querySelector('#username__alert') as HTMLInputElement).innerText = '';
+    this.removeFormAlertMessage('#username')
 
     if (!this.regName.test(userNameEl.value)) {
-      (document.querySelector('#username__alert') as HTMLInputElement).innerText = 'Please input valid Name & Surname';
-      userNameEl.classList.add('form__alert');
+      this.showFormAlertMessage('#username', 'Please input valid Name & Surname')
       return false;
     }
     return true;
   }
 
-  numberValidation(): boolean {
+  isNumberValid(): boolean {
     const numberEl: HTMLInputElement = document.querySelector('#telephone');
-    numberEl.classList.remove('form__alert');
-    (document.querySelector('#telephone__alert') as HTMLInputElement).innerText = '';
+    this.removeFormAlertMessage('#telephone')
 
     if (!this.regNumber.test(numberEl.value)) {
-      (document.querySelector('#telephone__alert') as HTMLInputElement).innerText = 'Format: +38 077 777 77 77';
-      numberEl.classList.add('form__alert');
+      this.showFormAlertMessage('#telephone', 'Format: +38 077 777 77 77')
       return false;
     }
     return true;
   }
 
-  emailValidation(): boolean {
+  isEmailValid(): boolean {
     const emailEl: HTMLInputElement = document.querySelector('#email');
-    emailEl.classList.remove('form__alert');
-    (document.querySelector('#email__alert') as HTMLInputElement).innerText = '';
+    this.removeFormAlertMessage('#email')
 
     if (!this.regEmail.test(emailEl.value)) {
-      (document.querySelector('#email__alert') as HTMLInputElement).innerText = 'Invalid email given';
-      emailEl.classList.add('form__alert');
+      this.showFormAlertMessage('#email', 'Invalid email given')
       return false;
     }
     return true;
+  }
+
+  showFormAlertMessage(selector: string, message: string) {
+    const el: HTMLInputElement = document.querySelector(selector);
+
+    document.querySelector<HTMLInputElement>(`${selector}__alert`).innerText = message;
+    el.classList.add('form__alert');
+  }
+
+  removeFormAlertMessage(selector: string) {
+    const el: HTMLInputElement = document.querySelector(selector);
+    el.classList.remove('form__alert');
+    document.querySelector<HTMLInputElement>(`${selector}__alert`).innerText = '';
   }
 }

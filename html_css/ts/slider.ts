@@ -1,4 +1,5 @@
 import { Data } from "./types/data-interface";
+import { Side } from "./types/slider-type";
 
 export default class Slider {
   arrowLeftClass: string = 'arrow-left';
@@ -19,7 +20,7 @@ export default class Slider {
     this.data = data;
     this.slider = document.querySelector(this.selector);
     this.page = 0;
-    this.initSlider()
+    this.initSlider();
   }
 
   initSlider(): void {
@@ -30,16 +31,16 @@ export default class Slider {
     this.changeSlidesQuantity();
   }
 
-  renderButtons(buttonSide: string): void {
+  renderButtons(buttonSide: Side): void {
     this.button = document.createElement('button');
     this.button.classList.add(this.arrowBtnClass);
-    this.button.classList.add(`arrow-${buttonSide}`)
+    this.button.classList.add(`arrow-${buttonSide}`);
     this.button.innerHTML = this.getButtonTemplate(buttonSide);
 
     this.slider.appendChild(this.button);
   }
 
-  getButtonTemplate(buttonSide: string): string {
+  getButtonTemplate(buttonSide: Side): string {
     return `
     <svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
       <use class="arrow-${buttonSide}"
@@ -50,6 +51,7 @@ export default class Slider {
   }
 
   initIventListener(): void {
+
     this.slider.addEventListener('click', (event) => {
 
       if (this.isButtonClass(event)) {
@@ -86,7 +88,7 @@ export default class Slider {
   buttonHandler(page: number): void {
     const arrowParent: NodeListOf<Element> = document.querySelectorAll('.slider__arrow-btn');
     const arrowParentArr: HTMLInputElement[] = Array.prototype.slice.call(arrowParent);
-    const arrowLeft = arrowParentArr.find(el => el.className === 'slider__arrow-btn arrow-left');
+    const arrowLeft: HTMLInputElement = arrowParentArr.find(el => el.className === 'slider__arrow-btn arrow-left');
 
     arrowLeft.disabled = page === 0;
     (this.button as HTMLInputElement).disabled = page >= this.maxPage;
@@ -102,7 +104,7 @@ export default class Slider {
     this.slidesInner.classList.add('prefer__slides-inner');
     slidesWrapper.appendChild(this.slidesInner);
 
-    data.forEach((slideData) => {
+    data.forEach((slideData: Data): void => {
       this.renderTemplate(slideData);
     });
 
