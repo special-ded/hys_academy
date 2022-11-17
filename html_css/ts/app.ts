@@ -18,6 +18,8 @@ export default class App implements AppAbstract {
 
   constructor() {
     this.storage = new Storage();
+    this.storage.localStorageSliderData = 'localStorageSliderData';
+
     this.data = this.storage.getSliderData();
   }
 
