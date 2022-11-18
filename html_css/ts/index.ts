@@ -1,5 +1,5 @@
 import initMobileMenu from "./mobile-menu";
-import paginatorData from "./data/paginator-data-big";
+import slidesData from "./data/slides-data-big";
 import App from "./app";
 import '../css/style.css';
 import { Data } from "./models/interfaces.model";
@@ -9,7 +9,7 @@ import { Data } from "./models/interfaces.model";
 })()
 
 function init(): void {
-  setDataInLocalStorage<Data[]>(paginatorData());
+  setDataInLocalStorage<Data[]>(slidesData());
   initApp();
   initMobileMenu();
 }

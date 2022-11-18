@@ -5,6 +5,7 @@ import Select from "./select";
 import CustomerSlider from "./customer-slider";
 import { Data } from "./models/interfaces.model";
 import './libs/my-slick';
+import { ReadOnly } from "./decorators/readOnly.decorator";
 
 abstract class AppAbstract {
   abstract BASE_URL: string;
@@ -23,6 +24,7 @@ export default class App implements AppAbstract {
     this.data = this.storage.getSliderData();
   }
 
+  @ReadOnly
   async init(): Promise<void> {
     const data = await this.setSliderData<number>(1);
     this.addStickyHeader()
@@ -40,6 +42,7 @@ export default class App implements AppAbstract {
       return result;
     } catch (error) {
       console.error("Error:", error);
+      result = this.storage.getSliderData()
     }
     return result;
   }
@@ -68,3 +71,4 @@ export default class App implements AppAbstract {
     });
   }
 }
+

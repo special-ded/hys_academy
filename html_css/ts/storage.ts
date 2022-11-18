@@ -14,13 +14,11 @@ export default class Storage {
 
   constructor() {
 
-    // this.localStorageSliderData = 'localStorageSliderData';
   }
 
 
   getSliderData(): Array<Data> {
     this.initStorage();
-    console.log(this.localStorageSliderData);
 
     return JSON.parse(localStorage.getItem(this.localStorageSliderData));
   }

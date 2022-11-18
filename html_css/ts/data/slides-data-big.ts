@@ -1,6 +1,6 @@
 import { Data } from "../models/interfaces.model";
 
-export default function paginatorData(): Data[] {
+export default function slidesData(): Data[] {
   return [{
     "id": 1,
     "title": "accusamus beatae ad facilis cum similique qui sunt",
