@@ -4,6 +4,7 @@ import { Data } from "./models/interfaces.model";
 
 export default class Storage {
   @LocalStorage
+  localData: Data[] = null
   localStorageSliderData: string;
   localStorageUserName: string;
   localStorageTelephone: string;

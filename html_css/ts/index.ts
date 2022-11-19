@@ -4,6 +4,7 @@ import App from "./app";
 import '../css/style.css';
 import { Data } from "./models/interfaces.model";
 
+
 (document.onload = () => {
   init();
 })()
