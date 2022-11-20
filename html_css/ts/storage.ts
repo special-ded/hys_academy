@@ -2,31 +2,31 @@ import { Data } from "./types/data-interface";
 
 export default class Storage {
 
-  localStorageSliderData: string;
-  localStorageUserName: string;
-  localStorageTelephone: string;
-  localStorageEmail: string;
-  regName: RegExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
-  regNumber: RegExp = /\+38+\d{10}$/;
-  regEmail: RegExp = /(?:[a-z0-9_-]+(?:\.[a-z0-9_-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+  private localStorageSliderData: string;
+  private localStorageUserName: string;
+  private localStorageTelephone: string;
+  private localStorageEmail: string;
+  private regName: RegExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
+  private regNumber: RegExp = /\+38+\d{10}$/;
+  private regEmail: RegExp = /(?:[a-z0-9_-]+(?:\.[a-z0-9_-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
   constructor() {
     this.localStorageSliderData = 'localStorageSliderData';
   }
 
-  getSliderData(): Data[] {
+  public getSliderData(): Data[] {
     this.initStorage();
 
     return JSON.parse(localStorage.getItem(this.localStorageSliderData));
   }
 
-  initStorage(): void {
+  private initStorage(): void {
     this.checkLocalStorage();
     this.setFormToLocalStorage();
     this.sendButtonHandler();
   }
 
-  checkLocalStorage(): void {
+  private checkLocalStorage(): void {
     this.localStorageUserName = JSON.parse(localStorage.getItem('username'))?.trim();
     this.localStorageTelephone = JSON.parse(localStorage.getItem('telephone'))?.trim();
     this.localStorageEmail = JSON.parse(localStorage.getItem('email'))?.trim();
@@ -36,7 +36,7 @@ export default class Storage {
     }
   }
 
-  renderFormData(): void {
+  private renderFormData(): void {
     document.querySelector<HTMLInputElement>('#username').value = this.localStorageUserName
       ? this.localStorageUserName
       : null;
@@ -50,25 +50,25 @@ export default class Storage {
       : null;
   }
 
-  setFormToLocalStorage(): void {
+  private setFormToLocalStorage(): void {
     document
       .querySelector('form')
       .addEventListener(
         'input', (e: Event): void => this.inputHandler(e));
   }
 
-  inputHandler(event: Event): void {
+  private inputHandler(event: Event): void {
     localStorage.setItem((event.target as HTMLInputElement).id, JSON.stringify((event.target as HTMLInputElement).value));
   }
 
-  sendButtonHandler(): void {
+  private sendButtonHandler(): void {
     document
       .querySelector('.send-btn')
       .addEventListener(
         'click', (): void => this.clearLocalStorage());
   }
 
-  clearLocalStorage(): void {
+  private clearLocalStorage(): void {
 
     if (this.passValidation()) {
       document.querySelector<HTMLInputElement>('#username').value = '';
@@ -78,7 +78,7 @@ export default class Storage {
     }
   }
 
-  passValidation(): boolean {
+  protected passValidation(): boolean {
     this.isUserNameValid();
     this.isNumberValid();
     this.isEmailValid();
@@ -88,7 +88,7 @@ export default class Storage {
     }
   }
 
-  isUserNameValid(): boolean {
+  protected isUserNameValid(): boolean {
     const userNameEl: HTMLInputElement = document.querySelector('#username');
     this.removeFormAlertMessage('#username')
 
@@ -99,7 +99,7 @@ export default class Storage {
     return true;
   }
 
-  isNumberValid(): boolean {
+  protected isNumberValid(): boolean {
     const numberEl: HTMLInputElement = document.querySelector('#telephone');
     this.removeFormAlertMessage('#telephone')
 
@@ -110,7 +110,7 @@ export default class Storage {
     return true;
   }
 
-  isEmailValid(): boolean {
+  protected isEmailValid(): boolean {
     const emailEl: HTMLInputElement = document.querySelector('#email');
     this.removeFormAlertMessage('#email')
 

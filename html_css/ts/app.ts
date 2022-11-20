@@ -8,8 +8,8 @@ import './libs/my-slick';
 
 
 export default class App {
-  storage: Storage;
-  data: Data[];
+  private storage: Storage;
+  private data: Data[];
 
   constructor() {
     this.storage = new Storage();
@@ -25,7 +25,7 @@ export default class App {
     this.initCustomerSlider(data)
   }
 
-  async setSliderData(albumId: number): Promise<Data[]> {
+  private async setSliderData(albumId: number): Promise<Data[]> {
     let result: Data[];
 
     try {
@@ -39,11 +39,11 @@ export default class App {
     return result;
   }
 
-  initSelect(): void {
+  private initSelect(): void {
     new Select("#select");
   }
 
-  initPaginator(): void {
+  private initPaginator(): void {
     paginator("#paginator", this.data);
   }
 
@@ -51,11 +51,11 @@ export default class App {
     new Slider("#slider", data);
   }
 
-  initCustomerSlider(data: Data[]): void {
+  private initCustomerSlider(data: Data[]): void {
     new CustomerSlider('#customer-slider', data);
   }
 
-  addStickyHeader(): void {
+  private addStickyHeader(): void {
     window.addEventListener('scroll', (): void => {
       const header: Element = document.querySelector('.header');
 
