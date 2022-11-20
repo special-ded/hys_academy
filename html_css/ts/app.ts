@@ -21,7 +21,7 @@ export default class App implements AppAbstract {
     this.storage = new Storage();
     this.storage.localStorageSliderData = 'localStorageSliderData';
 
-    this.data = this.storage.getSliderData();
+    this.storage.localData = this.storage.getSliderData();
   }
 
   @ReadOnly
@@ -52,7 +52,7 @@ export default class App implements AppAbstract {
   }
 
   initPaginator(): void {
-    paginator("#paginator", this.data);
+    paginator("#paginator", this.storage.localData);
   }
 
   initSlider(data: Data[]): void {

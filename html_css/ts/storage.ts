@@ -1,10 +1,14 @@
 import { LocalStorage } from "./decorators/localStorage.decorator";
 import { Data } from "./models/interfaces.model";
 
+interface Trim {
+  trim: () => string,
+}
 
 export default class Storage {
+  private _localData: Data[] = null;
+
   @LocalStorage
-  localData: Data[] = null
   localStorageSliderData: string;
   localStorageUserName: string;
   localStorageTelephone: string;
@@ -13,32 +17,44 @@ export default class Storage {
   regNumber: RegExp = /\+38+\d{10}$/;
   regEmail: RegExp = /(?:[a-z0-9_-]+(?:\.[a-z0-9_-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
+  get localData(): Data[] {
+    return this._localData;
+  }
+
+  ////Decorator
+  set localData(value: Data[]) {
+    this._localData = value;
+  }
+
   constructor() {
+    this.initStorage();
   }
 
   getSliderData(): Array<Data> {
-    this.initStorage();
-
     return JSON.parse(localStorage.getItem(this.localStorageSliderData));
   }
 
   initStorage(): void {
     this.checkLocalStorage();
-    this.setFormToLocalStorage();
+    this.initFormListener();
     this.sendButtonHandler();
   }
 
   checkLocalStorage(): void {
-    this.localStorageUserName = JSON.parse(localStorage.getItem('username'))?.trim();
-    this.localStorageTelephone = JSON.parse(localStorage.getItem('telephone'))?.trim();
-    this.localStorageEmail = JSON.parse(localStorage.getItem('email'))?.trim();
+    this.localStorageUserName = this.getFromLocalStorage<string>('username');
+    this.localStorageTelephone = this.getFromLocalStorage<string>('telephone');
+    this.localStorageEmail = this.getFromLocalStorage<string>('email');
 
     if (this.localStorageUserName || this.localStorageTelephone || this.localStorageEmail) {
-      this.renderFormData();
+      this.fillFormData();
     }
   }
 
-  renderFormData(): void {
+  getFromLocalStorage<T extends Trim>(key: string): T {
+    return JSON.parse(localStorage.getItem(key))?.trim();
+  }
+
+  fillFormData(): void {
     (document.querySelector('#username') as HTMLInputElement).value = this.localStorageUserName
       ? this.localStorageUserName
       : '';
@@ -46,17 +62,18 @@ export default class Storage {
     (document.querySelector('#telephone') as HTMLInputElement).value = this.localStorageTelephone
       ? this.localStorageTelephone
       : '';
-    console.log((document.querySelector('#telephone') as HTMLInputElement).value);
 
     (document.querySelector('#email') as HTMLInputElement).value = this.localStorageEmail
       ? this.localStorageEmail
       : '';
   }
 
-  setFormToLocalStorage(): void {
-    document.querySelector('form').addEventListener('input', (e) => this.inputHandler(e));
+  initFormListener(): void {
+    document.querySelector('form')
+      .addEventListener(
+        'input', (e) => this.inputHandler(e));
   }
-
+  ////Decorator
   inputHandler(event: Event): void {
     localStorage.setItem((event.target as HTMLInputElement).id, JSON.stringify((event.target as HTMLInputElement).value));
   }
