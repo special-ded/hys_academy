@@ -1,4 +1,3 @@
-import initMobileMenu from "./mobile-menu";
 import slidesData from "./data/slides-data-big";
 import App from "./app";
 import '../css/style.css';
@@ -12,7 +11,6 @@ import { Data } from "./models/interfaces.model";
 function init(): void {
   setDataInLocalStorage<Data[]>(slidesData());
   initApp();
-  initMobileMenu();
 }
 
 function initApp(): void {

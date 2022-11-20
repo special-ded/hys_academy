@@ -6,3 +6,7 @@ export interface Data {
   url: string,
   userImage: string
 }
+
+export interface Trim {
+  trim: () => string,
+}

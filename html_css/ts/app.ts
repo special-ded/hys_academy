@@ -3,39 +3,39 @@ import Slider from "./slider";
 import Storage from "./storage";
 import Select from "./select";
 import CustomerSlider from "./customer-slider";
+import initMobileMenu from "./mobile-menu";
+import { Form } from "./form";
 import { Data } from "./models/interfaces.model";
 import './libs/my-slick';
 import { ReadOnly } from "./decorators/readOnly.decorator";
+import { AppAbstract } from "./models/appAbstract.class";
 
-abstract class AppAbstract {
-  abstract BASE_URL: string;
-  abstract setSliderData<T>(albumId: T): Promise<Data[]>;
-}
 
 export default class App implements AppAbstract {
   storage: Storage;
   data: Data[];
-  BASE_URL = `https://jsonplaceholder.typicode.com/albums/`
+  BASE_URL = `https://jsonplaceholder.typicode.com/albums/`;
 
   constructor() {
-    this.storage = new Storage();
-    this.storage.localStorageSliderData = 'localStorageSliderData';
-
-    this.storage.localData = this.storage.getSliderData();
+    this.storage = new Storage('localStorageSliderData');
   }
 
   @ReadOnly
   async init(): Promise<void> {
-    const data = await this.setSliderData<number>(1);
-    this.addStickyHeader()
+    this.storage.localData = this.storage.getSliderData();
+    this.data = await this.setSliderData<number>(1);
+    initMobileMenu();
+    this.addStickyHeader();
     this.initSelect();
-    this.initSlider(data);
+    this.initSlider(this.data);
     this.initPaginator();
-    this.initCustomerSlider(data)
+    this.initCustomerSlider(this.data);
+    new Form();
   }
 
   async setSliderData<T>(albumId: T): Promise<Data[]> {
     let result: Data[]
+
     try {
       const response = await fetch(this.BASE_URL + `${albumId}/photos`);
       result = await response.json();
@@ -44,6 +44,7 @@ export default class App implements AppAbstract {
       console.error("Error:", error);
       result = this.storage.getSliderData()
     }
+
     return result;
   }
 
