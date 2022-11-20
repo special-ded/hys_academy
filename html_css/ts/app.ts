@@ -18,7 +18,7 @@ export default class App {
 
   async init(): Promise<void> {
     const data = await this.setSliderData(1);
-    this.addStickyHeader()
+    this.addStickyHeader();
     this.initSelect();
     this.initSlider(data);
     this.initPaginator();
@@ -26,8 +26,8 @@ export default class App {
   }
 
   async setSliderData(albumId: number): Promise<Data[]> {
+    let result: Data[];
 
-    let result: Data[]
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`);
       result = await response.json();
@@ -35,6 +35,7 @@ export default class App {
     } catch (error) {
       console.error("Error:", error);
     }
+
     return result;
   }
 
