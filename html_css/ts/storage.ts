@@ -2,13 +2,12 @@ import { LocalData } from "./decorators/localData.decorator";
 import { LocalStorage } from "./decorators/localStorage.decorator";
 import { Data } from "./models/interfaces.model";
 
+@LocalData()
 export default class Storage {
-
-  @LocalData('')
   private _localData: Data[];
 
   @LocalStorage
-  localStorageSliderData: string;
+  public localStorageSliderData: string;
   localStorageUserName: string;
   localStorageTelephone: string;
   localStorageEmail: string;
@@ -24,6 +23,7 @@ export default class Storage {
   constructor(key: string) {
     this.localStorageSliderData = key;
   }
+
 
   getFromLocalStorage(): Array<Data> {
     return JSON.parse(localStorage.getItem(this.localStorageSliderData));
