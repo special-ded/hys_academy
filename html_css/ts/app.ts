@@ -22,7 +22,7 @@ export default class App implements AppAbstract {
 
   @ReadOnly
   async init(): Promise<void> {
-    this.storage.localData = this.storage.getSliderData();
+    this.storage.localData = this.storage.getFromLocalStorage();
     this.data = await this.setSliderData<number>(1);
     initMobileMenu();
     this.addStickyHeader();
@@ -42,7 +42,7 @@ export default class App implements AppAbstract {
       return result;
     } catch (error) {
       console.error("Error:", error);
-      result = this.storage.getSliderData()
+      result = this.storage.getFromLocalStorage()
     }
 
     return result;
