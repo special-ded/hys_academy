@@ -44,6 +44,7 @@ export default class App implements AppAbstract {
       console.error("Error:", error);
       result = this.storage.getFromLocalStorage()
     }
+
     return result;
   }
 

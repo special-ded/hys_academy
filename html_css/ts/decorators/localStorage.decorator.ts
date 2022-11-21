@@ -1,4 +1,4 @@
-export function LocalStorage(target: any, key: any) {
+export function LocalStorage(target: any, key: string): void {
   let value = '';
 
   const getter = function () {

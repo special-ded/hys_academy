@@ -20,17 +20,12 @@ export default class Storage {
     this._localData = value;
   }
 
-  constructor(key: string) {
+  constructor(key: string, value?: string) {
     this.localStorageSliderData = key;
   }
 
-
   getFromLocalStorage(): Array<Data> {
     return JSON.parse(localStorage.getItem(this.localStorageSliderData));
-  }
-
-  setToLocalStorage(key: string, value: string) {
-    localStorage.setItem(key, JSON.stringify(value));
   }
 
   clearLocalStorage(): void {
