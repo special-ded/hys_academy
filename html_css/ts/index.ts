@@ -22,5 +22,3 @@ function initApp(): void {
 function setDataInLocalStorage<A extends Data[]>(data: A): void {
   new Storage('localStorageSliderData', data);
 }
-
-

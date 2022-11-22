@@ -1,4 +1,4 @@
-import paginator from "./paginator";
+import Paginator from "./paginator";
 import Slider from "./slider";
 import Storage from "./storage";
 import Select from "./select";
@@ -22,7 +22,7 @@ export default class App implements AppAbstract {
 
   @ReadOnly
   async init(): Promise<void> {
-    this.storage.localData = this.storage.getFromLocalStorage();
+    this.storage.localData = this.storage.getFromLocalStorage('localStorageSliderData')
     this.data = await this.setSliderData<number>(1);
     initMobileMenu();
     this.addStickyHeader();
@@ -42,7 +42,7 @@ export default class App implements AppAbstract {
       return result;
     } catch (error) {
       console.error("Error:", error);
-      result = this.storage.getFromLocalStorage()
+      result = this.storage.localData
     }
 
     return result;
@@ -53,7 +53,7 @@ export default class App implements AppAbstract {
   }
 
   initPaginator(): void {
-    paginator("#paginator", this.storage.localData);
+    Paginator("#paginator", this.storage.localData);
   }
 
   initSlider(data: Data[]): void {

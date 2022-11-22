@@ -24,8 +24,8 @@ export default class Storage {
     this.localStorageSliderData = key;
   }
 
-  getFromLocalStorage(): Array<Data> {
-    return JSON.parse(localStorage.getItem(this.localStorageSliderData));
+  getFromLocalStorage(key: string) {
+    return JSON.parse(localStorage.getItem(key));
   }
 
   clearLocalStorage(): void {

@@ -4,7 +4,7 @@ const sliderScroll: Element = document.querySelector('.blog__slider-scroll');
 const activeButtonClass: string = "blog__slider-btn_active";
 let sliderWrapper: Element;
 
-export default function paginator(selector: string, data: Data[]): void {
+export default function Paginator(selector: string, data: Data[]): void {
 
   sliderWrapper = document.querySelector(selector);
   const slidesQuantity: number = 2;
