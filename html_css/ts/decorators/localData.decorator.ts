@@ -1,7 +1,7 @@
 import { Data } from "../models/interfaces.model";
 
 export function LocalData() {
-  return function (constructor: any) {
+  return function <T extends { new(...arg: any): object }>(constructor: T) {
     return class extends constructor {
       constructor(...arg: any) {
         super(...arg)
