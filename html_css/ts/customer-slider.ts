@@ -18,18 +18,20 @@ export default class CustomerSlider {
   }
 
   initSlider(): void {
-    this.initEventListener()
+    this.initEventListener();
   }
 
   initEventListener(): void {
-    this.buttons.addEventListener('click', (event) => this.clickHandler(event))
+    this.buttons
+      .addEventListener(
+        'click', (event) => this.clickHandler(event));
   }
 
   clickHandler(event: Event): void {
     if (!(event.target as HTMLButtonElement).value) {
       return
     }
-    this.activeBtnToggler(event, this.activeButtonClass)
+    this.activeBtnToggler(event, this.activeButtonClass);
   }
 
   activeBtnToggler(event: Event, activeButtonClass: string): void {
@@ -38,17 +40,17 @@ export default class CustomerSlider {
     activeBtn.classList.remove(activeButtonClass);
     (event.target as HTMLButtonElement).classList.add(activeButtonClass);
 
-    this.renderImage((event.target as HTMLInputElement & { value: number }).value)
-    this.renderText((event.target as HTMLButtonElement & { value: number }).value)
+    this.renderImage((event.target as HTMLInputElement & { value: number }).value);
+    this.renderText((event.target as HTMLButtonElement & { value: number }).value);
   }
 
   renderImage(activeBtn: number): void {
-    this.image.src = this.data[activeBtn - 1].url
+    this.image.src = this.data[activeBtn - 1].url;
   }
 
   renderText(activeBtn: number): void {
-    this.firstText.innerText = this.data[activeBtn].title
-    this.secondText.innerText = this.data[activeBtn].title
+    this.firstText.innerText = this.data[activeBtn].title;
+    this.secondText.innerText = this.data[activeBtn].title;
   }
 }
 
