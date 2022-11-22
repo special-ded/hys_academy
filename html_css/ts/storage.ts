@@ -20,7 +20,7 @@ export default class Storage {
     this._localData = value;
   }
 
-  constructor(key: string, value?: string) {
+  constructor(key: string, value?: string | Data[]) {
     this.localStorageSliderData = key;
   }
 

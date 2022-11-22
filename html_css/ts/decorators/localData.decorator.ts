@@ -15,6 +15,9 @@ export function LocalData() {
         }
 
         if (value) {
+          console.log(value);
+          console.log(typeof value);
+
           localStorage.setItem(key, JSON.stringify(value));
           return
         }

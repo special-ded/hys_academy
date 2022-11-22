@@ -1,5 +1,6 @@
 import slidesData from "./data/slides-data-big";
 import App from "./app";
+import Storage from "./storage";
 import '../css/style.css';
 import { Data } from "./models/interfaces.model";
 
@@ -9,7 +10,7 @@ import { Data } from "./models/interfaces.model";
 })()
 
 function init(): void {
-  setDataInLocalStorage<Data[]>(slidesData());
+  setDataInLocalStorage(slidesData());
   initApp();
 }
 
@@ -18,8 +19,8 @@ function initApp(): void {
   app.init();
 }
 
-function setDataInLocalStorage<A>(data: A): void {
-  localStorage.setItem('localStorageSliderData', JSON.stringify(data));
+function setDataInLocalStorage<A extends Data[]>(data: A): void {
+  new Storage('localStorageSliderData', data);
 }
 
 
