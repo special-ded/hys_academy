@@ -22,9 +22,9 @@ export class Form {
 
   getFromLocalStorage<T extends Trim>(key: string): T {
     const storage = new Storage(key);
-    let value = storage.getFromLocalStorage(key)?.trim()
+    let value = storage.getFromLocalStorage(key)?.trim();
 
-    return value
+    return value;
   }
 
   checkLocalStorage(): void {
@@ -64,7 +64,7 @@ export class Form {
   }
 
   inputHandler(event: Event): void {
-    const eventTarget: HTMLInputElement = event.target as HTMLInputElement
+    const eventTarget: HTMLInputElement = event.target as HTMLInputElement;
 
     this.storage = new Storage(eventTarget.id, eventTarget.value);
   }
@@ -80,7 +80,7 @@ export class Form {
       (document.querySelector('#username') as HTMLInputElement).value = '';
       (document.querySelector('#telephone') as HTMLInputElement).value = '';
       (document.querySelector('#email') as HTMLInputElement).value = '';
-      this.storage.clearLocalStorage()
+      this.storage.clearLocalStorage();
     }
   }
 

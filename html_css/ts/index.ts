@@ -10,15 +10,11 @@ import { Data } from "./models/interfaces.model";
 })()
 
 function init(): void {
-  setDataInLocalStorage(slidesData());
+  new Storage('localStorageSliderData', slidesData());
   initApp();
 }
 
 function initApp(): void {
   const app: App = new App();
   app.init();
-}
-
-function setDataInLocalStorage<A extends Data[]>(data: A): void {
-  new Storage('localStorageSliderData', data);
 }

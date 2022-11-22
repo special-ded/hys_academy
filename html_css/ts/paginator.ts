@@ -8,14 +8,14 @@ export default function Paginator(selector: string, data: Data[]): void {
 
   sliderWrapper = document.querySelector(selector);
   const slidesQuantity: number = 2;
-  const activeButtonNumber: number = 1;
+  const activeButton: number = 1;
 
   if (data.length > 2) {
     renderButtons<Data[]>(data);
   }
 
   initClickListener(slidesQuantity, data);
-  updateData(slidesQuantity, activeButtonNumber, data);
+  updateData(slidesQuantity, activeButton, data);
   checkTranslateProperty();
 }
 
@@ -24,20 +24,20 @@ function initClickListener(slidesQuantity: number, data: Data[]): void {
 }
 
 function clickHandler(slidesQuantity: number, data: Data[], event: Event): void {
-  let activeButtonNumber: number = 0;
+  let activeButton: number = 0;
 
   if ((event.target as HTMLButtonElement).value) {
-    activeButtonNumber = Number((event.target as HTMLButtonElement).value)
+    activeButton = Number((event.target as HTMLButtonElement).value)
 
     activeBtnToggler(event, activeButtonClass);
-    updateData(slidesQuantity, activeButtonNumber, data);
-    buttonScrollHandler(activeButtonNumber, data);
+    updateData(slidesQuantity, activeButton, data);
+    buttonScrollHandler(activeButton, data);
   }
 }
 
-function updateData(slidesQuantity: number, activeButtonNumber: number, data: Data[]): void {
-  const currentData: Data[] = data.slice(slidesQuantity * activeButtonNumber - slidesQuantity,
-    slidesQuantity * activeButtonNumber);
+function updateData(slidesQuantity: number, activeButton: number, data: Data[]): void {
+  const currentData: Data[] = data.slice(slidesQuantity * activeButton - slidesQuantity,
+    slidesQuantity * activeButton);
   renderNewSlides(currentData);
 }
 
@@ -53,22 +53,28 @@ function checkTranslateProperty(): string {
     : "translateY";
 }
 
-function buttonScrollHandler(activeButtonNumber: number, data: Data[]): void {
+function buttonScrollHandler(activeButton: number, data: Data[]): void {
   const sliderScrollWrap: Element = document.querySelector('.blog__slider-scroll-wrap');
   const translateProperty: string = checkTranslateProperty();
 
-  if (activeButtonNumber <= 3) {
-    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-0px)`);
+  if (activeButton <= 3) {
+    sliderScrollWrap
+      .setAttribute(
+        "style", `transform: ${translateProperty}(-0px)`);
     return;
   }
 
-  if (activeButtonNumber > 3 && activeButtonNumber <= Math.round(data.length / 2) - 2) {
-    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-${62 * (activeButtonNumber - 3)}px)`);
+  if (activeButton > 3 && activeButton <= Math.round(data.length / 2) - 2) {
+    sliderScrollWrap
+      .setAttribute(
+        "style", `transform: ${translateProperty}(-${62 * (activeButton - 3)}px)`);
     return;
   }
 
-  if (activeButtonNumber == Math.round(data.length / 2) - 1) {
-    sliderScrollWrap.setAttribute("style", `transform: ${translateProperty}(-${62 * (activeButtonNumber - 4)}px)`);
+  if (activeButton == Math.round(data.length / 2) - 1) {
+    sliderScrollWrap
+      .setAttribute(
+        "style", `transform: ${translateProperty}(-${62 * (activeButton - 4)}px)`);
     return;
   }
 }

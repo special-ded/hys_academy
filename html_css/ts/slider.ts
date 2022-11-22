@@ -19,7 +19,7 @@ export default class Slider {
     this.data = data;
     this.slider = document.querySelector(this.selector);
     this.page = 0;
-    this.initSlider()
+    this.initSlider();
   }
 
   private initSlider(): void {
@@ -33,7 +33,7 @@ export default class Slider {
   private renderButtons(buttonSide: string): void {
     this.button = document.createElement('button');
     this.button.classList.add(this.arrowBtnClass);
-    this.button.classList.add(`arrow-${buttonSide}`)
+    this.button.classList.add(`arrow-${buttonSide}`);
     this.button.innerHTML = this.getButtonTemplate(buttonSide);
 
     this.slider.appendChild(this.button);
@@ -50,12 +50,14 @@ export default class Slider {
   }
 
   private initIventListener(): void {
-    this.slider.addEventListener('click', (event) => {
+    this.slider
+      .addEventListener(
+        'click', (event) => {
 
-      if (this.isButtonClass(event)) {
-        this.clickHandler(event);
-      }
-    })
+          if (this.isButtonClass(event)) {
+            this.clickHandler(event);
+          }
+        })
     window.addEventListener('resize', () => this.changeSlidesQuantity());
   }
 
