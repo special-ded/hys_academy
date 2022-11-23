@@ -3,7 +3,7 @@ import { Data } from "../models/interfaces.model";
 export function LocalData() {
   return function <T extends { new(...arg: any): object }>(constructor: T) {
     return class extends constructor {
-      constructor(...arg: any) {
+      constructor(...arg: any[]) {
         super(...arg)
 
         let keys: string[] = [...arg];

@@ -5,10 +5,11 @@ import Select from "./select";
 import CustomerSlider from "./customer-slider";
 import initMobileMenu from "./mobile-menu";
 import { Form } from "./form";
-import { Data } from "./models/interfaces.model";
-import './libs/my-slick';
 import { ReadOnly } from "./decorators/readOnly.decorator";
+import { Data } from "./models/interfaces.model";
 import { AppAbstract } from "./models/appAbstract.class";
+import { AppEnum } from "./models/enum.model";
+import './libs/my-slick';
 
 
 export default class App implements AppAbstract {
@@ -17,12 +18,12 @@ export default class App implements AppAbstract {
   BASE_URL = `https://jsonplaceholder.typicode.com/albums/`;
 
   constructor() {
-    this.storage = new Storage('localStorageSliderData');
+    this.storage = new Storage(AppEnum.key);
   }
 
   @ReadOnly
   async init(): Promise<void> {
-    this.storage.localData = this.storage.getFromLocalStorage('localStorageSliderData');
+    this.storage.localData = this.storage.getFromLocalStorage(AppEnum.key);
     this.data = await this.setSliderData<number>(1);
     initMobileMenu();
     this.addStickyHeader();
@@ -41,31 +42,30 @@ export default class App implements AppAbstract {
     } catch (error) {
       console.error("Error:", error);
       result = this.storage.localData;
-      alert("Please check Internet connection");
     }
 
     return result;
   }
 
   initSelect(): void {
-    new Select("#select");
+    new Select(AppEnum.select);
   }
 
   initPaginator(): void {
-    Paginator("#paginator", this.storage.localData);
+    Paginator(AppEnum.paginator, this.storage.localData);
   }
 
   initSlider(data: Data[]): void {
-    new Slider("#slider", data);
+    new Slider(AppEnum.slider, data);
   }
 
   initCustomerSlider(data: Data[]): void {
-    new CustomerSlider('#customer-slider', data);
+    new CustomerSlider(AppEnum.customerSlider, data);
   }
 
   addStickyHeader(): void {
     window.addEventListener('scroll', () => {
-      const header: Element = document.querySelector('.header');
+      const header: Element = document.querySelector(AppEnum.header);
 
       header.classList.toggle('sticky', window.scrollY > header.clientHeight);
     });

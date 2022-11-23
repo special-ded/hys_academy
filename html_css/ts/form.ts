@@ -1,5 +1,7 @@
-import { Trim } from "./models/interfaces.model";
 import Storage from "./storage";
+import { Trim } from "./models/interfaces.model";
+import { FormAlertEnum, FormSelector } from "./models/enum.model";
+
 
 export class Form {
   localStorageUserName: string;
@@ -38,15 +40,15 @@ export class Form {
   }
 
   fillFormData(): void {
-    (document.querySelector('#username') as HTMLInputElement).value = this.localStorageUserName
+    document.querySelector<HTMLInputElement>(FormSelector.username).value = this.localStorageUserName
       ? this.localStorageUserName
       : '';
 
-    (document.querySelector('#telephone') as HTMLInputElement).value = this.localStorageTelephone
+    document.querySelector<HTMLInputElement>(FormSelector.telephone).value = this.localStorageTelephone
       ? this.localStorageTelephone
       : '';
 
-    (document.querySelector('#email') as HTMLInputElement).value = this.localStorageEmail
+    document.querySelector<HTMLInputElement>(FormSelector.email).value = this.localStorageEmail
       ? this.localStorageEmail
       : '';
   }
@@ -58,7 +60,7 @@ export class Form {
   }
 
   initFormListener(): void {
-    document.querySelector('form')
+    document.querySelector(FormSelector.form)
       .addEventListener(
         'input', (e): void => this.inputHandler(e));
   }
@@ -77,47 +79,47 @@ export class Form {
 
     if (this.userNameValidation() && this.numberValidation() && this.emailValidation()) {
 
-      (document.querySelector('#username') as HTMLInputElement).value = '';
-      (document.querySelector('#telephone') as HTMLInputElement).value = '';
-      (document.querySelector('#email') as HTMLInputElement).value = '';
+      document.querySelector<HTMLInputElement>(FormSelector.username).value = '';
+      document.querySelector<HTMLInputElement>(FormSelector.telephone).value = '';
+      document.querySelector<HTMLInputElement>(FormSelector.email).value = '';
       this.storage.clearLocalStorage();
     }
   }
 
   userNameValidation(): boolean {
-    const userNameEl: HTMLInputElement = document.querySelector('#username');
-    userNameEl.classList.remove('form__alert');
-    (document.querySelector('#username__alert') as HTMLInputElement).innerText = '';
+    const userNameEl: HTMLInputElement = document.querySelector(FormSelector.username);
+    userNameEl.classList.remove(FormSelector.alert);
+    document.querySelector<HTMLInputElement>(FormSelector.userAlert).innerText = '';
 
     if (!this.regName.test(userNameEl.value)) {
-      (document.querySelector('#username__alert') as HTMLInputElement).innerText = 'Please input valid Name & Surname';
-      userNameEl.classList.add('form__alert');
+      document.querySelector<HTMLInputElement>(FormSelector.userAlert).innerText = FormAlertEnum.userNameAlert;
+      userNameEl.classList.add(FormSelector.alert);
       return false;
     }
     return true;
   }
 
   numberValidation(): boolean {
-    const numberEl: HTMLInputElement = document.querySelector('#telephone');
-    numberEl.classList.remove('form__alert');
-    (document.querySelector('#telephone__alert') as HTMLInputElement).innerText = '';
+    const numberEl: HTMLInputElement = document.querySelector(FormSelector.telephone);
+    numberEl.classList.remove(FormSelector.alert);
+    document.querySelector<HTMLInputElement>(FormSelector.telephoneAlert).innerText = '';
 
     if (!this.regTelephone.test(numberEl.value)) {
-      (document.querySelector('#telephone__alert') as HTMLInputElement).innerText = 'Format: +38 077 777 77 77';
-      numberEl.classList.add('form__alert');
+      document.querySelector<HTMLInputElement>(FormSelector.telephoneAlert).innerText = FormAlertEnum.telephoneAlert;
+      numberEl.classList.add(FormSelector.alert);
       return false;
     }
     return true;
   }
 
   emailValidation(): boolean {
-    const emailEl: HTMLInputElement = document.querySelector('#email');
-    emailEl.classList.remove('form__alert');
-    (document.querySelector('#email__alert') as HTMLInputElement).innerText = '';
+    const emailEl: HTMLInputElement = document.querySelector(FormSelector.email);
+    emailEl.classList.remove(FormSelector.alert);
+    document.querySelector<HTMLInputElement>(FormSelector.emailAlert).innerText = '';
 
     if (!this.regEmail.test(emailEl.value)) {
-      (document.querySelector('#email__alert') as HTMLInputElement).innerText = 'Invalid email given';
-      emailEl.classList.add('form__alert');
+      document.querySelector<HTMLInputElement>(FormSelector.emailAlert).innerText = FormAlertEnum.emailAlert;
+      emailEl.classList.add(FormSelector.alert);
       return false;
     }
     return true;

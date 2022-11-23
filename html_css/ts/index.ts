@@ -2,6 +2,7 @@ import slidesData from "./data/slides-data-big";
 import App from "./app";
 import Storage from "./storage";
 import '../css/style.css';
+import { AppEnum } from "./models/enum.model";
 
 
 (document.onload = () => {
@@ -9,7 +10,7 @@ import '../css/style.css';
 })()
 
 function init(): void {
-  new Storage('localStorageSliderData', slidesData());
+  new Storage(AppEnum.key, slidesData());
   initApp();
 }
 
