@@ -6,7 +6,7 @@ export function LocalData() {
       constructor(...arg: any) {
         super(...arg)
 
-        let keys: string[] = [...arg]
+        let keys: string[] = [...arg];
         let key: string = keys[0];
         let value: string = keys[1];
 
@@ -19,12 +19,11 @@ export function LocalData() {
           return
         }
 
-        setter(getter())
+        setter(getter());
 
         function setter(data: Data[]) {
           localStorage.setItem(key, JSON.stringify(data));
         };
-
       }
     }
   }

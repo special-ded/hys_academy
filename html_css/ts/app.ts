@@ -22,7 +22,7 @@ export default class App implements AppAbstract {
 
   @ReadOnly
   async init(): Promise<void> {
-    this.storage.localData = this.storage.getFromLocalStorage('localStorageSliderData')
+    this.storage.localData = this.storage.getFromLocalStorage('localStorageSliderData');
     this.data = await this.setSliderData<number>(1);
     initMobileMenu();
     this.addStickyHeader();
@@ -37,12 +37,11 @@ export default class App implements AppAbstract {
     let result: Data[]
 
     try {
-      const response = await fetch(this.BASE_URL + `${albumId}/photos`);
-      result = await response.json();
-      return result;
+      return result = await (await fetch(this.BASE_URL + `${albumId}/photos`)).json();
     } catch (error) {
       console.error("Error:", error);
-      result = this.storage.localData
+      result = this.storage.localData;
+      alert("Please check Internet connection");
     }
 
     return result;

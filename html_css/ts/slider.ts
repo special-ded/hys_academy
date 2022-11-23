@@ -58,7 +58,7 @@ export default class Slider {
             this.clickHandler(event);
           }
         })
-    window.addEventListener('resize', () => this.changeSlidesQuantity());
+    window.addEventListener('resize', (): void => this.changeSlidesQuantity());
   }
 
   private isButtonClass(event: Event): boolean {

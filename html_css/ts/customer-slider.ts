@@ -53,5 +53,3 @@ export default class CustomerSlider {
     this.secondText.innerText = this.data[activeBtn].title;
   }
 }
-
-

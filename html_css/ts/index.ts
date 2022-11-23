@@ -2,7 +2,6 @@ import slidesData from "./data/slides-data-big";
 import App from "./app";
 import Storage from "./storage";
 import '../css/style.css';
-import { Data } from "./models/interfaces.model";
 
 
 (document.onload = () => {

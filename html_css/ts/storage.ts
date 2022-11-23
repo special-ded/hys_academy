@@ -7,7 +7,7 @@ export default class Storage {
   private _localData: Data[];
 
   @LocalStorage
-  public localStorageSliderData: string;
+  public key: string;
   localStorageUserName: string;
   localStorageTelephone: string;
   localStorageEmail: string;
@@ -21,7 +21,7 @@ export default class Storage {
   }
 
   constructor(key: string, value?: string | Data[]) {
-    this.localStorageSliderData = key;
+    this.key = key;
   }
 
   getFromLocalStorage(key: string) {
