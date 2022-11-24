@@ -1,6 +1,6 @@
 import Storage from "./storage";
 import { Trim } from "./models/interfaces.model";
-import { FormAlertEnum, FormSelector } from "./models/enum.model";
+import { FormAlert, FormSelector } from "./models/enum.model";
 
 
 export class Form {
@@ -40,15 +40,15 @@ export class Form {
   }
 
   fillFormData(): void {
-    document.querySelector<HTMLInputElement>(FormSelector.username).value = this.localStorageUserName
+    document.querySelector<HTMLInputElement>(FormSelector.Username).value = this.localStorageUserName
       ? this.localStorageUserName
       : '';
 
-    document.querySelector<HTMLInputElement>(FormSelector.telephone).value = this.localStorageTelephone
+    document.querySelector<HTMLInputElement>(FormSelector.Telephone).value = this.localStorageTelephone
       ? this.localStorageTelephone
       : '';
 
-    document.querySelector<HTMLInputElement>(FormSelector.email).value = this.localStorageEmail
+    document.querySelector<HTMLInputElement>(FormSelector.Email).value = this.localStorageEmail
       ? this.localStorageEmail
       : '';
   }
@@ -60,7 +60,7 @@ export class Form {
   }
 
   initFormListener(): void {
-    document.querySelector(FormSelector.form)
+    document.querySelector(FormSelector.Form)
       .addEventListener(
         'input', (e): void => this.inputHandler(e));
   }
@@ -79,47 +79,47 @@ export class Form {
 
     if (this.userNameValidation() && this.numberValidation() && this.emailValidation()) {
 
-      document.querySelector<HTMLInputElement>(FormSelector.username).value = '';
-      document.querySelector<HTMLInputElement>(FormSelector.telephone).value = '';
-      document.querySelector<HTMLInputElement>(FormSelector.email).value = '';
+      document.querySelector<HTMLInputElement>(FormSelector.Username).value = '';
+      document.querySelector<HTMLInputElement>(FormSelector.Telephone).value = '';
+      document.querySelector<HTMLInputElement>(FormSelector.Email).value = '';
       this.storage.clearLocalStorage();
     }
   }
 
   userNameValidation(): boolean {
-    const userNameEl: HTMLInputElement = document.querySelector(FormSelector.username);
-    userNameEl.classList.remove(FormSelector.alert);
-    document.querySelector<HTMLInputElement>(FormSelector.userAlert).innerText = '';
+    const userNameEl: HTMLInputElement = document.querySelector(FormSelector.Username);
+    userNameEl.classList.remove(FormSelector.Alert);
+    document.querySelector<HTMLInputElement>(FormSelector.UserAlert).innerText = '';
 
     if (!this.regName.test(userNameEl.value)) {
-      document.querySelector<HTMLInputElement>(FormSelector.userAlert).innerText = FormAlertEnum.userNameAlert;
-      userNameEl.classList.add(FormSelector.alert);
+      document.querySelector<HTMLInputElement>(FormSelector.UserAlert).innerText = FormAlert.UserName;
+      userNameEl.classList.add(FormSelector.Alert);
       return false;
     }
     return true;
   }
 
   numberValidation(): boolean {
-    const numberEl: HTMLInputElement = document.querySelector(FormSelector.telephone);
-    numberEl.classList.remove(FormSelector.alert);
-    document.querySelector<HTMLInputElement>(FormSelector.telephoneAlert).innerText = '';
+    const numberEl: HTMLInputElement = document.querySelector(FormSelector.Telephone);
+    numberEl.classList.remove(FormSelector.Alert);
+    document.querySelector<HTMLInputElement>(FormSelector.TelephoneAlert).innerText = '';
 
     if (!this.regTelephone.test(numberEl.value)) {
-      document.querySelector<HTMLInputElement>(FormSelector.telephoneAlert).innerText = FormAlertEnum.telephoneAlert;
-      numberEl.classList.add(FormSelector.alert);
+      document.querySelector<HTMLInputElement>(FormSelector.TelephoneAlert).innerText = FormAlert.Telephone;
+      numberEl.classList.add(FormSelector.Alert);
       return false;
     }
     return true;
   }
 
   emailValidation(): boolean {
-    const emailEl: HTMLInputElement = document.querySelector(FormSelector.email);
-    emailEl.classList.remove(FormSelector.alert);
-    document.querySelector<HTMLInputElement>(FormSelector.emailAlert).innerText = '';
+    const emailEl: HTMLInputElement = document.querySelector(FormSelector.Email);
+    emailEl.classList.remove(FormSelector.Alert);
+    document.querySelector<HTMLInputElement>(FormSelector.EmailAlert).innerText = '';
 
     if (!this.regEmail.test(emailEl.value)) {
-      document.querySelector<HTMLInputElement>(FormSelector.emailAlert).innerText = FormAlertEnum.emailAlert;
-      emailEl.classList.add(FormSelector.alert);
+      document.querySelector<HTMLInputElement>(FormSelector.EmailAlert).innerText = FormAlert.Email;
+      emailEl.classList.add(FormSelector.Alert);
       return false;
     }
     return true;

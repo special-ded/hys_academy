@@ -1,4 +1,4 @@
-export function ReadOnly(target: any, key: any, descriptors: PropertyDescriptor) {
+export function ReadOnly(target: any, key: string, descriptors: PropertyDescriptor) {
 
   descriptors.writable = false;
 }

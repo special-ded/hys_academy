@@ -1,6 +1,6 @@
 import App from "./app";
 import { Data } from "./models/interfaces.model";
-import { AlbumEnum } from "./models/enum.model";
+import { Album } from "./models/enum.model";
 
 export default class Select {
   classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
@@ -29,7 +29,7 @@ export default class Select {
   private getSelectTemplate(): string {
     return `
     <div class="input__wrap">
-    <input class="input__value" value=" ${AlbumEnum.Album1}" />
+    <input class="input__value" value=" ${Album.Number1}" />
     <div class="input__icon">
       <svg class="select__icon" width="20" height="20">
         <use
@@ -40,9 +40,9 @@ export default class Select {
     </div>
   </div>
   <ul class="select__list">
-    <li value="1" class="select__item">${AlbumEnum.Album1}</li>
-    <li value="2" class="select__item">${AlbumEnum.Album2}</li>
-    <li value="3" class="select__item">${AlbumEnum.Album3}</li>
+    <li value="1" class="select__item">${Album.Number1}</li>
+    <li value="2" class="select__item">${Album.Number1}</li>
+    <li value="3" class="select__item">${Album.Number1}</li>
   </ul>`
   }
 

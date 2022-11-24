@@ -8,7 +8,7 @@ import { Form } from "./form";
 import { ReadOnly } from "./decorators/readOnly.decorator";
 import { Data } from "./models/interfaces.model";
 import { AppAbstract } from "./models/appAbstract.class";
-import { AppEnum } from "./models/enum.model";
+import { AppClass } from "./models/enum.model";
 import './libs/my-slick';
 
 
@@ -18,12 +18,12 @@ export default class App implements AppAbstract {
   BASE_URL = `https://jsonplaceholder.typicode.com/albums/`;
 
   constructor() {
-    this.storage = new Storage(AppEnum.key);
+    this.storage = new Storage(AppClass.Key);
   }
 
   @ReadOnly
   async init(): Promise<void> {
-    this.storage.localData = this.storage.getFromLocalStorage(AppEnum.key);
+    this.storage.localData = this.storage.getFromLocalStorage(AppClass.Key);
     this.data = await this.setSliderData<number>(1);
     initMobileMenu();
     this.addStickyHeader();
@@ -48,24 +48,24 @@ export default class App implements AppAbstract {
   }
 
   initSelect(): void {
-    new Select(AppEnum.select);
+    new Select(AppClass.Select);
   }
 
   initPaginator(): void {
-    Paginator(AppEnum.paginator, this.storage.localData);
+    Paginator(AppClass.Paginator, this.storage.localData);
   }
 
   initSlider(data: Data[]): void {
-    new Slider(AppEnum.slider, data);
+    new Slider(AppClass.Slider, data);
   }
 
   initCustomerSlider(data: Data[]): void {
-    new CustomerSlider(AppEnum.customerSlider, data);
+    new CustomerSlider(AppClass.CustomerSlider, data);
   }
 
   addStickyHeader(): void {
     window.addEventListener('scroll', () => {
-      const header: Element = document.querySelector(AppEnum.header);
+      const header: Element = document.querySelector(AppClass.Header);
 
       header.classList.toggle('sticky', window.scrollY > header.clientHeight);
     });
