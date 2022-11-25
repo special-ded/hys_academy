@@ -48,16 +48,16 @@ export default class App extends AppAbstract {
     return result;
   }
 
+  public initSlider(data: Data[]): void {
+    new Slider(AppClasses.Slider, data);
+  }
+
   private initSelect(): void {
     new Select(AppClasses.Select);
   }
 
   private initPaginator(): void {
     Paginator(AppClasses.Paginator, this.storage.localData);
-  }
-
-  public initSlider(data: Data[]): void {
-    new Slider(AppClasses.Slider, data);
   }
 
   private initCustomerSlider(data: Data[]): void {

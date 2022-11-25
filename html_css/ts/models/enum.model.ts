@@ -29,4 +29,3 @@ export enum FormSelector {
   EmailAlert = '#email__alert',
   Alert = 'form__alert'
 };
-

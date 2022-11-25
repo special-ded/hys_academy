@@ -39,7 +39,7 @@ export default class Slider {
     this.slider.appendChild(this.button);
   }
 
-  private getButtonTemplate(buttonSide: string): string {
+  private getButtonTemplate(buttonSide: 'left' | 'right'): string {
     return `
     <svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
       <use class="arrow-${buttonSide}"

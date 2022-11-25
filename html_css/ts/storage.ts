@@ -19,7 +19,7 @@ export default class Storage {
     this._localData = value;
   }
 
-  constructor(key: string, value?: string | Data[]) {
+  constructor(key: string, value?: string) {
     this.key = key;
   }
 

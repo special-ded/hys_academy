@@ -6,9 +6,9 @@ export function LocalData() {
       constructor(...arg: any[]) {
         super(...arg)
 
-        let keys: string[] = [...arg];
-        let key: string = keys[0];
-        let value: string = keys[1];
+        let args: string[] = [...arg];
+        let key: string = args[0];
+        let value: string = args[1];
 
         function getter() {
           return JSON.parse(localStorage.getItem(key));
