@@ -39,6 +39,7 @@ export default class App extends AppAbstract {
     let result: Data[]
 
     try {
+      // checkError
       return result = await (await fetch(this.BASE_URL + `${albumId}/photos`)).json();
     } catch (error) {
       console.error("Error:", error);

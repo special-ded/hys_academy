@@ -125,7 +125,7 @@ function getSlideTemplate<T extends Data>(slideData: T): string {
     <p class="blog__item-side-text">${slideData.category}</p>
     <div class="blog__slider-title">
       <img class="blog__slider-user-img" src=${slideData.userImage} width="48" height="48" alt="slider img1 small" />
-      <h3 class="slider-title">${slideData.title}</h3>
+      <h3 class="slider-title">${slideData.title.slice(0, 40)}</h3>
     </div>
     <a class="blog__item_link" href=${slideData.redirectLink}>Read Now</a>`
 }

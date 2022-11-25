@@ -9,7 +9,7 @@ export function LocalData() {
         let args: string[] = [...arg];
         let key: string = args[0];
         let value: string = args[1];
-
+        // check for null
         function getter() {
           return JSON.parse(localStorage.getItem(key));
         }
