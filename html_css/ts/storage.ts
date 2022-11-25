@@ -1,15 +1,14 @@
 import { LocalData } from "./decorators/localData.decorator";
 import { LocalStorage } from "./decorators/localStorage.decorator";
+import { SessionStorage } from "./decorators/sessionStorage.decorator";
 import { Data } from "./models/interfaces.model";
 
+@SessionStorage()
 @LocalData()
 export default class Storage {
   @LocalStorage
   public key: string;
   private _localData: Data[];
-  private localStorageUserName: string;
-  private localStorageTelephone: string;
-  private localStorageEmail: string;
 
   public get localData(): Data[] {
     return this._localData;
