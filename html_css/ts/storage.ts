@@ -4,19 +4,18 @@ import { Data } from "./models/interfaces.model";
 
 @LocalData()
 export default class Storage {
-  private _localData: Data[];
-
   @LocalStorage
   public key: string;
-  localStorageUserName: string;
-  localStorageTelephone: string;
-  localStorageEmail: string;
+  private _localData: Data[];
+  private localStorageUserName: string;
+  private localStorageTelephone: string;
+  private localStorageEmail: string;
 
-  get localData(): Data[] {
+  public get localData(): Data[] {
     return this._localData;
   }
 
-  set localData(value: Data[]) {
+  public set localData(value: Data[]) {
     this._localData = value;
   }
 
@@ -24,11 +23,11 @@ export default class Storage {
     this.key = key;
   }
 
-  getFromLocalStorage(key: string) {
+  public getFromLocalStorage(key: string) {
     return JSON.parse(localStorage.getItem(key));
   }
 
-  clearLocalStorage(): void {
+  public clearLocalStorage(): void {
     localStorage.clear();
   }
 }

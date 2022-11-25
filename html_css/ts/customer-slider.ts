@@ -1,14 +1,14 @@
 import { Data } from "./models/interfaces.model";
 
 export default class CustomerSlider {
-  buttons: HTMLButtonElement = document.querySelector('.customer__dots');
-  activeButtonClass: string = "customer__dot_active";
-  image: HTMLImageElement = document.querySelector('.customers__img');
-  firstText: HTMLParagraphElement = document.querySelector('.customers__text-first');
-  secondText: HTMLParagraphElement = document.querySelector('.customers__text-second');
-  selector: string;
-  data: Data[];
-  slider: HTMLElement;
+  private buttons: HTMLButtonElement = document.querySelector('.customer__dots');
+  private activeButtonClass: string = "customer__dot_active";
+  private image: HTMLImageElement = document.querySelector('.customers__img');
+  private firstText: HTMLParagraphElement = document.querySelector('.customers__text-first');
+  private secondText: HTMLParagraphElement = document.querySelector('.customers__text-second');
+  private selector: string;
+  private data: Data[];
+  private slider: HTMLElement;
 
   constructor(selector: string, data: Data[]) {
     this.selector = selector;
@@ -17,24 +17,24 @@ export default class CustomerSlider {
     this.initSlider();
   }
 
-  initSlider(): void {
+  private initSlider(): void {
     this.initEventListener();
   }
 
-  initEventListener(): void {
+  private initEventListener(): void {
     this.buttons
       .addEventListener(
         'click', (event) => this.clickHandler(event));
   }
 
-  clickHandler(event: Event): void {
+  private clickHandler(event: Event): void {
     if (!(event.target as HTMLButtonElement).value) {
       return
     }
     this.activeBtnToggler(event, this.activeButtonClass);
   }
 
-  activeBtnToggler(event: Event, activeButtonClass: string): void {
+  private activeBtnToggler(event: Event, activeButtonClass: string): void {
     let activeBtn = document.querySelector(`.` + activeButtonClass);
 
     activeBtn.classList.remove(activeButtonClass);
@@ -44,11 +44,11 @@ export default class CustomerSlider {
     this.renderText((event.target as HTMLButtonElement & { value: number }).value);
   }
 
-  renderImage(activeBtn: number): void {
+  private renderImage(activeBtn: number): void {
     this.image.src = this.data[activeBtn - 1].url;
   }
 
-  renderText(activeBtn: number): void {
+  private renderText(activeBtn: number): void {
     this.firstText.innerText = this.data[activeBtn].title;
     this.secondText.innerText = this.data[activeBtn].title;
   }

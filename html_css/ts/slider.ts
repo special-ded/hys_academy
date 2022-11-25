@@ -1,18 +1,18 @@
 import { Data } from "./models/interfaces.model";
 
 export default class Slider {
-  arrowLeftClass: string = 'arrow-left';
-  arrowRightClass: string = 'arrow-right';
-  arrowBtnClass: string = 'slider__arrow-btn';
-  selector: string;
-  data: Data[];
-  slider: Element;
-  page: number;
-  button: Element;
-  maxPage: number;
-  slidesShown: number;
-  slidesInner: Element;
-  slide: Element;
+  private arrowLeftClass: string = 'arrow-left';
+  private arrowRightClass: string = 'arrow-right';
+  private arrowBtnClass: string = 'slider__arrow-btn';
+  private selector: string;
+  private data: Data[];
+  private slider: Element;
+  private page: number;
+  private button: Element;
+  private maxPage: number;
+  private slidesShown: number;
+  private slidesInner: Element;
+  private slide: Element;
 
   constructor(selector: string, data: Data[]) {
     this.selector = selector;
@@ -30,7 +30,7 @@ export default class Slider {
     this.changeSlidesQuantity();
   }
 
-  private renderButtons(buttonSide: string): void {
+  private renderButtons(buttonSide: 'left' | 'right'): void {
     this.button = document.createElement('button');
     this.button.classList.add(this.arrowBtnClass);
     this.button.classList.add(`arrow-${buttonSide}`);

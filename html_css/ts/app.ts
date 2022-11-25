@@ -8,22 +8,23 @@ import { Form } from "./form";
 import { ReadOnly } from "./decorators/readOnly.decorator";
 import { Data } from "./models/interfaces.model";
 import { AppAbstract } from "./models/appAbstract.class";
-import { AppClass } from "./models/enum.model";
+import { AppClasses } from "./models/enum.model";
 import './libs/my-slick';
 
 
-export default class App implements AppAbstract {
-  storage: Storage;
-  data: Data[];
-  BASE_URL = `https://jsonplaceholder.typicode.com/albums/`;
+export default class App extends AppAbstract {
+  protected storage: Storage;
+  protected data: Data[];
+  protected BASE_URL = `https://jsonplaceholder.typicode.com/albums/`;
 
   constructor() {
-    this.storage = new Storage(AppClass.Key);
+    super();
+    this.storage = new Storage(AppClasses.Key);
   }
 
   @ReadOnly
-  async init(): Promise<void> {
-    this.storage.localData = this.storage.getFromLocalStorage(AppClass.Key);
+  public async init(): Promise<void> {
+    this.storage.localData = this.storage.getFromLocalStorage(AppClasses.Key);
     this.data = await this.setSliderData<number>(1);
     initMobileMenu();
     this.addStickyHeader();
@@ -34,7 +35,7 @@ export default class App implements AppAbstract {
     new Form();
   }
 
-  async setSliderData<T>(albumId: T): Promise<Data[]> {
+  public async setSliderData<T>(albumId: T): Promise<Data[]> {
     let result: Data[]
 
     try {
@@ -47,28 +48,27 @@ export default class App implements AppAbstract {
     return result;
   }
 
-  initSelect(): void {
-    new Select(AppClass.Select);
+  private initSelect(): void {
+    new Select(AppClasses.Select);
   }
 
-  initPaginator(): void {
-    Paginator(AppClass.Paginator, this.storage.localData);
+  private initPaginator(): void {
+    Paginator(AppClasses.Paginator, this.storage.localData);
   }
 
-  initSlider(data: Data[]): void {
-    new Slider(AppClass.Slider, data);
+  public initSlider(data: Data[]): void {
+    new Slider(AppClasses.Slider, data);
   }
 
-  initCustomerSlider(data: Data[]): void {
-    new CustomerSlider(AppClass.CustomerSlider, data);
+  private initCustomerSlider(data: Data[]): void {
+    new CustomerSlider(AppClasses.CustomerSlider, data);
   }
 
-  addStickyHeader(): void {
+  private addStickyHeader(): void {
     window.addEventListener('scroll', () => {
-      const header: Element = document.querySelector(AppClass.Header);
+      const header: Element = document.querySelector(AppClasses.Header);
 
       header.classList.toggle('sticky', window.scrollY > header.clientHeight);
     });
   }
 }
-

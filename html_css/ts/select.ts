@@ -3,23 +3,24 @@ import { Data } from "./models/interfaces.model";
 import { Album } from "./models/enum.model";
 
 export default class Select {
-  classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
-  isActiveClass: string = 'is-active';
-  iconHrefDefault: string = "./assets/images/sprite.svg#icon-arrow-default";
-  iconHrefActive: string = "./assets/images/sprite.svg#icon-arrow-active";
-  selector: string;
-  private el: Element;
+  private classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
+  private isActiveClass: string = 'is-active';
+  private iconHrefDefault: string = "./assets/images/sprite.svg#icon-arrow-default";
+  private iconHrefActive: string = "./assets/images/sprite.svg#icon-arrow-active";
+  private selector: string;
 
   constructor(selector: string) {
     this.selector = selector;
-    this.initSelect()
+    this.initSelect();
   }
 
   public initSelect(): void {
-    this.el = document.querySelector(`${this.selector}`);
-
     this.renderSelect();
     this.initEventListeners();
+  }
+
+  private get el(): Element {
+    return document.querySelector(`${this.selector}`);
   }
 
   private renderSelect(): void {
@@ -41,8 +42,8 @@ export default class Select {
   </div>
   <ul class="select__list">
     <li value="1" class="select__item">${Album.Number1}</li>
-    <li value="2" class="select__item">${Album.Number1}</li>
-    <li value="3" class="select__item">${Album.Number1}</li>
+    <li value="2" class="select__item">${Album.Number2}</li>
+    <li value="3" class="select__item">${Album.Number3}</li>
   </ul>`
   }
 

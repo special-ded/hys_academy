@@ -4,20 +4,20 @@ export enum Album {
   Number3 = 'Album 3'
 };
 
-export enum AppClass {
+export enum AppClasses {
   Key = 'localStorageSliderData',
   Select = "#select",
   Paginator = "#paginator",
   Slider = "#slider",
   CustomerSlider = "#customer-slider",
   Header = '.header'
-}
+};
 
 export enum FormAlert {
   UserName = 'Please input valid Name & Surname',
   Telephone = 'Format: +38 077 777 77 77',
   Email = 'Invalid email given'
-}
+};
 
 export enum FormSelector {
   Form = 'form',
@@ -28,5 +28,5 @@ export enum FormSelector {
   TelephoneAlert = '#telephone__alert',
   EmailAlert = '#email__alert',
   Alert = 'form__alert'
-}
+};
 

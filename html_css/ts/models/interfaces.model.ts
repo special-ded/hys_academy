@@ -5,8 +5,8 @@ export interface Data {
   title: string,
   url: string,
   userImage: string
-}
+};
 
 export interface Trim {
   trim: () => string,
-}
+};
