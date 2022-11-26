@@ -1,3 +1,6 @@
+import * as $ from 'jquery';
+import "slick-carousel";
+
 $(document).ready(function () {
   $('.slider__slides').slick({
     slidesToShow: 3,

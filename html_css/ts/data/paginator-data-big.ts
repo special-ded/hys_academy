@@ -1,4 +1,6 @@
-export default function paginatorData() {
+import { Data } from "../types/data-interface";
+
+export default function paginatorData(): Data[] {
   return [{
     "id": 1,
     "title": "accusamus beatae ad facilis cum similique qui sunt",
