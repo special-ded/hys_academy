@@ -40,7 +40,10 @@ export default class App extends AppAbstract {
 
     try {
       // checkError
-      return result = await (await fetch(this.BASE_URL + `${albumId}/photos`)).json();
+      const response = await fetch(this.BASE_URL + `${albumId}/photos`);
+      console.log(response + 'aaaaaaa');
+
+      return result = await response.json();
     } catch (error) {
       console.error("Error:", error);
       result = this.storage.localData;

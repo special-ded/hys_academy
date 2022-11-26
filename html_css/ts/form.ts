@@ -17,19 +17,18 @@ export class Form {
   }
 
   private onInit() {
-    this.checkLocalStorage();
+    this.checkStorage();
     this.sendButtonHandler();
     this.initFormListener();
   }
 
   private getFromStorage<T extends Trim>(key: string): T {
-    const storage = new Storage(key);
-    let value = storage.getFromStorage(key)?.trim()
+    this.storage = new Storage(key);
 
-    return value;
+    return this.storage.getFromStorage(key)?.trim();
   }
 
-  private checkLocalStorage(): void {
+  private checkStorage(): void {
     this.localStorageUserName = this.getFromStorage<string>('username');
     this.localStorageTelephone = this.getFromStorage<string>('telephone');
     this.localStorageEmail = this.getFromStorage<string>('email');
