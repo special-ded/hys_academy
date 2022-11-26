@@ -3,11 +3,11 @@ import { Data } from "./models/interfaces.model";
 import { AlbumEnum } from "./models/enum.model";
 
 export default class Select {
-  classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
-  isActiveClass: string = 'is-active';
-  iconHrefDefault: string = "./assets/images/sprite.svg#icon-arrow-default";
-  iconHrefActive: string = "./assets/images/sprite.svg#icon-arrow-active";
-  selector: string;
+  private classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
+  private isActiveClass: string = 'is-active';
+  private iconHrefDefault: string = "./assets/images/sprite.svg#icon-arrow-default";
+  private iconHrefActive: string = "./assets/images/sprite.svg#icon-arrow-active";
+  private selector: string;
   private el: Element;
 
   constructor(selector: string) {
@@ -51,13 +51,16 @@ export default class Select {
       this.selectChoose(event);
     })
 
-    document.querySelector(".select").addEventListener('click', (event) => {
+    document
+      .querySelector(".select")
+      .addEventListener(
+        'click', (event: Event): void => {
 
-      if (this.classListInput.includes((event.target as HTMLInputElement).className)
-        || this.classListInput.includes((event.target as HTMLInputElement).classList.value)) {
-        this.selectToggler();
-      }
-    })
+          if (this.classListInput.includes((event.target as HTMLInputElement).className)
+            || this.classListInput.includes((event.target as HTMLInputElement).classList.value)) {
+            this.selectToggler();
+          }
+        })
   }
 
   private selectToggler(): void {
@@ -73,7 +76,7 @@ export default class Select {
       return
     }
 
-    (document.querySelector('.input__value') as HTMLInputElement).value = (event.target as HTMLInputElement).innerText;
+    document.querySelector<HTMLInputElement>('.input__value').value = (event.target as HTMLInputElement).innerText;
     this.onSelectChange(event);
   }
 

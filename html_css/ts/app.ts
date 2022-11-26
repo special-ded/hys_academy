@@ -11,10 +11,16 @@ abstract class AppAbstract {
   abstract setSliderData<T>(albumId: T): Promise<Data[]>;
 }
 
+<<<<<<< HEAD
 export default class App implements AppAbstract {
   storage: Storage;
   data: Data[];
   BASE_URL = `https://jsonplaceholder.typicode.com/albums/`
+=======
+export default class App {
+  private storage: Storage;
+  private data: Data[];
+>>>>>>> ls_10
 
   constructor() {
     this.storage = new Storage();
@@ -22,16 +28,27 @@ export default class App implements AppAbstract {
   }
 
   async init(): Promise<void> {
+<<<<<<< HEAD
     const data = await this.setSliderData<number>(1);
     this.addStickyHeader()
+=======
+    const data = await this.setSliderData(1);
+    this.addStickyHeader();
+>>>>>>> ls_10
     this.initSelect();
     this.initSlider(data);
     this.initPaginator();
     this.initCustomerSlider(data)
   }
 
+<<<<<<< HEAD
   async setSliderData<T>(albumId: T): Promise<Data[]> {
     let result: Data[]
+=======
+  private async setSliderData(albumId: number): Promise<Data[]> {
+    let result: Data[];
+
+>>>>>>> ls_10
     try {
       const response = await fetch(this.BASE_URL + `${albumId}/photos`);
       result = await response.json();
@@ -39,14 +56,15 @@ export default class App implements AppAbstract {
     } catch (error) {
       console.error("Error:", error);
     }
+
     return result;
   }
 
-  initSelect(): void {
+  private initSelect(): void {
     new Select("#select");
   }
 
-  initPaginator(): void {
+  private initPaginator(): void {
     paginator("#paginator", this.data);
   }
 
@@ -54,12 +72,12 @@ export default class App implements AppAbstract {
     new Slider("#slider", data);
   }
 
-  initCustomerSlider(data: Data[]): void {
+  private initCustomerSlider(data: Data[]): void {
     new CustomerSlider('#customer-slider', data);
   }
 
-  addStickyHeader(): void {
-    window.addEventListener('scroll', () => {
+  private addStickyHeader(): void {
+    window.addEventListener('scroll', (): void => {
       const header: Element = document.querySelector('.header');
 
       header.classList.toggle('sticky', window.scrollY > header.clientHeight);

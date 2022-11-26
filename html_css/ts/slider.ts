@@ -1,25 +1,30 @@
+<<<<<<< HEAD
 import { Data } from "./models/interfaces.model";
+=======
+import { Data } from "./types/data-interface";
+import { Side } from "./types/slider-type";
+>>>>>>> ls_10
 
 export default class Slider {
-  arrowLeftClass: string = 'arrow-left';
-  arrowRightClass: string = 'arrow-right';
-  arrowBtnClass: string = 'slider__arrow-btn';
-  selector: string;
-  data: Data[];
-  slider: Element;
-  page: number;
-  button: Element;
-  maxPage: number;
-  slidesShown: number;
-  slidesInner: Element;
-  slide: Element;
+  private arrowLeftClass: string = 'arrow-left';
+  private arrowRightClass: string = 'arrow-right';
+  private arrowBtnClass: string = 'slider__arrow-btn';
+  private selector: string;
+  private data: Data[];
+  private slider: Element;
+  private page: number;
+  private button: Element;
+  private maxPage: number;
+  private slidesShown: number;
+  private slidesInner: Element;
+  private slide: Element;
 
   constructor(selector: string, data: Data[]) {
     this.selector = selector;
     this.data = data;
     this.slider = document.querySelector(this.selector);
     this.page = 0;
-    this.initSlider()
+    this.initSlider();
   }
 
   private initSlider(): void {
@@ -30,16 +35,24 @@ export default class Slider {
     this.changeSlidesQuantity();
   }
 
+<<<<<<< HEAD
   private renderButtons(buttonSide: string): void {
+=======
+  private renderButtons(buttonSide: Side): void {
+>>>>>>> ls_10
     this.button = document.createElement('button');
     this.button.classList.add(this.arrowBtnClass);
-    this.button.classList.add(`arrow-${buttonSide}`)
+    this.button.classList.add(`arrow-${buttonSide}`);
     this.button.innerHTML = this.getButtonTemplate(buttonSide);
 
     this.slider.appendChild(this.button);
   }
 
+<<<<<<< HEAD
   private getButtonTemplate(buttonSide: string): string {
+=======
+  private getButtonTemplate(buttonSide: Side): string {
+>>>>>>> ls_10
     return `
     <svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
       <use class="arrow-${buttonSide}"
@@ -50,12 +63,18 @@ export default class Slider {
   }
 
   private initIventListener(): void {
+<<<<<<< HEAD
     this.slider.addEventListener('click', (event) => {
+=======
+>>>>>>> ls_10
 
-      if (this.isButtonClass(event)) {
-        this.clickHandler(event);
-      }
-    })
+    this.slider.addEventListener(
+      'click', (event: Event) => {
+
+        if (this.isButtonClass(event)) {
+          this.clickHandler(event);
+        }
+      })
     window.addEventListener('resize', () => this.changeSlidesQuantity());
   }
 
@@ -86,7 +105,7 @@ export default class Slider {
   private buttonHandler(page: number): void {
     const arrowParent: NodeListOf<Element> = document.querySelectorAll('.slider__arrow-btn');
     const arrowParentArr: HTMLInputElement[] = Array.prototype.slice.call(arrowParent);
-    const arrowLeft = arrowParentArr.find(el => el.className === 'slider__arrow-btn arrow-left');
+    const arrowLeft: HTMLInputElement = arrowParentArr.find(el => el.className === 'slider__arrow-btn arrow-left');
 
     arrowLeft.disabled = page === 0;
     (this.button as HTMLInputElement).disabled = page >= this.maxPage;
@@ -102,7 +121,7 @@ export default class Slider {
     this.slidesInner.classList.add('prefer__slides-inner');
     slidesWrapper.appendChild(this.slidesInner);
 
-    data.forEach((slideData) => {
+    data.forEach((slideData: Data): void => {
       this.renderTemplate(slideData);
     });
 

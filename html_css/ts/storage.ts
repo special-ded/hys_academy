@@ -2,31 +2,31 @@ import { Data } from "./models/interfaces.model";
 
 export default class Storage {
 
-  localStorageSliderData: string;
-  localStorageUserName: string;
-  localStorageTelephone: string;
-  localStorageEmail: string;
-  regName: RegExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
-  regNumber: RegExp = /\+38+\d{10}$/;
-  regEmail: RegExp = /(?:[a-z0-9_-]+(?:\.[a-z0-9_-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+  private localStorageSliderData: string;
+  private localStorageUserName: string;
+  private localStorageTelephone: string;
+  private localStorageEmail: string;
+  private regName: RegExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
+  private regNumber: RegExp = /\+38+\d{10}$/;
+  private regEmail: RegExp = /(?:[a-z0-9_-]+(?:\.[a-z0-9_-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
   constructor() {
     this.localStorageSliderData = 'localStorageSliderData';
   }
 
-  getSliderData(): Array<Data> {
+  public getSliderData(): Array<Data> {
     this.initStorage();
 
     return JSON.parse(localStorage.getItem(this.localStorageSliderData));
   }
 
-  initStorage(): void {
+  private initStorage(): void {
     this.checkLocalStorage();
     this.setFormToLocalStorage();
     this.sendButtonHandler();
   }
 
-  checkLocalStorage(): void {
+  private checkLocalStorage(): void {
     this.localStorageUserName = JSON.parse(localStorage.getItem('username'))?.trim();
     this.localStorageTelephone = JSON.parse(localStorage.getItem('telephone'))?.trim();
     this.localStorageEmail = JSON.parse(localStorage.getItem('email'))?.trim();
@@ -36,88 +36,101 @@ export default class Storage {
     }
   }
 
-  renderFormData(): void {
-    (document.querySelector('#username') as HTMLInputElement).value = this.localStorageUserName
+  private renderFormData(): void {
+    document.querySelector<HTMLInputElement>('#username').value = this.localStorageUserName
       ? this.localStorageUserName
       : null;
 
-    (document.querySelector('#telephone') as HTMLInputElement).value = this.localStorageTelephone
+    document.querySelector<HTMLInputElement>('#telephone').value = this.localStorageTelephone
       ? this.localStorageTelephone
       : null;
 
-    (document.querySelector('#email') as HTMLInputElement).value = this.localStorageEmail
+    document.querySelector<HTMLInputElement>('#email').value = this.localStorageEmail
       ? this.localStorageEmail
       : null;
   }
 
-  setFormToLocalStorage(): void {
-    document.querySelector('form').addEventListener('input', (e) => this.inputHandler(e));
+  private setFormToLocalStorage(): void {
+    document
+      .querySelector('form')
+      .addEventListener(
+        'input', (e: Event): void => this.inputHandler(e));
   }
 
-  inputHandler(event: Event): void {
+  private inputHandler(event: Event): void {
     localStorage.setItem((event.target as HTMLInputElement).id, JSON.stringify((event.target as HTMLInputElement).value));
   }
 
-  sendButtonHandler(): void {
-    document.querySelector('.send-btn').addEventListener('click', () => this.clearLocalStorage());
+  private sendButtonHandler(): void {
+    document
+      .querySelector('.send-btn')
+      .addEventListener(
+        'click', (): void => this.clearLocalStorage());
   }
 
-  clearLocalStorage(): void {
+  private clearLocalStorage(): void {
 
     if (this.passValidation()) {
-      (document.querySelector('#username') as HTMLInputElement).value = '';
-      (document.querySelector('#telephone') as HTMLInputElement).value = '';
-      (document.querySelector('#email') as HTMLInputElement).value = '';
+      document.querySelector<HTMLInputElement>('#username').value = '';
+      document.querySelector<HTMLInputElement>('#telephone').value = '';
+      document.querySelector<HTMLInputElement>('#email').value = '';
       localStorage.clear();
     }
   }
 
-  passValidation(): boolean {
-    this.userNameValidation();
-    this.numberValidation();
-    this.emailValidation();
+  protected passValidation(): boolean {
+    this.isUserNameValid();
+    this.isNumberValid();
+    this.isEmailValid();
 
-    if (this.userNameValidation() && this.numberValidation() && this.emailValidation()) {
+    if (this.isUserNameValid() && this.isNumberValid() && this.isEmailValid()) {
       return true;
     }
   }
 
-  userNameValidation(): boolean {
+  protected isUserNameValid(): boolean {
     const userNameEl: HTMLInputElement = document.querySelector('#username');
-    userNameEl.classList.remove('form__alert');
-    (document.querySelector('#username__alert') as HTMLInputElement).innerText = '';
+    this.removeFormAlertMessage('#username')
 
     if (!this.regName.test(userNameEl.value)) {
-      (document.querySelector('#username__alert') as HTMLInputElement).innerText = 'Please input valid Name & Surname';
-      userNameEl.classList.add('form__alert');
+      this.showFormAlertMessage('#username', 'Please input valid Name & Surname')
       return false;
     }
     return true;
   }
 
-  numberValidation(): boolean {
+  protected isNumberValid(): boolean {
     const numberEl: HTMLInputElement = document.querySelector('#telephone');
-    numberEl.classList.remove('form__alert');
-    (document.querySelector('#telephone__alert') as HTMLInputElement).innerText = '';
+    this.removeFormAlertMessage('#telephone')
 
     if (!this.regNumber.test(numberEl.value)) {
-      (document.querySelector('#telephone__alert') as HTMLInputElement).innerText = 'Format: +38 077 777 77 77';
-      numberEl.classList.add('form__alert');
+      this.showFormAlertMessage('#telephone', 'Format: +38 077 777 77 77')
       return false;
     }
     return true;
   }
 
-  emailValidation(): boolean {
+  protected isEmailValid(): boolean {
     const emailEl: HTMLInputElement = document.querySelector('#email');
-    emailEl.classList.remove('form__alert');
-    (document.querySelector('#email__alert') as HTMLInputElement).innerText = '';
+    this.removeFormAlertMessage('#email')
 
     if (!this.regEmail.test(emailEl.value)) {
-      (document.querySelector('#email__alert') as HTMLInputElement).innerText = 'Invalid email given';
-      emailEl.classList.add('form__alert');
+      this.showFormAlertMessage('#email', 'Invalid email given')
       return false;
     }
     return true;
+  }
+
+  showFormAlertMessage(selector: string, message: string) {
+    const el: HTMLInputElement = document.querySelector(selector);
+
+    document.querySelector<HTMLInputElement>(`${selector}__alert`).innerText = message;
+    el.classList.add('form__alert');
+  }
+
+  removeFormAlertMessage(selector: string) {
+    const el: HTMLInputElement = document.querySelector(selector);
+    el.classList.remove('form__alert');
+    document.querySelector<HTMLInputElement>(`${selector}__alert`).innerText = '';
   }
 }
