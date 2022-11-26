@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 import { Data } from "./models/interfaces.model";
-=======
-import { Data } from "./types/data-interface";
-import { Side } from "./types/slider-type";
->>>>>>> ls_10
+import { Side } from "./models/slider-type.model";
+
 
 export default class Slider {
   private arrowLeftClass: string = 'arrow-left';
@@ -35,11 +32,9 @@ export default class Slider {
     this.changeSlidesQuantity();
   }
 
-<<<<<<< HEAD
-  private renderButtons(buttonSide: 'left' | 'right'): void {
-=======
+
   private renderButtons(buttonSide: Side): void {
->>>>>>> ls_10
+
     this.button = document.createElement('button');
     this.button.classList.add(this.arrowBtnClass);
     this.button.classList.add(`arrow-${buttonSide}`);
@@ -48,7 +43,7 @@ export default class Slider {
     this.slider.appendChild(this.button);
   }
 
-  private getButtonTemplate(buttonSide: 'left' | 'right'): string {
+  private getButtonTemplate(buttonSide: Side): string {
     return `
     <svg class="slider__arrow arrow-${buttonSide}" viewBox="0 0 33 32" width="40">
       <use class="arrow-${buttonSide}"

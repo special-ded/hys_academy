@@ -33,14 +33,12 @@ export default class App extends AppAbstract {
     this.initSlider(this.data);
     this.initPaginator();
     this.initCustomerSlider(this.data);
-
   }
 
   public async setSliderData<T>(albumId: T): Promise<Data[]> {
     let result: Data[]
 
     try {
-
       const response = await fetch(this.BASE_URL + `${albumId}/photos`);
       return result = await response.json();
     } catch (error) {
