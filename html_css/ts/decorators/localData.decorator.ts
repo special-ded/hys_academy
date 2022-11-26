@@ -1,4 +1,5 @@
 import { Data } from "../models/interfaces.model";
+import slidesData from "../data/slides-data-big";
 
 export function LocalData() {
   return function <T extends { new(...arg: any): object }>(constructor: T) {
@@ -9,8 +10,13 @@ export function LocalData() {
         let args: string[] = [...arg];
         let key: string = args[0];
         let value: string = args[1];
-        // check for null
+
         function getter() {
+
+          if (JSON.parse(localStorage.getItem(key)) === null || undefined) {
+            console.log("No data in LocalStorage");
+            return slidesData()
+          }
           return JSON.parse(localStorage.getItem(key));
         }
 

@@ -10,7 +10,7 @@ export function SessionStorage() {
         let args: string[] = [...arg];
         let key: string = args[0];
         let value: string = args[1];
-        // check for null
+
         function getter() {
 
           if (JSON.parse(sessionStorage.getItem(key)) === null || undefined) {
