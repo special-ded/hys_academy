@@ -4,7 +4,7 @@ import { SessionStorage } from "./decorators/sessionStorage.decorator";
 import { Data } from "./models/interfaces.model";
 
 @SessionStorage()
-@LocalData()
+// @LocalData()
 export default class Storage {
   @LocalStorage
   public key: string;
@@ -22,8 +22,10 @@ export default class Storage {
     this.key = key;
   }
 
-  public getFromLocalStorage(key: string) {
-    return JSON.parse(localStorage.getItem(key));
+  public getFromStorage(key: string) {
+    console.log(JSON.parse(localStorage.getItem(key)) || JSON.parse(sessionStorage.getItem(key)));
+
+    return JSON.parse(localStorage.getItem(key)) || JSON.parse(sessionStorage.getItem(key))
   }
 
   public clearLocalStorage(): void {

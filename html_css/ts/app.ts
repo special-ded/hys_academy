@@ -24,7 +24,7 @@ export default class App extends AppAbstract {
 
   @ReadOnly
   public async init(): Promise<void> {
-    this.storage.localData = this.storage.getFromLocalStorage(AppClasses.Key);
+    this.storage.localData = this.storage.getFromStorage(AppClasses.Key);
     this.data = await this.setSliderData<number>(1);
     initMobileMenu();
     this.addStickyHeader();

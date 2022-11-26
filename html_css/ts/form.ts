@@ -22,17 +22,17 @@ export class Form {
     this.initFormListener();
   }
 
-  private getFromLocalStorage<T extends Trim>(key: string): T {
+  private getFromStorage<T extends Trim>(key: string): T {
     const storage = new Storage(key);
-    let value = storage.getFromLocalStorage(key)?.trim();
+    let value = storage.getFromStorage(key)?.trim()
 
     return value;
   }
 
   private checkLocalStorage(): void {
-    this.localStorageUserName = this.getFromLocalStorage<string>('username');
-    this.localStorageTelephone = this.getFromLocalStorage<string>('telephone');
-    this.localStorageEmail = this.getFromLocalStorage<string>('email');
+    this.localStorageUserName = this.getFromStorage<string>('username');
+    this.localStorageTelephone = this.getFromStorage<string>('telephone');
+    this.localStorageEmail = this.getFromStorage<string>('email');
 
     if (this.localStorageUserName || this.localStorageTelephone || this.localStorageEmail) {
       this.fillFormData();
