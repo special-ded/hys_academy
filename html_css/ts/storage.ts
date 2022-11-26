@@ -4,7 +4,7 @@ import { SessionStorage } from "./decorators/sessionStorage.decorator";
 import { Data } from "./models/interfaces.model";
 
 @SessionStorage()
-@LocalData()
+// @LocalData()
 export default class Storage {
   @LocalStorage
   public key: string;

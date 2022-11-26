@@ -1,6 +1,5 @@
 import Storage from "./storage";
-import { Trim } from "./models/interfaces.model";
-import { FormAlert, FormSelector } from "./models/enum.model";
+import { FormAlert, FormSelector, AppClasses } from "./models/enum.model";
 
 
 export class Form {
@@ -22,16 +21,19 @@ export class Form {
     this.initFormListener();
   }
 
-  private getFromStorage<T extends Trim>(key: string): T {
-    this.storage = new Storage(key);
+  private getFromStorage(key: string): string {
+    this.storage = new Storage(AppClasses.Key);
 
+    if (this.storage.getFromStorage(key) === null) {
+      return ''
+    }
     return this.storage.getFromStorage(key)?.trim();
   }
 
   private checkStorage(): void {
-    this.localStorageUserName = this.getFromStorage<string>('username');
-    this.localStorageTelephone = this.getFromStorage<string>('telephone');
-    this.localStorageEmail = this.getFromStorage<string>('email');
+    this.localStorageUserName = this.getFromStorage('username');
+    this.localStorageTelephone = this.getFromStorage('telephone');
+    this.localStorageEmail = this.getFromStorage('email');
 
     if (this.localStorageUserName || this.localStorageTelephone || this.localStorageEmail) {
       this.fillFormData();

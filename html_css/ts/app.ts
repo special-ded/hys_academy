@@ -29,10 +29,11 @@ export default class App extends AppAbstract {
     initMobileMenu();
     this.addStickyHeader();
     this.initSelect();
+    new Form();
     this.initSlider(this.data);
     this.initPaginator();
     this.initCustomerSlider(this.data);
-    new Form();
+
   }
 
   public async setSliderData<T>(albumId: T): Promise<Data[]> {

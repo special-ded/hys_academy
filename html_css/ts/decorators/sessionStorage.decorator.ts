@@ -1,4 +1,5 @@
 import { Data } from "../models/interfaces.model";
+import slidesData from "../data/slides-data-big";
 
 export function SessionStorage() {
   return function <T extends { new(...arg: any): object }>(constructor: T) {
@@ -11,6 +12,11 @@ export function SessionStorage() {
         let value: string = args[1];
         // check for null
         function getter() {
+
+          if (JSON.parse(sessionStorage.getItem(key)) === null || undefined) {
+            console.log("No data in SessionStorage");
+            return slidesData()
+          }
           return JSON.parse(sessionStorage.getItem(key));
         }
 
