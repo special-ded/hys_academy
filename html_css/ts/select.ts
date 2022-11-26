@@ -54,9 +54,10 @@ export default class Select {
           this.selectChoose(event);
         })
 
-    document.querySelector(".select")
+    document
+      .querySelector(".select")
       .addEventListener(
-        'click', (event): void => {
+        'click', (event: Event): void => {
 
           if (this.classListInput.includes((event.target as HTMLInputElement).className)
             || this.classListInput.includes((event.target as HTMLInputElement).classList.value)) {
@@ -78,7 +79,7 @@ export default class Select {
       return
     }
 
-    (document.querySelector('.input__value') as HTMLInputElement).value = (event.target as HTMLInputElement).innerText;
+    document.querySelector<HTMLInputElement>('.input__value').value = (event.target as HTMLInputElement).innerText;
     this.onSelectChange(event);
   }
 

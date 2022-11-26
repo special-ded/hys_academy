@@ -40,10 +40,8 @@ export default class App extends AppAbstract {
     let result: Data[]
 
     try {
-      // checkError
-      const response = await fetch(this.BASE_URL + `${albumId}/photos`);
-      console.log(response + 'aaaaaaa');
 
+      const response = await fetch(this.BASE_URL + `${albumId}/photos`);
       return result = await response.json();
     } catch (error) {
       console.error("Error:", error);

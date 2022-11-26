@@ -30,4 +30,5 @@ export default class Storage {
     localStorage.clear();
     sessionStorage.clear();
   }
+
 }
