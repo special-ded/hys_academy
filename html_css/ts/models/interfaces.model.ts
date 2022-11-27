@@ -6,3 +6,14 @@ export interface Data {
   url: string,
   userImage: string
 };
+
+export interface ISelect {
+  initSelect(): void
+}
+
+export interface IStorage {
+  key: string,
+  get localData(): Data[],
+  set localData(value: Data[]),
+  clearLocalStorage(): void
+}

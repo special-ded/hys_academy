@@ -1,8 +1,9 @@
 import App from "./app";
 import { Data } from "./models/interfaces.model";
 import { Album } from "./models/enum.model";
+import { ISelect } from "./models/interfaces.model";
 
-export default class Select {
+export default class Select implements ISelect {
   private classListInput: string[] = ["input__value", "input__wrap", "select__icon-use", "select__icon"];
   private isActiveClass: string = 'is-active';
   private iconHrefDefault: string = "./assets/images/sprite.svg#icon-arrow-default";
@@ -96,7 +97,6 @@ export default class Select {
     const app: App = new App();
     let albumId: string = (event.target as HTMLInputElement).value
     const data: Data[] = await app.setSliderData(+albumId);
-    console.log(data);
 
     app.initSlider(data)
   }

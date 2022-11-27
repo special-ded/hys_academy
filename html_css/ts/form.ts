@@ -24,10 +24,10 @@ export class Form {
   private getFromStorage(key: string): string {
     this.storage = new Storage(AppClasses.Key);
 
-    if (this.storage.getFromStorage(key) === null) {
+    if (this.storage.getFromStorage<string>(key) === null) {
       return ''
     }
-    return this.storage.getFromStorage(key)?.trim();
+    return this.storage.getFromStorage<string>(key)?.trim();
   }
 
   private checkStorage(): void {

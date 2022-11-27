@@ -2,10 +2,11 @@ import { LocalData } from "./decorators/localData.decorator";
 import { LocalStorage } from "./decorators/localStorage.decorator";
 import { SessionStorage } from "./decorators/sessionStorage.decorator";
 import { Data } from "./models/interfaces.model";
+import { IStorage } from "./models/interfaces.model";
 
 @SessionStorage()
 @LocalData()
-export default class Storage {
+export default class Storage implements IStorage {
   @LocalStorage
   public key: string;
   private _localData: Data[];
@@ -22,7 +23,7 @@ export default class Storage {
     this.key = key;
   }
 
-  public getFromStorage(key: string) {
+  public getFromStorage<T>(key: string): T {
     return JSON.parse(localStorage.getItem(key)) || JSON.parse(sessionStorage.getItem(key))
   }
 

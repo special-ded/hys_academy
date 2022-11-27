@@ -1,6 +1,6 @@
 import { Data } from "./interfaces.model";
 
 export abstract class AppAbstract {
-  protected abstract BASE_URL: string;
+  protected BASE_URL: string = `https://jsonplaceholder.typicode.com/albums/`;
   protected abstract setSliderData<T>(albumId: T): Promise<Data[]>;
 }
