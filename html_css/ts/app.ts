@@ -36,17 +36,20 @@ export default class App extends AppAbstract {
   }
 
   public async setSliderData<T>(albumId: T): Promise<Data[]> {
-    let result: Data[]
+    console.log(albumId);
 
     try {
-      const response = await fetch(this.BASE_URL + `${albumId}/photos`);
-      return result = await response.json();
+      const response: Response = await fetch(this.BASE_URL + `${albumId}/photos`);
+
+      if (response.status !== 200) {
+        return this.storage.getFromStorage(AppClasses.Key);
+      }
+
+      return await response.json();
     } catch (error) {
       console.error("Error:", error);
-      result = this.storage.localData;
+      return this.storage.localData;
     }
-
-    return result;
   }
 
   public initSlider(data: Data[]): void {

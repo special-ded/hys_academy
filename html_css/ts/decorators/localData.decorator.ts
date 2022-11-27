@@ -7,16 +7,17 @@ export function LocalData() {
       constructor(...arg: any[]) {
         super(...arg)
 
-        let args: string[] = [...arg];
-        let key: string = args[0];
-        let value: string = args[1];
+        const args: string[] = [...arg];
+        const key: string = args[0];
+        const value: string = args[1];
 
         function getter() {
 
-          if (JSON.parse(localStorage.getItem(key)) === null || undefined) {
+          if (!localStorage.getItem(key)) {
             console.log("No data in LocalStorage");
-            return slidesData()
+            return slidesData();
           }
+
           return JSON.parse(localStorage.getItem(key));
         }
 

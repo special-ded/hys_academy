@@ -99,6 +99,8 @@ export default class Slider {
   }
 
   private processDataForSlides(data: Data[]): void {
+    console.log(data);
+
     this.slidesInner = document.createElement('div');
     const slidesWrapper: HTMLElement = document.createElement('div');
 

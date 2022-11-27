@@ -96,6 +96,7 @@ export default class Select {
     const app: App = new App();
     let albumId: string = (event.target as HTMLInputElement).value
     const data: Data[] = await app.setSliderData(+albumId);
+    console.log(data);
 
     app.initSlider(data)
   }

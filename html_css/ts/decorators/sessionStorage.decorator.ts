@@ -7,16 +7,17 @@ export function SessionStorage() {
       constructor(...arg: any[]) {
         super(...arg)
 
-        let args: string[] = [...arg];
-        let key: string = args[0];
-        let value: string = args[1];
+        const args: string[] = [...arg];
+        const key: string = args[0];
+        const value: string = args[1];
 
         function getter() {
 
-          if (JSON.parse(sessionStorage.getItem(key)) === null || undefined) {
+          if (!sessionStorage.getItem(key)) {
             console.log("No data in SessionStorage");
             return slidesData()
           }
+
           return JSON.parse(sessionStorage.getItem(key));
         }
 
